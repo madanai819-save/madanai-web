@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<title>プライバシーポリシー｜マダナイ？</title>
+<meta name="description" content="マダナイ？の個人情報の取り扱いに関する方針（プライバシーポリシー）です。Googleアナリティクス、お問い合わせフォーム、Cookieの利用、個人情報の管理・第三者提供について記載しています。">
+<link rel="canonical" href="https://madanai-web.jp/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1620;
+    --bg:#FFFFFF;
+    --bg-soft:#FFFFFF;
+    --purple:#7B2FF7;
+    --purple-deep:#5B1FCB;
+    --pink:#FF3D8A;
+    --grad: linear-gradient(135deg, var(--purple), var(--pink));
+    --text:#231F2B;
+    --text-muted:#6B6577;
+    --line:#ECE6F3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:#FFFFFF;
+    color:var(--text);
+    font-family:'Noto Sans JP', sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.round{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{ display:block; max-width:100%; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+  .grad-text{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .eyebrow{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:14px;
+    font-weight:800;
+    color:var(--purple);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1040px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:22px;
+    font-weight:900;
+  }
+  .logo .bar{
+    display:inline-block;
+    width:7px; height:20px;
+    background:var(--grad);
+    border-radius:2px;
+    margin-right:8px;
+    transform:skewX(-10deg);
+    vertical-align:-3px;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+  .nav a{
+    font-size:14px;
+    font-weight:700;
+    color:var(--text);
+    white-space:nowrap;
+  }
+  .nav a:hover{ color:var(--purple); }
+  .header-ctas{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .btn-header-primary, .btn-header-secondary{
+    font-size:13px; font-weight:800;
+    padding:11px 20px;
+    border-radius:999px;
+    white-space:nowrap;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:40px;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-header-primary{
+    background:#161616;
+    color:#fff;
+    box-shadow:0 10px 22px rgba(22,22,22,0.16);
+  }
+  .btn-header-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 26px rgba(22,22,22,0.2); }
+  .btn-header-secondary{
+    background:#fff;
+    color:var(--ink);
+    border:1px solid rgba(22,22,22,0.18);
+  }
+  .btn-header-secondary:hover{ transform:translateY(-2px); background:rgba(245,245,245,0.9); }
+  .btn-header-secondary .line-icon{ flex-shrink:0; }
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    width:40px; height:40px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .hamburger span{
+    display:block;
+    width:22px; height:2px;
+    background:var(--ink);
+    border-radius:2px;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  .mobile-nav{
+    display:none;
+    flex-direction:column;
+    gap:2px;
+    max-height:0;
+    overflow:hidden;
+    background:#fff;
+    border-top:1px solid var(--line);
+    transition:max-height .3s ease;
+  }
+  .mobile-nav.open{ max-height:520px; }
+  .mobile-nav a{
+    padding:14px 24px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--text);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav-ctas{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:16px 24px 20px;
+  }
+  .mobile-nav-ctas .btn-header-primary, .mobile-nav-ctas .btn-header-secondary{
+    width:100%;
+    padding:13px 20px;
+  }
+
+  /* ---------- POLICY CONTENT ---------- */
+  .policy-hero{
+    padding:72px 24px 32px;
+    text-align:center;
+  }
+  .policy-hero .eyebrow{ display:block; margin-bottom:12px; }
+  .policy-hero h1{
+    font-size:clamp(28px, 4vw, 40px);
+    font-weight:900;
+    color:var(--ink);
+  }
+  .policy-hero p{
+    margin-top:16px;
+    font-size:13.5px;
+    color:var(--text-muted);
+  }
+  .policy-body{
+    padding:24px 24px 96px;
+  }
+  .policy-block{
+    max-width:800px;
+    margin:0 auto 48px;
+  }
+  .policy-block h2{
+    font-size:19px;
+    font-weight:800;
+    color:var(--ink);
+    margin-bottom:14px;
+    padding-left:14px;
+    border-left:4px solid var(--purple);
+  }
+  .policy-block p{
+    font-size:14px;
+    color:var(--text-muted);
+    line-height:1.9;
+    margin-bottom:10px;
+  }
+  .policy-block ul{
+    list-style:none;
+    padding:0;
+    margin:12px 0;
+  }
+  .policy-block ul li{
+    position:relative;
+    padding-left:20px;
+    font-size:14px;
+    color:var(--text-muted);
+    line-height:1.9;
+    margin-bottom:6px;
+  }
+  .policy-block ul li::before{
+    content:"";
+    position:absolute;
+    left:0; top:10px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--purple);
+  }
+  .policy-block a{
+    color:var(--purple);
+    font-weight:700;
+    text-decoration:underline;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:44px 24px 38px; text-align:center; font-size:12px; color:var(--text-muted); border-top:1px solid var(--line); background:#FFFFFF; }
+  footer .logo{ display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px; }
+  footer .footer-links{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:13px; color:var(--text-muted); }
+
+  /* ---------- TABLET ---------- */
+  @media (max-width:1080px){
+    .nav, .header-ctas{ display:none; }
+    .hamburger{ display:flex; }
+    .mobile-nav{ display:flex; }
+  }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:720px){
+    .policy-hero{ padding:48px 24px 24px; }
+    .policy-block h2{ font-size:17px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="bar"></span>マダナイ<span class="grad-text">？</span></a>
+    <nav class="nav">
+      <a href="index.html#home">ホーム</a>
+      <a href="index.html#works">制作実績</a>
+      <a href="index.html#pricing">料金プラン</a>
+      <a href="index.html#process">制作の流れ</a>
+      <a href="index.html#testimonials">お客様の声</a>
+      <a href="index.html#faq">よくある質問</a>
+    </nav>
+    <div class="header-ctas">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-primary">無料相談する</a>
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-secondary"><svg class="line-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="6" fill="#06C755"/><path d="M7 10.3v4.2M10.3 10.3v4.2M10.3 10.3l3 4.2M13.3 10.3v4.2M16.3 10.3h1.6a1.1 1.1 0 0 1 0 2.2h-1.6v2" stroke="#fff" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>LINEで相談する</a>
+    </div>
+    <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#home">ホーム</a>
+    <a href="index.html#works">制作実績</a>
+    <a href="index.html#pricing">料金プラン</a>
+    <a href="index.html#process">制作の流れ</a>
+    <a href="index.html#testimonials">お客様の声</a>
+    <a href="index.html#faq">よくある質問</a>
+    <div class="mobile-nav-ctas">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-primary">無料相談する</a>
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-secondary">LINEで相談する</a>
+    </div>
+  </div>
+</header>
+
+<section class="policy-hero">
+  <div class="wrap">
+    <span class="eyebrow">PRIVACY POLICY</span>
+    <h1>プライバシーポリシー</h1>
+    <p>制定日：2026年7月18日</p>
+  </div>
+</section>
+
+<section class="policy-body">
+  <div class="wrap">
+
+    <div class="policy-block">
+      <p>マダナイ？（以下「当社」といいます）は、お客様の個人情報の重要性を認識し、個人情報の保護に関する法律（個人情報保護法）その他関連法令を遵守するとともに、以下のプライバシーポリシー（以下「本ポリシー」といいます）に基づき、適切に個人情報を取り扱います。</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Googleアナリティクスについて</h2>
+      <p>当社は、本サイトの利用状況を把握するため、Google社が提供するアクセス解析ツール「Googleアナリティクス」を利用しています。Googleアナリティクスは、Cookieを使用してお客様のアクセス情報（閲覧ページ、滞在時間、利用端末、地域など）を匿名で収集するもので、個人を特定する情報は含まれません。</p>
+      <p>収集されたデータはGoogle社のプライバシーポリシーに基づいて管理されます。詳細および収集を無効にする方法については、Google社の案内をご確認ください。</p>
+      <p><a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener">Googleのプライバシーポリシー（外部サイト）</a></p>
+    </div>
+
+    <div class="policy-block">
+      <h2>お問い合わせについて</h2>
+      <p>当社では、公式LINEを通じてお問い合わせ・ご相談を承っております。お問い合わせの際にお伺いする氏名、事業者名、連絡先、ご相談内容等の情報は、お問い合わせへの回答およびサービスのご案内、お見積りの作成のみに利用し、目的外の利用は行いません。</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Cookie（クッキー）について</h2>
+      <p>本サイトでは、お客様の利便性向上およびアクセス解析のため、Cookieを使用する場合があります。Cookieとは、Webサイトがお客様のブラウザに送信し、端末に保存される小さなデータファイルであり、個人を特定する情報は含まれません。</p>
+      <p>お客様はブラウザの設定によりCookieの受け取りを拒否・削除することができます。ただし、その場合、本サイトの一部機能が正しく動作しない可能性があります。</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>個人情報の管理</h2>
+      <p>当社は、取得した個人情報を正確かつ最新の状態に保つよう努め、個人情報への不正アクセス、紛失、改ざん、漏えいなどを防止するため、必要かつ適切な安全管理措置を講じます。</p>
+      <p>個人情報の取り扱いは、業務上必要な範囲に限定し、適切に管理いたします。</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>個人情報の第三者提供について</h2>
+      <p>当社は、以下の場合を除き、お客様の同意を得ることなく個人情報を第三者に提供することはありません。</p>
+      <ul>
+        <li>法令に基づく場合</li>
+        <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+        <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+        <li>その他、法令により認められる場合</li>
+      </ul>
+      <p>なお、業務委託先（サーバー管理会社等）に対し、業務の遂行に必要な範囲で個人情報の取り扱いを委託する場合があります。この場合、委託先の管理・監督を適切に行います。</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>免責事項</h2>
+      <p>当社は、本サイトに掲載する情報の正確性・安全性・有用性等について万全を期しておりますが、その内容を保証するものではありません。本サイトの情報を用いて行う一切の行為に関して、一切の責任を負いかねます。</p>
+      <p>本サイトからリンクやバナーによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について当社は一切責任を負いません。</p>
+      <p>また、制作実績・料金・サービス内容等は、予告なく変更・修正・削除される場合がございますので、あらかじめご了承ください。</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>お問い合わせ先</h2>
+      <p>本ポリシーに関するお問い合わせは、下記までご連絡ください。</p>
+      <p>運営：マダナイ？<br>お問い合わせ：公式LINEよりご連絡ください</p>
+      <p><a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener">公式LINEで問い合わせる ↗</a></p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="logo"><a href="index.html" style="display:flex; align-items:center;"><span class="bar"></span>マダナイ<span class="grad-text">？</span></a></div>
+  <div>ホームページ・LP制作 ｜ 全国対応</div>
+  <div class="footer-links">
+    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener">LINE相談</a>
+    <a href="https://www.instagram.com/madanai7171?igsh=MXYxb3RwcW1vOWRyZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  <div style="margin-top:10px;">&copy; 2026 マダナイ？ All rights reserved.</div>
+</footer>
+
+<script>
+  try{
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    if(hamburger && mobileNav){
+      hamburger.addEventListener('click', ()=>{
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      mobileNav.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click', ()=>{
+          mobileNav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  }catch(err){}
+</script>
+
+</body>
+</html>
