@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-<title>SEO対策｜ホームページ集客ならマダナイ？</title>
-<meta name="description" content="ホームページを作るだけで終わらせない、SEO対策のご案内。検索から選ばれるサイトづくりで、事業の集客を後押しします。">
+<title>MEO対策・Googleマップ集客支援｜マダナイ？</title>
+<meta name="description" content="Googleマップや地域検索から見つけてもらうためのMEO対策を支援。Googleビジネスプロフィールの初期設定・情報整理・公開後の運用相談まで対応します。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="マダナイ？">
-<meta property="og:title" content="SEO対策｜ホームページ集客ならマダナイ？">
-<meta property="og:description" content="ホームページを作るだけで終わらせない、SEO対策のご案内。検索から選ばれるサイトづくりで、事業の集客を後押しします。">
+<meta property="og:title" content="MEO対策・Googleマップ集客支援｜マダナイ？">
+<meta property="og:description" content="Googleマップや地域検索から見つけてもらうためのMEO対策を支援。Googleビジネスプロフィールの初期設定・情報整理・公開後の運用相談まで対応します。">
 <meta property="og:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
 <meta property="og:image:width" content="1536">
 <meta property="og:image:height" content="1024">
-<meta property="og:url" content="https://madanai-web.jp/seo.html">
+<meta property="og:url" content="https://madanai-web.jp/meo.html">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
-<meta name="twitter:title" content="SEO対策｜ホームページ集客ならマダナイ？">
-<meta name="twitter:description" content="ホームページを作るだけで終わらせない、SEO対策のご案内。検索から選ばれるサイトづくりで、事業の集客を後押しします。">
-<link rel="canonical" href="https://madanai-web.jp/seo.html">
+<meta name="twitter:title" content="MEO対策・Googleマップ集客支援｜マダナイ？">
+<meta name="twitter:description" content="Googleマップや地域検索から見つけてもらうためのMEO対策を支援。Googleビジネスプロフィールの初期設定・情報整理・公開後の運用相談まで対応します。">
+<link rel="canonical" href="https://madanai-web.jp/meo.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -278,6 +278,7 @@
     color:var(--ink);
     letter-spacing:-0.02em;
     margin-top:10px;
+    line-height:1.4;
   }
   .page-hero p{
     max-width:560px;
@@ -314,45 +315,142 @@
   }
   .content-block-inner p:last-child{ margin-bottom:0; }
 
-  /* ---------- CHECK LIST (shared with pricing page) ---------- */
-  .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:12px; }
-  .plan-check li{ position:relative; padding-left:28px; font-size:13.5px; color:var(--text-muted); line-height:1.7; }
+  /* ---------- PAIN CARDS ---------- */
+  .pain-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .pain-card{
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.08);
+    border-radius:18px;
+    padding:30px 22px;
+    text-align:center;
+  }
+  .pain-icon{
+    width:48px; height:48px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid var(--purple);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px;
+  }
+  .pain-card p{ font-size:13.5px; font-weight:600; color:var(--text); line-height:1.7; }
+  .pain-card h3{ font-size:14.5px; font-weight:800; color:var(--ink); margin-bottom:6px; }
+  .pain-card .pain-desc{ font-size:12.5px; font-weight:500; color:var(--text-muted); line-height:1.7; }
+
+  /* ---------- VALUE PILLARS ---------- */
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .value-card{
+    border-radius:18px;
+    padding:36px 22px;
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.06);
+    text-align:center;
+  }
+  .value-card h3{
+    font-size:16.5px;
+    font-weight:800;
+    color:var(--ink);
+    margin:0 0 10px;
+  }
+  .value-card p{ font-size:13px; color:var(--text-muted); line-height:1.7; }
+  .value-icon{
+    width:56px; height:56px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid var(--purple);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px;
+  }
+
+  /* ---------- CHECK LIST (shared) ---------- */
+  .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:10px; }
+  .plan-check li{ position:relative; padding-left:26px; font-size:12.5px; color:var(--text-muted); line-height:1.7; }
   .plan-check li::before{
     content:"✓";
     position:absolute; left:0; top:0;
-    width:18px; height:18px;
+    width:16px; height:16px;
     border-radius:50%;
     background:var(--purple);
     color:#fff;
-    font-size:10px;
+    font-size:9px;
     font-weight:900;
     display:flex; align-items:center; justify-content:center;
   }
 
-  .maintenance-note{
+  /* ---------- RECOMMEND BOX ---------- */
+  .recommend-box{
     background:#fff;
     border:1px solid var(--line);
-    border-radius:20px;
-    padding:24px 28px;
-    font-size:14px;
-    color:var(--text-muted);
+    border-radius:16px;
+    padding:28px 32px;
+    max-width:560px;
+    margin:0 auto;
+  }
+  .recommend-box ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .recommend-box li{
     position:relative;
-    padding-left:32px;
+    padding-left:24px;
+    font-size:14.5px;
+    color:var(--text);
+    font-weight:600;
+    line-height:1.7;
   }
-  .maintenance-note::before{
+  .recommend-box li::before{
     content:"";
-    position:absolute; left:0; top:0; bottom:0;
-    width:8px;
+    position:absolute;
+    left:2px; top:9px;
+    width:6px; height:6px;
+    border-radius:50%;
     background:var(--grad);
-    border-radius:8px 0 0 8px;
   }
-  .maintenance-note strong{
-    color:var(--ink);
-    font-family:'M PLUS Rounded 1c', sans-serif;
-    font-size:16px;
-    display:block;
-    margin-bottom:6px;
+
+  /* ---------- PROCESS ---------- */
+  .process-flow{
+    display:flex;
+    align-items:flex-start;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:44px 24px;
   }
+  .process-step{
+    flex:1;
+    min-width:0;
+    text-align:center;
+    padding:0 8px;
+    position:relative;
+  }
+  .process-step:not(:last-child)::after{
+    content:"\203A";
+    position:absolute;
+    top:18px;
+    right:-4px;
+    font-size:20px;
+    font-weight:700;
+    color:var(--line);
+  }
+  .process-icon{
+    width:48px; height:48px;
+    border-radius:50%;
+    border:1.5px solid var(--purple);
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 14px;
+  }
+  .process-step h3{ font-size:13px; font-weight:800; color:var(--ink); margin-bottom:6px; line-height:1.4; }
+  .process-step p{ font-size:10.5px; color:var(--text-muted); line-height:1.6; }
 
   /* ---------- FAQ ---------- */
   .faq-item{
@@ -413,8 +511,27 @@
     transform:translateY(-2px);
     box-shadow:0 18px 36px rgba(22,22,22,0.22);
   }
+  .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    background:#fff;
+    color:#161616;
+    border:1px solid rgba(22,22,22,0.18);
+    padding:15px 24px;
+    font-size:15px;
+    font-weight:700;
+    border-radius:999px;
+    white-space:nowrap;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-secondary:hover{
+    transform:translateY(-2px);
+    background:rgba(245,245,245,0.9);
+  }
   .btn-arrow{ display:inline-block; transition:transform .2s ease; }
-  .btn-primary:hover .btn-arrow{ transform:translateX(3px); }
+  .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow{ transform:translateX(3px); }
 
   /* ---------- CONTACT ---------- */
   .contact{
@@ -467,12 +584,23 @@
     .hamburger{ display:flex; }
     .mobile-nav{ display:flex; }
   }
+  @media (max-width:1000px){
+    .value-grid{ grid-template-columns:repeat(2,1fr); }
+    .process-flow{ flex-wrap:wrap; row-gap:32px; }
+    .process-step{ flex:0 0 50%; }
+    .process-step:not(:last-child)::after{ content:none; }
+  }
 
   /* ---------- MOBILE ---------- */
   @media (max-width:720px){
     section{ padding:58px 0; }
     .content-block{ padding:48px 0; }
-    .btn-primary, .btn-line{ width:100%; max-width:320px; justify-content:center; padding:14px 18px; font-size:14px; display:inline-flex; }
+    .btn-primary, .btn-line, .btn-secondary{ width:100%; max-width:320px; justify-content:center; padding:14px 18px; font-size:14px; }
+    .btn-primary, .btn-line, .btn-secondary{ display:inline-flex; }
+    .pain-grid{ grid-template-columns:1fr; }
+    .value-grid{ grid-template-columns:1fr; }
+    .process-flow{ padding:32px 20px; row-gap:26px; }
+    .process-step{ flex:0 0 100%; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
   }
 </style>
@@ -538,78 +666,198 @@
 <section class="page-hero reveal">
   <div class="wrap">
     <a href="index.html" class="back-link">← トップページへ戻る</a>
-    <span class="eyebrow">SEO</span>
-    <h1>SEO対策</h1>
-    <p>ホームページは作って終わりではありません。検索から見つけてもらい、選ばれるところまでを一緒に育てていきます。</p>
+    <span class="eyebrow">MEO</span>
+    <h1>近くのお客様に、<br>Googleマップで見つけてもらう。</h1>
+    <p>MEO対策は、Googleマップや地域名を含む検索で、<br>店舗やサービスを見つけてもらいやすくするための施策です。<br>Googleビジネスプロフィールの初期設定から、<br>情報整理・改善まで分かりやすくサポートします。</p>
+    <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">MEO対策を相談する<span class="btn-arrow">→</span></a>
+      <a href="pricing.html#options" class="btn-secondary">料金を見る<span class="btn-arrow">→</span></a>
+    </div>
   </div>
 </section>
 
-<!-- SEOとは -->
+<!-- MEO対策とは -->
 <section class="content-block reveal">
-  <div class="wrap content-block-inner">
+  <div class="wrap content-block-inner" style="text-align:center;">
     <div class="section-head">
       <span class="eyebrow">ABOUT</span>
-      <h2>SEOとは</h2>
+      <h2>MEO対策とは</h2>
     </div>
-    <p>SEO（Search Engine Optimization）とは、Googleなどの検索エンジンで、より多くの方に見つけてもらうための取り組みです。</p>
-    <p>「地域名＋業種」や「商品名＋サービス」などで検索された際に上位に表示されるよう、サイトの内容や構造を整えていきます。広告のように表示のたびに費用がかかるものではなく、育てるほど積み上がっていく取り組みです。</p>
+    <p>「SEO対策」と「MEO対策」は、どちらも見つけてもらうための取り組みですが、対象とする検索が異なります。</p>
+    <p><strong style="color:var(--ink);">SEO対策</strong>は、Google検索など通常の検索結果で、ホームページを見つけてもらうための対策です。</p>
+    <p><strong style="color:var(--ink);">MEO対策</strong>は、Googleマップや「地域名＋業種」といった検索で、お店や事業を見つけてもらうための対策です。</p>
+    <p>近隣のお客様に来店してほしい場合は、通常の検索対策に加えて、MEO対策を整えることがとても重要になります。</p>
   </div>
 </section>
 
-<!-- SEOのメリット -->
+<!-- こんなお悩みありませんか -->
 <section class="content-block alt reveal">
-  <div class="wrap content-block-inner">
+  <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">MERIT</span>
-      <h2>SEOのメリット</h2>
+      <span class="eyebrow">CONCERN</span>
+      <h2>こんなお悩みありませんか</h2>
     </div>
-    <ul class="plan-check">
-      <li>広告費をかけ続けなくても、継続的な集客が見込める</li>
-      <li>「今すぐ客」に近い、関心の高いユーザーと出会いやすい</li>
-      <li>検索結果に表示されること自体が、事業への信頼につながる</li>
-      <li>一度の取り組みが積み上がり、長く効果が続く資産になる</li>
-    </ul>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <p>Googleマップに店舗が表示されない</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></div>
+        <p>店舗情報が古いままになっている</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <p>営業時間や住所を正しく伝えたい</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
+        <p>近隣のお客様からの来店を増やしたい</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <p>Google検索で競合店ばかり表示される</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 17v.01M12 14c0-2.5 2.5-2 2.5-4.5A2.5 2.5 0 0 0 12 7a2.5 2.5 0 0 0-2.5 2.5"/></svg></div>
+        <p>何を設定すればいいか分からない</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- マダナイ？のSEO対策 -->
+<!-- MEOで整えること -->
 <section class="content-block reveal">
-  <div class="wrap content-block-inner">
+  <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">OUR APPROACH</span>
-      <h2>マダナイ？のSEO対策</h2>
+      <span class="eyebrow">WHAT WE ARRANGE</span>
+      <h2>MEOで整えること</h2>
     </div>
-    <p>ホームページ制作の全プランに、基本的なSEO設定を標準で含めています。公開して終わりにせず、公開後も検索での見つかりやすさを一緒に育てていきます。</p>
-    <ul class="plan-check">
-      <li>基本SEO設定（全プラン標準）</li>
-      <li>Googleサーチコンソール設定代行</li>
-      <li>Googleビジネスプロフィール設定代行（MEO対策）</li>
-      <li>保守プランでの継続的なSEO・MEO相談</li>
-      <li>AIを活用した検索ニーズの分析・改善提案</li>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>正しい情報を届ける</h3>
+        <ul class="plan-check">
+          <li>店舗名</li>
+          <li>住所</li>
+          <li>営業時間</li>
+          <li>電話番号</li>
+          <li>サービス内容</li>
+        </ul>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <h3>見つけてもらう</h3>
+        <ul class="plan-check">
+          <li>地域名や業種に合った情報整理</li>
+          <li>Googleマップ上での表示改善</li>
+          <li>検索されやすい情報設計</li>
+        </ul>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3>選ばれやすくする</h3>
+        <ul class="plan-check">
+          <li>写真の整理</li>
+          <li>店舗説明の改善</li>
+          <li>サービス情報の充実</li>
+        </ul>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
+        <h3>継続して育てる</h3>
+        <ul class="plan-check">
+          <li>情報更新</li>
+          <li>投稿内容の整理</li>
+          <li>改善点の確認</li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center; font-size:11.5px; color:var(--text-muted); margin-top:32px;">※検索順位の上昇や来店数の増加を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- マダナイ？のMEO支援 -->
+<section class="content-block alt reveal">
+  <div class="wrap content-block-inner" style="text-align:center;">
+    <div class="section-head">
+      <span class="eyebrow">OUR SUPPORT</span>
+      <h2>マダナイ？のMEO支援</h2>
+    </div>
+    <ul class="plan-check" style="max-width:440px; margin:0 auto; text-align:left;">
+      <li>Googleビジネスプロフィールの初期設定</li>
+      <li>基本情報の登録・整理</li>
+      <li>店舗説明文の整理</li>
+      <li>写真やサービス情報の掲載方法のご案内</li>
+      <li>ホームページやSEOとの導線整理</li>
+      <li>公開後の運用相談</li>
     </ul>
-    <div style="text-align:center; margin-top:32px;">
-      <a href="pricing.html" class="btn-primary">料金・サービス詳細を見る<span class="btn-arrow">→</span></a>
+  </div>
+</section>
+
+<!-- MEO対策が向いている業種 -->
+<section class="content-block reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FOR YOUR BUSINESS</span>
+      <h2>MEO対策が向いている業種</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card"><p style="font-weight:800; color:var(--ink);">飲食店</p></div>
+      <div class="pain-card"><p style="font-weight:800; color:var(--ink);">美容室</p></div>
+      <div class="pain-card"><p style="font-weight:800; color:var(--ink);">エステ・ネイルサロン</p></div>
+      <div class="pain-card"><p style="font-weight:800; color:var(--ink);">整体院・整骨院</p></div>
+      <div class="pain-card"><p style="font-weight:800; color:var(--ink);">士業</p></div>
+      <div class="pain-card"><p style="font-weight:800; color:var(--ink);">工務店</p></div>
+      <div class="pain-card"><p style="font-weight:800; color:var(--ink);">地域密着型サービス</p></div>
     </div>
   </div>
 </section>
 
-<!-- 制作会社との違い -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner">
+<!-- 支援の流れ -->
+<section class="reveal">
+  <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">DIFFERENCE</span>
-      <h2>制作会社との違い</h2>
+      <span class="eyebrow">FLOW</span>
+      <h2>支援の流れ</h2>
     </div>
-    <p>一般的な制作会社では、公開時点でのSEO設定のみで対応が終わることが少なくありません。</p>
-    <div class="maintenance-note">
-      <strong>マダナイ？の違い</strong>
-      公開後も保守プランを通じて検索での見つかりやすさを継続的に確認し、必要な改善をご提案します。「作って終わり」ではなく、育てていくパートナーであることが私たちの違いです。
+    <div class="process-flow">
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
+        <h3>無料相談</h3>
+        <p>公式LINEから、気になることをお聞かせください。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>現在のGoogle表示を確認</h3>
+        <p>Googleマップ・検索での表示状況を確認します。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>店舗情報・課題を整理</h3>
+        <p>現在の店舗情報と課題を整理します。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
+        <h3>必要な設定内容をご提案</h3>
+        <p>整えるべき内容をご提案します。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <h3>初期設定・情報整備</h3>
+        <p>Googleビジネスプロフィールの設定・情報整備を行います。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
+        <h3>公開後の確認・運用相談</h3>
+        <p>公開後の表示状況や運用についてもご相談いただけます。</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- よくある質問 -->
-<section id="faq" class="reveal">
+<section id="faq" class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FAQ</span>
@@ -619,48 +867,72 @@
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">SEO対策の効果はどれくらいで出ますか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">Googleビジネスプロフィールを持っていなくても依頼できますか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>業種や競合状況によって異なりますが、一般的には数ヶ月〜半年程度で変化が見え始めることが多いです。即効性のある施策ではなく、継続的な取り組みが大切です。</p>
+            <p>はい、お持ちでない場合も初期設定からサポートいたします。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">今使っているホームページでもSEO対策はできますか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">店舗を持たない事業でも利用できますか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>はい、可能です。現在のサイトの状態を確認した上で、改善点をご提案します。まずは公式LINEにてお気軽にご相談ください。</p>
+            <p>事業形態によって対応可否が異なります。内容を確認のうえ個別にご案内します。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">SEO対策に追加料金はかかりますか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">MEO対策をすると必ず上位表示されますか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>基本的なSEO設定は全プランに含まれています。Googleサーチコンソールやビジネスプロフィールの設定代行はオプション、継続的なSEO相談は保守プラン（スタンダード以上）でご案内しています。詳しくは料金ページをご覧ください。</p>
+            <p>順位や集客成果を保証するものではありません。地域名や業種に合わせて情報を整えることで、見つけてもらいやすい状態を目指します。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">AIを使ったSEO対策はできますか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">写真や店舗情報は何を準備すればいいですか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>はい。検索されやすいキーワードの整理や、お知らせ・ブログ更新の効率化など、AIを活用したご提案も行っています。専門知識がなくても大丈夫です。</p>
+            <p>店舗の外観・内観やサービスが伝わる写真など。詳しくはご相談時に内容を確認のうえご案内します。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">SEO対策と一緒に依頼できますか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>はい、SEOとMEOを組み合わせたご相談も可能です。内容を確認のうえ個別にご案内します。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">公開後の更新も相談できますか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>はい。保守プランの中で、MEOに関する運用相談も承っています。</p>
           </div>
         </div>
       </div>
@@ -669,12 +941,26 @@
   </div>
 </section>
 
+<!-- 料金について -->
+<section class="content-block reveal" style="scroll-margin-top:90px;">
+  <div class="wrap content-block-inner" style="text-align:center;">
+    <div class="section-head">
+      <span class="eyebrow">PRICE</span>
+      <h2>料金について</h2>
+    </div>
+    <p>Googleビジネスプロフィールの登録・設定に対応しています。料金の詳細は料金ページでご確認いただけます。ホームページ制作やSEO対策との組み合わせもご相談いただけます。</p>
+    <div style="margin-top:28px;">
+      <a href="pricing.html#options" class="btn-primary">MEO対策の料金を見る<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- 最終CTA -->
 <section id="contact" class="contact reveal">
   <div class="wrap inner">
     <span class="eyebrow">CONTACT</span>
-    <h2>検索から選ばれるホームページへ</h2>
-    <p>SEO対策について気になることがあれば、公式LINEからお気軽にご相談ください。</p>
+    <h2>気になることがあれば、まずは無料相談から</h2>
+    <p>Googleマップでの見つかりやすさについて気になることがあれば、公式LINEから気軽にお問合せください。</p>
     <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line">30秒で無料相談する</a>
   </div>
 </section>
