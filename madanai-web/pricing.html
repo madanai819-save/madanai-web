@@ -400,6 +400,46 @@
     margin-bottom:6px;
   }
 
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .faq-question{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:24px 26px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    text-align:left;
+    font:inherit;
+    color:inherit;
+  }
+  .faq-q-label{ display:flex; gap:10px; align-items:flex-start; }
+  .faq-q-mark{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:900; flex-shrink:0; }
+  .faq-q-text{ font-size:16px; font-weight:800; color:var(--ink); }
+  .faq-toggle-icon{ font-size:18px; color:var(--purple); flex-shrink:0; }
+  .faq-answer{
+    display:grid;
+    grid-template-rows:0fr;
+    opacity:0;
+    transition:grid-template-rows .3s ease, opacity .25s ease;
+  }
+  .faq-item.open .faq-answer{ grid-template-rows:1fr; opacity:1; }
+  .faq-answer-inner{ overflow:hidden; }
+  .faq-answer-inner p{
+    font-size:14px;
+    color:var(--text-muted);
+    padding:0 26px 24px 26px;
+    line-height:1.9;
+  }
+
   .btn-primary{
     display:inline-flex;
     align-items:center;
@@ -614,13 +654,15 @@
     <div class="section-head">
       <span class="eyebrow">MAINTENANCE</span>
       <h2>保守プラン</h2>
-      <p>ホームページを安心・安全に運用するためのサポートプランです</p>
+      <p>「更新代行」ではなく、公開後も一緒に成果を伸ばしていく運用パートナーです</p>
     </div>
+    <p style="max-width:520px; margin:-32px auto 32px; text-align:center; font-size:13.5px; color:var(--text-muted); line-height:1.9;">ホームページは公開して終わりではなく、育てていくものです。マダナイ？の保守プランは、修正対応だけでなく、SEO・MEOの相談やAI活用の提案まで、事業の成長を一緒に考える運用パートナーとしてご利用いただけます。</p>
     <div class="recommend-box">
       <span class="recommend-label">こんな方におすすめ</span>
       <ul>
         <li>公開後も安心して運用したい方</li>
         <li>更新や修正を継続して依頼したい方</li>
+        <li>SEO・MEO・AI活用まで相談しながら育てたい方</li>
       </ul>
     </div>
     <div class="plan-card">
@@ -683,9 +725,10 @@
         </ul>
       </div>
       <div class="plan-card featured">
-        <span class="plan-flag">人気</span>
+        <span class="plan-flag">おすすめ</span>
         <div class="plan-name">STANDARD</div>
         <h3 class="plan-title">スタンダードプラン</h3>
+        <p style="font-size:12px; color:var(--text-muted); margin:0 0 4px;">SEO・MEO・AI活用まで、まとめて相談したい方におすすめです</p>
         <div class="plan-price" style="margin-bottom:10px;">5,980<span>円/月</span></div>
         <div style="font-size:11px; font-weight:700; color:var(--purple); background:var(--bg-soft); display:inline-block; padding:3px 10px; border-radius:999px; margin-bottom:4px;">ライトプランの内容＋</div>
         <ul class="plan-check">
@@ -693,7 +736,9 @@
           <li>ブログ・お知らせ更新代行</li>
           <li>バックアップ管理</li>
           <li>セキュリティ更新</li>
-          <li>Google検索状況の簡易チェック</li>
+          <li>SEO相談（月1回）</li>
+          <li>MEO相談（Googleビジネスプロフィール運用）</li>
+          <li>月次改善提案</li>
         </ul>
       </div>
       <div class="plan-card">
@@ -704,11 +749,91 @@
         <ul class="plan-check">
           <li>軽微な修正ほぼ無制限</li>
           <li>優先対応</li>
-          <li>月1回の運用・集客相談</li>
+          <li>AI活用相談（業務効率化のご提案）</li>
+          <li>月1回の運用・集客ミーティング</li>
           <li>ページ追加・機能追加20%OFF</li>
-          <li>SEO改善アドバイス</li>
         </ul>
       </div>
+    </div>
+
+    <div style="overflow-x:auto;">
+    <table class="price-table" style="margin-top:32px; min-width:560px;">
+      <tr><th>項目</th><th>ライト</th><th>スタンダード</th><th>プレミアム</th></tr>
+      <tr><td>月額</td><td>2,980円</td><td>5,980円</td><td>9,980円</td></tr>
+      <tr><td>軽微な修正</td><td>月1回まで</td><td>月3回まで</td><td>ほぼ無制限</td></tr>
+      <tr><td>ブログ・お知らせ更新代行</td><td>−</td><td>○</td><td>○</td></tr>
+      <tr><td>バックアップ管理</td><td>−</td><td>○</td><td>○</td></tr>
+      <tr><td>セキュリティ更新</td><td>−</td><td>○</td><td>○</td></tr>
+      <tr><td>SEO相談</td><td>−</td><td>月1回</td><td>優先対応</td></tr>
+      <tr><td>MEO相談</td><td>−</td><td>○</td><td>優先対応</td></tr>
+      <tr><td>AI活用相談</td><td>−</td><td>−</td><td>○</td></tr>
+      <tr><td>月次改善提案</td><td>−</td><td>○</td><td>○</td></tr>
+      <tr><td>ページ追加・機能追加</td><td>通常料金</td><td>通常料金</td><td>20%OFF</td></tr>
+      <tr><td>優先対応</td><td>−</td><td>−</td><td>○</td></tr>
+      <tr><td>ドメイン更新・SSL管理</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td>LINEサポート</td><td>○</td><td>○</td><td>○</td></tr>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- よくある質問 -->
+<section id="faq" class="reveal" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>よくある質問</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px; max-width:720px; margin:0 auto;">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">保守プランはいつでも解約できますか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>はい、いつでも解約可能です。解約手数料はかかりません。解約後は、スポット修正（都度払い）でのご依頼に切り替えていただけます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">月の修正回数を超えた場合はどうなりますか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>各プランの回数を超えた分は、スポット修正料金にて追加対応いたします。プレミアムプランは軽微な修正がほぼ無制限のため、回数を気にせずご依頼いただけます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">他社で制作したホームページでも保守プランに加入できますか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>はい、可能です。まずは現在のサイトの状態を確認させていただいた上で、対応可否と料金をご案内します。公式LINEからお気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">AI活用相談とは具体的に何を相談できますか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>問い合わせ対応の自動化や、お知らせ・ブログ作成の効率化など、日々の業務を効率化するAIの使い方をご提案します。専門知識がなくても大丈夫です。</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -750,6 +875,18 @@
         });
       });
     }
+  }catch(err){}
+  try{
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      const btn = item.querySelector('.faq-question');
+      const icon = item.querySelector('.faq-toggle-icon');
+      if(!btn) return;
+      btn.addEventListener('click', ()=>{
+        const isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(icon) icon.textContent = isOpen ? '−' : '+';
+      });
+    });
   }catch(err){}
   try{
     if('IntersectionObserver' in window){
