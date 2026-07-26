@@ -186,6 +186,71 @@
     padding:13px 20px;
   }
 
+  /* ---------- SERVICES DROPDOWN ---------- */
+  .nav-dropdown{ position:relative; }
+  .nav-dropdown-toggle{
+    display:inline-flex; align-items:center; gap:5px;
+    background:none; border:none; cursor:pointer;
+    font:inherit; font-size:14px; font-weight:700; color:var(--text);
+    padding:0;
+  }
+  .nav-dropdown-toggle:hover{ color:var(--purple); }
+  .nav-dropdown.open .nav-dropdown-toggle{ color:var(--purple); }
+  .nav-caret{ transition:transform .2s ease; flex-shrink:0; }
+  .nav-dropdown.open .nav-caret{ transform:rotate(180deg); }
+  .nav-dropdown-menu{
+    position:absolute; top:calc(100% + 16px); left:50%;
+    transform:translateX(-50%) translateY(-6px);
+    min-width:240px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 14px 34px rgba(26,22,32,0.12);
+    padding:8px;
+    display:flex; flex-direction:column; gap:2px;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease, visibility .18s;
+    z-index:200;
+  }
+  .nav-dropdown.open .nav-dropdown-menu{
+    opacity:1; visibility:visible; pointer-events:auto;
+    transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-item{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:11px 14px;
+    border-radius:10px;
+    font-size:13.5px; font-weight:700; color:var(--text);
+  }
+  a.nav-dropdown-item:hover{ background:var(--bg-soft); color:var(--purple); }
+  .nav-dropdown-item.is-disabled{ color:var(--text-muted); cursor:default; }
+  .nav-dropdown-badge{
+    font-size:10px; font-weight:800;
+    color:var(--text-muted);
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    padding:2px 8px;
+    border-radius:999px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .mobile-nav-group{ border-bottom:1px solid var(--line); }
+  .mobile-nav-toggle{
+    width:100%;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    font-size:15px; font-weight:700; color:var(--text);
+    background:none; border:none; cursor:pointer; font-family:inherit;
+  }
+  .mobile-nav-submenu{
+    max-height:0; overflow:hidden;
+    transition:max-height .3s ease;
+    background:var(--bg-soft);
+  }
+  .mobile-nav-group.open .mobile-nav-submenu{ max-height:360px; }
+  .mobile-nav-submenu .nav-dropdown-item{ padding:12px 24px 12px 36px; border-radius:0; font-size:14px; }
+  .mobile-nav-group.open .nav-caret{ transform:rotate(180deg); }
+
   /* ---------- PAGE HEADING ---------- */
   .page-hero{
     padding:96px 24px 32px;
@@ -414,6 +479,20 @@
     <nav class="nav">
       <a href="index.html#home">ホーム</a>
       <a href="index.html#works">制作実績</a>
+      <div class="nav-dropdown" id="servicesDropdown">
+        <button type="button" class="nav-dropdown-toggle" id="servicesMenuBtn" aria-expanded="false" aria-controls="servicesMenu" aria-haspopup="true">
+          サービス
+          <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="servicesMenu" role="menu" aria-labelledby="servicesMenuBtn">
+          <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">ホームページ制作<span class="nav-dropdown-badge">準備中</span></span>
+          <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">LP制作<span class="nav-dropdown-badge">準備中</span></span>
+          <a class="nav-dropdown-item" role="menuitem" href="seo.html">SEO対策</a>
+          <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">MEO対策<span class="nav-dropdown-badge">準備中</span></span>
+          <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">AI導入・活用支援<span class="nav-dropdown-badge">準備中</span></span>
+          <a class="nav-dropdown-item" role="menuitem" href="pricing.html#maintenance">保守・運用支援</a>
+        </div>
+      </div>
       <a href="index.html#process">制作の流れ</a>
       <a href="index.html#testimonials">お客様の声</a>
       <a href="index.html#faq">よくある質問</a>
@@ -429,6 +508,20 @@
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html#home">ホーム</a>
     <a href="index.html#works">制作実績</a>
+    <div class="mobile-nav-group">
+      <button type="button" class="mobile-nav-toggle" id="mobileServicesBtn" aria-expanded="false" aria-controls="mobileServicesMenu">
+        サービス
+        <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mobileServicesMenu">
+        <span class="nav-dropdown-item is-disabled" aria-disabled="true">ホームページ制作<span class="nav-dropdown-badge">準備中</span></span>
+        <span class="nav-dropdown-item is-disabled" aria-disabled="true">LP制作<span class="nav-dropdown-badge">準備中</span></span>
+        <a class="nav-dropdown-item" href="seo.html">SEO対策</a>
+        <span class="nav-dropdown-item is-disabled" aria-disabled="true">MEO対策<span class="nav-dropdown-badge">準備中</span></span>
+        <span class="nav-dropdown-item is-disabled" aria-disabled="true">AI導入・活用支援<span class="nav-dropdown-badge">準備中</span></span>
+        <a class="nav-dropdown-item" href="pricing.html#maintenance">保守・運用支援</a>
+      </div>
+    </div>
     <a href="index.html#process">制作の流れ</a>
     <a href="index.html#testimonials">お客様の声</a>
     <a href="index.html#faq">よくある質問</a>
@@ -608,6 +701,46 @@
           mobileNav.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
         });
+      });
+    }
+  }catch(err){}
+  try{
+    const dropdown = document.getElementById('servicesDropdown');
+    const toggleBtn = document.getElementById('servicesMenuBtn');
+    const menu = document.getElementById('servicesMenu');
+    if(dropdown && toggleBtn && menu){
+      let closeTimer = null;
+      const openMenu = ()=>{
+        clearTimeout(closeTimer);
+        dropdown.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+      };
+      const closeMenu = ()=>{
+        dropdown.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      };
+      dropdown.addEventListener('mouseenter', openMenu);
+      dropdown.addEventListener('mouseleave', ()=>{
+        closeTimer = setTimeout(closeMenu, 220);
+      });
+      toggleBtn.addEventListener('click', ()=>{
+        openMenu();
+      });
+      document.addEventListener('click', (e)=>{
+        if(!dropdown.contains(e.target)) closeMenu();
+      });
+      dropdown.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){ closeMenu(); toggleBtn.focus(); }
+      });
+    }
+  }catch(err){}
+  try{
+    const mobileGroup = document.querySelector('.mobile-nav-group');
+    const mobileServicesBtn = document.getElementById('mobileServicesBtn');
+    if(mobileGroup && mobileServicesBtn){
+      mobileServicesBtn.addEventListener('click', ()=>{
+        const isOpen = mobileGroup.classList.toggle('open');
+        mobileServicesBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     }
   }catch(err){}
