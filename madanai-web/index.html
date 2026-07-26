@@ -169,6 +169,8 @@
     font-family:'M PLUS Rounded 1c', sans-serif;
     font-size:22px;
     font-weight:900;
+    white-space:nowrap;
+    flex-shrink:0;
   }
   .logo .bar{
     display:inline-block;
@@ -182,7 +184,7 @@
   .nav{
     display:flex;
     align-items:center;
-    gap:28px;
+    gap:36px;
   }
   .nav a{
     font-size:14px;
@@ -191,11 +193,6 @@
     white-space:nowrap;
   }
   .nav a:hover{ color:var(--purple); }
-  .header-ctas{
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
   .btn-header-primary, .btn-header-secondary{
     font-size:13px; font-weight:800;
     padding:11px 20px;
@@ -253,7 +250,7 @@
     border-top:1px solid var(--line);
     transition:max-height .3s ease;
   }
-  .mobile-nav.open{ max-height:520px; }
+  .mobile-nav.open{ max-height:calc(100vh - 70px); overflow-y:auto; }
   .mobile-nav a{
     padding:14px 24px;
     font-size:15px;
@@ -273,11 +270,12 @@
   }
 
   /* ---------- SERVICES DROPDOWN ---------- */
-  .nav-dropdown{ position:relative; }
+  .nav-dropdown{ position:relative; flex-shrink:0; }
   .nav-dropdown-toggle{
     display:inline-flex; align-items:center; gap:5px;
     background:none; border:none; cursor:pointer;
     font:inherit; font-size:14px; font-weight:700; color:var(--text);
+    white-space:nowrap;
     padding:0;
   }
   .nav-dropdown-toggle:hover{ color:var(--purple); }
@@ -332,9 +330,17 @@
     max-height:0; overflow:hidden;
     transition:max-height .3s ease;
     background:var(--bg-soft);
+    border-left:3px solid var(--line);
+    margin-left:24px;
   }
-  .mobile-nav-group.open .mobile-nav-submenu{ max-height:360px; }
-  .mobile-nav-submenu .nav-dropdown-item{ padding:12px 24px 12px 36px; border-radius:0; font-size:14px; }
+  .mobile-nav-group.open .mobile-nav-submenu{ max-height:420px; }
+  .mobile-nav-submenu .nav-dropdown-item{
+    padding:13px 24px 13px 16px;
+    border-radius:0;
+    font-size:13.5px;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav-submenu .nav-dropdown-item:last-child{ border-bottom:none; }
   .mobile-nav-group.open .nav-caret{ transform:rotate(180deg); }
 
   /* ---------- HERO ---------- */
@@ -1031,7 +1037,7 @@
 
   /* ---------- TABLET ---------- */
   @media (max-width:1080px){
-    .nav, .header-ctas{ display:none; }
+    .nav{ display:none; }
     .hamburger{ display:flex; }
     .mobile-nav{ display:flex; }
   }
@@ -1095,7 +1101,6 @@
     <div class="logo"><span class="bar"></span>マダナイ<span class="grad-text">？</span></div>
     <nav class="nav">
       <a href="#home">ホーム</a>
-      <a href="#works">制作実績</a>
       <div class="nav-dropdown" id="servicesDropdown">
         <button type="button" class="nav-dropdown-toggle" id="servicesMenuBtn" aria-expanded="false" aria-controls="servicesMenu" aria-haspopup="true">
           サービス
@@ -1107,25 +1112,19 @@
           <a class="nav-dropdown-item" role="menuitem" href="seo.html">SEO対策</a>
           <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">MEO対策<span class="nav-dropdown-badge">準備中</span></span>
           <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">AI導入・活用支援<span class="nav-dropdown-badge">準備中</span></span>
-          <a class="nav-dropdown-item" role="menuitem" href="pricing.html#maintenance">保守・運用支援</a>
+          <a class="nav-dropdown-item" role="menuitem" href="maintenance.html">保守・運用支援</a>
         </div>
       </div>
-      <a href="pricing.html">料金プラン</a>
-      <a href="#process">制作の流れ</a>
-      <a href="#testimonials">お客様の声</a>
-      <a href="#faq">よくある質問</a>
+      <a href="pricing.html">料金</a>
+      <a href="#about">会社について</a>
+      <a href="#contact">お問い合わせ</a>
     </nav>
-    <div class="header-ctas">
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-primary">無料相談する</a>
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-secondary"><svg class="line-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="6" fill="#06C755"/><path d="M7 10.3v4.2M10.3 10.3v4.2M10.3 10.3l3 4.2M13.3 10.3v4.2M16.3 10.3h1.6a1.1 1.1 0 0 1 0 2.2h-1.6v2" stroke="#fff" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>LINEで相談する</a>
-    </div>
     <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-nav" id="mobileNav">
     <a href="#home">ホーム</a>
-    <a href="#works">制作実績</a>
     <div class="mobile-nav-group">
       <button type="button" class="mobile-nav-toggle" id="mobileServicesBtn" aria-expanded="false" aria-controls="mobileServicesMenu">
         サービス
@@ -1137,16 +1136,18 @@
         <a class="nav-dropdown-item" href="seo.html">SEO対策</a>
         <span class="nav-dropdown-item is-disabled" aria-disabled="true">MEO対策<span class="nav-dropdown-badge">準備中</span></span>
         <span class="nav-dropdown-item is-disabled" aria-disabled="true">AI導入・活用支援<span class="nav-dropdown-badge">準備中</span></span>
-        <a class="nav-dropdown-item" href="pricing.html#maintenance">保守・運用支援</a>
+        <a class="nav-dropdown-item" href="maintenance.html">保守・運用支援</a>
       </div>
     </div>
-    <a href="pricing.html">料金プラン</a>
+    <a href="pricing.html">料金</a>
+    <a href="#works">制作実績</a>
     <a href="#process">制作の流れ</a>
     <a href="#testimonials">お客様の声</a>
+    <a href="#about">会社について</a>
     <a href="#faq">よくある質問</a>
+    <a href="#contact">お問い合わせ</a>
     <div class="mobile-nav-ctas">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-primary">無料相談する</a>
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-secondary">LINEで相談する</a>
     </div>
   </div>
 </header>
@@ -1270,7 +1271,7 @@
         <h3>AIを仕事に活用したい</h3>
         <p>日々の業務や情報発信で使えるAI活用方法を一緒に考えます。</p>
       </a>
-      <a class="concern-card" href="pricing.html#maintenance">
+      <a class="concern-card" href="maintenance.html">
         <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
         <h3>公開後の更新や改善ができない</h3>
         <p>修正・更新・改善まで、公開後も継続してサポートします。</p>
@@ -1278,7 +1279,7 @@
     </div>
   </div>
 </section>
-<section id="services" class="values reveal" style="padding-top:64px;">
+<section id="about" class="values reveal" style="padding-top:64px;">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">SOLUTION</span>
