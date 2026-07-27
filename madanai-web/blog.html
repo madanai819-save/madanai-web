@@ -708,6 +708,20 @@
   @media (max-width:1000px){ .blog-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:600px){ .blog-grid{ grid-template-columns:1fr; } }
 
+  /* ---------- CATEGORY GROUP HEADING (within すべての記事) ---------- */
+  .blog-category-heading{
+    font-size:15px;
+    font-weight:800;
+    color:var(--ink);
+    letter-spacing:0.02em;
+    margin:0 0 20px;
+    padding-left:14px;
+    border-left:4px solid var(--purple);
+    scroll-margin-top:96px;
+  }
+  .blog-category-group{ margin-bottom:48px; }
+  .blog-category-group:last-of-type{ margin-bottom:0; }
+
   /* ---------- CATEGORY LIST ---------- */
   .category-list{ display:flex; flex-direction:column; gap:12px; max-width:640px; margin:0 auto; }
   .category-row{
@@ -809,39 +823,39 @@
       <h2>新着・おすすめ記事</h2>
     </div>
     <div class="blog-grid">
-      <a href="blog/restaurant-ai.html" class="blog-post-card">
+      <a href="blog/website-company-selection.html" class="blog-post-card">
         <div class="blog-post-image">
-          <img src="assets/images/ai-restaurant-shift.jpg" width="1536" height="1024" loading="lazy" alt="飲食店向けシフト管理アプリの画面を表示したパソコンとスマートフォン">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
         </div>
         <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>飲食店でAIを活用する方法｜シフト・予約・売上・在庫管理を効率化</h3>
+          <span class="blog-post-category">ホームページ制作</span>
+          <h3>ホームページ制作会社の選び方｜失敗しないために確認したい10のポイント</h3>
           <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">シフト作成、売上集計、予約、在庫管理など、飲食店の管理業務を効率化する方法を解説します。</p>
+          <p class="blog-post-desc">ホームページ制作会社を選ぶ際に失敗しないための10のポイントを解説します。</p>
           <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
         </div>
       </a>
-      <a href="blog/realestate-ai.html" class="blog-post-card">
+      <a href="blog/website-inquiry-improvement.html" class="blog-post-card">
         <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9 20v-6h6v6"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.7 8.7 0 0 1-4-.9L3 21l1.9-5.5a8.38 8.38 0 0 1-.9-4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 12.5l2-2 2 2 3-3"/></svg>
         </div>
         <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>不動産会社でAIを活用する方法｜顧客・追客・契約進捗を一元管理</h3>
+          <span class="blog-post-category">ホームページ制作</span>
+          <h3>ホームページを作っても問い合わせが増えない原因と改善方法</h3>
           <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">レインズの外側にある顧客対応、追客、内見、契約進捗などの管理方法を解説します。</p>
+          <p class="blog-post-desc">問い合わせが増えない原因と、導線・スマホ対応・SEOなど改善のポイントを解説します。</p>
           <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
         </div>
       </a>
-      <a href="blog/construction-ai.html" class="blog-post-card">
+      <a href="blog/ai-development-cost.html" class="blog-post-card">
         <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
         </div>
         <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>建設業でAIを活用する方法｜工程・日報・写真・見積管理を効率化</h3>
+          <span class="blog-post-category">AI導入・業務効率化</span>
+          <h3>AI開発の費用相場｜オーダーメイドと既存ツールを比較</h3>
           <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">現場と事務所に分かれた工程、日報、写真、見積情報を管理しやすくする方法を解説します。</p>
+          <p class="blog-post-desc">AI導入にかかる費用相場を、オーダーメイドと既存ツールそれぞれの視点から解説します。</p>
           <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
         </div>
       </a>
@@ -850,12 +864,14 @@
 </section>
 
 <!-- すべての記事 -->
-<section id="industry-ai" class="content-block alt reveal">
+<section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">ALL POSTS</span>
       <h2>すべての記事</h2>
     </div>
+    <div class="blog-category-group">
+    <h3 id="industry-ai" class="blog-category-heading">業種別AI活用</h3>
     <div class="blog-grid">
       <a href="blog/restaurant-ai.html" class="blog-post-card">
         <div class="blog-post-image">
@@ -930,9 +946,83 @@
         </div>
       </a>
     </div>
-    <div style="text-align:center; margin-top:36px;">
+    <div style="text-align:center; margin-top:24px;">
       <a href="ai.html" class="text-link">AI導入・活用支援について見る →</a>
     </div>
+    </div>
+
+    <div class="blog-category-group">
+    <h3 id="cat-website" class="blog-category-heading">ホームページ制作</h3>
+    <div class="blog-grid">
+      <a href="blog/website-company-selection.html" class="blog-post-card">
+        <div class="blog-post-image">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
+        </div>
+        <div class="blog-post-body">
+          <span class="blog-post-category">ホームページ制作</span>
+          <h3>ホームページ制作会社の選び方｜失敗しないために確認したい10のポイント</h3>
+          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
+          <p class="blog-post-desc">料金の内訳・更新のしやすさ・SEO対応など、契約前に確認したい10のポイントを解説します。</p>
+          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+      <a href="blog/website-inquiry-improvement.html" class="blog-post-card">
+        <div class="blog-post-image">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.7 8.7 0 0 1-4-.9L3 21l1.9-5.5a8.38 8.38 0 0 1-.9-4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 12.5l2-2 2 2 3-3"/></svg>
+        </div>
+        <div class="blog-post-body">
+          <span class="blog-post-category">ホームページ制作</span>
+          <h3>ホームページを作っても問い合わせが増えない原因と改善方法</h3>
+          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
+          <p class="blog-post-desc">導線・スマホ対応・SEOなど、問い合わせが増えない原因と改善のポイントを解説します。</p>
+          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+    </div>
+
+    <div class="blog-category-group">
+    <h3 id="cat-ai-business" class="blog-category-heading">AI導入・業務効率化</h3>
+    <div class="blog-grid">
+      <a href="blog/ai-custom-vs-existing.html" class="blog-post-card">
+        <div class="blog-post-image">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7l-3 6a3 3 0 0 0 6 0z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0z"/><path d="M5 7h14"/><path d="M8 21h8"/></svg>
+        </div>
+        <div class="blog-post-body">
+          <span class="blog-post-category">AI導入・業務効率化</span>
+          <h3>AI導入はオーダーメイドと既存サービス、どちらを選ぶべき？</h3>
+          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
+          <p class="blog-post-desc">オーダーメイド開発と既存サービス、それぞれが向いているケースと選び方を解説します。</p>
+          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+      <a href="blog/ai-first-review-points.html" class="blog-post-card">
+        <div class="blog-post-image">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6l1 1 2-2"/><path d="M4 12l1 1 2-2"/><path d="M4 18l1 1 2-2"/></svg>
+        </div>
+        <div class="blog-post-body">
+          <span class="blog-post-category">AI導入・業務効率化</span>
+          <h3>小さな会社がAIを導入するときに最初に見直したい業務5選</h3>
+          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
+          <p class="blog-post-desc">優先順位のつけ方や、既存サービスで対応できるかの確認方法をわかりやすく紹介します。</p>
+          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+      <a href="blog/ai-development-cost.html" class="blog-post-card">
+        <div class="blog-post-image">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
+        </div>
+        <div class="blog-post-body">
+          <span class="blog-post-category">AI導入・業務効率化</span>
+          <h3>AI開発の費用相場｜オーダーメイドと既存ツールを比較</h3>
+          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
+          <p class="blog-post-desc">費用を構成する要素や、費用を抑えるための考え方もあわせてご紹介します。</p>
+          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+    </div>
+
   </div>
 </section>
 
@@ -950,6 +1040,22 @@
         </span>
         <span class="category-name">業種別AI活用</span>
         <span class="category-count">6記事</span>
+        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a href="blog.html#cat-website" class="category-row">
+        <span class="category-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 21h8"/></svg>
+        </span>
+        <span class="category-name">ホームページ制作</span>
+        <span class="category-count">2記事</span>
+        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a href="blog.html#cat-ai-business" class="category-row">
+        <span class="category-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-3 9v2h6v-2a5 5 0 0 0-3-9z"/><path d="M10 18h4M11 21h2"/></svg>
+        </span>
+        <span class="category-name">AI導入・業務効率化</span>
+        <span class="category-count">3記事</span>
         <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
       </a>
     </div>
