@@ -686,6 +686,78 @@
   .related-card .related-title{ font-size:14.5px; font-weight:800; color:var(--ink); }
   @media (max-width:600px){ .related-grid{ grid-template-columns:1fr; } }
 
+  /* ---------- BLOG ARTICLE LAYOUT ---------- */
+  .blog-container{ width:min(860px, calc(100% - 40px)); margin-inline:auto; }
+  .blog-article{ text-align:left; }
+  .blog-article .breadcrumb{ text-align:left; }
+  .blog-article .breadcrumb ol{ justify-content:flex-start; }
+  .blog-category{ display:inline-block; font-size:12px; font-weight:800; color:var(--purple); letter-spacing:0.04em; margin:6px 0 14px; }
+  .blog-title{
+    text-align:left;
+    font-size:clamp(2rem, 4vw, 3.4rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.35;
+    letter-spacing:-0.02em;
+    margin-bottom:24px;
+  }
+  .blog-intro p{ text-align:left; font-size:15.5px; line-height:2; color:var(--text); margin-bottom:22px; }
+  .blog-intro p:last-child{ margin-bottom:0; }
+
+  .toc-box{ background:var(--bg-soft); border:1px solid var(--line); border-radius:16px; padding:26px 28px; margin:0 0 8px; }
+  .toc-label{ font-size:14px; font-weight:800; color:var(--ink); margin-bottom:14px; }
+  .toc-box ol{ list-style:decimal; padding-left:1.3em; margin:0; display:flex; flex-direction:column; gap:8px; }
+  .toc-box li{ font-size:13.5px; line-height:1.6; }
+  .toc-box a{ color:var(--text); text-decoration:none; }
+  .toc-box a:hover{ color:var(--purple); text-decoration:underline; }
+
+  .blog-content{ margin-top:8px; }
+  .blog-content h2{
+    text-align:left;
+    font-size:clamp(1.55rem, 3vw, 2.1rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.5;
+    margin-top:80px;
+    margin-bottom:24px;
+    padding-left:18px;
+    border-left:5px solid var(--purple);
+    scroll-margin-top:32px;
+  }
+  .blog-content h3{
+    text-align:left;
+    font-size:clamp(1.25rem, 2vw, 1.55rem);
+    font-weight:800;
+    color:var(--ink);
+    line-height:1.6;
+    margin-top:48px;
+    margin-bottom:18px;
+    scroll-margin-top:32px;
+  }
+  .blog-content p{ text-align:left; font-size:1rem; line-height:2; color:var(--text); margin-bottom:24px; }
+  .blog-content ul, .blog-content ol{ text-align:left; padding-left:1.5em; margin-bottom:28px; }
+  .blog-content li{ line-height:1.9; margin-bottom:8px; color:var(--text); }
+  .blog-image{ width:100%; height:auto; display:block; border-radius:20px; margin:24px 0 32px; }
+  .article-note{ padding:24px; margin:32px 0; border-left:5px solid var(--purple); background:#f8f6ff; border-radius:0 16px 16px 0; }
+  .article-note p{ margin-bottom:0; }
+  .compare-table-wrap{ overflow-x:auto; margin:8px 0 32px; -webkit-overflow-scrolling:touch; }
+  .compare-table{ width:100%; min-width:520px; border-collapse:collapse; font-size:13.5px; }
+  .compare-table th, .compare-table td{ border:1px solid var(--line); padding:12px 14px; text-align:left; }
+  .compare-table th{ background:var(--bg-soft); font-weight:800; }
+  .blog-text-link{ color:var(--purple); font-weight:700; }
+  .blog-faq-item{ margin-bottom:36px; }
+  .blog-faq-item h3{ margin-top:0; margin-bottom:12px; }
+  .blog-faq-item p{ margin-bottom:0; }
+
+  @media (max-width:1000px){
+    .blog-container{ width:calc(100% - 48px); }
+  }
+  @media (max-width:600px){
+    .blog-container{ width:calc(100% - 36px); }
+    .toc-box{ padding:20px 18px; }
+    .blog-content h2{ margin-top:56px; }
+  }
+
 </style>
 </head>
 <body>
@@ -746,8 +818,8 @@
   </div>
 </header>
 
-<section class="page-hero reveal">
-  <div class="wrap">
+<section>
+  <div class="wrap blog-container blog-article">
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../index.html">ホーム</a></li>
@@ -758,241 +830,259 @@
       </ol>
     </nav>
     <a href="../ai.html" class="back-link">← AI導入・活用支援へ戻る</a>
-    <span class="eyebrow">RETAIL</span>
-    <h1>小売・卸売でAIを活用する方法｜在庫・受発注・売上管理を効率化</h1>
-    <p style="margin-top:20px;">在庫数の把握や受発注のやり取り、請求書作成など、小売・卸売業には数字の管理に関わる業務が数多くあります。この記事では、AI・業務アプリを使ってこれらの業務をどのように効率化できるのか、具体的な方法を解説します。</p>
-    <div style="margin-top:28px;">
+    <span class="blog-category">AI活用・業務効率化</span>
+    <h1 class="blog-title">小売・卸売でAIを活用する方法｜在庫・受発注・売上管理を効率化</h1>
+    <div class="blog-intro">
+      <p>在庫確認、受発注のやり取り、請求書作成、売上集計。小売・卸売業では、日々の数字を管理する業務が数多くあります。</p>
+      <p>在庫数をExcelや目視で確認し、受発注は電話やFAXで対応し、請求書を毎月手作業で作成していると、確認や転記に多くの時間がかかります。取引先や商品数が増えるほど、その負担は大きくなります。</p>
+      <p>小売・卸売の業務をすべてAI化する必要はありません。手間がかかっている業務だけを整理し、小さな仕組みから導入することで、日々の確認作業を減らせる可能性があります。</p>
+      <p>この記事では、小売・卸売業がAIや業務アプリを活用できる具体的な業務、導入イメージ、そして導入前に知っておきたい注意点をわかりやすく解説します。</p>
+    </div>
+    <!-- 公開日を確定後に入力 -->
+    <!-- 更新日を確定後に入力 -->
+    <!-- 著者名・プロフィールを確定後に入力 -->
+    <!-- メイン画像は掲載する場合ここに追加(現時点では該当する実画像がリポジトリ内に見つからないため未掲載) -->
+    <div style="margin-top:8px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">LINEでAI活用を相談する<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- その業界でよくある課題 -->
-<section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">CONCERN</span>
-      <h2>小売・卸売でよくある課題</h2>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></div>
-        <p>在庫数の把握がExcelや目視に頼っている</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></div>
-        <p>受発注のやり取りが電話やFAXで属人化している</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></div>
-        <p>請求書の作成に毎月時間がかかる</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></div>
-        <p>売上データの集計・確認に手間がかかる</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section>
+  <div class="wrap blog-container">
+    <nav class="toc-box" aria-label="目次">
+      <p class="toc-label">この記事の内容</p>
+      <ol>
+        <li><a href="#section-conclusion">結論｜小売・卸売のAI活用は、在庫・受発注・売上情報の一元化から始めるのがおすすめです</a></li>
+        <li><a href="#section-ai-reason">小売・卸売業でAIが注目される理由</a></li>
+        <li><a href="#section-challenges">小売・卸売業でよくある業務上の課題</a></li>
+        <li><a href="#section-efficiency">小売・卸売業でAIを活用できる業務</a></li>
+        <li><a href="#section-examples">具体的なAI活用例</a></li>
+        <li><a href="#section-benefit">導入で期待できる変化</a></li>
+        <li><a href="#section-caution">導入前に確認したい注意点</a></li>
+        <li><a href="#section-support">マダナイ？に相談できること</a></li>
+        <li><a href="#section-faq">よくある質問</a></li>
+        <li><a href="#section-summary">まとめ</a></li>
+      </ol>
+    </nav>
 
-<!-- AI・業務アプリで効率化できる業務 -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner" style="text-align:center;">
-    <div class="section-head">
-      <span class="eyebrow">EFFICIENCY</span>
-      <h2>AI・業務アプリで効率化できる業務</h2>
-    </div>
-    <p>現在の業務内容を確認し、必要な機能だけをご提案します。複雑なシステムをすべて導入する必要はありません。</p>
-    <ul class="plan-check" style="max-width:440px; margin:18px auto 0; text-align:left;">
-          <li>在庫管理</li>
-          <li>受発注のやり取り</li>
-          <li>請求書の作成</li>
-          <li>売上データの集計</li>
-          <li>取引先情報の管理</li>
-    </ul>
-  </div>
-</section>
+    <div class="blog-content blog-article">
 
-<!-- 具体的な活用例 -->
-<section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">EXAMPLE</span>
-      <h2>具体的な活用例</h2>
+      <h2 id="section-conclusion">結論｜小売・卸売のAI活用は、在庫・受発注・売上情報の一元化から始めるのがおすすめです</h2>
+      <p>先に結論からお伝えすると、小売・卸売業がAIを活用する際は、在庫、受発注、売上といった情報をバラバラに管理している状態から、一元化することを目指すのがおすすめです。</p>
+      <p>すでに使っている在庫管理・販売管理サービスで十分に対応できる業務があれば、無理に新しいシステムへ置き換える必要はありません。また、最初からすべての商品を新しい仕組みへ移行するのではなく、一部の商品や業務から試しながら進めることをおすすめします。</p>
+      <p>必要な機能は、取扱商品数や拠点数、取引先数によって異なります。まずは自社のどこに手間がかかっているかを整理するところから始めてみてください。</p>
+
+      <h2 id="section-ai-reason">小売・卸売業でAIが注目される理由</h2>
+      <p>小売・卸売業では、在庫管理、受発注、請求書作成、売上集計など、数字の管理に関わる業務が数多くあります。取扱商品数や取引先数が増えるほど、確認や集計にかかる時間も増えていきます。</p>
+      <p>在庫数を目視やExcelで管理していると、正確な数量を把握するのが難しくなり、発注のタイミングを逃したり、欠品や過剰在庫が発生したりすることがあります。</p>
+      <p>受発注のやり取りを電話やFAXで行っていると、記録として残りにくく、確認や再連絡の手間が発生しやすくなります。請求書の作成も、取引先ごとに手作業で行っていると、毎月一定の時間がかかります。</p>
+      <p>近年は、こうした在庫・受発注・売上管理に特化した業務アプリやAIツールが増えており、大がかりなシステムを導入しなくても、必要な範囲だけを効率化できる選択肢が広がっています。ただし、すでに在庫管理・販売管理サービスを導入している場合、その機能で十分に対応できるのであれば、無理に新しいシステムを導入するよりも、既存のサービスを活用する方が合理的です。</p>
+
+      <h2 id="section-challenges">小売・卸売業でよくある業務上の課題</h2>
+      <p>具体的な活用方法を見る前に、小売・卸売業の現場でよく聞かれる業務上の課題を整理しておきましょう。</p>
+
+      <h3>在庫数の把握がExcelや目視に頼っている</h3>
+      <p>在庫数をExcelへの手入力や目視で確認していると、実際の在庫と記録にずれが生じやすく、正確な数量を把握するのが難しくなります。</p>
+
+      <h3>受発注のやり取りが電話やFAXで属人化している</h3>
+      <p>受発注を電話やFAXで行っていると、記録として残りにくく、担当者によって対応方法が異なることもあります。確認や再連絡の手間も増えます。</p>
+
+      <h3>請求書の作成に毎月時間がかかる</h3>
+      <p>取引先ごとに請求内容をまとめ、請求書を手作業で作成していると、毎月一定の時間がかかります。</p>
+
+      <h3>売上データの集計・確認に手間がかかる</h3>
+      <p>日々の売上や利益を確認するために、その都度データを集計していると、必要なときにすぐ確認できません。</p>
+
+      <h2 id="section-efficiency">小売・卸売業でAIを活用できる業務</h2>
+      <p>前述のような課題に対して、AI・業務アプリは次のような業務で活用できます。それぞれの業務を個別に効率化することもできるため、必要な範囲から取り入れることが可能です。</p>
+
+      <h3>在庫管理</h3>
+      <p>在庫数や入出庫状況を可視化することで、実際の在庫と記録のずれを減らしやすくなります。</p>
+
+      <h3>入出庫管理</h3>
+      <p>入出庫の記録をアプリ上で管理することで、在庫数の把握や確認の手間を減らせる可能性があります。</p>
+
+      <h3>受注管理</h3>
+      <p>受注内容を1つの画面で管理することで、確認漏れや対応漏れを防ぎやすくなります。</p>
+
+      <h3>発注管理</h3>
+      <p>発注状況や発注タイミングを可視化することで、発注判断をしやすくすることを目指せます。</p>
+
+      <h3>請求書作成</h3>
+      <p>取引先ごとの請求内容をもとに、請求書を効率的に作成できる仕組みを取り入れることで、毎回の作成にかかる時間を減らせる可能性があります。</p>
+
+      <h3>売上管理</h3>
+      <p>日次・月次の売上をダッシュボード形式で確認できるようにすることで、集計にかかる手間を減らしやすくなります。</p>
+
+      <h3>利益管理</h3>
+      <p>売上と原価をあわせて管理することで、利益の把握をしやすくすることを目指せます。</p>
+
+      <h3>商品別分析</h3>
+      <p>商品やサービス別の売上構成を確認できるようにすることで、売れ筋や在庫の傾向を把握しやすくなります。</p>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th>業務</th><th>現在の管理方法</th><th>業務アプリでできること</th><th>目指せる変化</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>在庫管理</td><td>紙・表計算・目視</td><td>在庫数・入出庫状況の確認</td><td>発注判断をしやすい</td></tr>
+            <tr><td>受発注管理</td><td>電話・FAX</td><td>受発注情報の一元管理</td><td>確認漏れを防ぎやすい</td></tr>
+            <tr><td>請求書管理</td><td>Excel・手入力</td><td>請求書作成・PDF出力</td><td>作成時間を減らしやすい</td></tr>
+            <tr><td>売上管理</td><td>POS・Excel・手計算</td><td>日次・月次・推移表示</td><td>状況を把握しやすい</td></tr>
+            <tr><td>商品分析</td><td>Excel・個別集計</td><td>商品別売上構成の確認</td><td>傾向を把握しやすい</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="section-examples">具体的なAI活用例</h2>
       <p>掲載している画面・機能は、導入方法をご紹介するための活用例です。</p>
-    </div>
-    <div class="activation-grid">
-      <div class="activation-card">
-        <div class="activation-card-image">
-          <!-- 差し替え位置: 小売・卸売「在庫・受発注管理アプリ」のイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H9l-4 4z"/></svg>
-        </div>
-        <div class="activation-card-body">
-          <h3>在庫・受発注管理アプリ</h3>
-          <p>在庫数と発注状況をパソコンとスマートフォンの両方で確認できる仕組みです。</p>
-        </div>
-      </div>
-      <div class="activation-card">
-        <div class="activation-card-image">
-          <!-- 差し替え位置: 小売・卸売「請求書作成システム」のイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
-        </div>
-        <div class="activation-card-body">
-          <h3>請求書作成システム</h3>
-          <p>取引先ごとの請求内容をもとに、請求書を効率的に作成できる仕組みです。</p>
-        </div>
-      </div>
-      <div class="activation-card">
-        <div class="activation-card-image">
-          <!-- 差し替え位置: 小売・卸売「売上ダッシュボード」のイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="activation-card-body">
-          <h3>売上ダッシュボード</h3>
-          <p>日次・月次の売上データを自動集計し、確認しやすくする仕組みです。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- 導入によって期待できる変化 -->
-<section class="content-block alt reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">BENEFIT</span>
-      <h2>導入によって期待できる変化</h2>
-    </div>
-    <div class="value-grid">
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-        <h3>在庫確認の手間を減らす</h3>
-        <p>在庫数をリアルタイムに近い形で把握できるようにします。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
-        <h3>受発注のやり取りを整理しやすくする</h3>
-        <p>電話・FAXでのやり取りを記録として残しやすくします。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>請求書作成にかかる時間を減らす</h3>
-        <p>取引先情報をもとに、効率的に請求書を作成できるようにします。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>売上状況をすぐ確認できる</h3>
-        <p>集計作業を減らし、必要なときにすぐ確認できるようにします。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 導入時の注意点 -->
-<section class="content-block reveal">
-  <div class="wrap" style="text-align:center;">
-    <div class="section-head">
-      <span class="eyebrow">NOTE</span>
-      <h2>導入時の注意点</h2>
-    </div>
-    <div class="recommend-box">
+      <h3>在庫・受発注管理アプリ</h3>
+      <!-- 差し替え位置: 小売・卸売「在庫・受発注管理アプリ」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
       <ul>
-        <li>導入効果は取扱商品数や取引先数によって異なります。</li>
-        <li>既存の販売管理システムやExcelとの連携・移行可否は事前確認が必要です。</li>
-        <li>卸売・小売どちらか一方、または両方の業務に合わせた設定が可能です。</li>
+        <li>在庫数・入出庫状況の確認</li>
+        <li>発注状況の一覧管理</li>
+        <li>パソコン・スマートフォン両方での確認</li>
+        <li>発注タイミングの把握</li>
       </ul>
+      <p>在庫確認や発注判断にかかる手間を減らし、欠品や過剰在庫のリスクを減らしやすい状態を目指します。</p>
+
+      <h3>請求書作成システム</h3>
+      <!-- 差し替え位置: 小売・卸売「請求書作成システム」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <ul>
+        <li>取引先ごとの請求内容の管理</li>
+        <li>請求書の作成・PDF出力</li>
+        <li>入金状況の管理</li>
+        <li>過去の請求履歴の確認</li>
+      </ul>
+      <p>毎月の請求書作成にかかる時間を減らし、確認や管理をしやすくすることを目指します。</p>
+
+      <h3>売上ダッシュボード</h3>
+      <!-- 差し替え位置: 小売・卸売「売上ダッシュボード」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <ul>
+        <li>日次・月次の売上の自動集計</li>
+        <li>商品・サービス別の構成表示</li>
+        <li>利益の確認</li>
+        <li>スマートフォンからの確認</li>
+      </ul>
+      <p>集計作業にかかる時間を減らし、売上状況をすぐに確認できる状態を目指します。</p>
+
+      <h2 id="section-benefit">AI導入で期待できる変化</h2>
+      <p>在庫や受発注、請求書、売上の管理にAI・業務アプリを取り入れることで、次のような変化が期待できます。効果の度合いは取扱商品数や取引先数によって異なるため、あくまで一般的な傾向としてご参考ください。</p>
+
+      <h3>在庫確認の手間を減らしやすい</h3>
+      <p>在庫数をリアルタイムに近い形で把握できるようにすることで、確認にかかる手間を減らしやすくなります。</p>
+
+      <h3>受発注のやり取りを整理しやすくなる</h3>
+      <p>電話・FAXでのやり取りを記録として残しやすくすることで、確認や再連絡の手間を減らせる可能性があります。</p>
+
+      <h3>請求書作成にかかる時間を減らしやすい</h3>
+      <p>取引先情報をもとに、効率的に請求書を作成できるようにすることで、毎月の作業時間を減らしやすくなります。</p>
+
+      <h3>売上状況をすぐ確認できる</h3>
+      <p>集計作業を減らし、必要なときにすぐ確認できるようにすることを目指せます。</p>
+
+      <h3>必要な機能だけ導入できる</h3>
+      <p>すべての業務を一度にシステム化する必要はありません。在庫管理だけ、あるいは請求書作成だけといった形で、必要な機能から段階的に導入することもできます。</p>
+
+      <h2 id="section-caution">AI導入前に確認したい注意点</h2>
+      <p>AI・業務アプリの導入を検討する際は、良い面だけでなく、事前に確認しておきたい点もあります。</p>
+
+      <h3>既存の在庫管理・販売管理サービスで足りるか確認する</h3>
+      <p>すでに在庫管理や販売管理のサービスを導入している場合、その機能で十分に対応できる業務であれば、無理に新しいシステムへ置き換える必要はありません。まずは今使っているサービスでできることを確認することをおすすめします。</p>
+
+      <h3>商品数、拠点数、取引先数を整理する</h3>
+      <p>必要な機能は、取扱商品数や拠点数、取引先数によって異なります。導入を検討する前に、自社の規模や運用状況を整理しておくことをおすすめします。</p>
+
+      <h3>バーコードやPOSとの連携は仕様確認が必要</h3>
+      <p>既存のバーコードシステムやPOSレジとの連携については、機種やデータ形式によって対応可否が異なります。確認前に連携できると断定することはできません。</p>
+
+      <h3>最初からすべての商品を移行しない</h3>
+      <p>一度にすべての商品や取引先を新しい仕組みへ移行しようとすると、現場が混乱しやすくなります。まずは一部の商品や業務から試しながら、運用に合わせて広げていくことをおすすめします。</p>
+
+      <h3>在庫データの入力ルールを統一する</h3>
+      <p>在庫データの入力方法や単位がスタッフごとに異なっていると、正確な在庫把握が難しくなります。導入前に入力ルールを統一しておくことをおすすめします。</p>
+
+      <div class="article-note">
+        <p>既存の在庫管理・販売管理サービスで十分に対応できる場合は、無理にオーダーメイドの開発をおすすめすることはありません。バーコードやPOSとの連携については、仕様確認が取れた場合のみご案内します。</p>
+      </div>
+
+      <h2 id="section-support">マダナイ？に相談できること</h2>
+      <p>「何から始めればいいかわからない」という場合も、まずは現在の業務内容を教えていただくところから始められます。マダナイ？では、以下のような内容をご相談いただけます。</p>
+      <ul>
+        <li>現在の在庫・受発注・請求書・売上の管理方法の確認</li>
+        <li>手作業が多い業務の洗い出し</li>
+        <li>既存の在庫管理・販売管理サービスで解決できるかの確認</li>
+        <li>必要な機能の優先順位整理</li>
+        <li>画面と操作方法の設計</li>
+        <li>一部の商品・業務からの導入</li>
+        <li>公開後の改善</li>
+      </ul>
+      <p>すでにあるサービスで解決できる場合は、無理にオーダーメイドの開発をおすすめすることはありません。「まだない」を「もうある」へ。自社に合う仕組みがまだない場合にこそ、一緒に整理するところから始めます。</p>
+
+      <h2 id="section-faq">よくある質問</h2>
+
+      <div class="blog-faq-item">
+        <h3>Q. 取引先が多くても管理できますか？</h3>
+        <p>はい。取引先数に応じて管理しやすい形をご提案します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 既存のExcel在庫表から移行できますか？</h3>
+        <p>はい。現在の管理項目を確認し、移行方法をご案内します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 卸売と小売、両方の業務に対応できますか？</h3>
+        <p>はい。業務内容を伺ったうえで、それぞれに合った管理方法をご提案します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. バーコードやPOSレジと連携できますか？</h3>
+        <p>機種やデータ形式によって対応可否が異なります。現在お使いのシステムを確認のうえご案内します。確認前に連携可能と断定することはできません。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 請求書のフォーマットは指定できますか？</h3>
+        <p>現在お使いのフォーマットを確認し、近い形で作成できるようご提案します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 小さな店舗・会社でも導入できますか？</h3>
+        <p>はい。取扱商品数や取引先数が少ない場合でも、必要な機能だけを選んで導入いただけます。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 導入期間はどれくらいですか？</h3>
+        <p>必要な機能の範囲によって異なります。具体的な期間については、業務内容を伺ったうえでご案内します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 料金はどのように決まりますか？</h3>
+        <p>必要な機能の範囲や取扱商品数・取引先数によって異なります。現在の業務内容を伺ったうえで、料金の目安をご案内します。</p>
+      </div>
+
+      <h2 id="section-summary">まとめ</h2>
+      <p>小売・卸売業では、接客や仕入れ以外にも、在庫管理、受発注、請求書作成、売上集計など、数字に関わる業務が数多くあります。</p>
+      <p>すべてをAI化する必要はありません。在庫、受発注、請求書、売上など、手間がかかっている業務を一つずつ整理するだけでも、日々の確認作業を減らせる可能性があります。既存のサービスで十分な業務は活かしながら、自社の運用に合わない部分だけを補っていくという考え方が、無理のない進め方につながります。</p>
+      <p>大切なのは、最新のAIを導入することではなく、自社の業務に合う仕組みを作ることです。日々の確認作業にかかる時間を減らし、本来の業務に向き合える時間を増やすために、まずは現在の業務を整理するところから始めてみてください。</p>
+
     </div>
   </div>
 </section>
 
-<!-- マダナイ？に相談できること -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner" style="text-align:center;">
-    <div class="section-head">
-      <span class="eyebrow">SUPPORT</span>
-      <h2>マダナイ？に相談できること</h2>
-    </div>
-    <ul class="plan-check" style="max-width:480px; margin:18px auto 0; text-align:left;">
-          <li>現在の在庫・受発注・請求書・売上の管理方法の確認</li>
-          <li>取扱商品数や取引先数に合わせた機能のご提案</li>
-          <li>既存のExcelやシステムからの移行方法のご案内</li>
-          <li>導入後の設定・使い方のサポート</li>
-    </ul>
-  </div>
-</section>
-
-<!-- よくある質問 -->
-<section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">FAQ</span>
-      <h2>よくある質問</h2>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:16px; max-width:720px; margin:0 auto;">
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">取引先が多くても管理できますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>はい。取引先数に応じて管理しやすい形をご提案します。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">既存のExcel在庫表から移行できますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>はい。現在の管理項目を確認し、移行方法をご案内します。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">卸売と小売、両方の業務に対応できますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>はい。業務内容を伺ったうえで、それぞれに合った管理方法をご提案します。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">請求書のフォーマットは指定できますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>現在お使いのフォーマットを確認し、近い形で作成できるようご提案します。</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- LINE CTA -->
 <section id="contact" class="contact reveal">
   <div class="wrap inner">
     <span class="eyebrow">CONTACT</span>
-    <h2>自社の業務にもAIを活用できるか、<br>相談してみませんか？</h2>
-    <p>現在の業務内容を確認し、効率化できる作業と導入方法をご提案します。</p>
-    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line">LINEでAI活用を相談する</a>
+    <h2>在庫・受発注・売上管理を効率化できるか、<br>相談してみませんか？</h2>
+    <p>現在の在庫、受発注、請求書、売上の管理方法を確認し、AIや業務アプリで効率化できる部分をご提案します。</p>
+    <p style="font-size:12.5px; color:var(--text-muted); margin-top:14px;">既存の在庫管理・販売管理サービスで十分な場合は、無理にオーダーメイド開発をおすすめしません。</p>
+    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line" style="margin-top:18px;">LINEでAI活用を相談する</a>
   </div>
 </section>
 
-<!-- 関連記事 -->
 <section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
