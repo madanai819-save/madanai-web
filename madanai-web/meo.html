@@ -20,6 +20,14 @@
 <meta name="twitter:title" content="Googleマップで地域のお客様に選ばれるMEO対策｜大阪・心斎橋のマダナイ？">
 <meta name="twitter:description" content="Googleマップや「地域名＋業種」検索から、近隣のお客様に選ばれる状態へ。大阪・心斎橋のマダナイ？がGoogleビジネスプロフィールの整備から運用まで支援します。">
 <link rel="canonical" href="https://madanai-web.jp/meo.html">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://madanai-web.jp/" },
+    { "@type": "ListItem", "position": 2, "name": "MEO対策", "item": "https://madanai-web.jp/meo.html" }
+  ]
+}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -272,6 +280,24 @@
     margin-bottom:20px;
   }
   .page-hero .back-link:hover{ color:var(--purple); }
+  .breadcrumb{
+    font-size:12px;
+    color:var(--text-muted);
+    margin-bottom:14px;
+  }
+  .breadcrumb ol{
+    list-style:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:0;
+    margin:0;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .breadcrumb a{ color:var(--text-muted); }
+  .breadcrumb a:hover{ color:var(--purple); }
+  .breadcrumb [aria-current="page"]{ color:var(--text); font-weight:700; }
   .page-hero h1{
     font-size:clamp(26px, 5vw, 38px);
     font-weight:900;
@@ -533,6 +559,18 @@
   .btn-arrow{ display:inline-block; transition:transform .2s ease; }
   .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow{ transform:translateX(3px); }
 
+  /* ---------- INLINE TEXT LINK ---------- */
+  .text-link{
+    color:var(--purple);
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-color:rgba(123,47,247,0.35);
+    text-underline-offset:2px;
+    transition:color .2s ease, text-decoration-color .2s ease;
+  }
+  .text-link:hover{ color:var(--purple-deep); text-decoration-color:currentColor; }
+  .text-link:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
+
   /* ---------- CONTACT ---------- */
   .contact{
     text-align:center;
@@ -665,6 +703,13 @@
 
 <section class="page-hero reveal">
   <div class="wrap">
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="index.html">ホーム</a></li>
+        <li aria-hidden="true">＞</li>
+        <li aria-current="page">MEO対策</li>
+      </ol>
+    </nav>
     <a href="index.html" class="back-link">← トップページへ戻る</a>
     <span class="eyebrow">MEO</span>
     <h1>Googleマップで、<br>地域のお客様に選ばれる。</h1>
@@ -720,9 +765,30 @@
       <h2>マダナイ？なら解決できる理由</h2>
     </div>
     <p>「SEO対策」と「MEO対策」は、どちらも見つけてもらうための取り組みですが、対象とする検索が異なります。</p>
-    <p><strong style="color:var(--ink);"><a href="seo.html" style="color:inherit;">SEO対策</a></strong>は、Google検索など通常の検索結果で、ホームページを見つけてもらうための対策です。</p>
+    <p><strong><a href="seo.html" class="text-link">SEO対策</a></strong>は、Google検索など通常の検索結果で、ホームページを見つけてもらうための対策です。</p>
     <p><strong style="color:var(--ink);">MEO対策</strong>は、Googleマップや「地域名＋業種」といった検索で、お店や事業を見つけてもらうための対策です。</p>
     <p>近隣のお客様に来店してほしい場合は、通常の検索対策に加えて、MEO対策を整えることがとても重要になります。マダナイ？は、ホームページ制作・SEOと合わせてMEOも一体で支援できるため、集客の導線を分断せず整えられます。</p>
+  </div>
+</section>
+
+<!-- なぜ信じられるのか -->
+<section class="content-block reveal">
+  <div class="wrap content-block-inner" style="text-align:center;">
+    <div class="section-head">
+      <span class="eyebrow">EVIDENCE</span>
+      <h2>マダナイ？のMEO支援で実施すること</h2>
+    </div>
+    <p>「できます」だけでなく、実際に何を行うのかを具体的にお伝えします。</p>
+    <ul class="plan-check" style="max-width:440px; margin:18px auto 0; text-align:left;">
+      <li>Googleビジネスプロフィールの初期設定・基本情報の登録</li>
+      <li>店舗説明文・写真・サービス情報の整理</li>
+      <li>ホームページ・SEOとの導線整理</li>
+      <li>公開後の運用相談に対応</li>
+    </ul>
+    <!-- 差し替え位置: 制作事例（MEO対策を実施した店舗の紹介） -->
+    <!-- 差し替え位置: お客様の声（MEO対策に関する感想） -->
+    <!-- 差し替え位置: 改善前後（マップ上の表示状況の変化） -->
+    <!-- 差し替え位置: Googleビジネスプロフィールの結果（閲覧数・アクセス数の推移） -->
   </div>
 </section>
 

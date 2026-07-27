@@ -20,6 +20,14 @@
 <meta name="twitter:title" content="AIで業務効率化・売上アップを実現｜大阪・心斎橋のマダナイ？">
 <meta name="twitter:description" content="文章作成・SNS発信・情報整理をAIで効率化し、本来やるべき仕事に集中する。大阪・心斎橋のマダナイ？が、業務に合ったAI活用方法をご提案します。">
 <link rel="canonical" href="https://madanai-web.jp/ai.html">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://madanai-web.jp/" },
+    { "@type": "ListItem", "position": 2, "name": "AI導入・活用支援", "item": "https://madanai-web.jp/ai.html" }
+  ]
+}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -272,6 +280,24 @@
     margin-bottom:20px;
   }
   .page-hero .back-link:hover{ color:var(--purple); }
+  .breadcrumb{
+    font-size:12px;
+    color:var(--text-muted);
+    margin-bottom:14px;
+  }
+  .breadcrumb ol{
+    list-style:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:0;
+    margin:0;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .breadcrumb a{ color:var(--text-muted); }
+  .breadcrumb a:hover{ color:var(--purple); }
+  .breadcrumb [aria-current="page"]{ color:var(--text); font-weight:700; }
   .page-hero h1{
     font-size:clamp(26px, 5vw, 38px);
     font-weight:900;
@@ -533,6 +559,18 @@
   .btn-arrow{ display:inline-block; transition:transform .2s ease; }
   .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow{ transform:translateX(3px); }
 
+  /* ---------- INLINE TEXT LINK ---------- */
+  .text-link{
+    color:var(--purple);
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-color:rgba(123,47,247,0.35);
+    text-underline-offset:2px;
+    transition:color .2s ease, text-decoration-color .2s ease;
+  }
+  .text-link:hover{ color:var(--purple-deep); text-decoration-color:currentColor; }
+  .text-link:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
+
   /* ---------- CONTACT ---------- */
   .contact{
     text-align:center;
@@ -558,7 +596,8 @@
   .contact .inner{ position:relative; z-index:1; }
   .contact .eyebrow{ color:#E7B8FF; }
   .contact h2{ color:#fff; font-size:clamp(22px,4.4vw,30px); margin:14px 0 18px; font-weight:900; }
-  .contact p{ color:#C9C3D6; font-size:14px; max-width:420px; margin:0 auto 34px; }
+  .contact p{ color:#C9C3D6; font-size:14px; max-width:420px; margin:0 auto 20px; }
+  .contact .plan-check li{ color:#C9C3D6; }
   .btn-line{
     display:inline-flex; align-items:center; gap:10px;
     background:#06C755;
@@ -665,6 +704,13 @@
 
 <section class="page-hero reveal">
   <div class="wrap">
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="index.html">ホーム</a></li>
+        <li aria-hidden="true">＞</li>
+        <li aria-current="page">AI導入・活用支援</li>
+      </ol>
+    </nav>
     <a href="index.html" class="back-link">← トップページへ戻る</a>
     <span class="eyebrow">AI</span>
     <h1>AIで、<br>業務効率化と売上アップを両立する。</h1>
@@ -725,6 +771,26 @@
   </div>
 </section>
 
+<!-- なぜ信じられるのか -->
+<section class="content-block reveal">
+  <div class="wrap content-block-inner" style="text-align:center;">
+    <div class="section-head">
+      <span class="eyebrow">EVIDENCE</span>
+      <h2>マダナイ？のAI活用支援で実施すること</h2>
+    </div>
+    <p>「できます」だけでなく、実際に何を行うのかを具体的にお伝えします。</p>
+    <ul class="plan-check" style="max-width:440px; margin:18px auto 0; text-align:left;">
+      <li>現在の業務・課題のヒアリング</li>
+      <li>業務に合った活用方法のご提案（複雑なツールは勧めません）</li>
+      <li>プロンプト・運用手順・文章テンプレートなど、実務で使える形に整備</li>
+      <li>導入後も使い方を確認しながら見直し</li>
+    </ul>
+    <!-- 差し替え位置: 制作事例（AI活用を導入した業務の紹介） -->
+    <!-- 差し替え位置: お客様の声（AI活用に関する感想） -->
+    <!-- 差し替え位置: 改善前後（作業時間の削減量など） -->
+  </div>
+</section>
+
 <!-- AI活用で変えられること -->
 <section class="content-block reveal">
   <div class="wrap">
@@ -767,7 +833,7 @@
         <h3>改善のヒントを得る</h3>
         <ul class="plan-check">
           <li>サイト改善案</li>
-          <li>集客施策のアイデア整理（<a href="seo.html" style="color:var(--purple); font-weight:700;">SEO</a>・<a href="meo.html" style="color:var(--purple); font-weight:700;">MEO</a>と合わせたご相談も可能）</li>
+          <li>集客施策のアイデア整理（<a href="seo.html" class="text-link">SEO</a>・<a href="meo.html" class="text-link">MEO</a>と合わせたご相談も可能）</li>
           <li>データや反応の振り返り補助</li>
         </ul>
       </div>
@@ -998,26 +1064,17 @@
   </div>
 </section>
 
-<!-- 相談への導線 -->
-<section class="content-block reveal">
-  <div class="wrap content-block-inner" style="text-align:center;">
-    <div class="section-head">
-      <span class="eyebrow">CONSULTATION</span>
-      <h2>ご相談について</h2>
-    </div>
-    <p>支援内容は、業務内容やご希望に合わせて個別にご提案します。</p>
-    <div style="margin-top:28px;">
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">AI活用について相談する<span class="btn-arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
 <!-- 最終CTA -->
 <section id="contact" class="contact reveal">
   <div class="wrap inner">
     <span class="eyebrow">CONTACT</span>
     <h2>気になることがあれば、まずは無料相談から</h2>
-    <p>日々の業務にAIをどう活かせるか、公式LINEから気軽にお問合せください。</p>
+    <p>支援内容は、業務内容やご希望に合わせて個別にご提案します。例えば、こんなことをお話しいただけます。</p>
+    <ul class="plan-check" style="max-width:360px; margin:0 auto 32px; text-align:left;">
+      <li>現在の業務で時間がかかっている作業</li>
+      <li>AIで自動化・効率化できそうな部分</li>
+      <li>導入費用と進め方</li>
+    </ul>
     <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line">30秒で無料相談する</a>
   </div>
 </section>

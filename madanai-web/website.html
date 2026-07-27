@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 <title>問い合わせが増えるホームページ制作｜大阪・心斎橋のマダナイ？</title>
-<meta name="description" content="作って終わりのホームページ制作ではありません。大阪・心斎橋のマダナイ？が、問い合わせにつながるホームページをSEO・MEO・AI活用まで含めて制作します。">
+<meta name="description" content="大阪・心斎橋で、中小企業の問い合わせが増えるホームページ制作。作って終わりにせず、SEO・MEO・AI活用まで含めて公開後も支援します。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="マダナイ？">
 <meta property="og:title" content="問い合わせが増えるホームページ制作｜大阪・心斎橋のマダナイ？">
-<meta property="og:description" content="作って終わりのホームページ制作ではありません。大阪・心斎橋のマダナイ？が、問い合わせにつながるホームページをSEO・MEO・AI活用まで含めて制作します。">
+<meta property="og:description" content="大阪・心斎橋で、中小企業の問い合わせが増えるホームページ制作。作って終わりにせず、SEO・MEO・AI活用まで含めて公開後も支援します。">
 <meta property="og:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
 <meta property="og:image:width" content="1536">
 <meta property="og:image:height" content="1024">
@@ -18,8 +18,16 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
 <meta name="twitter:title" content="問い合わせが増えるホームページ制作｜大阪・心斎橋のマダナイ？">
-<meta name="twitter:description" content="作って終わりのホームページ制作ではありません。大阪・心斎橋のマダナイ？が、問い合わせにつながるホームページをSEO・MEO・AI活用まで含めて制作します。">
+<meta name="twitter:description" content="大阪・心斎橋で、中小企業の問い合わせが増えるホームページ制作。作って終わりにせず、SEO・MEO・AI活用まで含めて公開後も支援します。">
 <link rel="canonical" href="https://madanai-web.jp/website.html">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://madanai-web.jp/" },
+    { "@type": "ListItem", "position": 2, "name": "ホームページ制作", "item": "https://madanai-web.jp/website.html" }
+  ]
+}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -272,6 +280,24 @@
     margin-bottom:20px;
   }
   .page-hero .back-link:hover{ color:var(--purple); }
+  .breadcrumb{
+    font-size:12px;
+    color:var(--text-muted);
+    margin-bottom:14px;
+  }
+  .breadcrumb ol{
+    list-style:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:0;
+    margin:0;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .breadcrumb a{ color:var(--text-muted); }
+  .breadcrumb a:hover{ color:var(--purple); }
+  .breadcrumb [aria-current="page"]{ color:var(--text); font-weight:700; }
   .page-hero h1{
     font-size:clamp(26px, 5vw, 38px);
     font-weight:900;
@@ -499,6 +525,18 @@
   .btn-arrow{ display:inline-block; transition:transform .2s ease; }
   .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow{ transform:translateX(3px); }
 
+  /* ---------- INLINE TEXT LINK ---------- */
+  .text-link{
+    color:var(--purple);
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-color:rgba(123,47,247,0.35);
+    text-underline-offset:2px;
+    transition:color .2s ease, text-decoration-color .2s ease;
+  }
+  .text-link:hover{ color:var(--purple-deep); text-decoration-color:currentColor; }
+  .text-link:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
+
   /* ---------- CONTACT ---------- */
   .contact{
     text-align:center;
@@ -631,9 +669,16 @@
 
 <section class="page-hero reveal">
   <div class="wrap">
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="index.html">ホーム</a></li>
+        <li aria-hidden="true">＞</li>
+        <li aria-current="page">ホームページ制作</li>
+      </ol>
+    </nav>
     <a href="index.html" class="back-link">← トップページへ戻る</a>
     <span class="eyebrow">WEBSITE</span>
-    <h1>問い合わせが増える、<br>ホームページ制作。</h1>
+    <h1>問い合わせにつながる<br>ホームページ制作</h1>
     <p>作って終わりのホームページではなく、公開後も問い合わせにつながり続けるホームページを。<br>大阪・心斎橋のマダナイ？が、SEO・MEO・AI活用まで含めて制作します。</p>
     <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">ホームページ制作を相談する<span class="btn-arrow">→</span></a>
@@ -688,8 +733,30 @@
     <p>一般的な制作会社は、ホームページを「納品して終わり」にしがちです。見た目は整っていても、検索から見つけてもらえず、問い合わせにつながらないケースが少なくありません。</p>
     <div class="maintenance-note">
       <strong>マダナイ？の違い</strong>
-      マダナイ？は、ホームページ制作会社ではなく、<a href="seo.html" style="color:var(--purple); font-weight:700;">SEO</a>・<a href="meo.html" style="color:var(--purple); font-weight:700;">MEO</a>・<a href="ai.html" style="color:var(--purple); font-weight:700;">AI活用</a>を組み合わせて集客の仕組みごと作る事業成長パートナーです。公開後も<a href="maintenance.html" style="color:var(--purple); font-weight:700;">保守プラン</a>で一緒に育てていきます。
+      マダナイ？は、ホームページ制作会社ではなく、<a href="seo.html" class="text-link">SEO</a>・<a href="meo.html" class="text-link">MEO</a>・<a href="ai.html" class="text-link">AI活用</a>を組み合わせて集客の仕組みごと作る事業成長パートナーです。公開後も<a href="maintenance.html" class="text-link">保守プラン</a>で一緒に育てていきます。
     </div>
+  </div>
+</section>
+
+<!-- なぜ信じられるのか -->
+<section class="content-block reveal">
+  <div class="wrap content-block-inner">
+    <div class="section-head">
+      <span class="eyebrow">EVIDENCE</span>
+      <h2>なぜ、マダナイ？に任せられるのか</h2>
+    </div>
+    <p>「できます」だけでなく、実際に何を行うのかを具体的にお伝えします。</p>
+    <ul class="plan-check">
+      <li>ヒアリングからご入金確認後、通常2〜3週間ほどで納品（ページ数・内容により前後）</li>
+      <li>全プランに基本SEO設定・スマホ対応を標準搭載</li>
+      <li>Googleサーチコンソール・ビジネスプロフィールの設定代行に対応</li>
+      <li>公開後も保守プランで、修正対応・改善提案まで継続</li>
+    </ul>
+    <!-- 差し替え位置: 制作事例（詳細な導入事例が増え次第、個別ページ化を検討） -->
+    <p>実際の制作事例は<a href="index.html#works" class="text-link">制作実績ページ</a>、お客様の声は<a href="index.html#testimonials" class="text-link">お客様の声ページ</a>でご覧いただけます。</p>
+    <!-- 差し替え位置: 改善前後（Before/After）の実績データ -->
+    <!-- 差し替え位置: Search Consoleの結果（検索順位・流入数の推移） -->
+    <!-- 差し替え位置: Googleビジネスプロフィールの結果（閲覧数・アクセス数の推移） -->
   </div>
 </section>
 
@@ -840,7 +907,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>はい。ホームページ制作と合わせて、<a href="seo.html" style="color:var(--purple); font-weight:700;">SEO対策</a>・<a href="meo.html" style="color:var(--purple); font-weight:700;">MEO対策</a>・<a href="ai.html" style="color:var(--purple); font-weight:700;">AI活用</a>もご相談いただけます。</p>
+            <p>はい。ホームページ制作と合わせて、<a href="seo.html" class="text-link">SEO対策</a>・<a href="meo.html" class="text-link">MEO対策</a>・<a href="ai.html" class="text-link">AI活用</a>もご相談いただけます。</p>
           </div>
         </div>
       </div>
@@ -852,7 +919,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p><a href="maintenance.html" style="color:var(--purple); font-weight:700;">保守プラン</a>にご加入いただくと、修正対応・ドメイン管理・セキュリティ更新まで継続的にサポートします。</p>
+            <p><a href="maintenance.html" class="text-link">保守プラン</a>にご加入いただくと、修正対応・ドメイン管理・セキュリティ更新まで継続的にサポートします。</p>
           </div>
         </div>
       </div>
