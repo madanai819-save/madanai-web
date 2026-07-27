@@ -686,6 +686,78 @@
   .related-card .related-title{ font-size:14.5px; font-weight:800; color:var(--ink); }
   @media (max-width:600px){ .related-grid{ grid-template-columns:1fr; } }
 
+  /* ---------- BLOG ARTICLE LAYOUT ---------- */
+  .blog-container{ width:min(860px, calc(100% - 40px)); margin-inline:auto; }
+  .blog-article{ text-align:left; }
+  .blog-article .breadcrumb{ text-align:left; }
+  .blog-article .breadcrumb ol{ justify-content:flex-start; }
+  .blog-category{ display:inline-block; font-size:12px; font-weight:800; color:var(--purple); letter-spacing:0.04em; margin:6px 0 14px; }
+  .blog-title{
+    text-align:left;
+    font-size:clamp(2rem, 4vw, 3.4rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.35;
+    letter-spacing:-0.02em;
+    margin-bottom:24px;
+  }
+  .blog-intro p{ text-align:left; font-size:15.5px; line-height:2; color:var(--text); margin-bottom:22px; }
+  .blog-intro p:last-child{ margin-bottom:0; }
+
+  .toc-box{ background:var(--bg-soft); border:1px solid var(--line); border-radius:16px; padding:26px 28px; margin:0 0 8px; }
+  .toc-label{ font-size:14px; font-weight:800; color:var(--ink); margin-bottom:14px; }
+  .toc-box ol{ list-style:decimal; padding-left:1.3em; margin:0; display:flex; flex-direction:column; gap:8px; }
+  .toc-box li{ font-size:13.5px; line-height:1.6; }
+  .toc-box a{ color:var(--text); text-decoration:none; }
+  .toc-box a:hover{ color:var(--purple); text-decoration:underline; }
+
+  .blog-content{ margin-top:8px; }
+  .blog-content h2{
+    text-align:left;
+    font-size:clamp(1.55rem, 3vw, 2.1rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.5;
+    margin-top:80px;
+    margin-bottom:24px;
+    padding-left:18px;
+    border-left:5px solid var(--purple);
+    scroll-margin-top:32px;
+  }
+  .blog-content h3{
+    text-align:left;
+    font-size:clamp(1.25rem, 2vw, 1.55rem);
+    font-weight:800;
+    color:var(--ink);
+    line-height:1.6;
+    margin-top:48px;
+    margin-bottom:18px;
+    scroll-margin-top:32px;
+  }
+  .blog-content p{ text-align:left; font-size:1rem; line-height:2; color:var(--text); margin-bottom:24px; }
+  .blog-content ul, .blog-content ol{ text-align:left; padding-left:1.5em; margin-bottom:28px; }
+  .blog-content li{ line-height:1.9; margin-bottom:8px; color:var(--text); }
+  .blog-image{ width:100%; height:auto; display:block; border-radius:20px; margin:24px 0 32px; }
+  .article-note{ padding:24px; margin:32px 0; border-left:5px solid var(--purple); background:#f8f6ff; border-radius:0 16px 16px 0; }
+  .article-note p{ margin-bottom:0; }
+  .compare-table-wrap{ overflow-x:auto; margin:8px 0 32px; -webkit-overflow-scrolling:touch; }
+  .compare-table{ width:100%; min-width:520px; border-collapse:collapse; font-size:13.5px; }
+  .compare-table th, .compare-table td{ border:1px solid var(--line); padding:12px 14px; text-align:left; }
+  .compare-table th{ background:var(--bg-soft); font-weight:800; }
+  .blog-text-link{ color:var(--purple); font-weight:700; }
+  .blog-faq-item{ margin-bottom:36px; }
+  .blog-faq-item h3{ margin-top:0; margin-bottom:12px; }
+  .blog-faq-item p{ margin-bottom:0; }
+
+  @media (max-width:1000px){
+    .blog-container{ width:calc(100% - 48px); }
+  }
+  @media (max-width:600px){
+    .blog-container{ width:calc(100% - 36px); }
+    .toc-box{ padding:20px 18px; }
+    .blog-content h2{ margin-top:56px; }
+  }
+
 </style>
 </head>
 <body>
@@ -746,8 +818,8 @@
   </div>
 </header>
 
-<section class="page-hero reveal">
-  <div class="wrap">
+<section>
+  <div class="wrap blog-container blog-article">
     <nav class="breadcrumb" aria-label="パンくずリスト">
       <ol>
         <li><a href="../index.html">ホーム</a></li>
@@ -758,241 +830,259 @@
       </ol>
     </nav>
     <a href="../ai.html" class="back-link">← AI導入・活用支援へ戻る</a>
-    <span class="eyebrow">CLINIC</span>
-    <h1>クリニック・整体院でAIを活用する方法｜予約・受付・顧客管理を効率化</h1>
-    <p style="margin-top:20px;">予約対応や受付業務に追われて、本来集中したい診療・施術の時間が圧迫されていませんか。この記事では、クリニック・整体院がAI・業務アプリを使って予約・受付・顧客管理をどのように効率化できるのか、注意点とあわせてご紹介します。</p>
-    <div style="margin-top:28px;">
+    <span class="blog-category">AI活用・業務効率化</span>
+    <h1 class="blog-title">クリニック・整体院でAIを活用する方法｜予約・受付・顧客管理を効率化</h1>
+    <div class="blog-intro">
+      <p>予約対応、受付業務、リマインド連絡、顧客情報管理。クリニックや整体院では、診療・施術以外にも多くの業務があります。</p>
+      <p>電話予約の対応に追われたり、予約とカルテ・顧客情報の管理が別々になっていたり、リマインド連絡を手作業で行っていたりすると、受付や事務の負担は大きくなります。</p>
+      <p>クリニック・整体院の業務をすべてAI化する必要はありません。診療・施術そのものではなく、その前後にある予約・受付・顧客管理といった業務だけを整理し、小さな仕組みから導入することで、スタッフの負担を減らせる可能性があります。</p>
+      <p>この記事では、クリニック・整体院がAIや業務アプリを活用できる具体的な業務、導入イメージ、そして導入前に知っておきたい注意点をわかりやすく解説します。</p>
+    </div>
+    <!-- 公開日を確定後に入力 -->
+    <!-- 更新日を確定後に入力 -->
+    <!-- 著者名・プロフィールを確定後に入力 -->
+    <!-- メイン画像は掲載する場合ここに追加(現時点では該当する実画像がリポジトリ内に見つからないため未掲載) -->
+    <div style="margin-top:8px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">LINEでAI活用を相談する<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- その業界でよくある課題 -->
-<section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">CONCERN</span>
-      <h2>クリニック・整体院でよくある課題</h2>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></div>
-        <p>予約の電話対応に受付の手間が取られる</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></div>
-        <p>予約と紙のカルテ・顧客情報の管理が分かれている</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></div>
-        <p>予約リマインドの連絡を都度手作業で行っている</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></div>
-        <p>キャンセルや変更の対応に手間がかかる</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section>
+  <div class="wrap blog-container">
+    <nav class="toc-box" aria-label="目次">
+      <p class="toc-label">この記事の内容</p>
+      <ol>
+        <li><a href="#section-conclusion">結論｜クリニック・整体院のAI活用は、診療・施術ではなく予約・受付業務から始めるのがおすすめです</a></li>
+        <li><a href="#section-ai-reason">クリニック・整体院でAIが注目される理由</a></li>
+        <li><a href="#section-challenges">クリニック・整体院でよくある業務上の課題</a></li>
+        <li><a href="#section-efficiency">クリニック・整体院でAIを活用できる業務</a></li>
+        <li><a href="#section-examples">具体的なAI活用例</a></li>
+        <li><a href="#section-benefit">導入で期待できる変化</a></li>
+        <li><a href="#section-caution">導入前に確認したい注意点</a></li>
+        <li><a href="#section-support">マダナイ？に相談できること</a></li>
+        <li><a href="#section-faq">よくある質問</a></li>
+        <li><a href="#section-summary">まとめ</a></li>
+      </ol>
+    </nav>
 
-<!-- AI・業務アプリで効率化できる業務 -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner" style="text-align:center;">
-    <div class="section-head">
-      <span class="eyebrow">EFFICIENCY</span>
-      <h2>AI・業務アプリで効率化できる業務</h2>
-    </div>
-    <p>現在の業務内容を確認し、必要な機能だけをご提案します。複雑なシステムをすべて導入する必要はありません。</p>
-    <ul class="plan-check" style="max-width:440px; margin:18px auto 0; text-align:left;">
-          <li>予約受付・管理</li>
-          <li>顧客情報の管理</li>
-          <li>LINEでの予約リマインド</li>
-          <li>キャンセル・変更対応</li>
-          <li>受付業務の効率化</li>
-    </ul>
-  </div>
-</section>
+    <div class="blog-content blog-article">
 
-<!-- 具体的な活用例 -->
-<section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">EXAMPLE</span>
-      <h2>具体的な活用例</h2>
+      <h2 id="section-conclusion">結論｜クリニック・整体院のAI活用は、診療・施術ではなく予約・受付業務から始めるのがおすすめです</h2>
+      <p>先に結論からお伝えすると、クリニック・整体院がAIを活用する際は、診療や施術そのものではなく、予約管理・受付業務・顧客情報管理といった、診療・施術の前後にある業務から始めることをおすすめします。</p>
+      <p>診断や治療方針の判断は、引き続き医師・施術者が行うものであり、AI・業務アプリがこれらを代替することはありません。今回ご紹介する仕組みは、予約対応や受付、リマインド連絡など、診療・施術以外の業務を効率化するためのものです。</p>
+      <p>すでに使っている予約サービスで十分に対応できる業務があれば、無理に新しいシステムへ置き換える必要はありません。また、医療機関と整体院では、扱う情報や必要な機能が異なります。まずは自院・自店のどこに手間がかかっているかを整理するところから始めてみてください。</p>
+
+      <h2 id="section-ai-reason">クリニック・整体院でAIが注目される理由</h2>
+      <p>クリニックや整体院では、診療・施術に加えて、予約対応、受付業務、顧客情報管理、リマインド連絡など、さまざまな業務が発生します。電話対応に追われることで、受付スタッフの負担が大きくなることも少なくありません。</p>
+      <p>予約情報と顧客情報(カルテや連絡先など)が別々に管理されていると、確認や入力の手間が増えます。また、予約のリマインド連絡を手作業で行っていると、都度の対応に時間がかかります。</p>
+      <p>近年は、こうした診療・施術以外の業務に特化した業務アプリやAIツールが増えており、大がかりなシステムを導入しなくても、予約・受付まわりの業務だけを効率化できる選択肢が広がっています。ただし、すでに予約システムを導入している場合、その機能で十分に対応できるのであれば、無理に新しいシステムを導入するよりも、既存のサービスを活用する方が合理的です。</p>
+      <p>なお、医療機関と整体院では、取り扱う情報の性質や求められる機能が異なります。医療機関では特に、個人情報・健康情報の取り扱いについてより慎重な検討が必要です。</p>
+
+      <h2 id="section-challenges">クリニック・整体院でよくある業務上の課題</h2>
+      <p>具体的な活用方法を見る前に、クリニック・整体院の現場でよく聞かれる業務上の課題を整理しておきましょう。</p>
+
+      <h3>予約の電話対応に受付の手間が取られる</h3>
+      <p>電話での予約受付は、診療・施術の合間に対応する必要があり、受付スタッフの負担になりやすい業務です。</p>
+
+      <h3>予約と顧客情報の管理が分かれている</h3>
+      <p>予約状況と顧客情報(連絡先や来院・来店履歴など)が別々の場所で管理されていると、確認のたびに複数の場所を見る必要があります。</p>
+
+      <h3>リマインド連絡を手作業で行っている</h3>
+      <p>予約日が近づいた際のリマインド連絡を、電話やメールで一件ずつ行っていると、時間がかかるだけでなく、対応漏れが起きることもあります。</p>
+
+      <h3>キャンセルや変更の対応に手間がかかる</h3>
+      <p>キャンセルや予約変更が発生するたびに、予約表の更新や関係者への連絡が必要になり、対応に追われることがあります。</p>
+
+      <h2 id="section-efficiency">クリニック・整体院でAIを活用できる業務</h2>
+      <p>前述のような課題に対して、AI・業務アプリは次のような業務で活用できます。診療・施術そのものには関わらず、その前後にある業務を効率化するための仕組みとしてご活用いただけます。</p>
+
+      <h3>予約管理</h3>
+      <p>電話予約とオンライン予約の情報を1つの画面にまとめることで、確認の手間を減らし、予約状況を把握しやすくすることを目指せます。</p>
+
+      <h3>受付管理</h3>
+      <p>来院・来店時の受付対応を効率化する仕組みを取り入れることで、受付スタッフの負担を減らせる可能性があります。</p>
+
+      <h3>リマインド通知</h3>
+      <p>予約日が近づくとLINEなどで自動的にお知らせが届く仕組みを取り入れることで、手作業での連絡を減らしやすくなります。</p>
+
+      <h3>顧客情報管理</h3>
+      <p>連絡先や来院・来店履歴などの情報を一元管理することで、確認にかかる手間を減らしやすくなります。</p>
+
+      <h3>問い合わせ対応</h3>
+      <p>営業時間やアクセスなど、よくある問い合わせへの案内を整えることで、電話対応の負担を減らせる可能性があります。</p>
+
+      <h3>スタッフ共有</h3>
+      <p>予約状況やスタッフへの連絡事項をアプリ上で共有することで、情報共有をスムーズにすることを目指せます。</p>
+
+      <h3>売上集計</h3>
+      <p>日々の売上をダッシュボード形式で確認できるようにすることで、集計にかかる手間を減らせる可能性があります。</p>
+
+      <h3>シフト管理</h3>
+      <p>スタッフの希望シフトの提出・調整をアプリ上で行えるようにすることで、シフト作成にかかる時間を減らせる可能性があります。</p>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th>業務</th><th>現在の管理方法</th><th>業務アプリでできること</th><th>目指せる変化</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>予約管理</td><td>電話・紙・予約サイト</td><td>予約情報の一覧化・通知</td><td>確認漏れを防ぎやすい</td></tr>
+            <tr><td>受付管理</td><td>手作業・口頭対応</td><td>受付対応の効率化</td><td>受付の負担を減らしやすい</td></tr>
+            <tr><td>顧客情報管理</td><td>紙のカルテ・Excel</td><td>連絡先・来院履歴の一元管理</td><td>確認しやすい</td></tr>
+            <tr><td>リマインド</td><td>電話・手作業</td><td>LINE等での自動通知</td><td>連絡の手間を減らしやすい</td></tr>
+            <tr><td>シフト管理</td><td>紙・LINE・Excel</td><td>希望提出・調整の一元管理</td><td>調整作業を減らしやすい</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="section-examples">具体的なAI活用例</h2>
       <p>掲載している画面・機能は、導入方法をご紹介するための活用例です。</p>
-    </div>
-    <div class="activation-grid">
-      <div class="activation-card">
-        <div class="activation-card-image">
-          <!-- 差し替え位置: クリニック・整体院「予約管理アプリ」のイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H9l-4 4z"/></svg>
-        </div>
-        <div class="activation-card-body">
-          <h3>予約管理アプリ</h3>
-          <p>患者様・利用者様がスマートフォンから予約でき、受付がパソコンで確認・調整できる仕組みです。</p>
-        </div>
-      </div>
-      <div class="activation-card">
-        <div class="activation-card-image">
-          <!-- 差し替え位置: クリニック・整体院「顧客情報管理システム」のイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
-        </div>
-        <div class="activation-card-body">
-          <h3>顧客情報管理システム</h3>
-          <p>予約履歴や連絡先情報を一元管理する仕組みです。</p>
-        </div>
-      </div>
-      <div class="activation-card">
-        <div class="activation-card-image">
-          <!-- 差し替え位置: クリニック・整体院「LINEリマインド連携」のイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="activation-card-body">
-          <h3>LINEリマインド連携</h3>
-          <p>予約日が近づくとLINEで自動的にお知らせが届く仕組みです。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- 導入によって期待できる変化 -->
-<section class="content-block alt reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">BENEFIT</span>
-      <h2>導入によって期待できる変化</h2>
-    </div>
-    <div class="value-grid">
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-        <h3>電話対応にかかる時間を減らす</h3>
-        <p>オンライン予約と電話予約を併用し、受付の負担を減らします。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
-        <h3>予約管理・顧客情報の確認をしやすくする</h3>
-        <p>予約と顧客情報を1つの画面で確認できるようにします。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>リマインド連絡の手間を減らす</h3>
-        <p>手作業での連絡を減らし、来院・来店忘れの防止につなげます。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>受付業務の負担を減らす</h3>
-        <p>予約・変更・キャンセル対応をスムーズにします。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 導入時の注意点 -->
-<section class="content-block reveal">
-  <div class="wrap" style="text-align:center;">
-    <div class="section-head">
-      <span class="eyebrow">NOTE</span>
-      <h2>導入時の注意点</h2>
-    </div>
-    <div class="recommend-box">
+      <h3>予約管理アプリ</h3>
+      <!-- 差し替え位置: クリニック・整体院「予約管理アプリ」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
       <ul>
-        <li>診断・治療・問診など、医療行為そのものを代替するものではありません。</li>
-        <li>予約・受付・顧客管理など、診療・施術以外の業務に対応する仕組みです。</li>
-        <li>個人情報・患者情報の取り扱いについては、運用方法を個別に確認します。</li>
+        <li>患者様・利用者様がスマートフォンから予約</li>
+        <li>受付がパソコンで予約状況を確認・調整</li>
+        <li>電話予約との併用</li>
+        <li>予約変更・キャンセルの管理</li>
       </ul>
+      <p>電話対応の負担を減らし、予約状況を確認しやすい状態を目指します。</p>
+
+      <h3>顧客情報管理システム</h3>
+      <!-- 差し替え位置: クリニック・整体院「顧客情報管理システム」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <ul>
+        <li>連絡先・来院来店履歴の一元管理</li>
+        <li>予約履歴の確認</li>
+        <li>スタッフ間での情報共有</li>
+        <li>スマートフォンからの確認</li>
+      </ul>
+      <p>顧客情報の確認にかかる手間を減らし、受付対応をスムーズにすることを目指します。</p>
+
+      <h3>LINEリマインド連携</h3>
+      <!-- 差し替え位置: クリニック・整体院「LINEリマインド連携」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <ul>
+        <li>予約日が近づいた際の自動通知</li>
+        <li>予約内容の確認・変更案内</li>
+        <li>手作業での連絡の削減</li>
+        <li>既存のLINE公式アカウントとの連携</li>
+      </ul>
+      <p>リマインド連絡の手間を減らし、来院・来店忘れの防止につなげることを目指します。</p>
+
+      <h2 id="section-benefit">AI導入で期待できる変化</h2>
+      <p>予約管理や受付、リマインド連絡などにAI・業務アプリを取り入れることで、次のような変化が期待できます。効果の度合いは業態や規模によって異なるため、あくまで一般的な傾向としてご参考ください。</p>
+
+      <h3>電話対応にかかる時間を減らしやすい</h3>
+      <p>オンライン予約と電話予約を併用することで、受付の電話対応にかかる時間を減らしやすくなります。</p>
+
+      <h3>予約・顧客情報の確認をしやすくなる</h3>
+      <p>予約と顧客情報を1つの画面で確認できるようにすることで、確認にかかる手間を減らしやすくなります。</p>
+
+      <h3>リマインド連絡の手間を減らしやすい</h3>
+      <p>手作業での連絡を減らし、来院・来店忘れの防止につなげやすくなります。</p>
+
+      <h3>受付業務の負担を減らしやすい</h3>
+      <p>予約・変更・キャンセル対応をスムーズにすることで、受付スタッフの負担を減らせる可能性があります。</p>
+
+      <h3>診療・施術に集中しやすい時間を確保しやすくなる</h3>
+      <p>予約・受付まわりの業務にかかる時間や確認の手間が減ることで、診療・施術によりしっかり向き合いやすくなることを目指せます。</p>
+
+      <h2 id="section-caution">AI導入前に確認したい注意点</h2>
+      <p>AI・業務アプリの導入を検討する際は、良い面だけでなく、事前に確認しておきたい点もあります。</p>
+
+      <h3>診断や治療判断をAIへ任せない</h3>
+      <p>今回ご紹介するAI・業務アプリは、診断や治療方針の判断を行うものではありません。これらの判断は、引き続き医師・施術者が行うものであり、AI・業務アプリが代替することはありません。</p>
+
+      <h3>医療行為の代替と表現しない</h3>
+      <p>予約管理や受付業務の効率化は、医療行為そのものを代替するものではありません。診療・施術以外の業務を効率化するための仕組みとしてご理解ください。</p>
+
+      <h3>個人情報や健康情報を慎重に扱う</h3>
+      <p>患者様・利用者様の個人情報や健康に関する情報は、特に慎重な取り扱いが必要です。どのように保存・管理されるのか、導入前に十分に確認することが重要です。</p>
+
+      <h3>既存予約サービスで足りるか確認する</h3>
+      <p>すでに予約システムを導入している場合、その機能で十分に対応できる業務であれば、無理に新しいシステムへ置き換える必要はありません。まずは今使っているサービスでできることを確認することをおすすめします。</p>
+
+      <h3>医療機関と整体院では必要な機能が異なる</h3>
+      <p>医療機関と整体院では、取り扱う情報の性質や求められる機能が異なります。自院・自店の業態に合わせて、必要な機能を個別に検討することが大切です。</p>
+
+      <div class="article-note">
+        <p>診断・治療・問診の自動判断など、医療行為を代替するものではありません。予約・受付・顧客管理など、診療・施術以外の業務効率化に対応する仕組みです。個人情報・健康情報の取り扱いについては、導入前に運用方法を確認します。</p>
+      </div>
+
+      <h2 id="section-support">マダナイ？に相談できること</h2>
+      <p>「何から始めればいいかわからない」という場合も、まずは現在の業務内容を教えていただくところから始められます。マダナイ？では、以下のような内容をご相談いただけます。</p>
+      <ul>
+        <li>現在の予約・受付・顧客管理の方法の確認</li>
+        <li>手作業が多い業務の洗い出し</li>
+        <li>既存の予約サービスで解決できるかの確認</li>
+        <li>必要な機能の優先順位整理(医療行為には関与しません)</li>
+        <li>画面と操作方法の設計</li>
+        <li>小さな機能からの導入</li>
+        <li>公開後の改善</li>
+      </ul>
+      <p>すでにあるサービスで解決できる場合は、無理にオーダーメイドの開発をおすすめすることはありません。「まだない」を「もうある」へ。自院・自店に合う仕組みがまだない場合にこそ、一緒に整理するところから始めます。</p>
+
+      <h2 id="section-faq">よくある質問</h2>
+
+      <div class="blog-faq-item">
+        <h3>Q. 予約システムの導入で診療内容に影響はありますか？</h3>
+        <p>いいえ。診療・施術の内容には関わらず、予約・受付・顧客管理などの業務のみを効率化するご提案です。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. AIが診断や施術方針を判断することはありますか？</h3>
+        <p>いいえ。診断や治療方針の判断は、引き続き医師・施術者が行うものです。AI・業務アプリはこれらの判断を代替するものではありません。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 高齢の患者様でも予約しやすいですか？</h3>
+        <p>電話予約と併用できる形でご提案しますので、これまで通りの予約方法も維持できます。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 個人情報の取り扱いは大丈夫ですか？</h3>
+        <p>患者様・利用者様の情報の取り扱いについては、ご相談の際に運用方法を一緒に確認します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 複数のスタッフで予約状況を共有できますか？</h3>
+        <p>はい。受付・スタッフ間で予約状況をリアルタイムに共有できるようご提案します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 医療機関でも整体院でも同じ内容で導入できますか？</h3>
+        <p>いいえ。医療機関と整体院では取り扱う情報や必要な機能が異なるため、業態に合わせて個別にご提案します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 導入期間はどれくらいですか？</h3>
+        <p>必要な機能の範囲によって異なります。具体的な期間については、業務内容を伺ったうえでご案内します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 料金はどのように決まりますか？</h3>
+        <p>必要な機能の範囲や業務の複雑さによって異なります。現在の業務内容を伺ったうえで、料金の目安をご案内します。</p>
+      </div>
+
+      <h2 id="section-summary">まとめ</h2>
+      <p>クリニックや整体院では、診療・施術に加えて、予約対応や受付業務、顧客情報管理など、多くの業務があります。</p>
+      <p>すべてをAI化する必要はありません。診断や治療方針の判断は引き続き医師・施術者が行う前提で、予約管理や受付業務、リマインド連絡といった診療・施術以外の業務を一つずつ整理するだけでも、負担を減らせる可能性があります。既存の予約サービスで十分な業務は活かしながら、自院・自店の運用に合わない部分だけを補っていくという考え方が、無理のない進め方につながります。</p>
+      <p>大切なのは、最新のAIを導入することではなく、自院・自店の業務に合う仕組みを作ることです。診療・施術にしっかり向き合える時間を増やすために、まずは現在の業務を整理するところから始めてみてください。</p>
+
     </div>
   </div>
 </section>
 
-<!-- マダナイ？に相談できること -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner" style="text-align:center;">
-    <div class="section-head">
-      <span class="eyebrow">SUPPORT</span>
-      <h2>マダナイ？に相談できること</h2>
-    </div>
-    <ul class="plan-check" style="max-width:480px; margin:18px auto 0; text-align:left;">
-          <li>現在の予約・受付・顧客管理の方法の確認</li>
-          <li>診療・施術の内容に合わせた機能のご提案（医療行為には関与しません）</li>
-          <li>個人情報の取り扱いを含めた運用方法のすり合わせ</li>
-          <li>導入後の設定・使い方のご案内</li>
-    </ul>
-  </div>
-</section>
-
-<!-- よくある質問 -->
-<section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">FAQ</span>
-      <h2>よくある質問</h2>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:16px; max-width:720px; margin:0 auto;">
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">予約システムの導入で診療内容に影響はありますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>いいえ。診療・施術の内容には関わらず、予約・受付・顧客管理などの業務のみを効率化するご提案です。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">高齢の患者様でも予約しやすいですか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>電話予約と併用できる形でご提案しますので、これまで通りの予約方法も維持できます。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">個人情報の取り扱いは大丈夫ですか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>患者様・利用者様の情報の取り扱いについては、ご相談の際に運用方法を一緒に確認します。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">複数のスタッフで予約状況を共有できますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>はい。受付・スタッフ間で予約状況をリアルタイムに共有できるようご提案します。</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- LINE CTA -->
 <section id="contact" class="contact reveal">
   <div class="wrap inner">
     <span class="eyebrow">CONTACT</span>
-    <h2>自社の業務にもAIを活用できるか、<br>相談してみませんか？</h2>
-    <p>現在の業務内容を確認し、効率化できる作業と導入方法をご提案します。</p>
-    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line">LINEでAI活用を相談する</a>
+    <h2>予約・受付業務をAIで効率化できるか、<br>相談してみませんか？</h2>
+    <p>現在の予約管理、受付、顧客情報の管理方法を確認し、AIや業務アプリで効率化できる部分をご提案します。</p>
+    <p style="font-size:12.5px; color:var(--text-muted); margin-top:14px;">既存の予約サービスで十分な場合は、無理にオーダーメイド開発をおすすめしません。</p>
+    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line" style="margin-top:18px;">LINEでAI活用を相談する</a>
   </div>
 </section>
 
-<!-- 関連記事 -->
 <section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
