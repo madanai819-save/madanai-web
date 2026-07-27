@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-<title>SEO対策｜ホームページ集客ならマダナイ？</title>
-<meta name="description" content="ホームページを作るだけで終わらせない、SEO対策のご案内。検索から選ばれるサイトづくりで、事業の集客を後押しします。">
+<title>Google検索から継続的に集客できるSEO対策｜大阪・心斎橋のマダナイ？</title>
+<meta name="description" content="広告費に頼らず、Google検索から継続的にお客様を集める。大阪・心斎橋のマダナイ？が、検索から選ばれるホームページ作りを支援します。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="マダナイ？">
-<meta property="og:title" content="SEO対策｜ホームページ集客ならマダナイ？">
-<meta property="og:description" content="ホームページを作るだけで終わらせない、SEO対策のご案内。検索から選ばれるサイトづくりで、事業の集客を後押しします。">
+<meta property="og:title" content="Google検索から継続的に集客できるSEO対策｜大阪・心斎橋のマダナイ？">
+<meta property="og:description" content="広告費に頼らず、Google検索から継続的にお客様を集める。大阪・心斎橋のマダナイ？が、検索から選ばれるホームページ作りを支援します。">
 <meta property="og:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
 <meta property="og:image:width" content="1536">
 <meta property="og:image:height" content="1024">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
-<meta name="twitter:title" content="SEO対策｜ホームページ集客ならマダナイ？">
-<meta name="twitter:description" content="ホームページを作るだけで終わらせない、SEO対策のご案内。検索から選ばれるサイトづくりで、事業の集客を後押しします。">
+<meta name="twitter:title" content="Google検索から継続的に集客できるSEO対策｜大阪・心斎橋のマダナイ？">
+<meta name="twitter:description" content="広告費に頼らず、Google検索から継続的にお客様を集める。大阪・心斎橋のマダナイ？が、検索から選ばれるホームページ作りを支援します。">
 <link rel="canonical" href="https://madanai-web.jp/seo.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -329,6 +329,85 @@
     display:flex; align-items:center; justify-content:center;
   }
 
+  /* ---------- PAIN CARDS ---------- */
+  .pain-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .pain-card{
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.08);
+    border-radius:18px;
+    padding:30px 22px;
+    text-align:center;
+  }
+  .pain-icon{
+    width:48px; height:48px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid var(--purple);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px;
+  }
+  .pain-card p{ font-size:13.5px; font-weight:600; color:var(--text); line-height:1.7; }
+
+  /* ---------- PROCESS ---------- */
+  .process-flow{
+    display:flex;
+    align-items:flex-start;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:44px 24px;
+  }
+  .process-step{
+    flex:1;
+    min-width:0;
+    text-align:center;
+    padding:0 8px;
+    position:relative;
+  }
+  .process-step:not(:last-child)::after{
+    content:"\203A";
+    position:absolute;
+    top:18px;
+    right:-4px;
+    font-size:20px;
+    font-weight:700;
+    color:var(--line);
+  }
+  .process-icon{
+    width:48px; height:48px;
+    border-radius:50%;
+    border:1.5px solid var(--purple);
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 14px;
+  }
+  .process-step h3{ font-size:13px; font-weight:800; color:var(--ink); margin-bottom:6px; line-height:1.4; }
+  .process-step p{ font-size:10.5px; color:var(--text-muted); line-height:1.6; }
+
+  .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    background:#fff;
+    color:#161616;
+    border:1px solid rgba(22,22,22,0.18);
+    padding:15px 24px;
+    font-size:15px;
+    font-weight:700;
+    border-radius:999px;
+    white-space:nowrap;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-secondary:hover{
+    transform:translateY(-2px);
+    background:rgba(245,245,245,0.9);
+  }
+
   .maintenance-note{
     background:#fff;
     border:1px solid var(--line);
@@ -414,7 +493,7 @@
     box-shadow:0 18px 36px rgba(22,22,22,0.22);
   }
   .btn-arrow{ display:inline-block; transition:transform .2s ease; }
-  .btn-primary:hover .btn-arrow{ transform:translateX(3px); }
+  .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow{ transform:translateX(3px); }
 
   /* ---------- CONTACT ---------- */
   .contact{
@@ -467,12 +546,20 @@
     .hamburger{ display:flex; }
     .mobile-nav{ display:flex; }
   }
+  @media (max-width:1000px){
+    .process-flow{ flex-wrap:wrap; row-gap:32px; }
+    .process-step{ flex:0 0 50%; }
+    .process-step:not(:last-child)::after{ content:none; }
+  }
 
   /* ---------- MOBILE ---------- */
   @media (max-width:720px){
     section{ padding:58px 0; }
     .content-block{ padding:48px 0; }
-    .btn-primary, .btn-line{ width:100%; max-width:320px; justify-content:center; padding:14px 18px; font-size:14px; display:inline-flex; }
+    .btn-primary, .btn-line, .btn-secondary{ width:100%; max-width:320px; justify-content:center; padding:14px 18px; font-size:14px; display:inline-flex; }
+    .pain-grid{ grid-template-columns:1fr; }
+    .process-flow{ padding:32px 20px; row-gap:26px; }
+    .process-step{ flex:0 0 100%; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
   }
 </style>
@@ -490,7 +577,7 @@
           <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="nav-dropdown-menu" id="servicesMenu" role="menu" aria-labelledby="servicesMenuBtn">
-          <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">ホームページ制作<span class="nav-dropdown-badge">準備中</span></span>
+          <a class="nav-dropdown-item" role="menuitem" href="website.html">ホームページ制作</a>
           <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">LP制作<span class="nav-dropdown-badge">準備中</span></span>
           <a class="nav-dropdown-item" role="menuitem" href="seo.html">SEO対策</a>
           <a class="nav-dropdown-item" role="menuitem" href="meo.html">MEO対策</a>
@@ -514,7 +601,7 @@
         <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="mobile-nav-submenu" id="mobileServicesMenu">
-        <span class="nav-dropdown-item is-disabled" aria-disabled="true">ホームページ制作<span class="nav-dropdown-badge">準備中</span></span>
+        <a class="nav-dropdown-item" href="website.html">ホームページ制作</a>
         <span class="nav-dropdown-item is-disabled" aria-disabled="true">LP制作<span class="nav-dropdown-badge">準備中</span></span>
         <a class="nav-dropdown-item" href="seo.html">SEO対策</a>
         <a class="nav-dropdown-item" href="meo.html">MEO対策</a>
@@ -539,29 +626,73 @@
   <div class="wrap">
     <a href="index.html" class="back-link">← トップページへ戻る</a>
     <span class="eyebrow">SEO</span>
-    <h1>SEO対策</h1>
-    <p>ホームページは作って終わりではありません。検索から見つけてもらい、選ばれるところまでを一緒に育てていきます。</p>
-  </div>
-</section>
-
-<!-- SEOとは -->
-<section class="content-block reveal">
-  <div class="wrap content-block-inner">
-    <div class="section-head">
-      <span class="eyebrow">ABOUT</span>
-      <h2>SEOとは</h2>
+    <h1>Google検索から、<br>継続的にお客様を集める。</h1>
+    <p>広告費をかけ続けなくても、検索から見つけてもらい、選ばれるホームページへ。<br>大阪・心斎橋のマダナイ？が、公開後も一緒に育てていきます。</p>
+    <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">SEO対策を相談する<span class="btn-arrow">→</span></a>
+      <a href="pricing.html" class="btn-secondary">料金を見る<span class="btn-arrow">→</span></a>
     </div>
-    <p>SEO（Search Engine Optimization）とは、Googleなどの検索エンジンで、より多くの方に見つけてもらうための取り組みです。</p>
-    <p>「地域名＋業種」や「商品名＋サービス」などで検索された際に上位に表示されるよう、サイトの内容や構造を整えていきます。広告のように表示のたびに費用がかかるものではなく、育てるほど積み上がっていく取り組みです。</p>
   </div>
 </section>
 
-<!-- SEOのメリット -->
+<!-- こんなお悩みありませんか -->
+<section class="content-block reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">CONCERN</span>
+      <h2>こんなお悩みありませんか</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <p>検索しても自社サイトが出てこない</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
+        <p>広告費をかけ続けないと集客できない</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 17v.01M12 14c0-2.5 2.5-2 2.5-4.5A2.5 2.5 0 0 0 12 7a2.5 2.5 0 0 0-2.5 2.5"/></svg></div>
+        <p>何から手をつければいいか分からない</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
+        <p>競合ばかり上位表示されている</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <p>制作会社に頼んだが公開後は放置されている</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+        <p>AIで何か効率化できないか気になる</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- マダナイ？なら解決できる理由 -->
 <section class="content-block alt reveal">
   <div class="wrap content-block-inner">
     <div class="section-head">
-      <span class="eyebrow">MERIT</span>
-      <h2>SEOのメリット</h2>
+      <span class="eyebrow">WHY US</span>
+      <h2>マダナイ？なら解決できる理由</h2>
+    </div>
+    <p>SEO（Search Engine Optimization）は、Googleなどの検索エンジンで見つけてもらうための取り組みです。「地域名＋業種」などで検索された際に上位表示されるよう、サイトの内容や構造を整えます。広告と違い、育てるほど積み上がる資産になります。</p>
+    <p>一般的な制作会社では、公開時点でのSEO設定のみで対応が終わることが少なくありません。</p>
+    <div class="maintenance-note">
+      <strong>マダナイ？の違い</strong>
+      公開後も保守プランを通じて検索での見つかりやすさを継続的に確認し、必要な改善をご提案します。「作って終わり」ではなく、育てていくパートナーであることが私たちの違いです。
+    </div>
+  </div>
+</section>
+
+<!-- 得られる未来 -->
+<section class="content-block reveal">
+  <div class="wrap content-block-inner">
+    <div class="section-head">
+      <span class="eyebrow">BENEFIT</span>
+      <h2>SEO対策で得られる未来</h2>
     </div>
     <ul class="plan-check">
       <li>広告費をかけ続けなくても、継続的な集客が見込める</li>
@@ -572,12 +703,12 @@
   </div>
 </section>
 
-<!-- マダナイ？のSEO対策 -->
-<section class="content-block reveal">
+<!-- サービス内容 -->
+<section class="content-block alt reveal">
   <div class="wrap content-block-inner">
     <div class="section-head">
-      <span class="eyebrow">OUR APPROACH</span>
-      <h2>マダナイ？のSEO対策</h2>
+      <span class="eyebrow">SERVICE</span>
+      <h2>マダナイ？のSEO対策 サービス内容</h2>
     </div>
     <p>ホームページ制作の全プランに、基本的なSEO設定を標準で含めています。公開して終わりにせず、公開後も検索での見つかりやすさを一緒に育てていきます。</p>
     <ul class="plan-check">
@@ -593,17 +724,44 @@
   </div>
 </section>
 
-<!-- 制作会社との違い -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner">
+<!-- 導入の流れ -->
+<section class="reveal">
+  <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">DIFFERENCE</span>
-      <h2>制作会社との違い</h2>
+      <span class="eyebrow">FLOW</span>
+      <h2>導入の流れ</h2>
     </div>
-    <p>一般的な制作会社では、公開時点でのSEO設定のみで対応が終わることが少なくありません。</p>
-    <div class="maintenance-note">
-      <strong>マダナイ？の違い</strong>
-      公開後も保守プランを通じて検索での見つかりやすさを継続的に確認し、必要な改善をご提案します。「作って終わり」ではなく、育てていくパートナーであることが私たちの違いです。
+    <div class="process-flow">
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
+        <h3>無料相談</h3>
+        <p>公式LINEから、気になることをお聞かせください。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <h3>現状の検索状況を確認</h3>
+        <p>現在の検索順位・サイト構造を確認します。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>課題を整理</h3>
+        <p>見つかりにくい原因・改善点を整理します。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
+        <h3>改善内容をご提案</h3>
+        <p>必要な設定・改善内容をご提案します。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
+        <h3>設定・改善を実施</h3>
+        <p>SEO設定・サイト改善を行います。</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
+        <h3>公開後も継続改善</h3>
+        <p>検索状況を確認しながら育てていきます。</p>
+      </div>
     </div>
   </div>
 </section>
