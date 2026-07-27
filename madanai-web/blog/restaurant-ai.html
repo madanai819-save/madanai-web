@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<title>飲食店でAIを活用する方法｜シフト・予約・売上・在庫管理を効率化｜大阪・心斎橋のマダナイ？</title>
+<meta name="description" content="飲食店がAIを活用してシフト管理・予約・売上・在庫管理を効率化する方法を解説します。導入時の注意点や、マダナイ？に相談できることもご紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="マダナイ？">
+<meta property="og:title" content="飲食店でAIを活用する方法｜シフト・予約・売上・在庫管理を効率化｜大阪・心斎橋のマダナイ？">
+<meta property="og:description" content="飲食店がAIを活用してシフト管理・予約・売上・在庫管理を効率化する方法を解説します。導入時の注意点や、マダナイ？に相談できることもご紹介します。">
+<meta property="og:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="1024">
+<meta property="og:url" content="https://madanai-web.jp/blog/restaurant-ai.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
+<meta name="twitter:title" content="飲食店でAIを活用する方法｜シフト・予約・売上・在庫管理を効率化｜大阪・心斎橋のマダナイ？">
+<meta name="twitter:description" content="飲食店がAIを活用してシフト管理・予約・売上・在庫管理を効率化する方法を解説します。導入時の注意点や、マダナイ？に相談できることもご紹介します。">
+<link rel="canonical" href="https://madanai-web.jp/blog/restaurant-ai.html">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://madanai-web.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AI導入・活用支援",
+      "item": "https://madanai-web.jp/ai.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "飲食店",
+      "item": "https://madanai-web.jp/blog/restaurant-ai.html"
+    }
+  ]
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#1A1620;
+    --bg:#FFFFFF;
+    --bg-soft:#FFFFFF;
+    --purple:#7B2FF7;
+    --purple-deep:#5B1FCB;
+    --pink:#FF3D8A;
+    --grad: linear-gradient(135deg, var(--purple), var(--pink));
+    --text:#231F2B;
+    --text-muted:#6B6577;
+    --line:#ECE6F3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:#FFFFFF;
+    color:var(--text);
+    font-family:'Noto Sans JP', sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.round{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{ display:block; max-width:100%; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+  section{ padding:112px 0; }
+  .grad-text{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .eyebrow{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:14px;
+    font-weight:800;
+    color:var(--purple);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1040px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:22px;
+    font-weight:900;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .logo .bar{
+    display:inline-block;
+    width:7px; height:20px;
+    background:var(--grad);
+    border-radius:2px;
+    margin-right:8px;
+    transform:skewX(-10deg);
+    vertical-align:-3px;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    gap:36px;
+  }
+  .nav a{
+    font-size:14px;
+    font-weight:700;
+    color:var(--text);
+    white-space:nowrap;
+  }
+  .nav a:hover{ color:var(--purple); }
+  .btn-header-primary, .btn-header-secondary{
+    font-size:13px; font-weight:800;
+    padding:11px 20px;
+    border-radius:999px;
+    white-space:nowrap;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:40px;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-header-primary{
+    background:#161616;
+    color:#fff;
+    box-shadow:0 10px 22px rgba(22,22,22,0.16);
+  }
+  .btn-header-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 26px rgba(22,22,22,0.2); }
+  .btn-header-secondary{
+    background:#fff;
+    color:var(--ink);
+    border:1px solid rgba(22,22,22,0.18);
+  }
+  .btn-header-secondary:hover{ transform:translateY(-2px); background:rgba(245,245,245,0.9); }
+  .btn-header-secondary .line-icon{ flex-shrink:0; }
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    width:40px; height:40px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .hamburger span{
+    display:block;
+    width:22px; height:2px;
+    background:var(--ink);
+    border-radius:2px;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  .mobile-nav{
+    display:none;
+    flex-direction:column;
+    gap:2px;
+    max-height:0;
+    overflow:hidden;
+    background:#fff;
+    border-top:1px solid var(--line);
+    transition:max-height .3s ease;
+  }
+  .mobile-nav.open{ max-height:calc(100vh - 70px); overflow-y:auto; }
+  .mobile-nav a{
+    padding:14px 24px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--text);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav-ctas{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:16px 24px 20px;
+  }
+  .mobile-nav-ctas .btn-header-primary, .mobile-nav-ctas .btn-header-secondary{
+    width:100%;
+    padding:13px 20px;
+  }
+
+  /* ---------- SERVICES DROPDOWN ---------- */
+  .nav-dropdown{ position:relative; flex-shrink:0; }
+  .nav-dropdown-toggle{
+    display:inline-flex; align-items:center; gap:5px;
+    background:none; border:none; cursor:pointer;
+    font:inherit; font-size:14px; font-weight:700; color:var(--text);
+    white-space:nowrap;
+    padding:0;
+  }
+  .nav-dropdown-toggle:hover{ color:var(--purple); }
+  .nav-dropdown.open .nav-dropdown-toggle{ color:var(--purple); }
+  .nav-caret{ transition:transform .2s ease; flex-shrink:0; }
+  .nav-dropdown.open .nav-caret{ transform:rotate(180deg); }
+  .nav-dropdown-menu{
+    position:absolute; top:calc(100% + 16px); left:50%;
+    transform:translateX(-50%) translateY(-6px);
+    min-width:240px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 14px 34px rgba(26,22,32,0.12);
+    padding:8px;
+    display:flex; flex-direction:column; gap:2px;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease, visibility .18s;
+    z-index:200;
+  }
+  .nav-dropdown.open .nav-dropdown-menu{
+    opacity:1; visibility:visible; pointer-events:auto;
+    transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-item{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:11px 14px;
+    border-radius:10px;
+    font-size:13.5px; font-weight:700; color:var(--text);
+  }
+  a.nav-dropdown-item:hover{ background:var(--bg-soft); color:var(--purple); }
+  .nav-dropdown-item.is-disabled{ color:var(--text-muted); cursor:default; }
+  .nav-dropdown-badge{
+    font-size:10px; font-weight:800;
+    color:var(--text-muted);
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    padding:2px 8px;
+    border-radius:999px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .mobile-nav-group{ border-bottom:1px solid var(--line); }
+  .mobile-nav-toggle{
+    width:100%;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    font-size:15px; font-weight:700; color:var(--text);
+    background:none; border:none; cursor:pointer; font-family:inherit;
+  }
+  .mobile-nav-submenu{
+    max-height:0; overflow:hidden;
+    transition:max-height .3s ease;
+    background:var(--bg-soft);
+    border-left:3px solid var(--line);
+    margin-left:24px;
+  }
+  .mobile-nav-group.open .mobile-nav-submenu{ max-height:420px; }
+  .mobile-nav-submenu .nav-dropdown-item{
+    padding:13px 24px 13px 16px;
+    border-radius:0;
+    font-size:13.5px;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav-submenu .nav-dropdown-item:last-child{ border-bottom:none; }
+  .mobile-nav-group.open .nav-caret{ transform:rotate(180deg); }
+
+  /* ---------- PAGE HEADING ---------- */
+  .page-hero{
+    padding:96px 24px 32px;
+    text-align:center;
+  }
+  .page-hero .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--text-muted);
+    margin-bottom:20px;
+  }
+  .page-hero .back-link:hover{ color:var(--purple); }
+  .breadcrumb{
+    font-size:12px;
+    color:var(--text-muted);
+    margin-bottom:14px;
+  }
+  .breadcrumb ol{
+    list-style:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:0;
+    margin:0;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .breadcrumb a{ color:var(--text-muted); }
+  .breadcrumb a:hover{ color:var(--purple); }
+  .breadcrumb [aria-current="page"]{ color:var(--text); font-weight:700; }
+  .page-hero h1{
+    font-size:clamp(26px, 5vw, 38px);
+    font-weight:900;
+    color:var(--ink);
+    letter-spacing:-0.02em;
+    margin-top:10px;
+    line-height:1.4;
+  }
+  .page-hero p{
+    max-width:560px;
+    margin:16px auto 0;
+    font-size:14px;
+    color:var(--text-muted);
+    line-height:1.8;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{ text-align:center; margin-bottom:56px; }
+  .section-head .eyebrow{ display:block; margin-bottom:10px; }
+  .section-head h2{
+    font-size:clamp(24px, 5vw, 32px);
+    font-weight:900;
+    color:var(--ink);
+    letter-spacing:-0.02em;
+  }
+  .section-head p{
+    font-size:13px;
+    color:var(--text-muted);
+    margin-top:8px;
+  }
+
+  /* ---------- CONTENT BLOCK ---------- */
+  .content-block{ padding:64px 0; }
+  .content-block.alt{ background:var(--bg-soft); }
+  .content-block-inner{ max-width:680px; margin:0 auto; }
+  .content-block-inner p{
+    font-size:14.5px;
+    color:var(--text-muted);
+    line-height:1.95;
+    margin-bottom:16px;
+  }
+  .content-block-inner p:last-child{ margin-bottom:0; }
+
+  /* ---------- PAIN CARDS ---------- */
+  .pain-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .pain-card{
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.08);
+    border-radius:18px;
+    padding:30px 22px;
+    text-align:center;
+  }
+  .pain-icon{
+    width:48px; height:48px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid var(--purple);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px;
+  }
+  .pain-card p{ font-size:13.5px; font-weight:600; color:var(--text); line-height:1.7; }
+  .pain-card h3{ font-size:14.5px; font-weight:800; color:var(--ink); margin-bottom:6px; }
+  .pain-card .pain-desc{ font-size:12.5px; font-weight:500; color:var(--text-muted); line-height:1.7; }
+
+  /* ---------- VALUE PILLARS ---------- */
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .value-card{
+    border-radius:18px;
+    padding:36px 22px;
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.06);
+    text-align:center;
+  }
+  .value-card h3{
+    font-size:16.5px;
+    font-weight:800;
+    color:var(--ink);
+    margin:0 0 10px;
+  }
+  .value-card p{ font-size:13px; color:var(--text-muted); line-height:1.7; }
+  .value-icon{
+    width:56px; height:56px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid var(--purple);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px;
+  }
+
+  /* ---------- CHECK LIST (shared) ---------- */
+  .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:10px; }
+  .plan-check li{ position:relative; padding-left:26px; font-size:12.5px; color:var(--text-muted); line-height:1.7; }
+  .plan-check li::before{
+    content:"✓";
+    position:absolute; left:0; top:0;
+    width:16px; height:16px;
+    border-radius:50%;
+    background:var(--purple);
+    color:#fff;
+    font-size:9px;
+    font-weight:900;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- RECOMMEND BOX ---------- */
+  .recommend-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px 32px;
+    max-width:560px;
+    margin:0 auto;
+  }
+  .recommend-box ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .recommend-box li{
+    position:relative;
+    padding-left:24px;
+    font-size:14.5px;
+    color:var(--text);
+    font-weight:600;
+    line-height:1.7;
+  }
+  .recommend-box li::before{
+    content:"";
+    position:absolute;
+    left:2px; top:9px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--grad);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process-flow{
+    display:flex;
+    align-items:flex-start;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:44px 24px;
+  }
+  .process-step{
+    flex:1;
+    min-width:0;
+    text-align:center;
+    padding:0 8px;
+    position:relative;
+  }
+  .process-step:not(:last-child)::after{
+    content:"\203A";
+    position:absolute;
+    top:18px;
+    right:-4px;
+    font-size:20px;
+    font-weight:700;
+    color:var(--line);
+  }
+  .process-icon{
+    width:48px; height:48px;
+    border-radius:50%;
+    border:1.5px solid var(--purple);
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 14px;
+  }
+  .process-step h3{ font-size:13px; font-weight:800; color:var(--ink); margin-bottom:6px; line-height:1.4; }
+  .process-step p{ font-size:10.5px; color:var(--text-muted); line-height:1.6; }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .faq-question{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:24px 26px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    text-align:left;
+    font:inherit;
+    color:inherit;
+  }
+  .faq-q-label{ display:flex; gap:10px; align-items:flex-start; }
+  .faq-q-mark{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:900; flex-shrink:0; }
+  .faq-q-text{ font-size:16px; font-weight:800; color:var(--ink); }
+  .faq-toggle-icon{ font-size:18px; color:var(--purple); flex-shrink:0; }
+  .faq-answer{
+    display:grid;
+    grid-template-rows:0fr;
+    opacity:0;
+    transition:grid-template-rows .3s ease, opacity .25s ease;
+  }
+  .faq-item.open .faq-answer{ grid-template-rows:1fr; opacity:1; }
+  .faq-answer-inner{ overflow:hidden; }
+  .faq-answer-inner p{
+    font-size:14px;
+    color:var(--text-muted);
+    padding:0 26px 24px 26px;
+    line-height:1.9;
+  }
+
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:#161616;
+    color:#fff;
+    padding:15px 26px;
+    font-size:15px;
+    font-weight:800;
+    border-radius:999px;
+    white-space:nowrap;
+    box-shadow:0 16px 34px rgba(22,22,22,0.18);
+    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 18px 36px rgba(22,22,22,0.22);
+  }
+  .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    background:#fff;
+    color:#161616;
+    border:1px solid rgba(22,22,22,0.18);
+    padding:15px 24px;
+    font-size:15px;
+    font-weight:700;
+    border-radius:999px;
+    white-space:nowrap;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-secondary:hover{
+    transform:translateY(-2px);
+    background:rgba(245,245,245,0.9);
+  }
+  .btn-arrow{ display:inline-block; transition:transform .2s ease; }
+  .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow{ transform:translateX(3px); }
+
+  /* ---------- INLINE TEXT LINK ---------- */
+  .text-link{
+    color:var(--purple);
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-color:rgba(123,47,247,0.35);
+    text-underline-offset:2px;
+    transition:color .2s ease, text-decoration-color .2s ease;
+  }
+  .text-link:hover{ color:var(--purple-deep); text-decoration-color:currentColor; }
+  .text-link:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    text-align:center;
+    background:var(--ink);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact::before{
+    content:"?";
+    position:absolute;
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-weight:900;
+    font-size:520px;
+    line-height:1;
+    right:-120px; top:-140px;
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    opacity:0.18;
+  }
+  .contact .inner{ position:relative; z-index:1; }
+  .contact .eyebrow{ color:#E7B8FF; }
+  .contact h2{ color:#fff; font-size:clamp(22px,4.4vw,30px); margin:14px 0 18px; font-weight:900; }
+  .contact p{ color:#C9C3D6; font-size:14px; max-width:420px; margin:0 auto 20px; }
+  .contact .plan-check li{ color:#C9C3D6; }
+  .btn-line{
+    display:inline-flex; align-items:center; gap:10px;
+    background:#06C755;
+    color:#fff;
+    padding:17px 40px;
+    font-size:15px; font-weight:800;
+    border-radius:999px;
+    box-shadow:0 10px 24px rgba(6,199,85,0.18);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-line:hover{ transform:translateY(-2px); box-shadow:0 14px 28px rgba(6,199,85,0.22); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:44px 24px 38px; text-align:center; font-size:12px; color:var(--text-muted); border-top:1px solid var(--line); background:#FFFFFF; }
+  footer .logo{ display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px; }
+  footer .footer-links{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:13px; color:var(--text-muted); }
+
+  .reveal{ transition:opacity 0.7s ease, transform 0.7s ease; }
+
+  /* ---------- TABLET ---------- */
+  @media (max-width:1080px){
+    .nav{ display:none; }
+    .hamburger{ display:flex; }
+    .mobile-nav{ display:flex; }
+  }
+  @media (max-width:1000px){
+    .value-grid{ grid-template-columns:repeat(2,1fr); }
+    .process-flow{ flex-wrap:wrap; row-gap:32px; }
+    .process-step{ flex:0 0 50%; }
+    .process-step:not(:last-child)::after{ content:none; }
+  }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:720px){
+    section{ padding:58px 0; }
+    .content-block{ padding:48px 0; }
+    .btn-primary, .btn-line, .btn-secondary{ width:100%; max-width:320px; justify-content:center; padding:14px 18px; font-size:14px; }
+    .btn-primary, .btn-line, .btn-secondary{ display:inline-flex; }
+    .pain-grid{ grid-template-columns:1fr; }
+    .value-grid{ grid-template-columns:1fr; }
+    .process-flow{ padding:32px 20px; row-gap:26px; }
+    .process-step{ flex:0 0 100%; }
+    .contact::before{ font-size:280px; right:-80px; top:-60px; }
+  }
+
+  /* ---------- ACTIVATION IMAGE CARDS (blog articles) ---------- */
+  .activation-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .activation-card{ background:#fff; border:1px solid rgba(26,22,32,0.08); border-radius:20px; overflow:hidden; }
+  .activation-card-image{
+    width:100%; aspect-ratio:4 / 3;
+    background:linear-gradient(135deg, rgba(123,47,247,0.09), rgba(76,140,255,0.09));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .activation-card-image img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .activation-card-body{ padding:22px; }
+  .activation-card h3{ font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px; line-height:1.5; }
+  .activation-card p{ font-size:12.5px; color:var(--text-muted); line-height:1.8; }
+  @media (max-width:1000px){ .activation-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- RELATED ARTICLES ---------- */
+  .related-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:640px; margin:0 auto; }
+  .related-card{
+    display:block; background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:22px 24px; transition:border-color .2s ease, transform .2s ease;
+  }
+  .related-card:hover{ border-color:var(--purple); transform:translateY(-2px); }
+  .related-card:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
+  .related-card .related-label{ font-size:10.5px; font-weight:800; color:var(--purple); letter-spacing:0.04em; display:block; margin-bottom:6px; }
+  .related-card .related-title{ font-size:14.5px; font-weight:800; color:var(--ink); }
+  @media (max-width:600px){ .related-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- BLOG ARTICLE LAYOUT ---------- */
+  .blog-container{ width:min(860px, calc(100% - 40px)); margin-inline:auto; }
+  .blog-article{ text-align:left; }
+  .blog-article .breadcrumb{ text-align:left; }
+  .blog-article .breadcrumb ol{ justify-content:flex-start; }
+  .blog-category{ display:inline-block; font-size:12px; font-weight:800; color:var(--purple); letter-spacing:0.04em; margin:6px 0 14px; }
+  .blog-title{
+    text-align:left;
+    font-size:clamp(2rem, 4vw, 3.4rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.35;
+    letter-spacing:-0.02em;
+    margin-bottom:24px;
+  }
+  .blog-intro p{ text-align:left; font-size:15.5px; line-height:2; color:var(--text); margin-bottom:22px; }
+  .blog-intro p:last-child{ margin-bottom:0; }
+
+  .toc-box{ background:var(--bg-soft); border:1px solid var(--line); border-radius:16px; padding:26px 28px; margin:0 0 8px; }
+  .toc-label{ font-size:14px; font-weight:800; color:var(--ink); margin-bottom:14px; }
+  .toc-box ol{ list-style:decimal; padding-left:1.3em; margin:0; display:flex; flex-direction:column; gap:8px; }
+  .toc-box li{ font-size:13.5px; line-height:1.6; }
+  .toc-box a{ color:var(--text); text-decoration:none; }
+  .toc-box a:hover{ color:var(--purple); text-decoration:underline; }
+
+  .blog-content{ margin-top:8px; }
+  .blog-content h2{
+    text-align:left;
+    font-size:clamp(1.55rem, 3vw, 2.1rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.5;
+    margin-top:80px;
+    margin-bottom:24px;
+    padding-left:18px;
+    border-left:5px solid var(--purple);
+    scroll-margin-top:32px;
+  }
+  .blog-content h3{
+    text-align:left;
+    font-size:clamp(1.25rem, 2vw, 1.55rem);
+    font-weight:800;
+    color:var(--ink);
+    line-height:1.6;
+    margin-top:48px;
+    margin-bottom:18px;
+    scroll-margin-top:32px;
+  }
+  .blog-content p{ text-align:left; font-size:1rem; line-height:2; color:var(--text); margin-bottom:24px; }
+  .blog-content ul, .blog-content ol{ text-align:left; padding-left:1.5em; margin-bottom:28px; }
+  .blog-content li{ line-height:1.9; margin-bottom:8px; color:var(--text); }
+  .blog-image{ width:100%; height:auto; display:block; border-radius:20px; margin:24px 0 32px; }
+  .article-note{ padding:24px; margin:32px 0; border-left:5px solid var(--purple); background:#f8f6ff; border-radius:0 16px 16px 0; }
+  .article-note p{ margin-bottom:0; }
+  .compare-table-wrap{ overflow-x:auto; margin:8px 0 32px; -webkit-overflow-scrolling:touch; }
+  .compare-table{ width:100%; min-width:520px; border-collapse:collapse; font-size:13.5px; }
+  .compare-table th, .compare-table td{ border:1px solid var(--line); padding:12px 14px; text-align:left; }
+  .compare-table th{ background:var(--bg-soft); font-weight:800; }
+  .blog-text-link{ color:var(--purple); font-weight:700; }
+  .blog-faq-item{ margin-bottom:36px; }
+  .blog-faq-item h3{ margin-top:0; margin-bottom:12px; }
+  .blog-faq-item p{ margin-bottom:0; }
+
+  @media (max-width:1000px){
+    .blog-container{ width:calc(100% - 48px); }
+  }
+  @media (max-width:600px){
+    .blog-container{ width:calc(100% - 36px); }
+    .toc-box{ padding:20px 18px; }
+    .blog-content h2{ margin-top:56px; }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo"><span class="bar"></span>マダナイ<span class="grad-text">？</span></a>
+    <nav class="nav">
+      <a href="../index.html#home">ホーム</a>
+      <div class="nav-dropdown" id="servicesDropdown">
+        <button type="button" class="nav-dropdown-toggle" id="servicesMenuBtn" aria-expanded="false" aria-controls="servicesMenu" aria-haspopup="true">
+          サービス
+          <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="servicesMenu" role="menu" aria-labelledby="servicesMenuBtn">
+          <a class="nav-dropdown-item" role="menuitem" href="../website.html">ホームページ制作</a>
+          <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">LP制作<span class="nav-dropdown-badge">準備中</span></span>
+          <a class="nav-dropdown-item" role="menuitem" href="../seo.html">SEO対策</a>
+          <a class="nav-dropdown-item" role="menuitem" href="../meo.html">MEO対策</a>
+          <a class="nav-dropdown-item" role="menuitem" href="../ai.html">AI導入・活用支援</a>
+          <a class="nav-dropdown-item" role="menuitem" href="../maintenance.html">保守・運用支援</a>
+        </div>
+      </div>
+      <a href="../pricing.html">料金</a>
+      <a href="../index.html#about">会社について</a>
+      <a href="../index.html#contact">お問い合わせ</a>
+    </nav>
+    <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="../index.html#home">ホーム</a>
+    <div class="mobile-nav-group">
+      <button type="button" class="mobile-nav-toggle" id="mobileServicesBtn" aria-expanded="false" aria-controls="mobileServicesMenu">
+        サービス
+        <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mobileServicesMenu">
+        <a class="nav-dropdown-item" href="../website.html">ホームページ制作</a>
+        <span class="nav-dropdown-item is-disabled" aria-disabled="true">LP制作<span class="nav-dropdown-badge">準備中</span></span>
+        <a class="nav-dropdown-item" href="../seo.html">SEO対策</a>
+        <a class="nav-dropdown-item" href="../meo.html">MEO対策</a>
+        <a class="nav-dropdown-item" href="../ai.html">AI導入・活用支援</a>
+        <a class="nav-dropdown-item" href="../maintenance.html">保守・運用支援</a>
+      </div>
+    </div>
+    <a href="../pricing.html">料金</a>
+    <a href="../index.html#works">制作実績</a>
+    <a href="../index.html#process">制作の流れ</a>
+    <a href="../index.html#testimonials">お客様の声</a>
+    <a href="../index.html#about">会社について</a>
+    <a href="../index.html#faq">よくある質問</a>
+    <a href="../index.html#contact">お問い合わせ</a>
+    <div class="mobile-nav-ctas">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-primary">無料相談する</a>
+    </div>
+  </div>
+</header>
+
+<section class="reveal">
+  <div class="wrap blog-container blog-article">
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../index.html">ホーム</a></li>
+        <li aria-hidden="true">＞</li>
+        <li><a href="../ai.html">AI導入・活用支援</a></li>
+        <li aria-hidden="true">＞</li>
+        <li aria-current="page">飲食店</li>
+      </ol>
+    </nav>
+    <a href="../ai.html" class="back-link">← AI導入・活用支援へ戻る</a>
+    <span class="blog-category">AI活用・業務効率化</span>
+    <h1 class="blog-title">飲食店でAIを活用する方法｜シフト・予約・売上・在庫管理を効率化</h1>
+    <div class="blog-intro">
+      <p>シフト作成、売上集計、予約確認、在庫管理。飲食店では、営業時間が終わってからも管理業務が残ることが少なくありません。</p>
+      <p>スタッフから届く希望シフトをLINEで集めてExcelへ入力し、変更があればその都度調整する。売上はPOSレジ、予約は予約サイト、在庫は紙や表計算ソフトで管理する。情報が分かれているほど、確認や転記に時間がかかります。</p>
+      <p>飲食店の業務を、すべてAI化する必要はありません。手間がかかっている業務だけを整理し、小さな仕組みから導入することで、店舗運営の負担を減らせる可能性があります。</p>
+      <p>この記事では、飲食店でAIや業務アプリを活用できる具体的な業務、導入イメージ、そして導入前に知っておきたい注意点をわかりやすく解説します。</p>
+    </div>
+    <!-- 公開日を確定後に入力 -->
+    <!-- 更新日を確定後に入力 -->
+    <!-- 著者名・プロフィールを確定後に入力 -->
+    <!-- メイン画像は掲載する場合ここに追加(現時点では本文内のシフト管理アプリ画像を代表画像として使用) -->
+    <div style="margin-top:8px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">LINEでAI活用を相談する<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap blog-container">
+    <nav class="toc-box" aria-label="目次">
+      <p class="toc-label">この記事の内容</p>
+      <ol>
+        <li><a href="#section-conclusion">結論｜飲食店のAI活用は、小さな管理業務から始めるのがおすすめです</a></li>
+        <li><a href="#section-ai-reason">飲食店でAIが注目される理由</a></li>
+        <li><a href="#section-challenges">飲食店でよくある業務上の課題</a></li>
+        <li><a href="#section-efficiency">AIで効率化できる業務</a></li>
+        <li><a href="#section-examples">具体的なAI活用例</a></li>
+        <li><a href="#section-benefit">導入で期待できる変化</a></li>
+        <li><a href="#section-caution">導入前に確認したい注意点</a></li>
+        <li><a href="#section-support">マダナイ？に相談できること</a></li>
+        <li><a href="#section-faq">よくある質問</a></li>
+        <li><a href="#section-summary">まとめ</a></li>
+      </ol>
+    </nav>
+
+    <div class="blog-content blog-article">
+
+      <h2 id="section-conclusion">結論｜飲食店のAI活用は、小さな管理業務から始めるのがおすすめです</h2>
+      <p>先に結論からお伝えすると、飲食店がAIを活用する際は、すべての業務を一度にシステム化しようとせず、手間がかかっている業務だけを小さく改善していくことをおすすめします。</p>
+      <p>すでに使っている予約サイトやPOSレジで十分に対応できる業務は、無理に新しいツールへ置き換える必要はありません。一方で、シフト作成や売上集計のように、紙やExcel、LINEの間で転記や確認を繰り返している業務は、AI・業務アプリを取り入れることで効果をイメージしやすい部分です。</p>
+      <p>シフト、売上、予約、在庫といった業務は、多くの飲食店で共通して負担になりやすく、比較的小さな仕組みからでも変化を感じやすい領域です。ただし、必要な機能は店舗の規模や運営方法によって異なります。まずは自店のどこに手間がかかっているかを整理するところから始めてみてください。</p>
+
+      <h2 id="section-ai-reason">飲食店でAIが注目される理由</h2>
+      <p>飲食店業界では人手不足が続いており、限られたスタッフで日々の運営を回さなければならない店舗が増えています。仕込みや接客に加えて、シフト作成や売上集計といった管理業務まで店長や経営者一人に集中してしまうと、負担はさらに大きくなります。</p>
+      <p>こうした管理業務の多くは営業中には手が回らず、閉店後や休憩時間にまとめて対応することになりがちです。結果として営業時間外の作業が積み重なり、本来休むべき時間や、次の営業に向けた準備の時間が圧迫されてしまいます。</p>
+      <p>さらに、シフトはLINE、売上はPOS、予約は予約サイト、在庫は紙やExcelというように、情報が複数のツールに分散しているケースも多く見られます。それぞれを別々に確認しなければならないことも、業務が複雑に感じられる一因です。</p>
+      <p>近年は、スマートフォンひとつで使える業務アプリやAIツールが増え、大がかりなシステム導入をしなくても、特定の業務だけを効率化できる選択肢が広がっています。ただし、既存のサービスで十分に解決できる業務であれば、無理に新しいシステムを導入するよりも、既存サービスを活用する方が合理的な場合もあります。自店の運用に既存サービスが合わない、あるいは複数の業務をまとめて管理したいといった場合に、AI・業務アプリを検討する価値が生まれます。</p>
+
+      <h2 id="section-challenges">飲食店でよくある業務上の課題</h2>
+      <p>具体的な活用方法を見る前に、飲食店の現場でよく聞かれる業務上の課題を整理しておきましょう。</p>
+
+      <h3>シフト作成に時間がかかる</h3>
+      <p>シフト作成は、スタッフから希望を回収するところから始まります。LINEや口頭で希望を集め、人数のバランスを見ながら調整し、変更が出れば連絡し直す。こうしたやり取りを繰り返すうちに、想定以上の時間がかかってしまうことも少なくありません。</p>
+      <p>さらに、確定したシフトをもとに人件費を確認したり、紙やLINE、Excelの間で内容を転記したりする作業も発生します。情報の行き来が多いほど、入力ミスや確認漏れのリスクも高まります。</p>
+
+      <h3>予約情報が複数サービスに分かれている</h3>
+      <p>電話予約、予約サイト、SNSやLINE経由の予約、店頭での直接予約など、予約の入り口が複数あると、それぞれを別々に確認しなければなりません。確認の手間が増えるだけでなく、ダブルブッキングなどのリスクも高まります。</p>
+
+      <h3>売上や在庫を手作業で集計している</h3>
+      <p>レジの売上データを、日次・月次でExcelや紙にまとめ直している店舗も少なくありません。利益や商品別の売上を確認しようとすると、さらに集計の手間がかかります。</p>
+      <p>在庫についても、発注タイミングを目視や感覚で判断していると、発注漏れや過剰在庫につながることがあります。</p>
+
+      <h3>スタッフ間の情報共有が難しい</h3>
+      <p>シフトの変更や在庫状況、予約の変更などをスタッフ全員へ正確に伝えるのは、意外と手間がかかります。口頭やLINEグループでの連絡だけでは、誰が確認したか把握しづらく、伝達漏れが起きることもあります。</p>
+
+      <h2 id="section-efficiency">飲食店でAIを活用できる業務</h2>
+      <p>前述のような課題に対して、AI・業務アプリは次のような業務で活用できます。それぞれの業務を個別に効率化することもできるため、必要な範囲から取り入れることが可能です。</p>
+
+      <h3>シフト管理</h3>
+      <p>希望シフトの回収から人数調整まで、LINEやExcelを行き来しながら手作業で行っている店舗は多くあります。シフト管理アプリを使うことで、スタッフがスマートフォンから希望を提出し、管理者はパソコンで一覧確認・調整できるようになります。営業時間後のシフト作成にかかる時間を、少しずつ減らせる可能性があります。</p>
+
+      <h3>売上管理</h3>
+      <p>売上や利益をExcelや手計算でまとめている場合、確認のたびに集計作業が発生します。売上管理アプリでは、レジや会計データをもとに日次・月次の売上をダッシュボード形式で確認できるようにし、集計にかかる手間を減らすことを目指せます。</p>
+
+      <h3>予約管理</h3>
+      <p>電話予約と予約サイトの情報を別々に管理していると、確認漏れや二重予約が起きやすくなります。予約情報を1つの画面にまとめることで、確認の手間を減らし、予約状況を把握しやすくすることを目指せます。</p>
+
+      <h3>在庫・発注管理</h3>
+      <p>在庫を目視や感覚で管理していると、発注のタイミングを逃しやすくなります。在庫数や入出庫状況を可視化することで、発注判断をしやすくすることを目指せます。</p>
+
+      <h3>請求書・見積書作成</h3>
+      <p>宴会やケータリング、法人取引などで請求書や見積書を都度Word・Excelで作成していると、毎回一定の時間がかかります。テンプレートをもとに作成できる仕組みを取り入れることで、書類作成にかかる手間を減らせる可能性があります。</p>
+
+      <h3>問い合わせ対応</h3>
+      <p>予約や営業時間についての問い合わせに毎回個別対応していると、接客や調理の時間が圧迫されます。LINEでの自動リマインドやよくある質問への案内を整えることで、接客以外の対応業務を効率化できます。</p>
+
+      <h3>日報・店舗情報共有</h3>
+      <p>売上や在庫状況、スタッフへの連絡事項を口頭やメモで共有していると、伝達漏れが起きやすくなります。日報や共有事項をアプリ上で一元管理することで、スタッフ間の情報共有をスムーズにすることを目指せます。</p>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th>業務</th><th>現在の管理方法</th><th>AI・業務アプリでできること</th><th>目指せる変化</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>シフト管理</td><td>紙・LINE・Excel</td><td>提出・集計・変更・通知</td><td>調整作業を減らしやすい</td></tr>
+            <tr><td>売上管理</td><td>POS・Excel・手計算</td><td>日次・月次・利益・推移表示</td><td>状況を把握しやすい</td></tr>
+            <tr><td>予約管理</td><td>電話・予約サイト・SNS</td><td>予約情報の一覧化・通知</td><td>確認漏れを防ぎやすい</td></tr>
+            <tr><td>在庫管理</td><td>紙・表計算・目視</td><td>在庫数・入出庫・発注状況確認</td><td>発注判断をしやすい</td></tr>
+            <tr><td>請求書管理</td><td>Word・Excel・手入力</td><td>見積・請求書・PDF・履歴管理</td><td>作成と確認の手間を減らしやすい</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="section-examples">具体的なAI活用例</h2>
+      <p>掲載している画面・機能は、導入方法をご紹介するための活用例です。</p>
+
+      <h3>シフト管理アプリ</h3>
+      <img class="blog-image" src="../assets/images/ai-restaurant-shift.jpg" width="1536" height="1024" loading="lazy" alt="シフト管理アプリを表示したパソコンとスマートフォン">
+      <ul>
+        <li>スタッフがスマートフォンから希望シフトを提出</li>
+        <li>管理者がパソコンで一覧確認</li>
+        <li>時間帯ごとの人数を確認</li>
+        <li>勤務時間や人件費を把握</li>
+        <li>提出漏れ、変更、確定状況を表示</li>
+        <li>紙、LINE、Excel間の転記を減らせる可能性</li>
+      </ul>
+      <p>営業時間後のシフト調整を減らし、店舗運営に集中できる状態を目指します。</p>
+
+      <h3>売上管理ダッシュボード</h3>
+      <!-- 差し替え位置: 飲食店「売上管理ダッシュボード」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <p>売上管理ダッシュボードは、日々の売上や利益の状況を1つの画面にまとめて確認できるようにする仕組みです。次のような情報を表示できるようにすることを想定しています。</p>
+      <ul>
+        <li>売上</li>
+        <li>利益</li>
+        <li>受注件数</li>
+        <li>平均単価</li>
+        <li>日別、月別の推移</li>
+        <li>商品やサービス別の構成</li>
+        <li>スマートフォンからの確認</li>
+      </ul>
+      <p>レジや会計データの集計にかかっていた作業を減らし、数字をすぐに確認できる状態を目指します。</p>
+
+      <h3>請求書作成システム</h3>
+      <!-- 差し替え位置: 飲食店「請求書作成システム」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <p>宴会や法人利用、ケータリング、取引先への請求など、飲食店でも見積書・請求書の作成が必要になる場面は少なくありません。請求書作成システムでは、次のような機能を想定しています。</p>
+      <ul>
+        <li>見積書作成</li>
+        <li>請求書作成</li>
+        <li>PDF出力</li>
+        <li>顧客別履歴</li>
+        <li>入金状況管理</li>
+      </ul>
+      <p>毎回ゼロから作成していた書類作成の手間を減らし、確認や管理をしやすくすることを目指します。</p>
+
+      <h2 id="section-benefit">AI導入で期待できる変化</h2>
+      <p>シフト管理や売上集計などの業務にAI・業務アプリを取り入れることで、次のような変化が期待できます。効果の度合いは店舗の規模や運用方法によって異なるため、あくまで一般的な傾向としてご参考ください。</p>
+
+      <h3>管理業務にかかる時間を減らしやすい</h3>
+      <p>スタッフの希望提出から確定まで、あるいは売上の集計から確認までをアプリ上で完結できるようにすることで、手作業にかかっていた時間を減らしやすくなります。</p>
+
+      <h3>確認漏れや転記ミスを防ぎやすい</h3>
+      <p>予約情報や在庫状況を1つの画面にまとめることで、確認漏れや二重入力によるミスを防ぎやすくなります。</p>
+
+      <h3>スマートフォンから状況を確認できる</h3>
+      <p>パソコンの前にいなくても、スマートフォンからシフトや売上、予約の状況を確認できるようになります。外出先や別の作業をしながらでも、必要な情報にアクセスしやすくなります。</p>
+
+      <h3>店舗ごとに必要な機能だけ導入できる</h3>
+      <p>すべての業務を一度にシステム化する必要はありません。シフト管理だけ、あるいは予約管理だけといった形で、店舗の状況に合わせて必要な機能から段階的に導入することもできます。</p>
+
+      <h3>店長や経営者が店舗運営へ集中しやすくなる</h3>
+      <p>管理業務にかかる時間や確認の手間が減ることで、店長や経営者が接客や商品づくりなど、店舗運営そのものに使える時間を確保しやすくなることを目指せます。</p>
+
+      <h2 id="section-caution">AI導入前に確認したい注意点</h2>
+      <p>AI・業務アプリの導入を検討する際は、良い面だけでなく、事前に確認しておきたい点もあります。</p>
+
+      <h3>既存サービスで解決できないか確認する</h3>
+      <p>予約管理だけであれば、既存の予約サービスで十分な場合があります。シフト管理だけであれば、既存のシフト管理サービスの方が安く導入できる可能性もあります。まずは今使っているサービスで対応できないかを確認することをおすすめします。</p>
+
+      <h3>最初からすべてを自動化しない</h3>
+      <p>一度にすべての業務をシステム化しようとすると、現場が混乱しやすくなります。まずはシフト管理や売上集計など、負担の大きい業務から少しずつ取り入れることをおすすめします。</p>
+
+      <h3>スタッフが使いやすい画面を優先する</h3>
+      <p>どれだけ機能が充実していても、現場のスタッフが使いにくいと定着しません。実際に日々操作するスタッフの目線で、操作のしやすさを確認することが大切です。</p>
+
+      <h3>個人情報や売上データの管理方法を確認する</h3>
+      <p>顧客情報や売上データなど、取り扱いに注意が必要な情報も多くあります。どのように保存・管理されるのか、導入前に確認しておくと安心です。</p>
+
+      <h3>業務フローを整理してから作る</h3>
+      <p>複数の業務をまとめたい、既存サービスでは自店の運用に合わない、独自のやり方に合わせたいといった場合に、オーダーメイドで作る価値が生まれます。まずは現在の業務フローを整理し、どこに手間がかかっているかを明確にしてから検討することをおすすめします。</p>
+
+      <div class="article-note">
+        <p>既存のPOSレジや予約システムとの連携可否は、サービスごとの仕様によって異なるため事前確認が必要です。既存サービスで十分に対応できる場合は、無理にオーダーメイドの開発をおすすめすることはありません。</p>
+      </div>
+
+      <h2 id="section-support">マダナイ？に相談できること</h2>
+      <p>「何から始めればいいかわからない」という場合も、まずは現在の業務内容を教えていただくところから始められます。マダナイ？では、以下のような内容をご相談いただけます。</p>
+      <ul>
+        <li>現在の業務フローの整理</li>
+        <li>手作業が多い業務の洗い出し</li>
+        <li>既存サービスで解決できるかの確認</li>
+        <li>必要な機能の優先順位整理</li>
+        <li>画面と操作方法の設計</li>
+        <li>小さな機能からの導入</li>
+        <li>公開後の改善</li>
+      </ul>
+      <p>すでにあるサービスで解決できる場合は、無理にオーダーメイドの開発をおすすめすることはありません。「まだない」を「もうある」へ。自店に合う仕組みがまだない場合にこそ、一緒に整理するところから始めます。</p>
+
+      <h2 id="section-faq">よくある質問</h2>
+
+      <div class="blog-faq-item">
+        <h3>Q. 飲食店ではどの業務からAI化するのがおすすめですか？</h3>
+        <p>多くの店舗で負担になりやすいのは、シフト作成と売上集計です。この2つは紙やExcel、LINEの間での転記や確認が発生しやすく、効果をイメージしやすい業務でもあります。</p>
+        <p>まずはご自身の店舗でどの業務に一番時間がかかっているかを整理し、そこから優先的に検討することをおすすめします。予約や在庫の管理に課題がある場合は、そちらから着手することも可能です。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 既存の予約システムやPOSと連携できますか？</h3>
+        <p>連携の可否は、お使いのサービスのAPI提供状況や仕様によって異なります。すべてのサービスと連携できるわけではないため、確認前に連携可能と断定することはできません。</p>
+        <p>現在お使いのシステムの名称や機種を伺ったうえで、連携可能かどうかを個別に確認してご案内します。連携が難しい場合は、別の方法での情報共有もあわせてご提案します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 小さな店舗でも導入できますか？</h3>
+        <p>はい。1〜2名で運営している店舗でも、必要な機能だけを選んで導入いただけます。大規模なシステムを想定したものではなく、店舗の規模に合わせて機能を調整できます。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. スマートフォンだけでも使えますか？</h3>
+        <p>多くの機能はスマートフォンから利用できるように設計を想定しています。ただし、集計結果の確認や細かい設定など、パソコンの方が操作しやすい場面もあります。</p>
+        <p>スタッフの方はスマートフォンから、管理者の方はパソコンとスマートフォンを使い分ける、という運用も可能です。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 導入にはどれくらいの期間がかかりますか？</h3>
+        <p>必要な機能の範囲や、現在の業務の複雑さによって異なります。シフト管理など特定の業務に絞った場合は、比較的短い期間でご案内できることもあります。</p>
+        <p>複数の業務をまとめて管理したい場合や、独自の運用に合わせたい場合は、要件の整理にあわせて期間も変わります。具体的な期間については、業務内容を伺ったうえでご案内します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 料金はどのように決まりますか？</h3>
+        <p>必要な機能の範囲や業務の複雑さによって異なります。すべての業務を一度にシステム化するのではなく、優先度の高い業務から範囲を決めることで、費用を抑えて始めることも可能です。</p>
+        <p>現在の業務内容を伺ったうえで、料金の目安をご案内します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. AIに詳しくなくても使えますか？</h3>
+        <p>はい。専門知識がなくても使えるよう、現場のスタッフが操作する画面はできるだけシンプルにすることを想定しています。導入後の使い方についても、あわせてご案内します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. すべてを自動化できますか？</h3>
+        <p>いいえ。すべての業務を自動化することを前提としたものではありません。最終的な判断や接客、調理などは引き続き人が行う前提で、管理業務の一部を効率化することを目的としています。</p>
+        <p>また、既存サービスで十分に解決できる業務については、無理に自動化・オーダーメイド化をご提案することはありません。</p>
+      </div>
+
+      <h2 id="section-summary">まとめ</h2>
+      <p>飲食店では、接客や料理以外にも多くの管理業務があります。すべてをAI化する必要はありません。</p>
+      <p>シフト、売上、予約、在庫など、手間がかかっている業務を一つずつ整理するだけでも、店舗運営の負担を減らせる可能性があります。既存サービスで十分な業務は既存サービスを活かしながら、自店に合わない部分だけを補っていくという考え方が、無理のない進め方につながります。</p>
+      <p>大切なのは、最新のAIを導入することではなく、自店の業務に合う仕組みを作ることです。営業時間後の管理作業を減らし、店舗やお客様に向き合える時間を増やすために、まずは現在の業務を整理するところから始めてみてください。</p>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact reveal">
+  <div class="wrap inner">
+    <span class="eyebrow">CONTACT</span>
+    <h2>飲食店の業務をAIで効率化できるか、<br>相談してみませんか？</h2>
+    <p>現在のシフト管理、予約、売上集計などを確認し、AIや業務アプリで効率化できる部分をご提案します。</p>
+    <p style="font-size:12.5px; color:var(--text-muted); margin-top:14px;">既存サービスで十分な場合は、無理にオーダーメイド開発をおすすめしません。</p>
+    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line" style="margin-top:18px;">LINEでAI活用を相談する</a>
+  </div>
+</section>
+
+<section class="content-block alt reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">RELATED</span>
+      <h2>関連記事</h2>
+    </div>
+    <div class="related-grid">
+      <a href="retail-ai.html" class="related-card">
+        <span class="related-label">RELATED</span>
+        <span class="related-title">小売・卸売でAIを活用する方法</span>
+      </a>
+      <a href="clinic-ai.html" class="related-card">
+        <span class="related-label">RELATED</span>
+        <span class="related-title">クリニック・整体院でAIを活用する方法</span>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="../ai.html" class="text-link">業種別AI活用事例の一覧へ戻る →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo"><span class="bar"></span>マダナイ<span class="grad-text">？</span></div>
+  <div>ホームページ・LP制作 ｜ 全国対応</div>
+  <div class="footer-links">
+    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener">LINE相談</a>
+    <a href="https://www.instagram.com/madanai7171?igsh=MXYxb3RwcW1vOWRyZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+    <a href="../privacy.html">プライバシーポリシー</a>
+  </div>
+  <div style="margin-top:10px;">&copy; 2026 マダナイ？ All rights reserved.</div>
+</footer>
+
+<script>
+
+  try{
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    if(hamburger && mobileNav){
+      hamburger.addEventListener('click', ()=>{
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      mobileNav.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click', ()=>{
+          mobileNav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  }catch(err){}
+  try{
+    const dropdown = document.getElementById('servicesDropdown');
+    const toggleBtn = document.getElementById('servicesMenuBtn');
+    const menu = document.getElementById('servicesMenu');
+    if(dropdown && toggleBtn && menu){
+      let closeTimer = null;
+      const openMenu = ()=>{
+        clearTimeout(closeTimer);
+        dropdown.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+      };
+      const closeMenu = ()=>{
+        dropdown.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      };
+      dropdown.addEventListener('mouseenter', openMenu);
+      dropdown.addEventListener('mouseleave', ()=>{
+        closeTimer = setTimeout(closeMenu, 220);
+      });
+      toggleBtn.addEventListener('click', ()=>{
+        openMenu();
+      });
+      document.addEventListener('click', (e)=>{
+        if(!dropdown.contains(e.target)) closeMenu();
+      });
+      dropdown.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){ closeMenu(); toggleBtn.focus(); }
+      });
+    }
+  }catch(err){}
+  try{
+    const mobileGroup = document.querySelector('.mobile-nav-group');
+    const mobileServicesBtn = document.getElementById('mobileServicesBtn');
+    if(mobileGroup && mobileServicesBtn){
+      mobileServicesBtn.addEventListener('click', ()=>{
+        const isOpen = mobileGroup.classList.toggle('open');
+        mobileServicesBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  }catch(err){}
+  try{
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      const btn = item.querySelector('.faq-question');
+      const icon = item.querySelector('.faq-toggle-icon');
+      if(!btn) return;
+      btn.addEventListener('click', ()=>{
+        const isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(icon) icon.textContent = isOpen ? '−' : '+';
+      });
+    });
+  }catch(err){}
+  try{
+    if('IntersectionObserver' in window){
+      const els = document.querySelectorAll('.reveal');
+      els.forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(18px)'; });
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.style.opacity='1';
+            e.target.style.transform='translateY(0)';
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold:0.12});
+      els.forEach(el=>io.observe(el));
+    }
+  }catch(err){}
+</script>
+
+</body>
+</html>

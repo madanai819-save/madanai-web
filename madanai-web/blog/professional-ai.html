@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<title>士業でAIを活用する方法｜顧客・案件・期限・書類作成を効率化｜大阪・心斎橋のマダナイ？</title>
+<meta name="description" content="士業が顧客管理・案件管理・期限管理・書類作成をAIで効率化する方法を解説します。導入時の注意点や相談できることもご紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="マダナイ？">
+<meta property="og:title" content="士業でAIを活用する方法｜顧客・案件・期限・書類作成を効率化｜大阪・心斎橋のマダナイ？">
+<meta property="og:description" content="士業が顧客管理・案件管理・期限管理・書類作成をAIで効率化する方法を解説します。導入時の注意点や相談できることもご紹介します。">
+<meta property="og:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="1024">
+<meta property="og:url" content="https://madanai-web.jp/blog/professional-ai.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://madanai-web.jp/assets/images/madanai_hero.jpg">
+<meta name="twitter:title" content="士業でAIを活用する方法｜顧客・案件・期限・書類作成を効率化｜大阪・心斎橋のマダナイ？">
+<meta name="twitter:description" content="士業が顧客管理・案件管理・期限管理・書類作成をAIで効率化する方法を解説します。導入時の注意点や相談できることもご紹介します。">
+<link rel="canonical" href="https://madanai-web.jp/blog/professional-ai.html">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://madanai-web.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AI導入・活用支援",
+      "item": "https://madanai-web.jp/ai.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "士業",
+      "item": "https://madanai-web.jp/blog/professional-ai.html"
+    }
+  ]
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#1A1620;
+    --bg:#FFFFFF;
+    --bg-soft:#FFFFFF;
+    --purple:#7B2FF7;
+    --purple-deep:#5B1FCB;
+    --pink:#FF3D8A;
+    --grad: linear-gradient(135deg, var(--purple), var(--pink));
+    --text:#231F2B;
+    --text-muted:#6B6577;
+    --line:#ECE6F3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:#FFFFFF;
+    color:var(--text);
+    font-family:'Noto Sans JP', sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.round{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{ display:block; max-width:100%; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+  section{ padding:112px 0; }
+  .grad-text{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .eyebrow{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:14px;
+    font-weight:800;
+    color:var(--purple);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1040px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:22px;
+    font-weight:900;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .logo .bar{
+    display:inline-block;
+    width:7px; height:20px;
+    background:var(--grad);
+    border-radius:2px;
+    margin-right:8px;
+    transform:skewX(-10deg);
+    vertical-align:-3px;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    gap:36px;
+  }
+  .nav a{
+    font-size:14px;
+    font-weight:700;
+    color:var(--text);
+    white-space:nowrap;
+  }
+  .nav a:hover{ color:var(--purple); }
+  .btn-header-primary, .btn-header-secondary{
+    font-size:13px; font-weight:800;
+    padding:11px 20px;
+    border-radius:999px;
+    white-space:nowrap;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    min-height:40px;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-header-primary{
+    background:#161616;
+    color:#fff;
+    box-shadow:0 10px 22px rgba(22,22,22,0.16);
+  }
+  .btn-header-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 26px rgba(22,22,22,0.2); }
+  .btn-header-secondary{
+    background:#fff;
+    color:var(--ink);
+    border:1px solid rgba(22,22,22,0.18);
+  }
+  .btn-header-secondary:hover{ transform:translateY(-2px); background:rgba(245,245,245,0.9); }
+  .btn-header-secondary .line-icon{ flex-shrink:0; }
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    width:40px; height:40px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .hamburger span{
+    display:block;
+    width:22px; height:2px;
+    background:var(--ink);
+    border-radius:2px;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  .mobile-nav{
+    display:none;
+    flex-direction:column;
+    gap:2px;
+    max-height:0;
+    overflow:hidden;
+    background:#fff;
+    border-top:1px solid var(--line);
+    transition:max-height .3s ease;
+  }
+  .mobile-nav.open{ max-height:calc(100vh - 70px); overflow-y:auto; }
+  .mobile-nav a{
+    padding:14px 24px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--text);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav-ctas{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:16px 24px 20px;
+  }
+  .mobile-nav-ctas .btn-header-primary, .mobile-nav-ctas .btn-header-secondary{
+    width:100%;
+    padding:13px 20px;
+  }
+
+  /* ---------- SERVICES DROPDOWN ---------- */
+  .nav-dropdown{ position:relative; flex-shrink:0; }
+  .nav-dropdown-toggle{
+    display:inline-flex; align-items:center; gap:5px;
+    background:none; border:none; cursor:pointer;
+    font:inherit; font-size:14px; font-weight:700; color:var(--text);
+    white-space:nowrap;
+    padding:0;
+  }
+  .nav-dropdown-toggle:hover{ color:var(--purple); }
+  .nav-dropdown.open .nav-dropdown-toggle{ color:var(--purple); }
+  .nav-caret{ transition:transform .2s ease; flex-shrink:0; }
+  .nav-dropdown.open .nav-caret{ transform:rotate(180deg); }
+  .nav-dropdown-menu{
+    position:absolute; top:calc(100% + 16px); left:50%;
+    transform:translateX(-50%) translateY(-6px);
+    min-width:240px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 14px 34px rgba(26,22,32,0.12);
+    padding:8px;
+    display:flex; flex-direction:column; gap:2px;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease, visibility .18s;
+    z-index:200;
+  }
+  .nav-dropdown.open .nav-dropdown-menu{
+    opacity:1; visibility:visible; pointer-events:auto;
+    transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-item{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:11px 14px;
+    border-radius:10px;
+    font-size:13.5px; font-weight:700; color:var(--text);
+  }
+  a.nav-dropdown-item:hover{ background:var(--bg-soft); color:var(--purple); }
+  .nav-dropdown-item.is-disabled{ color:var(--text-muted); cursor:default; }
+  .nav-dropdown-badge{
+    font-size:10px; font-weight:800;
+    color:var(--text-muted);
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    padding:2px 8px;
+    border-radius:999px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .mobile-nav-group{ border-bottom:1px solid var(--line); }
+  .mobile-nav-toggle{
+    width:100%;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    font-size:15px; font-weight:700; color:var(--text);
+    background:none; border:none; cursor:pointer; font-family:inherit;
+  }
+  .mobile-nav-submenu{
+    max-height:0; overflow:hidden;
+    transition:max-height .3s ease;
+    background:var(--bg-soft);
+    border-left:3px solid var(--line);
+    margin-left:24px;
+  }
+  .mobile-nav-group.open .mobile-nav-submenu{ max-height:420px; }
+  .mobile-nav-submenu .nav-dropdown-item{
+    padding:13px 24px 13px 16px;
+    border-radius:0;
+    font-size:13.5px;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav-submenu .nav-dropdown-item:last-child{ border-bottom:none; }
+  .mobile-nav-group.open .nav-caret{ transform:rotate(180deg); }
+
+  /* ---------- PAGE HEADING ---------- */
+  .page-hero{
+    padding:96px 24px 32px;
+    text-align:center;
+  }
+  .page-hero .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--text-muted);
+    margin-bottom:20px;
+  }
+  .page-hero .back-link:hover{ color:var(--purple); }
+  .breadcrumb{
+    font-size:12px;
+    color:var(--text-muted);
+    margin-bottom:14px;
+  }
+  .breadcrumb ol{
+    list-style:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:0;
+    margin:0;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .breadcrumb a{ color:var(--text-muted); }
+  .breadcrumb a:hover{ color:var(--purple); }
+  .breadcrumb [aria-current="page"]{ color:var(--text); font-weight:700; }
+  .page-hero h1{
+    font-size:clamp(26px, 5vw, 38px);
+    font-weight:900;
+    color:var(--ink);
+    letter-spacing:-0.02em;
+    margin-top:10px;
+    line-height:1.4;
+  }
+  .page-hero p{
+    max-width:560px;
+    margin:16px auto 0;
+    font-size:14px;
+    color:var(--text-muted);
+    line-height:1.8;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{ text-align:center; margin-bottom:56px; }
+  .section-head .eyebrow{ display:block; margin-bottom:10px; }
+  .section-head h2{
+    font-size:clamp(24px, 5vw, 32px);
+    font-weight:900;
+    color:var(--ink);
+    letter-spacing:-0.02em;
+  }
+  .section-head p{
+    font-size:13px;
+    color:var(--text-muted);
+    margin-top:8px;
+  }
+
+  /* ---------- CONTENT BLOCK ---------- */
+  .content-block{ padding:64px 0; }
+  .content-block.alt{ background:var(--bg-soft); }
+  .content-block-inner{ max-width:680px; margin:0 auto; }
+  .content-block-inner p{
+    font-size:14.5px;
+    color:var(--text-muted);
+    line-height:1.95;
+    margin-bottom:16px;
+  }
+  .content-block-inner p:last-child{ margin-bottom:0; }
+
+  /* ---------- PAIN CARDS ---------- */
+  .pain-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .pain-card{
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.08);
+    border-radius:18px;
+    padding:30px 22px;
+    text-align:center;
+  }
+  .pain-icon{
+    width:48px; height:48px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid var(--purple);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px;
+  }
+  .pain-card p{ font-size:13.5px; font-weight:600; color:var(--text); line-height:1.7; }
+  .pain-card h3{ font-size:14.5px; font-weight:800; color:var(--ink); margin-bottom:6px; }
+  .pain-card .pain-desc{ font-size:12.5px; font-weight:500; color:var(--text-muted); line-height:1.7; }
+
+  /* ---------- VALUE PILLARS ---------- */
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .value-card{
+    border-radius:18px;
+    padding:36px 22px;
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.06);
+    text-align:center;
+  }
+  .value-card h3{
+    font-size:16.5px;
+    font-weight:800;
+    color:var(--ink);
+    margin:0 0 10px;
+  }
+  .value-card p{ font-size:13px; color:var(--text-muted); line-height:1.7; }
+  .value-icon{
+    width:56px; height:56px;
+    border-radius:50%;
+    background:#fff;
+    border:1.5px solid var(--purple);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px;
+  }
+
+  /* ---------- CHECK LIST (shared) ---------- */
+  .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:10px; }
+  .plan-check li{ position:relative; padding-left:26px; font-size:12.5px; color:var(--text-muted); line-height:1.7; }
+  .plan-check li::before{
+    content:"✓";
+    position:absolute; left:0; top:0;
+    width:16px; height:16px;
+    border-radius:50%;
+    background:var(--purple);
+    color:#fff;
+    font-size:9px;
+    font-weight:900;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- RECOMMEND BOX ---------- */
+  .recommend-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px 32px;
+    max-width:560px;
+    margin:0 auto;
+  }
+  .recommend-box ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .recommend-box li{
+    position:relative;
+    padding-left:24px;
+    font-size:14.5px;
+    color:var(--text);
+    font-weight:600;
+    line-height:1.7;
+  }
+  .recommend-box li::before{
+    content:"";
+    position:absolute;
+    left:2px; top:9px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--grad);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process-flow{
+    display:flex;
+    align-items:flex-start;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:44px 24px;
+  }
+  .process-step{
+    flex:1;
+    min-width:0;
+    text-align:center;
+    padding:0 8px;
+    position:relative;
+  }
+  .process-step:not(:last-child)::after{
+    content:"\203A";
+    position:absolute;
+    top:18px;
+    right:-4px;
+    font-size:20px;
+    font-weight:700;
+    color:var(--line);
+  }
+  .process-icon{
+    width:48px; height:48px;
+    border-radius:50%;
+    border:1.5px solid var(--purple);
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 14px;
+  }
+  .process-step h3{ font-size:13px; font-weight:800; color:var(--ink); margin-bottom:6px; line-height:1.4; }
+  .process-step p{ font-size:10.5px; color:var(--text-muted); line-height:1.6; }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .faq-question{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:24px 26px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    text-align:left;
+    font:inherit;
+    color:inherit;
+  }
+  .faq-q-label{ display:flex; gap:10px; align-items:flex-start; }
+  .faq-q-mark{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:900; flex-shrink:0; }
+  .faq-q-text{ font-size:16px; font-weight:800; color:var(--ink); }
+  .faq-toggle-icon{ font-size:18px; color:var(--purple); flex-shrink:0; }
+  .faq-answer{
+    display:grid;
+    grid-template-rows:0fr;
+    opacity:0;
+    transition:grid-template-rows .3s ease, opacity .25s ease;
+  }
+  .faq-item.open .faq-answer{ grid-template-rows:1fr; opacity:1; }
+  .faq-answer-inner{ overflow:hidden; }
+  .faq-answer-inner p{
+    font-size:14px;
+    color:var(--text-muted);
+    padding:0 26px 24px 26px;
+    line-height:1.9;
+  }
+
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:#161616;
+    color:#fff;
+    padding:15px 26px;
+    font-size:15px;
+    font-weight:800;
+    border-radius:999px;
+    white-space:nowrap;
+    box-shadow:0 16px 34px rgba(22,22,22,0.18);
+    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 18px 36px rgba(22,22,22,0.22);
+  }
+  .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    background:#fff;
+    color:#161616;
+    border:1px solid rgba(22,22,22,0.18);
+    padding:15px 24px;
+    font-size:15px;
+    font-weight:700;
+    border-radius:999px;
+    white-space:nowrap;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-secondary:hover{
+    transform:translateY(-2px);
+    background:rgba(245,245,245,0.9);
+  }
+  .btn-arrow{ display:inline-block; transition:transform .2s ease; }
+  .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow{ transform:translateX(3px); }
+
+  /* ---------- INLINE TEXT LINK ---------- */
+  .text-link{
+    color:var(--purple);
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-color:rgba(123,47,247,0.35);
+    text-underline-offset:2px;
+    transition:color .2s ease, text-decoration-color .2s ease;
+  }
+  .text-link:hover{ color:var(--purple-deep); text-decoration-color:currentColor; }
+  .text-link:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    text-align:center;
+    background:var(--ink);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact::before{
+    content:"?";
+    position:absolute;
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-weight:900;
+    font-size:520px;
+    line-height:1;
+    right:-120px; top:-140px;
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    opacity:0.18;
+  }
+  .contact .inner{ position:relative; z-index:1; }
+  .contact .eyebrow{ color:#E7B8FF; }
+  .contact h2{ color:#fff; font-size:clamp(22px,4.4vw,30px); margin:14px 0 18px; font-weight:900; }
+  .contact p{ color:#C9C3D6; font-size:14px; max-width:420px; margin:0 auto 20px; }
+  .contact .plan-check li{ color:#C9C3D6; }
+  .btn-line{
+    display:inline-flex; align-items:center; gap:10px;
+    background:#06C755;
+    color:#fff;
+    padding:17px 40px;
+    font-size:15px; font-weight:800;
+    border-radius:999px;
+    box-shadow:0 10px 24px rgba(6,199,85,0.18);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-line:hover{ transform:translateY(-2px); box-shadow:0 14px 28px rgba(6,199,85,0.22); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:44px 24px 38px; text-align:center; font-size:12px; color:var(--text-muted); border-top:1px solid var(--line); background:#FFFFFF; }
+  footer .logo{ display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px; }
+  footer .footer-links{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:13px; color:var(--text-muted); }
+
+  .reveal{ transition:opacity 0.7s ease, transform 0.7s ease; }
+
+  /* ---------- TABLET ---------- */
+  @media (max-width:1080px){
+    .nav{ display:none; }
+    .hamburger{ display:flex; }
+    .mobile-nav{ display:flex; }
+  }
+  @media (max-width:1000px){
+    .value-grid{ grid-template-columns:repeat(2,1fr); }
+    .process-flow{ flex-wrap:wrap; row-gap:32px; }
+    .process-step{ flex:0 0 50%; }
+    .process-step:not(:last-child)::after{ content:none; }
+  }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:720px){
+    section{ padding:58px 0; }
+    .content-block{ padding:48px 0; }
+    .btn-primary, .btn-line, .btn-secondary{ width:100%; max-width:320px; justify-content:center; padding:14px 18px; font-size:14px; }
+    .btn-primary, .btn-line, .btn-secondary{ display:inline-flex; }
+    .pain-grid{ grid-template-columns:1fr; }
+    .value-grid{ grid-template-columns:1fr; }
+    .process-flow{ padding:32px 20px; row-gap:26px; }
+    .process-step{ flex:0 0 100%; }
+    .contact::before{ font-size:280px; right:-80px; top:-60px; }
+  }
+
+  /* ---------- ACTIVATION IMAGE CARDS (blog articles) ---------- */
+  .activation-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .activation-card{ background:#fff; border:1px solid rgba(26,22,32,0.08); border-radius:20px; overflow:hidden; }
+  .activation-card-image{
+    width:100%; aspect-ratio:4 / 3;
+    background:linear-gradient(135deg, rgba(123,47,247,0.09), rgba(76,140,255,0.09));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .activation-card-image img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .activation-card-body{ padding:22px; }
+  .activation-card h3{ font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px; line-height:1.5; }
+  .activation-card p{ font-size:12.5px; color:var(--text-muted); line-height:1.8; }
+  @media (max-width:1000px){ .activation-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- RELATED ARTICLES ---------- */
+  .related-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:640px; margin:0 auto; }
+  .related-card{
+    display:block; background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:22px 24px; transition:border-color .2s ease, transform .2s ease;
+  }
+  .related-card:hover{ border-color:var(--purple); transform:translateY(-2px); }
+  .related-card:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
+  .related-card .related-label{ font-size:10.5px; font-weight:800; color:var(--purple); letter-spacing:0.04em; display:block; margin-bottom:6px; }
+  .related-card .related-title{ font-size:14.5px; font-weight:800; color:var(--ink); }
+  @media (max-width:600px){ .related-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- BLOG ARTICLE LAYOUT ---------- */
+  .blog-container{ width:min(860px, calc(100% - 40px)); margin-inline:auto; }
+  .blog-article{ text-align:left; }
+  .blog-article .breadcrumb{ text-align:left; }
+  .blog-article .breadcrumb ol{ justify-content:flex-start; }
+  .blog-category{ display:inline-block; font-size:12px; font-weight:800; color:var(--purple); letter-spacing:0.04em; margin:6px 0 14px; }
+  .blog-title{
+    text-align:left;
+    font-size:clamp(2rem, 4vw, 3.4rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.35;
+    letter-spacing:-0.02em;
+    margin-bottom:24px;
+  }
+  .blog-intro p{ text-align:left; font-size:15.5px; line-height:2; color:var(--text); margin-bottom:22px; }
+  .blog-intro p:last-child{ margin-bottom:0; }
+
+  .toc-box{ background:var(--bg-soft); border:1px solid var(--line); border-radius:16px; padding:26px 28px; margin:0 0 8px; }
+  .toc-label{ font-size:14px; font-weight:800; color:var(--ink); margin-bottom:14px; }
+  .toc-box ol{ list-style:decimal; padding-left:1.3em; margin:0; display:flex; flex-direction:column; gap:8px; }
+  .toc-box li{ font-size:13.5px; line-height:1.6; }
+  .toc-box a{ color:var(--text); text-decoration:none; }
+  .toc-box a:hover{ color:var(--purple); text-decoration:underline; }
+
+  .blog-content{ margin-top:8px; }
+  .blog-content h2{
+    text-align:left;
+    font-size:clamp(1.55rem, 3vw, 2.1rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.5;
+    margin-top:80px;
+    margin-bottom:24px;
+    padding-left:18px;
+    border-left:5px solid var(--purple);
+    scroll-margin-top:32px;
+  }
+  .blog-content h3{
+    text-align:left;
+    font-size:clamp(1.25rem, 2vw, 1.55rem);
+    font-weight:800;
+    color:var(--ink);
+    line-height:1.6;
+    margin-top:48px;
+    margin-bottom:18px;
+    scroll-margin-top:32px;
+  }
+  .blog-content p{ text-align:left; font-size:1rem; line-height:2; color:var(--text); margin-bottom:24px; }
+  .blog-content ul, .blog-content ol{ text-align:left; padding-left:1.5em; margin-bottom:28px; }
+  .blog-content li{ line-height:1.9; margin-bottom:8px; color:var(--text); }
+  .blog-image{ width:100%; height:auto; display:block; border-radius:20px; margin:24px 0 32px; }
+  .article-note{ padding:24px; margin:32px 0; border-left:5px solid var(--purple); background:#f8f6ff; border-radius:0 16px 16px 0; }
+  .article-note p{ margin-bottom:0; }
+  .compare-table-wrap{ overflow-x:auto; margin:8px 0 32px; -webkit-overflow-scrolling:touch; }
+  .compare-table{ width:100%; min-width:520px; border-collapse:collapse; font-size:13.5px; }
+  .compare-table th, .compare-table td{ border:1px solid var(--line); padding:12px 14px; text-align:left; }
+  .compare-table th{ background:var(--bg-soft); font-weight:800; }
+  .blog-text-link{ color:var(--purple); font-weight:700; }
+  .blog-faq-item{ margin-bottom:36px; }
+  .blog-faq-item h3{ margin-top:0; margin-bottom:12px; }
+  .blog-faq-item p{ margin-bottom:0; }
+
+  @media (max-width:1000px){
+    .blog-container{ width:calc(100% - 48px); }
+  }
+  @media (max-width:600px){
+    .blog-container{ width:calc(100% - 36px); }
+    .toc-box{ padding:20px 18px; }
+    .blog-content h2{ margin-top:56px; }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo"><span class="bar"></span>マダナイ<span class="grad-text">？</span></a>
+    <nav class="nav">
+      <a href="../index.html#home">ホーム</a>
+      <div class="nav-dropdown" id="servicesDropdown">
+        <button type="button" class="nav-dropdown-toggle" id="servicesMenuBtn" aria-expanded="false" aria-controls="servicesMenu" aria-haspopup="true">
+          サービス
+          <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="servicesMenu" role="menu" aria-labelledby="servicesMenuBtn">
+          <a class="nav-dropdown-item" role="menuitem" href="../website.html">ホームページ制作</a>
+          <span class="nav-dropdown-item is-disabled" role="menuitem" aria-disabled="true">LP制作<span class="nav-dropdown-badge">準備中</span></span>
+          <a class="nav-dropdown-item" role="menuitem" href="../seo.html">SEO対策</a>
+          <a class="nav-dropdown-item" role="menuitem" href="../meo.html">MEO対策</a>
+          <a class="nav-dropdown-item" role="menuitem" href="../ai.html">AI導入・活用支援</a>
+          <a class="nav-dropdown-item" role="menuitem" href="../maintenance.html">保守・運用支援</a>
+        </div>
+      </div>
+      <a href="../pricing.html">料金</a>
+      <a href="../index.html#about">会社について</a>
+      <a href="../index.html#contact">お問い合わせ</a>
+    </nav>
+    <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="../index.html#home">ホーム</a>
+    <div class="mobile-nav-group">
+      <button type="button" class="mobile-nav-toggle" id="mobileServicesBtn" aria-expanded="false" aria-controls="mobileServicesMenu">
+        サービス
+        <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mobileServicesMenu">
+        <a class="nav-dropdown-item" href="../website.html">ホームページ制作</a>
+        <span class="nav-dropdown-item is-disabled" aria-disabled="true">LP制作<span class="nav-dropdown-badge">準備中</span></span>
+        <a class="nav-dropdown-item" href="../seo.html">SEO対策</a>
+        <a class="nav-dropdown-item" href="../meo.html">MEO対策</a>
+        <a class="nav-dropdown-item" href="../ai.html">AI導入・活用支援</a>
+        <a class="nav-dropdown-item" href="../maintenance.html">保守・運用支援</a>
+      </div>
+    </div>
+    <a href="../pricing.html">料金</a>
+    <a href="../index.html#works">制作実績</a>
+    <a href="../index.html#process">制作の流れ</a>
+    <a href="../index.html#testimonials">お客様の声</a>
+    <a href="../index.html#about">会社について</a>
+    <a href="../index.html#faq">よくある質問</a>
+    <a href="../index.html#contact">お問い合わせ</a>
+    <div class="mobile-nav-ctas">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-primary">無料相談する</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap blog-container blog-article">
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="../index.html">ホーム</a></li>
+        <li aria-hidden="true">＞</li>
+        <li><a href="../ai.html">AI導入・活用支援</a></li>
+        <li aria-hidden="true">＞</li>
+        <li aria-current="page">士業</li>
+      </ol>
+    </nav>
+    <a href="../ai.html" class="back-link">← AI導入・活用支援へ戻る</a>
+    <span class="blog-category">AI活用・業務効率化</span>
+    <h1 class="blog-title">士業でAIを活用する方法｜顧客・案件・期限・書類作成を効率化</h1>
+    <div class="blog-intro">
+      <p>相談対応、書類作成、期限管理、請求書発行。士業の事務所では、専門業務に加えて、日々多くの事務作業が発生します。</p>
+      <p>顧客情報や案件の進捗が紙やExcel、メールに散らばっていると、案件が増えるほど確認に時間がかかります。期限管理を個人の手帳や記憶に頼っていると、うっかりミスのリスクも高まります。</p>
+      <p>士業の業務をすべてAI化する必要はありません。手間がかかっている事務作業だけを整理し、小さな仕組みから導入することで、専門業務に使える時間を増やせる可能性があります。</p>
+      <p>この記事では、士業事務所がAIや業務アプリを活用できる具体的な業務、導入イメージ、そして導入前に知っておきたい注意点をわかりやすく解説します。</p>
+    </div>
+    <!-- 公開日を確定後に入力 -->
+    <!-- 更新日を確定後に入力 -->
+    <!-- 著者名・プロフィールを確定後に入力 -->
+    <!-- メイン画像は掲載する場合ここに追加(現時点では該当する実画像がリポジトリ内に見つからないため未掲載) -->
+    <div style="margin-top:8px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">LINEでAI活用を相談する<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap blog-container">
+    <nav class="toc-box" aria-label="目次">
+      <p class="toc-label">この記事の内容</p>
+      <ol>
+        <li><a href="#section-conclusion">結論｜士業のAI活用は、案件・期限・定型業務の整理から始めるのがおすすめです</a></li>
+        <li><a href="#section-ai-reason">士業でAIが注目される理由</a></li>
+        <li><a href="#section-challenges">士業でよくある業務上の課題</a></li>
+        <li><a href="#section-efficiency">士業でAIを活用できる業務</a></li>
+        <li><a href="#section-examples">具体的なAI活用例</a></li>
+        <li><a href="#section-benefit">導入で期待できる変化</a></li>
+        <li><a href="#section-caution">導入前に確認したい注意点</a></li>
+        <li><a href="#section-support">マダナイ？に相談できること</a></li>
+        <li><a href="#section-faq">よくある質問</a></li>
+        <li><a href="#section-summary">まとめ</a></li>
+      </ol>
+    </nav>
+
+    <div class="blog-content blog-article">
+
+      <h2 id="section-conclusion">結論｜士業のAI活用は、案件・期限・定型業務の整理から始めるのがおすすめです</h2>
+      <p>先に結論からお伝えすると、士業事務所がAIを活用する際は、専門判断そのものではなく、案件管理・期限管理・定型文書作成といった事務業務から、小さく始めることをおすすめします。</p>
+      <p>専門的な判断や最終的な文書内容の確認は、引き続き専門家が行う前提です。AI・業務アプリは、その前後にある事務作業―顧客情報の管理、期限のリマインド、書類のひな形作成など―を効率化するための仕組みとして活用いただけます。</p>
+      <p>すでに士業向けの専用システムを導入している場合、その機能で十分に対応できる業務があれば、無理に置き換える必要はありません。案件数が多い、複数の業務をまとめて管理したいといった場合に、AI・業務アプリを検討する価値が生まれます。</p>
+
+      <h2 id="section-ai-reason">士業でAIが注目される理由</h2>
+      <p>士業の事務所では、専門業務に加えて、顧客対応、案件管理、期限管理、書類作成、請求書発行など、幅広い事務作業が発生します。専門知識を要する業務に集中したくても、事務作業に時間を取られてしまうことは少なくありません。</p>
+      <p>特に期限管理は、案件ごとに異なる期日を正確に把握し続ける必要があり、個人の手帳や記憶に頼っていると、繁忙期や案件数が増えたときにリスクが高まります。</p>
+      <p>顧客情報や過去のやり取りが紙やメール、担当者個人のメモに分散していると、担当者が不在のときや引き継ぎの際に、必要な情報をすぐに確認できないこともあります。</p>
+      <p>近年は、こうした事務作業に特化した業務アプリやAIツールが増え、専門判断の部分には関わらず、周辺の事務作業だけを効率化できる選択肢が広がっています。ただし、すでに士業向けの専用システムを導入している場合、その機能で十分に対応できる業務であれば、無理に新しいシステムを導入するよりも、既存のシステムを活用する方が合理的です。</p>
+
+      <h2 id="section-challenges">士業でよくある業務上の課題</h2>
+      <p>具体的な活用方法を見る前に、士業の事務所でよく聞かれる業務上の課題を整理しておきましょう。</p>
+
+      <h3>案件ごとの期限管理が個人任せになっている</h3>
+      <p>案件ごとに異なる期日を、担当者個人の手帳やカレンダーで管理していると、他のスタッフが状況を把握できず、担当者が不在のときに対応が遅れることがあります。</p>
+
+      <h3>顧客情報や過去のやり取りが分散している</h3>
+      <p>顧客情報や相談内容、過去のやり取りが紙やメール、個人のメモに散らばっていると、必要な情報を探すのに時間がかかります。</p>
+
+      <h3>請求書や定型文書の作成に時間がかかる</h3>
+      <p>契約書や案内文書など、似たような文書を毎回ゼロから作成していると、事務作業に想定以上の時間がかかります。請求書の作成や入金確認も、手作業で行っていると手間が増えます。</p>
+
+      <h3>案件の進捗状況がスタッフ間で共有しづらい</h3>
+      <p>案件の対応状況を口頭やメモで共有していると、担当者以外が状況を正確に把握するのが難しくなります。</p>
+
+      <h2 id="section-efficiency">士業でAIを活用できる業務</h2>
+      <p>前述のような課題に対して、AI・業務アプリは次のような業務で活用できます。専門的な判断や文書内容の最終確認は専門家が行う前提で、その前後にある事務作業を効率化するための仕組みとしてご活用いただけます。</p>
+
+      <h3>顧客管理</h3>
+      <p>顧客情報や相談内容、過去のやり取りが紙やメールに分散していると、必要な情報をすぐに取り出せません。顧客管理アプリでは、これらの情報を1つの画面に集約し、スタッフ間で共有しやすくすることを目指せます。</p>
+
+      <h3>案件管理</h3>
+      <p>案件ごとの進捗状況を一覧で管理できるようにすることで、担当者以外もスタッフ間で状況を把握しやすくなります。</p>
+
+      <h3>期限管理</h3>
+      <p>案件ごとの期限やタスクを記録し、通知で知らせる仕組みを取り入れることで、期限管理を個人任せにする負担を減らせる可能性があります。</p>
+
+      <h3>必要書類管理</h3>
+      <p>案件ごとに必要な書類や提出状況を一覧で管理することで、書類の提出漏れや確認の手間を減らしやすくなります。</p>
+
+      <h3>定型文書作成支援</h3>
+      <p>契約書や案内文書などのひな形をもとに、必要事項を入力するだけで文書を作成できる仕組みを取り入れることで、書類作成にかかる時間を減らせる可能性があります。ただし、作成した文書の最終的な内容確認は、専門家が行う前提です。</p>
+
+      <h3>請求書作成</h3>
+      <p>案件ごとの請求内容をもとに、請求書を効率的に作成できる仕組みを取り入れることで、毎回ゼロから作成する手間を減らせる可能性があります。</p>
+
+      <h3>入金確認</h3>
+      <p>請求と入金状況をあわせて管理することで、入金確認にかかる手間を減らしやすくなります。</p>
+
+      <h3>担当者間の情報共有</h3>
+      <p>案件の状況や顧客対応の履歴をアプリ上で一元管理することで、スタッフ間の情報共有をスムーズにすることを目指せます。</p>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th>業務</th><th>現在の管理方法</th><th>業務アプリでできること</th><th>目指せる変化</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>顧客管理</td><td>紙・メール・個人メモ</td><td>顧客情報・相談内容・対応履歴を一元管理</td><td>スタッフ間で確認しやすい</td></tr>
+            <tr><td>案件管理</td><td>Excel・口頭共有</td><td>案件ごとの進捗を一覧管理</td><td>状況を把握しやすい</td></tr>
+            <tr><td>期限管理</td><td>手帳・個人カレンダー・記憶</td><td>期限・タスクの記録、通知</td><td>期限管理漏れを防ぎやすい</td></tr>
+            <tr><td>書類作成</td><td>Word・Excel・手入力</td><td>ひな形をもとにした文書作成</td><td>作成時間を減らしやすい</td></tr>
+            <tr><td>請求書管理</td><td>Excel・手入力</td><td>請求書作成・入金状況管理</td><td>確認の手間を減らしやすい</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="section-examples">具体的なAI活用例</h2>
+      <p>掲載している画面・機能は、導入方法をご紹介するための活用例です。</p>
+
+      <h3>顧客・案件管理システム</h3>
+      <!-- 差し替え位置: 士業「顧客・案件管理システム」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <ul>
+        <li>顧客情報・相談内容の一元管理</li>
+        <li>案件ごとの進捗状況の記録</li>
+        <li>過去のやり取り・対応履歴の確認</li>
+        <li>スタッフ間での情報共有</li>
+      </ul>
+      <p>顧客対応の抜け漏れを減らし、担当者が不在でも状況を確認しやすい状態を目指します。</p>
+
+      <h3>期限管理アプリ</h3>
+      <!-- 差し替え位置: 士業「期限管理アプリ」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <ul>
+        <li>案件ごとの期限・タスクの登録</li>
+        <li>期限が近づいた際の通知</li>
+        <li>担当者ごとの対応状況の確認</li>
+        <li>スマートフォンからの確認</li>
+      </ul>
+      <p>期限管理を個人の手帳や記憶に頼る負担を減らし、対応漏れを防ぎやすい状態を目指します。</p>
+
+      <h3>定型文書・請求書作成支援</h3>
+      <!-- 差し替え位置: 士業「定型文書・請求書作成支援」の活用イメージ画像(パソコンとスマートフォンの両方が写ったもの)。リポジトリ内に該当画像が見つからないため、確定後に差し替えてください -->
+      <ul>
+        <li>契約書・案内文書のひな形作成</li>
+        <li>必要事項の入力による文書作成</li>
+        <li>請求書の作成・入金状況管理</li>
+        <li>顧客別の書類履歴管理</li>
+      </ul>
+      <p>書類作成にかかる時間を減らし、確認や管理をしやすくすることを目指します。作成した文書の最終的な内容確認は、専門家が行う前提です。</p>
+
+      <h2 id="section-benefit">AI導入で期待できる変化</h2>
+      <p>顧客管理や案件管理、期限管理などにAI・業務アプリを取り入れることで、次のような変化が期待できます。効果の度合いは事務所の規模や業務内容によって異なるため、あくまで一般的な傾向としてご参考ください。</p>
+
+      <h3>事務作業にかかる時間を減らしやすい</h3>
+      <p>顧客情報の管理や書類作成にかかっていた作業をアプリ上で完結できるようにすることで、手作業にかかっていた時間を減らしやすくなります。</p>
+
+      <h3>期限管理の抜け漏れを防ぎやすい</h3>
+      <p>案件ごとの期限を可視化し、通知で知らせる仕組みを取り入れることで、対応漏れを防ぎやすくなります。</p>
+
+      <h3>顧客対応の履歴を確認しやすい</h3>
+      <p>やり取りの記録を一元管理することで、担当者以外も状況を確認しやすくなり、引き継ぎの負担も減らせる可能性があります。</p>
+
+      <h3>必要な機能だけ導入できる</h3>
+      <p>すべての業務を一度にシステム化する必要はありません。期限管理だけ、あるいは書類作成支援だけといった形で、事務所の状況に合わせて必要な機能から段階的に導入することもできます。</p>
+
+      <h3>専門業務に使える時間を増やしやすくなる</h3>
+      <p>事務作業にかかる時間や確認の手間が減ることで、専門知識を要する業務により多くの時間を使いやすくなることを目指せます。</p>
+
+      <h2 id="section-caution">AI導入前に確認したい注意点</h2>
+      <p>AI・業務アプリの導入を検討する際は、良い面だけでなく、事前に確認しておきたい点もあります。</p>
+
+      <h3>専門判断をAIへ任せない</h3>
+      <p>AI・業務アプリはあくまで事務作業を効率化するための仕組みであり、法律的な判断や専門的なアドバイスを代替するものではありません。最終的な判断は、引き続き専門家が行う前提です。</p>
+
+      <h3>作成文書は専門家が確認する</h3>
+      <p>定型文書のひな形をもとに作成した書類であっても、内容の最終確認は専門家が行う必要があります。ひな形はあくまで作成の手間を減らすための仕組みです。</p>
+
+      <h3>個人情報・機密情報の管理を確認する</h3>
+      <p>顧客情報や案件内容には、機密性の高い情報が多く含まれます。どのように保存・管理されるのか、誰がアクセスできるのか、導入前に確認しておくことが重要です。</p>
+
+      <h3>法令や業界ルールを確認する</h3>
+      <p>士業ごとに定められた法令や業界団体のルールがあります。業務アプリの活用が、これらのルールに反しないかを確認したうえで検討することをおすすめします。</p>
+
+      <h3>既存の士業向けシステムで足りるか確認する</h3>
+      <p>すでに士業向けの専用システムを導入している場合、その機能で十分に対応できる業務であれば、無理に新しいシステムへ置き換える必要はありません。まずは今使っているシステムでできることを確認することをおすすめします。</p>
+
+      <div class="article-note">
+        <p>専門的な判断や作成文書の最終確認は、引き続き専門家が行う前提です。個人情報・機密情報の管理方法についても、導入前に確認が必要です。既存の士業向けシステムで十分に対応できる場合は、無理にオーダーメイドの開発をおすすめすることはありません。</p>
+      </div>
+
+      <h2 id="section-support">マダナイ？に相談できること</h2>
+      <p>「何から始めればいいかわからない」という場合も、まずは現在の業務内容を教えていただくところから始められます。マダナイ？では、以下のような内容をご相談いただけます。</p>
+      <ul>
+        <li>現在の顧客管理・案件管理・書類作成方法の確認</li>
+        <li>手作業が多い事務業務の洗い出し</li>
+        <li>既存の士業向けシステムで解決できるかの確認</li>
+        <li>必要な機能の優先順位整理</li>
+        <li>画面と操作方法の設計</li>
+        <li>小さな機能からの導入</li>
+        <li>公開後の改善</li>
+      </ul>
+      <p>すでにあるサービスで解決できる場合は、無理にオーダーメイドの開発をおすすめすることはありません。「まだない」を「もうある」へ。自社に合う仕組みがまだない場合にこそ、一緒に整理するところから始めます。</p>
+
+      <h2 id="section-faq">よくある質問</h2>
+
+      <div class="blog-faq-item">
+        <h3>Q. 士業の種類によって対応は変わりますか？</h3>
+        <p>業務内容によって適した管理方法が異なるため、現在の業務を伺ったうえでご提案します。士業の種類によって、優先すべき機能も変わってきます。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 作成した文書をそのまま使えますか？</h3>
+        <p>いいえ。ひな形をもとに作成した文書であっても、内容の最終確認は専門家が行う必要があります。作成の手間を減らすための仕組みとしてご活用ください。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 顧客情報を安全に管理できますか？</h3>
+        <p>顧客情報や案件内容の保存・管理方法、アクセス権限については、ご相談の際に運用方法を一緒に確認します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 既存の士業向けシステムと何が違いますか？</h3>
+        <p>既存の士業向けシステムで十分に対応できる業務があれば、無理に新しいシステムを導入する必要はありません。自社の運用に合わない部分や、複数の業務をまとめて管理したい場合に、オーダーメイドで作る価値が生まれます。まずは既存システムでできることを確認したうえでご提案します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. スマートフォンから使えますか？</h3>
+        <p>多くの機能はスマートフォンから利用できるように設計を想定しています。外出先や移動中の確認にも対応しやすくなります。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 一人の事務所でも導入できますか？</h3>
+        <p>はい。一人の事務所でも、必要な機能だけを選んで導入いただけます。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 導入期間はどれくらいですか？</h3>
+        <p>必要な機能の範囲によって異なります。具体的な期間については、業務内容を伺ったうえでご案内します。</p>
+      </div>
+
+      <div class="blog-faq-item">
+        <h3>Q. 料金はどのように決まりますか？</h3>
+        <p>必要な機能の範囲や業務の複雑さによって異なります。現在の業務内容を伺ったうえで、料金の目安をご案内します。</p>
+      </div>
+
+      <h2 id="section-summary">まとめ</h2>
+      <p>士業の事務所では、専門業務に加えて、顧客対応や案件管理、期限管理、書類作成など、多くの事務作業があります。</p>
+      <p>すべてをAI化する必要はありません。専門判断や文書の最終確認は専門家が行う前提で、案件管理や期限管理、定型文書作成といった事務作業を一つずつ整理するだけでも、負担を減らせる可能性があります。既存のシステムで十分な業務は活かしながら、自社の運用に合わない部分だけを補っていくという考え方が、無理のない進め方につながります。</p>
+      <p>大切なのは、最新のAIを導入することではなく、自社の業務に合う仕組みを作ることです。専門業務にしっかり向き合える時間を増やすために、まずは現在の業務を整理するところから始めてみてください。</p>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact reveal">
+  <div class="wrap inner">
+    <span class="eyebrow">CONTACT</span>
+    <h2>士業事務所の案件・期限管理を効率化できるか、<br>相談してみませんか？</h2>
+    <p>現在の顧客管理、案件管理、書類作成などを確認し、AIや業務アプリで効率化できる部分をご提案します。</p>
+    <p style="font-size:12.5px; color:var(--text-muted); margin-top:14px;">既存の士業向けシステムで十分な場合は、無理にオーダーメイド開発をおすすめしません。</p>
+    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line" style="margin-top:18px;">LINEでAI活用を相談する</a>
+  </div>
+</section>
+
+<section class="content-block alt reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">RELATED</span>
+      <h2>関連記事</h2>
+    </div>
+    <div class="related-grid">
+      <a href="realestate-ai.html" class="related-card">
+        <span class="related-label">RELATED</span>
+        <span class="related-title">不動産会社でAIを活用する方法</span>
+      </a>
+      <a href="construction-ai.html" class="related-card">
+        <span class="related-label">RELATED</span>
+        <span class="related-title">建設業でAIを活用する方法</span>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="../ai.html" class="text-link">業種別AI活用事例の一覧へ戻る →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo"><span class="bar"></span>マダナイ<span class="grad-text">？</span></div>
+  <div>ホームページ・LP制作 ｜ 全国対応</div>
+  <div class="footer-links">
+    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener">LINE相談</a>
+    <a href="https://www.instagram.com/madanai7171?igsh=MXYxb3RwcW1vOWRyZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+    <a href="../privacy.html">プライバシーポリシー</a>
+  </div>
+  <div style="margin-top:10px;">&copy; 2026 マダナイ？ All rights reserved.</div>
+</footer>
+
+<script>
+
+  try{
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    if(hamburger && mobileNav){
+      hamburger.addEventListener('click', ()=>{
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      mobileNav.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click', ()=>{
+          mobileNav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  }catch(err){}
+  try{
+    const dropdown = document.getElementById('servicesDropdown');
+    const toggleBtn = document.getElementById('servicesMenuBtn');
+    const menu = document.getElementById('servicesMenu');
+    if(dropdown && toggleBtn && menu){
+      let closeTimer = null;
+      const openMenu = ()=>{
+        clearTimeout(closeTimer);
+        dropdown.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+      };
+      const closeMenu = ()=>{
+        dropdown.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      };
+      dropdown.addEventListener('mouseenter', openMenu);
+      dropdown.addEventListener('mouseleave', ()=>{
+        closeTimer = setTimeout(closeMenu, 220);
+      });
+      toggleBtn.addEventListener('click', ()=>{
+        openMenu();
+      });
+      document.addEventListener('click', (e)=>{
+        if(!dropdown.contains(e.target)) closeMenu();
+      });
+      dropdown.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){ closeMenu(); toggleBtn.focus(); }
+      });
+    }
+  }catch(err){}
+  try{
+    const mobileGroup = document.querySelector('.mobile-nav-group');
+    const mobileServicesBtn = document.getElementById('mobileServicesBtn');
+    if(mobileGroup && mobileServicesBtn){
+      mobileServicesBtn.addEventListener('click', ()=>{
+        const isOpen = mobileGroup.classList.toggle('open');
+        mobileServicesBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  }catch(err){}
+  try{
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      const btn = item.querySelector('.faq-question');
+      const icon = item.querySelector('.faq-toggle-icon');
+      if(!btn) return;
+      btn.addEventListener('click', ()=>{
+        const isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(icon) icon.textContent = isOpen ? '−' : '+';
+      });
+    });
+  }catch(err){}
+  try{
+    if('IntersectionObserver' in window){
+      const els = document.querySelectorAll('.reveal');
+      els.forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(18px)'; });
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.style.opacity='1';
+            e.target.style.transform='translateY(0)';
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold:0.12});
+      els.forEach(el=>io.observe(el));
+    }
+  }catch(err){}
+</script>
+
+</body>
+</html>

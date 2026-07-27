@@ -329,6 +329,82 @@
     margin-top:8px;
   }
 
+  /* ---------- INDUSTRY SLIDER ---------- */
+  .industry-scroll-hint{
+    display:none;
+    font-size:12px;
+    font-weight:700;
+    color:var(--text-muted);
+    margin-bottom:10px;
+  }
+  .industry-slider{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:8px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    border-radius:4px;
+  }
+  .industry-slider::-webkit-scrollbar{ display:none; }
+  .industry-slider:focus-visible{ outline:2px solid var(--purple); outline-offset:4px; }
+  .industry-card{
+    scroll-snap-align:start;
+    flex:0 0 calc((100% - 40px)/3);
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.08);
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .industry-card:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(26,22,32,0.08); }
+  .industry-card:focus-visible{ outline:2px solid var(--purple); outline-offset:3px; border-color:transparent; }
+  .industry-card-image{
+    width:100%;
+    aspect-ratio:4 / 3;
+    background:linear-gradient(135deg, rgba(123,47,247,0.09), rgba(76,140,255,0.09));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .industry-card-image img{ width:100%; height:100%; object-fit:cover; }
+  .industry-card-body{ padding:22px 22px 24px; display:flex; flex-direction:column; flex:1; }
+  .industry-card h3{ font-size:16.5px; font-weight:800; color:var(--ink); margin-bottom:8px; line-height:1.4; }
+  .industry-card-desc{ font-size:12.5px; color:var(--text-muted); line-height:1.75; margin-bottom:14px; }
+  .industry-tags{ list-style:none; display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; padding:0; }
+  .industry-tags li{ font-size:10.5px; font-weight:700; color:var(--purple); background:var(--bg-soft); border:1px solid var(--line); padding:4px 10px; border-radius:999px; }
+  .industry-card-link{ margin-top:auto; font-size:12.5px; font-weight:800; color:var(--purple); display:inline-flex; align-items:center; gap:4px; }
+  .industry-card-link .btn-arrow{ display:inline-block; transition:transform .2s ease; }
+  .industry-card:hover .industry-card-link .btn-arrow{ transform:translateX(3px); }
+
+  .industry-slider-nav{ display:flex; justify-content:center; gap:12px; margin-top:24px; }
+  .industry-nav-btn{
+    width:44px; height:44px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    padding:0;
+    transition:border-color .2s ease, background .2s ease, opacity .2s ease;
+  }
+  .industry-nav-btn:hover:not(:disabled){ border-color:var(--purple); }
+  .industry-nav-btn:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
+  .industry-nav-btn:disabled{ opacity:0.32; cursor:default; }
+
+  @media (max-width:1000px){
+    .industry-card{ flex:0 0 calc((100% - 20px)/2); }
+  }
+  @media (max-width:720px){
+    .industry-scroll-hint{ display:block; }
+    .industry-card{ flex:0 0 86%; }
+    .industry-slider{ gap:14px; }
+  }
+
   /* ---------- CONTENT BLOCK ---------- */
   .content-block{ padding:64px 0; }
   .content-block.alt{ background:var(--bg-soft); }
@@ -719,6 +795,144 @@
     <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">AI活用を相談する<span class="btn-arrow">→</span></a>
       <a href="#use-cases" class="btn-secondary">何ができるか見る<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 業種別AI活用事例 -->
+<section class="content-block alt reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">BY INDUSTRY</span>
+      <h2>業種別AI活用事例</h2>
+      <p>あなたの業界に合わせて、日々の業務を効率化するAIツール・業務アプリをご提案します。</p>
+      <p style="margin-top:4px;">既存システムで足りない部分だけの追加や、現在の業務に合わせたオーダーメイドにも対応します。</p>
+    </div>
+
+    <p class="industry-scroll-hint">→ 横にスライドして事例を見る</p>
+
+    <div class="industry-slider" id="industrySlider" tabindex="0" role="region" aria-label="業種別AI活用事例のスライダー">
+      <a href="blog/restaurant-ai.html" class="industry-card">
+        <div class="industry-card-image">
+          <img src="assets/images/ai-restaurant-shift.jpg" width="1536" height="1024" loading="lazy" alt="飲食店向けシフト管理アプリの画面を表示したパソコンとスマートフォン">
+        </div>
+        <div class="industry-card-body">
+          <h3>飲食店向けAI活用</h3>
+          <p class="industry-card-desc">シフト作成、売上集計、予約、在庫管理など、店舗運営の手作業を減らします。</p>
+          <ul class="industry-tags" aria-hidden="true">
+            <li>シフト管理</li>
+            <li>売上管理</li>
+            <li>予約管理</li>
+            <li>在庫管理</li>
+          </ul>
+          <span class="industry-card-link">詳しく見る<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="blog/realestate-ai.html" class="industry-card">
+        <div class="industry-card-image">
+          <!-- 差し替え位置: 不動産会社向け顧客管理・契約進捗アプリのイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9 20v-6h6v6"/></svg>
+        </div>
+        <div class="industry-card-body">
+          <h3>不動産向けAI活用</h3>
+          <p class="industry-card-desc">レインズでは管理できない顧客対応、追客、契約進捗、営業状況を一元管理します。</p>
+          <ul class="industry-tags" aria-hidden="true">
+            <li>顧客管理</li>
+            <li>追客管理</li>
+            <li>契約進捗</li>
+            <li>営業管理</li>
+          </ul>
+          <span class="industry-card-link">詳しく見る<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="blog/professional-ai.html" class="industry-card">
+        <div class="industry-card-image">
+          <!-- 差し替え位置: 士業向け案件管理・書類作成アプリのイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
+        </div>
+        <div class="industry-card-body">
+          <h3>士業向けAI活用</h3>
+          <p class="industry-card-desc">顧客情報、案件進捗、期限、請求書、定型文書の作成を効率化します。</p>
+          <ul class="industry-tags" aria-hidden="true">
+            <li>顧客管理</li>
+            <li>案件管理</li>
+            <li>期限管理</li>
+            <li>書類作成</li>
+          </ul>
+          <span class="industry-card-link">詳しく見る<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="blog/construction-ai.html" class="industry-card">
+        <div class="industry-card-image">
+          <!-- 差し替え位置: 建設業向け工程管理・日報管理アプリのイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+        </div>
+        <div class="industry-card-body">
+          <h3>建設業向けAI活用</h3>
+          <p class="industry-card-desc">現場の日報、工程、写真、見積もり、原価情報をまとめて管理します。</p>
+          <ul class="industry-tags" aria-hidden="true">
+            <li>工程管理</li>
+            <li>日報管理</li>
+            <li>写真管理</li>
+            <li>見積作成</li>
+          </ul>
+          <span class="industry-card-link">詳しく見る<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="blog/clinic-ai.html" class="industry-card">
+        <div class="industry-card-image">
+          <!-- 差し替え位置: クリニック・整体院向け予約管理アプリのイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/><path d="M8 14h3M8 17h6"/></svg>
+        </div>
+        <div class="industry-card-body">
+          <h3>クリニック・整体院向けAI活用</h3>
+          <p class="industry-card-desc">予約、受付、顧客情報、リマインドなど、診療・施術以外の業務負担を減らします。</p>
+          <ul class="industry-tags" aria-hidden="true">
+            <li>予約管理</li>
+            <li>受付管理</li>
+            <li>顧客管理</li>
+            <li>LINE通知</li>
+          </ul>
+          <span class="industry-card-link">詳しく見る<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="blog/retail-ai.html" class="industry-card">
+        <div class="industry-card-image">
+          <!-- 差し替え位置: 小売・卸売向け在庫管理・受発注管理アプリのイメージ画像（パソコンとスマートフォンの両方が写ったもの） -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l1-4h16l1 4"/><path d="M4 7h16v13H4z"/><path d="M9 11a3 3 0 0 0 6 0"/></svg>
+        </div>
+        <div class="industry-card-body">
+          <h3>小売・卸売向けAI活用</h3>
+          <p class="industry-card-desc">在庫、受発注、請求、売上を一つの画面で把握し、確認作業を減らします。</p>
+          <ul class="industry-tags" aria-hidden="true">
+            <li>在庫管理</li>
+            <li>受発注管理</li>
+            <li>請求書作成</li>
+            <li>売上管理</li>
+          </ul>
+          <span class="industry-card-link">詳しく見る<span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+
+    <div class="industry-slider-nav">
+      <button type="button" class="industry-nav-btn" id="industryPrevBtn" aria-label="前の業種事例を表示" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="industry-nav-btn" id="industryNextBtn" aria-label="次の業種事例を表示">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+
+    <div style="text-align:center; margin-top:48px;">
+      <h3 style="font-family:'M PLUS Rounded 1c', sans-serif; font-size:19px; font-weight:900; color:var(--ink); margin-bottom:10px;">掲載のない業種にも対応できます</h3>
+      <p style="font-size:13.5px; color:var(--text-muted); max-width:520px; margin:0 auto 24px; line-height:1.9;">現在の業務やお困りごとを確認し、必要な機能だけをご提案します。既存サービスでは合わない業務や、Excel・紙で管理している作業もご相談ください。</p>
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">自社のAI活用について相談する<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1158,6 +1372,38 @@
         if(icon) icon.textContent = isOpen ? '−' : '+';
       });
     });
+  }catch(err){}
+  try{
+    const industrySlider = document.getElementById('industrySlider');
+    const industryPrevBtn = document.getElementById('industryPrevBtn');
+    const industryNextBtn = document.getElementById('industryNextBtn');
+    if(industrySlider && industryPrevBtn && industryNextBtn){
+      const cardGap = 20;
+      const updateIndustryButtons = () => {
+        const maxScroll = industrySlider.scrollWidth - industrySlider.clientWidth;
+        industryPrevBtn.disabled = industrySlider.scrollLeft <= 4;
+        industryNextBtn.disabled = industrySlider.scrollLeft >= maxScroll - 4;
+      };
+      const scrollIndustryByCard = (dir) => {
+        const card = industrySlider.querySelector('.industry-card');
+        if(!card) return;
+        const amount = (card.getBoundingClientRect().width + cardGap) * dir;
+        industrySlider.scrollBy({ left: amount, behavior: 'smooth' });
+      };
+      industryPrevBtn.addEventListener('click', () => scrollIndustryByCard(-1));
+      industryNextBtn.addEventListener('click', () => scrollIndustryByCard(1));
+      let scrollTicking = false;
+      industrySlider.addEventListener('scroll', () => {
+        if(scrollTicking) return;
+        scrollTicking = true;
+        window.requestAnimationFrame(() => {
+          updateIndustryButtons();
+          scrollTicking = false;
+        });
+      }, { passive: true });
+      window.addEventListener('resize', updateIndustryButtons);
+      updateIndustryButtons();
+    }
   }catch(err){}
   try{
     if('IntersectionObserver' in window){
