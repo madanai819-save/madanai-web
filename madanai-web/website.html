@@ -393,6 +393,60 @@
     margin:0 auto 20px;
   }
 
+  /* ---------- WORKS ---------- */
+  .work-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+  }
+  .work-card{
+    border:1px solid rgba(26,22,32,0.07);
+    background:#fff;
+    border-radius:18px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    transition:transform .25s ease;
+  }
+  .work-card:hover{ transform:translateY(-5px); }
+  .work-image{
+    width:100%;
+    aspect-ratio:3/2;
+    overflow:hidden;
+    background:#fff;
+  }
+  .work-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .work-body{ padding:28px 26px; }
+  .work-tag{ font-size:12px; font-weight:800; color:var(--pink); margin-bottom:10px; }
+  .work-body h3{ font-size:19px; color:var(--ink); margin-bottom:16px; font-weight:800; }
+  .work-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:20px;
+  }
+  .work-list li{
+    font-size:13px;
+    color:var(--text-muted);
+    padding-left:18px;
+    position:relative;
+  }
+  .work-list li::before{
+    content:"";
+    position:absolute;
+    left:0; top:7px;
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--purple);
+  }
+  .work-link{ font-size:13px; font-weight:800; color:var(--purple); display:inline-flex; align-items:center; gap:4px; }
+
   /* ---------- CHECK LIST (shared) ---------- */
   .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:10px; }
   .plan-check li{ position:relative; padding-left:26px; font-size:12.5px; color:var(--text-muted); line-height:1.7; }
@@ -590,6 +644,7 @@
   }
   @media (max-width:1000px){
     .value-grid{ grid-template-columns:repeat(2,1fr); }
+    .work-grid{ gap:20px; }
     .process-flow{ flex-wrap:wrap; row-gap:32px; }
     .process-step{ flex:0 0 50%; }
     .process-step:not(:last-child)::after{ content:none; }
@@ -603,6 +658,7 @@
     .btn-primary, .btn-line, .btn-secondary{ display:inline-flex; }
     .pain-grid{ grid-template-columns:1fr; }
     .value-grid{ grid-template-columns:1fr; }
+    .work-grid{ grid-template-columns:1fr; }
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
@@ -687,6 +743,49 @@
   </div>
 </section>
 
+<!-- 制作実績 -->
+<section id="works" class="content-block reveal" style="scroll-margin-top:90px;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">WORKS</span>
+      <h2>成果につながるホームページ制作実績</h2>
+      <p>デザインだけでは終わりません。<br>AI・SEO・MEO・導線設計まで考えたホームページをご紹介します。</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-image"><img src="assets/images/izakaya_shinnwa.jpg" alt="真和 ホームページ PC・スマホ表示イメージ" loading="lazy" width="1536" height="1024"></div>
+        <div class="work-body">
+          <div class="work-tag">居酒屋／大阪・東心斎橋</div>
+          <h3>真和</h3>
+          <div style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
+          <ul class="work-list">
+            <li>ホームページ制作</li>
+            <li>スマホ対応</li>
+            <li>SEO基本設定</li>
+          </ul>
+          <!-- 詳しく見るリンク先：制作事例の詳細ページ公開後にhrefを設定 -->
+          <span class="work-link" style="opacity:.55; cursor:default;">詳しく見る ↗</span>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-image"><img src="assets/images/ella_hp.jpg" alt="ELLA ホームページ PC・スマホ表示イメージ" loading="lazy" width="1536" height="1024"></div>
+        <div class="work-body">
+          <div class="work-tag">アパレル</div>
+          <h3>ELLA</h3>
+          <div style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
+          <ul class="work-list">
+            <li>ECサイト制作</li>
+            <li>スマホ対応</li>
+            <li>レスポンシブ対応</li>
+          </ul>
+          <!-- 詳しく見るリンク先：制作事例の詳細ページ公開後にhrefを設定 -->
+          <span class="work-link" style="opacity:.55; cursor:default;">詳しく見る ↗</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- こんなお悩みありませんか -->
 <section class="content-block reveal">
   <div class="wrap">
@@ -752,8 +851,8 @@
       <li>Googleサーチコンソール・ビジネスプロフィールの設定代行に対応</li>
       <li>公開後も保守プランで、修正対応・改善提案まで継続</li>
     </ul>
+    <p>実際の制作実績は<a href="#works" class="text-link">このページ上部</a>、お客様の声は<a href="index.html#testimonials" class="text-link">お客様の声ページ</a>でご覧いただけます。</p>
     <!-- 差し替え位置: 制作事例（詳細な導入事例が増え次第、個別ページ化を検討） -->
-    <p>実際の制作事例は<a href="index.html#works" class="text-link">制作実績ページ</a>、お客様の声は<a href="index.html#testimonials" class="text-link">お客様の声ページ</a>でご覧いただけます。</p>
     <!-- 差し替え位置: 改善前後（Before/After）の実績データ -->
     <!-- 差し替え位置: Search Consoleの結果（検索順位・流入数の推移） -->
     <!-- 差し替え位置: Googleビジネスプロフィールの結果（閲覧数・アクセス数の推移） -->
@@ -807,18 +906,15 @@
       <li>Googleサーチコンソール・ビジネスプロフィール設定代行（オプション）</li>
       <li>公開後の保守・更新プラン</li>
     </ul>
-    <div style="text-align:center; margin-top:32px;">
-      <a href="pricing.html" class="btn-primary">料金・プラン詳細を見る<span class="btn-arrow">→</span></a>
-    </div>
   </div>
 </section>
 
-<!-- 導入の流れ -->
+<!-- 制作の流れ -->
 <section class="reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FLOW</span>
-      <h2>導入の流れ</h2>
+      <h2>制作の流れ</h2>
     </div>
     <div class="process-flow">
       <div class="process-step">
@@ -851,6 +947,20 @@
         <h3>公開後の運用</h3>
         <p>保守プランで、公開後も一緒に育てていきます。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 料金 -->
+<section class="content-block alt reveal" style="scroll-margin-top:90px;">
+  <div class="wrap content-block-inner" style="text-align:center;">
+    <div class="section-head">
+      <span class="eyebrow">PRICE</span>
+      <h2>料金</h2>
+    </div>
+    <p>ホームページ制作は5万円から。全部込みパッケージや各種オプション、公開後の保守プランまで、事業や予算に合わせてお選びいただけます。</p>
+    <div style="margin-top:28px;">
+      <a href="pricing.html" class="btn-primary">料金・プラン詳細を見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
