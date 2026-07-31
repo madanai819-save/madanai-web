@@ -478,6 +478,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin:0 auto 20px;
   }
 
+  /* ---------- ARRANGE SLIDER (AI活用で得られる未来) ---------- */
+  .arrange-scroll-hint{
+    display:none;
+    font-size:12px;
+    font-weight:700;
+    color:var(--text-muted);
+    margin-bottom:10px;
+  }
+  .arrange-slider{
+    display:flex;
+    gap:24px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:8px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    border-radius:4px;
+  }
+  .arrange-slider::-webkit-scrollbar{ display:none; }
+  .arrange-slider:focus-visible{ outline:2px solid var(--purple); outline-offset:4px; }
+  .arrange-slider .value-card{
+    scroll-snap-align:start;
+    flex:0 0 calc((100% - 48px)/3);
+  }
+  .arrange-slider-nav{ display:flex; justify-content:center; gap:12px; margin-top:24px; }
+  .arrange-nav-btn{
+    width:44px; height:44px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    padding:0;
+    transition:border-color .2s ease, background .2s ease, opacity .2s ease;
+  }
+  .arrange-nav-btn:hover:not(:disabled){ border-color:var(--purple); }
+  .arrange-nav-btn:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
+  .arrange-nav-btn:disabled{ opacity:0.32; cursor:default; }
+  @media (max-width:1000px){
+    .arrange-slider .value-card{ flex:0 0 calc((100% - 24px)/2); }
+  }
+  @media (max-width:720px){
+    .arrange-scroll-hint{ display:block; }
+    .arrange-slider .value-card{ flex:0 0 86%; }
+    .arrange-slider{ gap:14px; }
+  }
+
   /* ---------- CHECK LIST (shared) ---------- */
   .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:10px; }
   .plan-check li{ position:relative; padding-left:26px; font-size:12.5px; color:var(--text-muted); line-height:1.7; }
@@ -725,6 +772,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-step{ flex:0 0 100%; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
   }
+
+  /* ---------- MOBILE: LEFT-ALIGN BODY TEXT (readability) ---------- */
+  @media (max-width:767px){
+    .page-hero{ text-align:left; }
+    .page-hero p{ margin-left:0 !important; margin-right:0 !important; }
+    .section-head{ text-align:left; }
+    .section-head p{ margin-left:0 !important; margin-right:0 !important; }
+    .content-block-inner{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
+    p[style*="text-align:center"]{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
+  }
 </style>
 </head>
 <body>
@@ -802,9 +859,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
     <a href="index.html" class="back-link">← トップページへ戻る</a>
     <span class="eyebrow">AI</span>
-    <h1>AIで業務を軽くし、<br>売上につながる仕事へ集中する。</h1>
-    <p>文章作成、情報整理、顧客管理、シフト管理など、<br>日々の手作業をAIや業務アプリで効率化。<br>生まれた時間を、接客・営業・サービス改善など、本来取り組みたい仕事へ使える仕組みを整えます。</p>
-    <p>専門知識がなくても大丈夫です。<br>現在の業務や課題を伺い、使いやすい方法から一緒に考えます。</p>
+    <h1>AIで業務を軽くし、<br>売上につながる仕事へ<br>集中する。</h1>
+    <p>文章作成、情報整理、顧客管理、シフト管理など、日々の手作業をAIや業務アプリで効率化。</p>
+    <p>生まれた時間を、接客・営業・サービス改善など、本来取り組みたい仕事へ使える仕組みを整えます。<br>専門知識がなくても大丈夫です。</p>
+    <p>現在の業務や課題を伺い、使いやすい方法から一緒に考えます。</p>
     <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">AI活用を相談する<span class="btn-arrow">→</span></a>
       <a href="#use-cases" class="btn-secondary">何ができるか見る<span class="btn-arrow">→</span></a>
@@ -1066,7 +1124,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">BENEFIT</span>
       <h2>AI活用で得られる未来</h2>
     </div>
-    <div class="value-grid">
+    <p class="arrange-scroll-hint">→ 横にスライドして見る</p>
+    <div class="arrange-slider" id="arrangeSlider" tabindex="0" role="region" aria-label="AI活用で得られる未来のスライダー">
       <div class="value-card">
         <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
         <h3>時間を生み出す</h3>
@@ -1105,6 +1164,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>データや反応の振り返り補助</li>
         </ul>
       </div>
+    </div>
+    <div class="arrange-slider-nav">
+      <button type="button" class="arrange-nav-btn" id="arrangePrevBtn" aria-label="前のカードを表示" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="arrange-nav-btn" id="arrangeNextBtn" aria-label="次のカードを表示">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
     </div>
   </div>
 </section>
@@ -1482,6 +1549,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }, { passive: true });
       window.addEventListener('resize', updateIndustryButtons);
       updateIndustryButtons();
+    }
+  }catch(err){}
+  try{
+    const arrangeSlider = document.getElementById('arrangeSlider');
+    const arrangePrevBtn = document.getElementById('arrangePrevBtn');
+    const arrangeNextBtn = document.getElementById('arrangeNextBtn');
+    if(arrangeSlider && arrangePrevBtn && arrangeNextBtn){
+      const cardGap = 24;
+      const updateArrangeButtons = () => {
+        const maxScroll = arrangeSlider.scrollWidth - arrangeSlider.clientWidth;
+        arrangePrevBtn.disabled = arrangeSlider.scrollLeft <= 4;
+        arrangeNextBtn.disabled = arrangeSlider.scrollLeft >= maxScroll - 4;
+      };
+      const scrollArrangeByCard = (dir) => {
+        const card = arrangeSlider.querySelector('.value-card');
+        if(!card) return;
+        const amount = (card.getBoundingClientRect().width + cardGap) * dir;
+        arrangeSlider.scrollBy({ left: amount, behavior: 'smooth' });
+      };
+      arrangePrevBtn.addEventListener('click', () => scrollArrangeByCard(-1));
+      arrangeNextBtn.addEventListener('click', () => scrollArrangeByCard(1));
+      let arrangeScrollTicking = false;
+      arrangeSlider.addEventListener('scroll', () => {
+        if(arrangeScrollTicking) return;
+        arrangeScrollTicking = true;
+        window.requestAnimationFrame(() => {
+          updateArrangeButtons();
+          arrangeScrollTicking = false;
+        });
+      }, { passive: true });
+      window.addEventListener('resize', updateArrangeButtons);
+      updateArrangeButtons();
     }
   }catch(err){}
   try{

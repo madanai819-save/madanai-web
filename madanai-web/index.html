@@ -1069,6 +1069,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width:900px) and (min-width:721px){
     .hero-grid{ grid-template-columns:45% 55%; gap:32px; }
   }
+  /* ---------- HERO IMAGE: stack image above copy on mobile/tablet, 721-767px ---------- */
+  @media (max-width:767px) and (min-width:721px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-copy{ text-align:center; order:2; }
+    .hero-badges{ justify-content:center; }
+    .hero-badge{ justify-content:center; }
+    .hero-right{ order:1; }
+    .hero-visual{ justify-content:center; margin-bottom:24px; }
+  }
   @media (max-width:1000px){
     .value-grid{ grid-template-columns:repeat(2,1fr); }
     .pillar-grid{ grid-template-columns:repeat(2,1fr); }
@@ -1091,10 +1100,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-actions{ flex-direction:column; align-items:center; }
     .hero-note{ font-size:13px; }
     .hero-grid{ grid-template-columns:1fr; }
-    .hero-copy{ text-align:center; }
+    .hero-copy{ text-align:center; order:2; }
     .hero-badges{ justify-content:center; }
     .hero-badge{ justify-content:center; }
-    .hero-visual{ margin-top:24px; }
+    .hero-visual{ justify-content:center; margin-bottom:24px; }
+    .hero-right{ order:1; }
     .contact p{ font-size:15px; }
     .pain-grid{ grid-template-columns:1fr; }
     .value-grid{ grid-template-columns:1fr; }
@@ -1149,6 +1159,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width:600px){
     .home-blog-grid{ grid-template-columns:1fr; }
     .home-blog-image{ display:none; }
+  }
+
+  /* ---------- MOBILE: LEFT-ALIGN BODY TEXT (readability) ---------- */
+  @media (max-width:767px){
+    .hero-copy{ text-align:left; }
+    .hero-badges{ flex-direction:column; align-items:flex-start; }
+    .hero-badge{ justify-content:flex-start; }
+    .section-head{ text-align:left; }
+    .section-head p{ margin-left:0 !important; margin-right:0 !important; }
+    .about-hero-text{ text-align:left; }
+    p[style*="text-align:center"]{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
   }
 </style>
 </head>
@@ -1252,12 +1273,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-<section class="reveal" style="padding:48px 0 12px;">
-  <div class="wrap" style="text-align:center; max-width:640px;">
-    <p style="font-size:15px; font-weight:700; color:var(--text-muted); line-height:2;">「ホームページが、まだない。」「集客の仕組みが、まだない。」「AIを、まだ活かせていない。」</p>
-    <p style="font-size:15px; font-weight:700; color:var(--ink); margin-top:6px;">その”まだない”を、最短1日から”もうある”へ。</p>
-  </div>
-</section>
 <section id="works" class="works reveal" style="padding-top:48px; padding-bottom:64px;">
   <div class="wrap">
     <div class="carousel-heading">
@@ -1330,7 +1345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">START HERE</span>
-      <h2>あなたの「まだない」は、どれですか？</h2>
+      <h2>あなたの「まだない」は<br>どれですか？</h2>
       <p class="section-sub">今の状況に近いものを選んでください。必要なことが分からない状態でも大丈夫です。</p>
     </div>
     <div class="concern-grid">
@@ -1373,10 +1388,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img class="about-hero-logo" src="assets/images/madanai_rogo.jpg" alt="" aria-hidden="true" loading="lazy" width="1774" height="887">
       <div class="about-hero-text">
         <p>マダナイ？は、ホームページを作る会社ではありません。<br>ホームページを入り口に、集客や売上、事業の成長そのものを支援するパートナーです。</p>
-        <p>「集客がうまくいかない。」<br>「何から手をつければいいか分からない。」<br>そんな悩みに、制作の前段階から向き合い、<br>SEOやMEOでの見つかりやすさ、AIを活用した業務の効率化、公開後の運用改善まで、<br>事業の成長に必要なことを、一貫してサポートします。</p>
-        <p>公開して終わりにはしません。<br>数字や反応を見ながら改善を重ね、事業の成長に合わせて長く伴走すること。<br>それが、私たちのスタイルです。</p>
-        <p>AIの時代だからこそ、<br>人にしかできない提案力と、AIならではのスピードを掛け合わせる。<br>それが、マダナイ？の強みです。</p>
-        <p>中小企業や個人事業主の「これから」を、本気で応援しています。</p>
+        <p>「集客がうまくいかない。」<br>「何から手をつければいいか分からない。」</p>
+        <p>そんな悩みに制作の前段階から向き合い、SEOやMEOでの見つかりやすさ、AIを活用した業務の効率化、公開後の運用改善まで、事業の成長に必要なことを一貫してサポートします。</p>
+        <p>公開して終わりにはしません。</p>
+        <p>数字や反応を見ながら改善を重ね、事業の成長に合わせて長く伴走すること。<br>それが、私たちのスタイルです。</p>
+        <p>AIの時代だからこそ、人にしかできない提案力と、AIならではのスピードを掛け合わせる。</p>
         <p class="about-message grad-text">「まだない」を、「もうある」へ。<br>その未来を、マダナイ？が一緒につくります。</p>
       </div>
     </div>
