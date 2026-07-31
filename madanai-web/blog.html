@@ -715,6 +715,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width:1000px){ .blog-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:600px){ .blog-grid{ grid-template-columns:1fr; } }
 
+  /* ---------- MOBILE: TITLE LIST (news-site style) ---------- */
+  @media (max-width:767px){
+    .blog-grid{ display:block; gap:0; }
+    .blog-post-card{
+      flex-direction:column;
+      background:none; border:none; border-radius:0; box-shadow:none; overflow:visible; height:auto;
+      border-bottom:1px solid var(--line);
+      padding:20px 0;
+    }
+    .blog-post-card:hover{ transform:none; box-shadow:none; }
+    .blog-post-card:last-child{ border-bottom:none; }
+    .blog-post-image{ display:none; }
+    .blog-post-body{ padding:0; }
+    .blog-post-category{ order:1; margin-bottom:6px; }
+    .blog-post-date{ order:2; margin-bottom:10px; }
+    .blog-post-body h3{ order:3; margin-bottom:0; }
+    .blog-post-desc{ display:none; }
+    .blog-post-link{ order:4; margin-top:10px; font-size:0; display:flex; justify-content:flex-end; }
+    .blog-post-link .btn-arrow{ font-size:16px; }
+  }
+
   /* ---------- CATEGORY GROUP HEADING (within すべての記事) ---------- */
   .blog-category-heading{
     font-size:15px;
@@ -1348,7 +1369,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             io.unobserve(e.target);
           }
         });
-      }, {threshold:0.12});
+      }, {threshold:0});
       els.forEach(el=>io.observe(el));
     }
   }catch(err){}
