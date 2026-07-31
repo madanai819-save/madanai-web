@@ -1,0 +1,131 @@
+# Redirect non-canonical URL variants (no extension, trailing slash) to the
+# canonical `.html` URLs used in canonical tags, sitemap.xml, and internal
+# links.
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/website"
+  to = "/website.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/website/"
+  to = "/website.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lp"
+  to = "/lp.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lp/"
+  to = "/lp.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pricing/"
+  to = "/pricing.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/seo"
+  to = "/seo.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/seo/"
+  to = "/seo.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/meo"
+  to = "/meo.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/meo/"
+  to = "/meo.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ai"
+  to = "/ai.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ai/"
+  to = "/ai.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/maintenance"
+  to = "/maintenance.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/maintenance/"
+  to = "/maintenance.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy/"
+  to = "/privacy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/"
+  to = "/blog.html"
+  status = 301
+  force = true
+
+# Individual blog articles: /blog/<slug> and /blog/<slug>/ -> /blog/<slug>.html
+# Wildcard rules only apply when no exact static file matches the request
+# (force is intentionally omitted/false here), so requests for real files like
+# /blog/restaurant-ai.html continue to be served directly without redirecting.
+[[redirects]]
+  from = "/blog/*/"
+  to = "/blog/:splat.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/:splat.html"
+  status = 301
