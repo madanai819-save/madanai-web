@@ -48,7 +48,7 @@
   </url>
   <url>
     <loc>https://madanai-web.jp/blog.html</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -156,7 +156,43 @@
   </url>
   <url>
     <loc>https://madanai-web.jp/blog/meo-basics.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://madanai-web.jp/blog/meo-monthly-operations.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://madanai-web.jp/blog/meo-suitable-industries.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://madanai-web.jp/blog/gbp-initial-setup-checklist.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://madanai-web.jp/blog/gbp-agency-cost.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://madanai-web.jp/blog/meo-ranking-causes.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://madanai-web.jp/blog/gbp-faq-30.html</loc>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
