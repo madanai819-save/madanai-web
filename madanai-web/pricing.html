@@ -275,7 +275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* ---------- PAGE HEADING ---------- */
   .page-hero{
     padding:96px 24px 32px;
-    text-align:center;
+    text-align:left;
   }
   .page-hero .back-link{
     display:inline-flex;
@@ -313,8 +313,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin-top:10px;
   }
   .page-hero p{
-    max-width:560px;
-    margin:16px auto 0;
+    max-width:740px;
+    margin:16px 0 0;
     font-size:14px;
     color:var(--text-muted);
     line-height:1.8;
@@ -357,7 +357,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .text-link:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
 
   /* ---------- SECTION HEADS ---------- */
-  .section-head{ text-align:center; margin:0 auto 48px; max-width:640px; }
+  .section-head{ text-align:left; margin-bottom:48px; }
   .section-head .eyebrow{ display:block; margin-bottom:10px; }
   .section-head h2{
     font-size:clamp(24px, 5vw, 32px);
@@ -369,6 +369,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size:13px;
     color:var(--text-muted);
     margin-top:8px;
+    max-width:740px;
   }
 
   /* ---------- RECOMMEND BOX ---------- */
@@ -790,6 +791,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     color:var(--text);
     line-height:1.5;
   }
+  .simulator-option-suitable{
+    display:block;
+    font-size:12.5px;
+    font-weight:400;
+    color:var(--text-muted);
+    line-height:1.5;
+    margin-top:4px;
+    margin-bottom:4px;
+    text-align:left;
+  }
   .simulator-option-price{
     display:block;
     font-size:12px;
@@ -889,6 +900,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display:block;
     margin-bottom:6px;
   }
+
+  /* ---------- CHECK LIST（ブログ記事のチェックリストデザインを流用） ---------- */
+  .check-list{ list-style:none; padding:0; margin:0 0 28px; display:flex; flex-direction:column; gap:12px; }
+  .check-list li{ position:relative; padding:14px 16px 14px 44px; background:var(--bg-soft); border:1px solid var(--line); border-radius:12px; font-size:14.5px; line-height:1.8; color:var(--text); }
+  .check-list li::before{ content:"□"; position:absolute; left:14px; top:13px; font-size:18px; color:var(--purple); font-weight:900; }
 
   /* ---------- FAQ ---------- */
   .faq-item{
@@ -1544,74 +1560,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="section-head">
       <span class="eyebrow">AI</span>
       <h2>AIで、時間のかかる仕事を減らす</h2>
-      <p>AIツールを導入すること自体ではなく、文章作成、問い合わせ対応、SNS投稿、資料作成など、実際の業務を効率化することを目的にします。</p>
+      <p>AIツールを導入すること自体ではなく、文章作成、問い合わせ対応、SNS投稿、資料作成など、実際の業務を効率化することを目的にします。導入の考え方や進め方は<a href="ai.html" class="text-link">AI導入・活用支援ページ</a>で詳しくご紹介しています。</p>
     </div>
     <div class="plan-cards plan-cards-3">
       <div class="plan-card">
         <div class="plan-name">相談</div>
         <h3 class="plan-title">AI活用相談</h3>
-        <p class="plan-desc">対象：自社で何にAIを使えるか知りたい方</p>
-        <div class="plan-price" style="margin-bottom:4px;">11,000<span>円（税込）／60分</span></div>
-        <ul class="plan-check">
-          <li>現状業務のヒアリング</li>
-          <li>AI活用候補の整理・ツール提案</li>
-          <li>導入優先順位の提案</li>
+        <p class="plan-desc">自社にAIが必要かどうか、どの業務から始めるべきかをご相談いただけます。</p>
+        <div class="plan-section-label" style="color:var(--purple);">対象</div>
+        <ul class="plan-target">
+          <li>何から始めればいいか相談したい方向け</li>
         </ul>
+        <div class="plan-price" style="margin-bottom:4px;">33,000<span>円（税込）／90分</span></div>
       </div>
       <div class="plan-card featured">
         <span class="plan-flag">おすすめ</span>
-        <div class="plan-name">導入スタート</div>
-        <h3 class="plan-title"><span class="plan-title-nowrap">AI導入<wbr>スタート</span></h3>
-        <p class="plan-desc">対象：特定の業務にAIを導入し、使える状態まで整えたい方</p>
-        <div class="plan-price" style="margin-bottom:4px;">49,800<span>円（税込）〜</span></div>
-        <ul class="plan-check">
-          <li>対象業務の整理・ツール選定</li>
-          <li>プロンプト設計・テンプレート作成</li>
-          <li>操作説明・簡易マニュアル</li>
+        <div class="plan-name">導入支援</div>
+        <h3 class="plan-title">AI導入支援</h3>
+        <p class="plan-desc">業務整理・AIツール選定・プロンプト作成・初期設定・社内研修・運用開始までまとめて支援します。</p>
+        <div class="plan-section-label" style="color:var(--purple);">対象</div>
+        <ul class="plan-target">
+          <li>AIを業務へ導入したい方向け</li>
         </ul>
+        <div class="plan-price" style="margin-bottom:4px;">330,000<span>円（税込）〜</span></div>
       </div>
       <div class="plan-card">
-        <div class="plan-name">継続サポート</div>
-        <h3 class="plan-title"><span class="plan-title-nowrap">AI継続<wbr>サポート</span></h3>
-        <p class="plan-desc">対象：社内でAI活用を定着させ、継続改善したい方</p>
-        <div class="plan-price" style="margin-bottom:4px;">29,800<span>円（税込）／月〜</span></div>
-        <ul class="plan-check">
-          <li>月1回の相談・プロンプト改善</li>
-          <li>新しい活用方法の提案</li>
-          <li>チャットでの簡易質問対応</li>
+        <div class="plan-name">顧問</div>
+        <h3 class="plan-title">AI顧問</h3>
+        <p class="plan-desc">毎月の相談・改善提案・プロンプト改善・社内定着支援・最新AI情報の共有まで伴走します。</p>
+        <div class="plan-section-label" style="color:var(--purple);">対象</div>
+        <ul class="plan-target">
+          <li>導入後も継続して改善したい方向け</li>
         </ul>
+        <div class="plan-price" style="margin-bottom:4px;">110,000<span>円（税込）／月〜</span></div>
       </div>
     </div>
 
+    <div class="section-head" style="margin:40px 0 20px;">
+      <span class="eyebrow">COMPARE</span>
+      <h3 style="font-size:22px; font-family:'M PLUS Rounded 1c', sans-serif; font-weight:900; color:var(--ink);">AI導入支援とAI顧問の違い</h3>
+    </div>
     <div class="compare-wrap">
       <p class="compare-hint">→ 横にスライドして比較できます</p>
-      <div class="compare-scroll" tabindex="0" aria-label="AI導入・活用支援プラン比較表。横にスクロールできます">
+      <div class="compare-scroll" tabindex="0" aria-label="AI導入支援とAI顧問の違い比較表。横にスクロールできます">
         <table class="compare-table">
-          <caption class="visually-hidden">AI導入・活用支援プラン比較表：AI活用相談、AI導入スタート、AI継続サポートの違い</caption>
+          <caption class="visually-hidden">AI導入支援とAI顧問の違い</caption>
           <thead>
             <tr>
-              <th scope="col" class="compare-plan-name">比較項目</th>
-              <th scope="col" class="compare-plan-name">AI活用相談</th>
-              <th scope="col" class="compare-featured compare-plan-name">AI導入スタート<span class="compare-badge">おすすめ</span></th>
-              <th scope="col" class="compare-plan-name">AI継続サポート</th>
+              <th scope="col" class="compare-plan-name">項目</th>
+              <th scope="col" class="compare-featured compare-plan-name">AI導入支援<span class="compare-badge">おすすめ</span></th>
+              <th scope="col" class="compare-plan-name">AI顧問</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="compare-row-price"><th scope="row">料金（税込）</th><td>11,000円／60分</td><td class="compare-featured">49,800円〜</td><td>29,800円〜／月</td></tr>
-            <tr><th scope="row">契約形式</th><td>単発</td><td class="compare-featured">単発</td><td>月額（最低3か月）</td></tr>
-            <tr><th scope="row">業務ヒアリング</th><td><span class="compare-yes">○</span></td><td class="compare-featured"><span class="compare-yes">○</span></td><td>月1回の相談</td></tr>
-            <tr><th scope="row">活用候補整理</th><td><span class="compare-yes">○</span></td><td class="compare-featured"><span class="compare-yes">○</span></td><td>新しい活用方法の提案</td></tr>
-            <tr><th scope="row">ツール選定</th><td>提案まで</td><td class="compare-featured"><span class="compare-yes">○</span></td><td><span class="compare-no">−</span></td></tr>
-            <tr><th scope="row">プロンプト作成</th><td><span class="compare-no">−</span></td><td class="compare-featured">設計</td><td>改善・追加</td></tr>
-            <tr><th scope="row">テンプレート作成</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td><td>追加</td></tr>
-            <tr><th scope="row">操作説明・マニュアル</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td><td>更新</td></tr>
-            <tr><th scope="row">継続改善</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-no">−</span></td><td><span class="compare-yes">○</span></td></tr>
-            <tr><th scope="row">おすすめの方</th><td>何に使えるか知りたい方</td><td class="compare-featured">実際に導入したい方</td><td>定着・改善を続けたい方</td></tr>
+            <tr><th scope="row">目的</th><td class="compare-featured">AIを使える状態を作る</td><td>AI活用を継続改善する</td></tr>
+            <tr><th scope="row">契約</th><td class="compare-featured">単発</td><td>月額契約</td></tr>
+            <tr><th scope="row">期間</th><td class="compare-featured">約1〜3ヶ月</td><td>継続</td></tr>
+            <tr><th scope="row">内容</th><td class="compare-featured">業務整理・設定・研修</td><td>相談・改善・新しい活用提案</td></tr>
+            <tr><th scope="row">成果物</th><td class="compare-featured">プロンプト・マニュアル</td><td>毎月の改善提案</td></tr>
+            <tr><th scope="row">おすすめ</th><td class="compare-featured">初めてAIを導入する会社</td><td>AIをもっと活用したい会社</td></tr>
           </tbody>
         </table>
       </div>
     </div>
-    <p style="font-size:11px; color:var(--text-muted); margin-top:14px;">AI導入スタートは対象業務1種類が基本です。API開発、システム連携、独自アプリ開発は別途お見積りです。AI継続サポートは最低契約期間3か月です。大規模システム開発、社内全体研修、機密データを扱う高度な環境構築は別途お見積りです。</p>
+
+    <div class="section-head" style="margin:40px 0 20px;">
+      <span class="eyebrow">CHECK</span>
+      <h3 style="font-size:22px; font-family:'M PLUS Rounded 1c', sans-serif; font-weight:900; color:var(--ink);">こんな企業におすすめ</h3>
+    </div>
+    <ul class="check-list">
+      <li>AIを導入したいが何から始めればいいかわからない</li>
+      <li>ChatGPTやClaudeを業務で活用したい</li>
+      <li>社員にもAIを使えるようになってほしい</li>
+      <li>業務を効率化したい</li>
+      <li>AI導入後も継続して改善したい</li>
+    </ul>
+
+    <div class="maintenance-note" style="margin-top:4px;">
+      <strong>AIシステム開発（AI導入支援とは別サービス）</strong>
+      独自システム・社内AI・チャットボット・業務アプリなど、要件に応じてお見積りいたします。
+      <div style="font-size:10.5px; margin-top:8px; opacity:0.85;">料金：個別見積</div>
+    </div>
+
+    <p style="font-size:11px; color:var(--text-muted); margin-top:14px;">AI導入支援は対象業務1種類が基本です。API開発、システム連携、独自アプリ開発などはAIシステム開発として別途お見積りします。AI顧問は最低契約期間3か月です。社内全体研修、機密データを扱う高度な環境構築も別途お見積りです。導入前の判断材料として<a href="blog/ai-adoption-failure-points.html" class="text-link">AI導入で失敗しないために</a>、活用イメージは<a href="blog/chatgpt-business-use-cases.html" class="text-link">ChatGPT業務活用事例</a>、開発をご検討の方は<a href="blog/claude-code-guide.html" class="text-link">Claude Codeとは？</a>、情報発信にご関心のある方は<a href="blog/aeo-improvement-experience.html" class="text-link">AI検索で引用される記事を書くためにやったこと</a>もあわせてご覧ください。</p>
     <div style="text-align:center; margin-top:24px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">AI活用について相談する<span class="btn-arrow">→</span></a>
     </div>
@@ -1729,23 +1760,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- オプション -->
 <section id="options" class="price-block reveal" style="scroll-margin-top:90px;">
-  <div class="pricing-wide" style="max-width:800px;">
+  <div class="pricing-wide">
     <div class="section-head">
       <span class="eyebrow">OPTION</span>
       <h2>設定代行オプション</h2>
     </div>
-    <div class="maintenance-note">
-      <strong>設定代行オプション（税込）</strong>
-      <table style="width:100%; font-size:12.5px; margin-top:14px; border-collapse:collapse;">
-        <tr><td style="padding:8px 0; color:var(--text-muted); border-bottom:1px solid var(--line);">Google Search Console設定代行<br><span style="font-size:10.5px;">プロパティ設定・所有権確認・サイトマップ送信・インデックス状況確認</span></td><td style="padding:8px 0; text-align:right; font-weight:700; white-space:nowrap; border-bottom:1px solid var(--line); vertical-align:top;">5,000円</td></tr>
-        <tr><td style="padding:8px 0; color:var(--text-muted); border-bottom:1px solid var(--line);">Googleビジネスプロフィール設定代行<br><span style="font-size:10.5px;">基本情報登録・営業時間設定・カテゴリの基本設定・Webサイト/電話番号登録・オーナー確認の案内</span></td><td style="padding:8px 0; text-align:right; font-weight:700; white-space:nowrap; border-bottom:1px solid var(--line); vertical-align:top;">10,000円</td></tr>
-        <tr><td style="padding:8px 0; color:var(--text-muted);">独自ドメイン・サーバー設定代行<br><span style="font-size:10.5px;">独自ドメイン設定・サーバー設定・公開に必要な基本接続作業</span></td><td style="padding:8px 0; text-align:right; font-weight:700; white-space:nowrap; vertical-align:top;">10,000円</td></tr>
-      </table>
-      <div style="font-size:10.5px; margin-top:10px; opacity:0.85;">
-        ※ドメイン・サーバー・外部サービスの利用料は別途実費が発生します。<br>
-        ※既存環境の状態によって追加作業が発生する場合があります。<br>
-        ※作業前に金額をご案内します。<br>
-        ※各設定代行が<a href="#website" class="text-link" style="color:inherit; text-decoration-color:currentColor;">HP公開まるごとパック</a>、<a href="#seo" class="text-link" style="color:inherit; text-decoration-color:currentColor;">SEO対策</a>、<a href="#meo" class="text-link" style="color:inherit; text-decoration-color:currentColor;">MEO対策</a>などに含まれる場合、同じ設定費用を重複して請求することはありません。
+    <div style="max-width:800px;">
+      <div class="maintenance-note">
+        <strong>設定代行オプション（税込）</strong>
+        <table style="width:100%; font-size:12.5px; margin-top:14px; border-collapse:collapse;">
+          <tr><td style="padding:8px 0; color:var(--text-muted); border-bottom:1px solid var(--line);">Google Search Console設定代行<br><span style="font-size:10.5px;">プロパティ設定・所有権確認・サイトマップ送信・インデックス状況確認</span></td><td style="padding:8px 0; text-align:right; font-weight:700; white-space:nowrap; border-bottom:1px solid var(--line); vertical-align:top;">5,000円</td></tr>
+          <tr><td style="padding:8px 0; color:var(--text-muted); border-bottom:1px solid var(--line);">Googleビジネスプロフィール設定代行<br><span style="font-size:10.5px;">基本情報登録・営業時間設定・カテゴリの基本設定・Webサイト/電話番号登録・オーナー確認の案内</span></td><td style="padding:8px 0; text-align:right; font-weight:700; white-space:nowrap; border-bottom:1px solid var(--line); vertical-align:top;">10,000円</td></tr>
+          <tr><td style="padding:8px 0; color:var(--text-muted);">独自ドメイン・サーバー設定代行<br><span style="font-size:10.5px;">独自ドメイン設定・サーバー設定・公開に必要な基本接続作業</span></td><td style="padding:8px 0; text-align:right; font-weight:700; white-space:nowrap; vertical-align:top;">10,000円</td></tr>
+        </table>
+        <div style="font-size:10.5px; margin-top:10px; opacity:0.85;">
+          ※ドメイン・サーバー・外部サービスの利用料は別途実費が発生します。<br>
+          ※既存環境の状態によって追加作業が発生する場合があります。<br>
+          ※作業前に金額をご案内します。<br>
+          ※各設定代行が<a href="#website" class="text-link" style="color:inherit; text-decoration-color:currentColor;">HP公開まるごとパック</a>、<a href="#seo" class="text-link" style="color:inherit; text-decoration-color:currentColor;">SEO対策</a>、<a href="#meo" class="text-link" style="color:inherit; text-decoration-color:currentColor;">MEO対策</a>などに含まれる場合、同じ設定費用を重複して請求することはありません。
+        </div>
       </div>
     </div>
   </div>
@@ -1753,36 +1786,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- 目的別おすすめプラン -->
 <section class="price-block alt reveal">
-  <div class="wrap price-block-inner" style="max-width:760px;">
+  <div class="pricing-wide">
     <div class="section-head">
       <span class="eyebrow">FOR YOU</span>
       <h2>目的別おすすめプラン</h2>
       <p>専門用語が分からなくても大丈夫です。近いものをお選びください。</p>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
-      <div class="recommend-box" style="margin-bottom:0;">
-        <span class="recommend-label">まずホームページが欲しい</span>
-        <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#website" class="text-link">Webページ制作プラン（公開なし）</a></p>
-      </div>
-      <div class="recommend-box" style="margin-bottom:0;">
-        <span class="recommend-label">ホームページと集客準備をまとめたい</span>
-        <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#website" class="text-link">HP公開まるごとパック</a></p>
-      </div>
-      <div class="recommend-box" style="margin-bottom:0;">
-        <span class="recommend-label">検索から問い合わせを増やしたい</span>
-        <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#seo" class="text-link">Google検索改善代行</a></p>
-      </div>
-      <div class="recommend-box" style="margin-bottom:0;">
-        <span class="recommend-label">地域の来店客を増やしたい</span>
-        <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#meo" class="text-link">Googleマップ運用代行</a></p>
-      </div>
-      <div class="recommend-box" style="margin-bottom:0;">
-        <span class="recommend-label">AIで業務時間を減らしたい</span>
-        <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#ai" class="text-link">AI活用相談＋AI導入スタート</a></p>
-      </div>
-      <div class="recommend-box" style="margin-bottom:0;">
-        <span class="recommend-label">どれを選べばよいか分からない</span>
-        <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="text-link">公式LINEで無料相談</a></p>
+    <div style="max-width:760px;">
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
+        <div class="recommend-box" style="margin-bottom:0;">
+          <span class="recommend-label">まずホームページが欲しい</span>
+          <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#website" class="text-link">Webページ制作プラン（公開なし）</a></p>
+        </div>
+        <div class="recommend-box" style="margin-bottom:0;">
+          <span class="recommend-label">ホームページと集客準備をまとめたい</span>
+          <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#website" class="text-link">HP公開まるごとパック</a></p>
+        </div>
+        <div class="recommend-box" style="margin-bottom:0;">
+          <span class="recommend-label">検索から問い合わせを増やしたい</span>
+          <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#seo" class="text-link">Google検索改善代行</a></p>
+        </div>
+        <div class="recommend-box" style="margin-bottom:0;">
+          <span class="recommend-label">地域の来店客を増やしたい</span>
+          <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#meo" class="text-link">Googleマップ運用代行</a></p>
+        </div>
+        <div class="recommend-box" style="margin-bottom:0;">
+          <span class="recommend-label">AIで業務時間を減らしたい</span>
+          <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="#ai" class="text-link">AI活用相談＋AI導入支援</a></p>
+        </div>
+        <div class="recommend-box" style="margin-bottom:0;">
+          <span class="recommend-label">どれを選べばよいか分からない</span>
+          <p style="font-size:14px; font-weight:700; color:var(--ink);">おすすめ：<a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="text-link">公式LINEで無料相談</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -1790,13 +1825,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- 料金かんたんシミュレーション -->
 <section id="simulator" class="price-block reveal" style="scroll-margin-top:90px;">
-  <div class="pricing-wide" style="max-width:900px;">
+  <div class="pricing-wide">
     <div class="section-head">
       <span class="eyebrow">SIMULATION</span>
       <h2>料金かんたんシミュレーション</h2>
       <p>必要なサービスを選ぶと、初期費用と月額費用の目安を確認できます。正式なお見積もりではなく、料金の目安としてご利用ください。</p>
     </div>
 
+    <div style="max-width:900px;">
     <noscript>
       <p class="simulator-noscript-note">このシミュレーターの利用にはJavaScriptが必要です。JavaScriptを有効にしていただくか、上記の料金カード・比較表から直接ご確認ください。</p>
     </noscript>
@@ -1856,6 +1892,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="simulator-copy-status" id="simulatorCopyStatus" role="status" aria-live="polite"></span>
       </div>
     </form>
+    </div>
   </div>
 </section>
 
@@ -1911,7 +1948,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>Google検索改善代行、Googleマップ運用代行、AI継続サポートは最低契約期間3か月です。保守プラン（ライト・スタンダード・プレミアム）はいつでも解約可能で、解約手数料はかかりません。</p>
+            <p>Google検索改善代行、Googleマップ運用代行、AI顧問は最低契約期間3か月です。保守プラン（ライト・スタンダード・プレミアム）はいつでも解約可能で、解約手数料はかかりません。</p>
           </div>
         </div>
       </div>
@@ -2063,37 +2100,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const SIM_DATA = [
       { key:'website', label:'ホームページ制作', type:'radio', options:[
         { id:'none', label:'選択しない', price:0, billing:'initial' },
-        { id:'basic', label:'Webページ制作プラン（公開なし）', price:50000, billing:'initial' },
-        { id:'package', label:'HP公開まるごとパック', price:70000, billing:'initial' }
+        { id:'basic', label:'Webページ制作プラン（公開なし）', price:50000, billing:'initial', suitableFor:'自分で公開できる方向け' },
+        { id:'package', label:'HP公開まるごとパック', price:70000, billing:'initial', suitableFor:'公開までまとめて任せたい方向け' }
       ]},
       { key:'options', label:'設定代行オプション', type:'checkbox', options:[
-        { id:'gsc', label:'Google Search Console設定代行', price:5000, billing:'initial' },
-        { id:'gbp', label:'Googleビジネスプロフィール設定代行', price:10000, billing:'initial' },
-        { id:'domain', label:'独自ドメイン・サーバー設定代行', price:10000, billing:'initial' }
+        { id:'gsc', label:'Google Search Console設定代行', price:5000, billing:'initial', suitableFor:'Google検索へ対応したい方向け' },
+        { id:'gbp', label:'Googleビジネスプロフィール設定代行', price:10000, billing:'initial', suitableFor:'Googleマップへ掲載したい方向け' },
+        { id:'domain', label:'独自ドメイン・サーバー設定代行', price:10000, billing:'initial', suitableFor:'初期設定を任せたい方向け' }
       ]},
       { key:'lp', label:'LP制作', type:'radio', options:[
         { id:'none', label:'選択しない', price:0, billing:'initial' },
-        { id:'light', label:'LPライト', price:59800, billing:'initial', approx:true },
-        { id:'standard', label:'LPスタンダード', price:99800, billing:'initial', approx:true }
+        { id:'light', label:'LPライト', price:59800, billing:'initial', approx:true, suitableFor:'素材を用意できる方向け' },
+        { id:'standard', label:'LPスタンダード', price:99800, billing:'initial', approx:true, suitableFor:'内容から相談したい方向け' }
       ]},
       { key:'seo', label:'SEO対策', type:'checkbox', options:[
-        { id:'diag', label:'SEO診断', price:22000, billing:'initial' },
-        { id:'continuous', label:'Google検索改善代行', price:49800, billing:'monthly', approx:true }
+        { id:'diag', label:'SEO診断', price:22000, billing:'initial', suitableFor:'まず現状を確認したい方向け' },
+        { id:'continuous', label:'Google検索改善代行', price:49800, billing:'monthly', approx:true, suitableFor:'毎月の運用を任せたい方向け' }
       ]},
       { key:'meo', label:'MEO対策', type:'checkbox', options:[
-        { id:'meoInitial', label:'MEO診断', price:19800, billing:'initial' },
-        { id:'meoPlus', label:'Googleマップ運用代行', price:33000, billing:'monthly' }
+        { id:'meoInitial', label:'MEO診断', price:19800, billing:'initial', suitableFor:'まず現状を把握したい方向け' },
+        { id:'meoPlus', label:'Googleマップ運用代行', price:33000, billing:'monthly', suitableFor:'継続して運用を任せたい方向け' }
       ]},
       { key:'ai', label:'AI導入・活用支援', type:'checkbox', options:[
-        { id:'consult', label:'AI活用相談', price:11000, billing:'initial' },
-        { id:'start', label:'AI導入スタート', price:49800, billing:'initial', approx:true },
-        { id:'continuous', label:'AI継続サポート', price:29800, billing:'monthly', approx:true }
+        { id:'consult', label:'AI活用相談', price:33000, billing:'initial', suitableFor:'何から始めればいいか相談したい方向け' },
+        { id:'start', label:'AI導入支援', price:330000, billing:'initial', approx:true, suitableFor:'AIを業務へ導入したい方向け' },
+        { id:'continuous', label:'AI顧問', price:110000, billing:'monthly', approx:true, suitableFor:'導入後も継続して改善したい方向け' },
+        { id:'system', label:'AIシステム開発', price:0, billing:'initial', quote:true, suitableFor:'独自システムを作りたい方向け' }
       ]},
       { key:'maintenance', label:'保守・運用', type:'radio', options:[
         { id:'none', label:'選択しない', price:0, billing:'monthly' },
-        { id:'light', label:'ライト', price:2980, billing:'monthly' },
-        { id:'standard', label:'スタンダード', price:5980, billing:'monthly' },
-        { id:'premium', label:'プレミアム', price:9980, billing:'monthly' }
+        { id:'light', label:'ライト', price:2980, billing:'monthly', suitableFor:'基本管理だけ任せたい方向け' },
+        { id:'standard', label:'スタンダード', price:5980, billing:'monthly', suitableFor:'更新や改善を任せたい方向け' },
+        { id:'premium', label:'プレミアム', price:9980, billing:'monthly', suitableFor:'優先対応も任せたい方向け' }
       ]}
     ];
 
@@ -2102,6 +2140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const fmt = n => n.toLocaleString('ja-JP');
 
       const priceText = opt => {
+        if(opt.quote) return '個別見積';
         if(opt.price === 0) return '0円';
         let t = fmt(opt.price) + '円（税込）';
         if(opt.approx) t += '〜';
@@ -2127,10 +2166,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           const labelSpan = document.createElement('span');
           labelSpan.className = 'simulator-option-label';
           labelSpan.textContent = opt.label;
+          textWrap.appendChild(labelSpan);
+          if(opt.suitableFor){
+            const suitableSpan = document.createElement('span');
+            suitableSpan.className = 'simulator-option-suitable';
+            suitableSpan.textContent = opt.suitableFor;
+            textWrap.appendChild(suitableSpan);
+          }
           const priceSpan = document.createElement('span');
           priceSpan.className = 'simulator-option-price';
           priceSpan.textContent = priceText(opt);
-          textWrap.appendChild(labelSpan);
           textWrap.appendChild(priceSpan);
           label.appendChild(input);
           label.appendChild(textWrap);

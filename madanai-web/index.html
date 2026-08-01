@@ -517,7 +517,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   /* ---------- SECTION HEADS ---------- */
-  .section-head{ text-align:center; margin-bottom:56px; }
+  .section-head{ text-align:left; margin-bottom:56px; }
   .section-head .eyebrow{ display:block; margin-bottom:10px; }
   .section-head h2{
     font-size:clamp(26px, 5.4vw, 36px);
@@ -555,7 +555,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* ---------- VALUES ---------- */
   .section-sub{
     max-width:520px;
-    margin:14px auto 0;
+    margin:14px 0 0;
     font-size:14px;
     color:var(--text-muted);
     line-height:1.8;
@@ -564,7 +564,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     position:relative;
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:flex-start;
     min-height:460px;
     margin:48px 0 80px;
     overflow:hidden;
@@ -583,9 +583,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .about-hero-text{
     position:relative;
     z-index:1;
-    max-width:640px;
-    margin:0 auto;
-    text-align:center;
+    max-width:760px;
+    margin:0;
+    text-align:left;
   }
   .about-hero-text p{
     font-size:16px;
@@ -1415,22 +1415,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="about" class="values reveal" style="padding-top:64px;">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">SOLUTION</span>
-      <h2>マダナイ？について</h2>
+      <span class="eyebrow">PHILOSOPHY</span>
+      <h2>「まだない」を「もうある」へ</h2>
     </div>
 
     <div class="about-hero">
       <img class="about-hero-logo" src="assets/images/madanai_rogo.jpg" alt="" aria-hidden="true" loading="lazy" width="1774" height="887">
       <div class="about-hero-text">
-        <p>マダナイ？は、ホームページを作る会社ではありません。<br>ホームページを入り口に、集客や売上、事業の成長そのものを支援するパートナーです。</p>
-        <p>「集客がうまくいかない。」<br>「何から手をつければいいか分からない。」</p>
-        <p>そんな悩みに制作の前段階から向き合い、SEOやMEOでの見つかりやすさ、AIを活用した業務の効率化、公開後の運用改善まで、事業の成長に必要なことを一貫してサポートします。</p>
-        <p>公開して終わりにはしません。</p>
-        <p>数字や反応を見ながら改善を重ね、事業の成長に合わせて長く伴走すること。<br>それが、私たちのスタイルです。</p>
-        <p>AIの時代だからこそ、人にしかできない提案力と、AIならではのスピードを掛け合わせる。</p>
-        <p class="about-message grad-text">「まだない」を、「もうある」へ。<br>その未来を、マダナイ？が一緒につくります。</p>
+        <p>まだ形になっていない想い、言葉になっていない課題、始めたいのに進められていない挑戦。私たちは、それらを一つずつ整理し、動き出せる形へ変えていきます。</p>
       </div>
     </div>
+
+    <div style="max-width:760px; margin:0 0 56px; text-align:left;">
+      <span class="eyebrow">MISSION</span>
+      <h3 style="font-size:18.5px; font-weight:800; color:var(--ink); margin:10px 0 12px; line-height:1.5;">挑戦を、動き出せる形にする。</h3>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.9;">やりたいことがあっても、方法が分からなかったり、時間や知識が足りず止まってしまうことがあります。私たちの使命は、その想いと課題を整理し、次の一歩を踏み出せる形に変えることです。</p>
+    </div>
+
+    <div style="max-width:760px; margin:0 0 56px; text-align:left;">
+      <span class="eyebrow">VISION</span>
+      <h3 style="font-size:18.5px; font-weight:800; color:var(--ink); margin:10px 0 12px; line-height:1.5;">小さな会社の挑戦が、止まらない社会へ。</h3>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.9;">規模や専門知識に関係なく、必要な技術や仕組みを活用できる。新しいことを始めたい会社が、迷い続けずに前へ進める。そんな環境が当たり前になる未来を目指します。</p>
+    </div>
+
+    <div style="max-width:760px; margin:0 0 56px; text-align:left;">
+      <span class="eyebrow">VALUE</span>
+      <h3 style="font-size:18.5px; font-weight:800; color:var(--ink); margin:10px 0 24px; line-height:1.5;">迷ったときに立ち返る、3つの判断基準です。</h3>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:20px;">
+        <li style="padding-left:20px; position:relative;">
+          <span aria-hidden="true" style="position:absolute; left:0; top:0; color:var(--purple); font-weight:800;">・</span>
+          <div style="font-size:14.5px; font-weight:800; color:var(--ink); margin-bottom:4px;">本質から考える</div>
+          <p style="font-size:13.5px; color:var(--text-muted); line-height:1.75; margin:0;">流行や手段から考えるのではなく、まず何を変えたいのか、何が必要なのかを整理します。</p>
+        </li>
+        <li style="padding-left:20px; position:relative;">
+          <span aria-hidden="true" style="position:absolute; left:0; top:0; color:var(--purple); font-weight:800;">・</span>
+          <div style="font-size:14.5px; font-weight:800; color:var(--ink); margin-bottom:4px;">必要なものだけ選ぶ</div>
+          <p style="font-size:13.5px; color:var(--text-muted); line-height:1.75; margin:0;">大きな仕組みを勧めるのではなく、今の状況に必要な範囲から考えます。</p>
+        </li>
+        <li style="padding-left:20px; position:relative;">
+          <span aria-hidden="true" style="position:absolute; left:0; top:0; color:var(--purple); font-weight:800;">・</span>
+          <div style="font-size:14.5px; font-weight:800; color:var(--ink); margin-bottom:4px;">つくって終わらせない</div>
+          <p style="font-size:13.5px; color:var(--text-muted); line-height:1.75; margin:0;">完成そのものではなく、使われ、改善され、前へ進む状態を大切にします。</p>
+        </li>
+      </ul>
+    </div>
+
+    <p style="text-align:left; margin:64px 0 0; max-width:640px; font-size:15px; font-weight:500; color:var(--text-muted); line-height:1.9;">「まだない」のままになっている挑戦を、「もう動き出している」に変えていく。私たちは、そのために存在します。</p>
   </div>
 </section>
 <section id="what-we-do" class="values reveal" style="background:var(--bg-soft); padding-top:64px;">
@@ -1651,7 +1681,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="section-head">
       <span class="eyebrow">BLOG</span>
       <h2>お悩み解決ブログ</h2>
-      <p style="max-width:560px; margin:16px auto 0; font-size:14px; color:var(--text-muted); line-height:1.8;">ホームページ制作・SEO・MEO・AI活用・業務効率化など、問い合わせや売上につながる情報を分かりやすく解説しています。</p>
+      <p style="max-width:560px; margin:16px 0 0; font-size:14px; color:var(--text-muted); line-height:1.8;">ホームページ制作・SEO・MEO・AI活用・業務効率化など、問い合わせや売上につながる情報を分かりやすく解説しています。</p>
     </div>
     <div class="home-blog-grid">
       <a href="blog/website-cost-guide.html" class="home-blog-card">

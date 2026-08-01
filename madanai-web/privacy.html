@@ -76,6 +76,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-family:'M PLUS Rounded 1c', sans-serif;
     font-size:22px;
     font-weight:900;
+    white-space:nowrap;
+    flex-shrink:0;
   }
   .logo .bar{
     display:inline-block;
@@ -89,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .nav{
     display:flex;
     align-items:center;
-    gap:28px;
+    gap:36px;
   }
   .nav a{
     font-size:14px;
@@ -98,11 +100,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     white-space:nowrap;
   }
   .nav a:hover{ color:var(--purple); }
-  .header-ctas{
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
   .btn-header-primary, .btn-header-secondary{
     font-size:13px; font-weight:800;
     padding:11px 20px;
@@ -160,7 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-top:1px solid var(--line);
     transition:max-height .3s ease;
   }
-  .mobile-nav.open{ max-height:520px; }
+  .mobile-nav.open{ max-height:calc(100vh - 70px); overflow-y:auto; }
   .mobile-nav a{
     padding:14px 24px;
     font-size:15px;
@@ -179,10 +176,84 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding:13px 20px;
   }
 
+  /* ---------- SERVICES DROPDOWN ---------- */
+  .nav-dropdown{ position:relative; flex-shrink:0; }
+  .nav-dropdown-toggle{
+    display:inline-flex; align-items:center; gap:5px;
+    background:none; border:none; cursor:pointer;
+    font:inherit; font-size:14px; font-weight:700; color:var(--text);
+    white-space:nowrap;
+    padding:0;
+  }
+  .nav-dropdown-toggle:hover{ color:var(--purple); }
+  .nav-dropdown.open .nav-dropdown-toggle{ color:var(--purple); }
+  .nav-caret{ transition:transform .2s ease; flex-shrink:0; }
+  .nav-dropdown.open .nav-caret{ transform:rotate(180deg); }
+  .nav-dropdown-menu{
+    position:absolute; top:calc(100% + 16px); left:50%;
+    transform:translateX(-50%) translateY(-6px);
+    min-width:240px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 14px 34px rgba(26,22,32,0.12);
+    padding:8px;
+    display:flex; flex-direction:column; gap:2px;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease, visibility .18s;
+    z-index:200;
+  }
+  .nav-dropdown.open .nav-dropdown-menu{
+    opacity:1; visibility:visible; pointer-events:auto;
+    transform:translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-item{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:11px 14px;
+    border-radius:10px;
+    font-size:13.5px; font-weight:700; color:var(--text);
+  }
+  a.nav-dropdown-item:hover{ background:var(--bg-soft); color:var(--purple); }
+  .nav-dropdown-item.is-disabled{ color:var(--text-muted); cursor:default; }
+  .nav-dropdown-badge{
+    font-size:10px; font-weight:800;
+    color:var(--text-muted);
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    padding:2px 8px;
+    border-radius:999px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .mobile-nav-group{ border-bottom:1px solid var(--line); }
+  .mobile-nav-toggle{
+    width:100%;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    font-size:15px; font-weight:700; color:var(--text);
+    background:none; border:none; cursor:pointer; font-family:inherit;
+  }
+  .mobile-nav-submenu{
+    max-height:0; overflow:hidden;
+    transition:max-height .3s ease;
+    background:var(--bg-soft);
+    border-left:3px solid var(--line);
+    margin-left:24px;
+  }
+  .mobile-nav-group.open .mobile-nav-submenu{ max-height:420px; }
+  .mobile-nav-submenu .nav-dropdown-item{
+    padding:13px 24px 13px 16px;
+    border-radius:0;
+    font-size:13.5px;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav-submenu .nav-dropdown-item:last-child{ border-bottom:none; }
+  .mobile-nav-group.open .nav-caret{ transform:rotate(180deg); }
+
   /* ---------- POLICY CONTENT ---------- */
   .policy-hero{
     padding:72px 24px 32px;
-    text-align:center;
+    text-align:left;
   }
   .policy-hero .eyebrow{ display:block; margin-bottom:12px; }
   .policy-hero h1{
@@ -199,8 +270,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding:24px 24px 96px;
   }
   .policy-block{
-    max-width:800px;
-    margin:0 auto 48px;
+    max-width:740px;
+    margin:0 0 48px;
   }
   .policy-block h2{
     font-size:19px;
@@ -250,7 +321,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* ---------- TABLET ---------- */
   @media (max-width:1080px){
-    .nav, .header-ctas{ display:none; }
+    .nav{ display:none; }
     .hamburger{ display:flex; }
     .mobile-nav{ display:flex; }
   }
@@ -273,32 +344,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="index.html" class="logo"><span class="bar"></span>マダナイ<span class="grad-text">？</span></a>
     <nav class="nav">
       <a href="index.html#home">ホーム</a>
-      <a href="index.html#works">制作実績</a>
-      <a href="index.html#pricing">料金プラン</a>
+      <div class="nav-dropdown" id="servicesDropdown">
+        <button type="button" class="nav-dropdown-toggle" id="servicesMenuBtn" aria-expanded="false" aria-controls="servicesMenu" aria-haspopup="true">
+          サービス
+          <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="servicesMenu" role="menu" aria-labelledby="servicesMenuBtn">
+          <a class="nav-dropdown-item" role="menuitem" href="website.html">ホームページ制作</a>
+          <a class="nav-dropdown-item" role="menuitem" href="lp.html">LP制作</a>
+          <a class="nav-dropdown-item" role="menuitem" href="seo.html">SEO対策</a>
+          <a class="nav-dropdown-item" role="menuitem" href="meo.html">MEO対策</a>
+          <a class="nav-dropdown-item" role="menuitem" href="ai.html">AI導入・活用支援</a>
+          <a class="nav-dropdown-item" role="menuitem" href="maintenance.html">保守・運用支援</a>
+        </div>
+      </div>
+      <a href="pricing.html">料金</a>
       <a href="blog.html">ブログ</a>
-      <a href="index.html#process">制作の流れ</a>
-      <a href="index.html#testimonials">お客様の声</a>
-      <a href="index.html#faq">よくある質問</a>
+      <a href="index.html#about">会社について</a>
+      <a href="index.html#contact">お問い合わせ</a>
     </nav>
-    <div class="header-ctas">
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-primary">無料相談する</a>
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-secondary"><svg class="line-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="6" fill="#06C755"/><path d="M7 10.3v4.2M10.3 10.3v4.2M10.3 10.3l3 4.2M13.3 10.3v4.2M16.3 10.3h1.6a1.1 1.1 0 0 1 0 2.2h-1.6v2" stroke="#fff" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>LINEで相談する</a>
-    </div>
     <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html#home">ホーム</a>
-    <a href="index.html#works">制作実績</a>
-    <a href="index.html#pricing">料金プラン</a>
+    <div class="mobile-nav-group">
+      <button type="button" class="mobile-nav-toggle" id="mobileServicesBtn" aria-expanded="false" aria-controls="mobileServicesMenu">
+        サービス
+        <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-nav-submenu" id="mobileServicesMenu">
+        <a class="nav-dropdown-item" href="website.html">ホームページ制作</a>
+        <a class="nav-dropdown-item" href="lp.html">LP制作</a>
+        <a class="nav-dropdown-item" href="seo.html">SEO対策</a>
+        <a class="nav-dropdown-item" href="meo.html">MEO対策</a>
+        <a class="nav-dropdown-item" href="ai.html">AI導入・活用支援</a>
+        <a class="nav-dropdown-item" href="maintenance.html">保守・運用支援</a>
+      </div>
+    </div>
+    <a href="pricing.html">料金</a>
     <a href="blog.html">ブログ</a>
+    <a href="index.html#works">制作実績</a>
     <a href="index.html#process">制作の流れ</a>
     <a href="index.html#testimonials">お客様の声</a>
+    <a href="index.html#about">会社について</a>
     <a href="index.html#faq">よくある質問</a>
+    <a href="index.html#contact">お問い合わせ</a>
     <div class="mobile-nav-ctas">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-primary">無料相談する</a>
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-header-secondary">LINEで相談する</a>
     </div>
   </div>
 </header>
@@ -397,6 +491,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           mobileNav.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
         });
+      });
+    }
+  }catch(err){}
+  try{
+    const dropdown = document.getElementById('servicesDropdown');
+    const toggleBtn = document.getElementById('servicesMenuBtn');
+    const menu = document.getElementById('servicesMenu');
+    if(dropdown && toggleBtn && menu){
+      let closeTimer = null;
+      const openMenu = ()=>{
+        clearTimeout(closeTimer);
+        dropdown.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+      };
+      const closeMenu = ()=>{
+        dropdown.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      };
+      dropdown.addEventListener('mouseenter', openMenu);
+      dropdown.addEventListener('mouseleave', ()=>{
+        closeTimer = setTimeout(closeMenu, 220);
+      });
+      toggleBtn.addEventListener('click', ()=>{
+        openMenu();
+      });
+      document.addEventListener('click', (e)=>{
+        if(!dropdown.contains(e.target)) closeMenu();
+      });
+      dropdown.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){ closeMenu(); toggleBtn.focus(); }
+      });
+    }
+  }catch(err){}
+  try{
+    const mobileGroup = document.querySelector('.mobile-nav-group');
+    const mobileServicesBtn = document.getElementById('mobileServicesBtn');
+    if(mobileGroup && mobileServicesBtn){
+      mobileServicesBtn.addEventListener('click', ()=>{
+        const isOpen = mobileGroup.classList.toggle('open');
+        mobileServicesBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     }
   }catch(err){}
