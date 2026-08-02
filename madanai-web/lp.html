@@ -382,9 +382,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:var(--bg-soft); border:1px solid var(--line);
     padding:8px 14px; border-radius:999px;
   }
-  .hero-cta-row{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:30px; }
-  .hero-sub-link{ display:block; margin-top:16px; font-size:12.5px; font-weight:700; color:var(--purple); text-decoration:underline; text-decoration-color:rgba(123,47,247,0.35); text-underline-offset:2px; }
-  .hero-sub-link:hover{ color:var(--purple-deep); text-decoration-color:currentColor; }
+  .hero-cta-row{ display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-start; margin-top:30px; }
 
   /* ---------- SECTION HEADS ---------- */
   .section-head{ text-align:left; margin-bottom:56px; }
@@ -415,6 +413,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin-bottom:16px;
   }
   .content-block-inner p:last-child{ margin-bottom:0; }
+
+  /* ---------- RECOMMEND BOX ---------- */
+  .recommend-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px 32px;
+    max-width:560px;
+    margin:0 auto;
+  }
 
   /* ---------- USE-CASE GRID ---------- */
   .usecase-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
@@ -709,6 +717,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .content-block{ padding:48px 0; }
     .btn-primary, .btn-line, .btn-secondary{ width:100%; max-width:320px; justify-content:center; padding:14px 18px; font-size:14px; }
     .btn-primary, .btn-line, .btn-secondary{ display:inline-flex; }
+    .hero-cta-row{ justify-content:center; }
     .pain-grid{ grid-template-columns:1fr; }
     .step-grid{ grid-template-columns:1fr; }
     .plan-cards{ grid-template-columns:1fr; }
@@ -797,217 +806,97 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sub-copy">商品やサービスの魅力を1ページに集約し、広告・SNS・検索から訪れたユーザーを、問い合わせや購入へ導きます。</p>
     <p class="supp-copy">構成・コピー・スマートフォン対応・公開まで、大阪・心斎橋のマダナイ？がワンストップで支援します。</p>
     <ul class="hero-proof">
-      <li>LP制作 59,800円〜</li>
       <li>構成・コピーから相談可能</li>
       <li>スマートフォン対応</li>
-      <li>最短納期は内容確認後に提示</li>
+      <li>公開までワンストップ</li>
     </ul>
     <div class="hero-cta-row">
-      <a href="pricing.html#lp" class="btn-primary">LP制作の料金を見る<span class="btn-arrow">→</span></a>
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">LP制作についてLINEで相談する<span class="btn-arrow">→</span></a>
+      <a href="pricing.html#lp" class="btn-secondary">LP制作の料金を見る<span class="btn-arrow">→</span></a>
     </div>
-    <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="hero-sub-link">LP制作についてLINEで相談する</a>
   </div>
 </section>
 
-<!-- 活用イメージ -->
+<!-- こんな目的・お悩みにLPが向いています -->
 <section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">USE CASE</span>
-      <h2>こんな目的にLPを活用できます</h2>
-    </div>
-    <div class="usecase-grid">
-      <div class="usecase-card">
-        <div class="usecase-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3H4a1 1 0 0 0-1 1v7a1 1 0 0 0 .3.7l9 9a1 1 0 0 0 1.4 0l7-7a1 1 0 0 0 0-1.4l-9-9A1 1 0 0 0 11 3z"/><circle cx="7.5" cy="7.5" r="1"/></svg></div>
-        <span>新商品・新サービスの販売</span>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></div>
-        <span>無料相談・資料請求</span>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M12 7.5v5M9.5 10h5"/></svg></div>
-        <span>LINE公式アカウント登録</span>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
-        <span>セミナー・イベント集客</span>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.2"/><circle cx="17" cy="17" r="2.2"/><path d="M18 6 6 18"/></svg></div>
-        <span>キャンペーン・期間限定企画</span>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
-        <span>採用・求人応募</span>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18"/><path d="M9 15l2 2 4-4"/></svg></div>
-        <span>店舗予約</span>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.6" fill="var(--purple)" stroke="none"/></svg></div>
-        <span>広告専用ページ</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- こんなお悩みありませんか -->
-<section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CONCERN</span>
-      <h2>こんなお悩みありませんか？</h2>
+      <h2>こんな目的・お悩みにLPが向いています</h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div>
-        <p>広告を出しても問い合わせにつながらない</p>
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3H4a1 1 0 0 0-1 1v7a1 1 0 0 0 .3.7l9 9a1 1 0 0 0 1.4 0l7-7a1 1 0 0 0 0-1.4l-9-9A1 1 0 0 0 11 3z"/><circle cx="7.5" cy="7.5" r="1"/></svg></div>
+        <p>新商品やサービスへの問い合わせを増やしたい</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M12 7.5v5M9.5 10h5"/></svg></div>
+        <p>LINE登録や予約へ誘導したい</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.6" fill="var(--purple)" stroke="none"/></svg></div>
+        <p>広告専用のページを用意したい</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="1.4"/><circle cx="17" cy="6" r="1.4"/><circle cx="9" cy="17" r="1.4"/><circle cx="18" cy="15" r="1.4"/></svg></div>
-        <p>ホームページでは商品情報が分散している</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 17v.01M12 14c0-2.5 2.5-2 2.5-4.5A2.5 2.5 0 0 0 12 7a2.5 2.5 0 0 0-2.5 2.5"/></svg></div>
-        <p>何を伝えれば売れるのか分からない</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h6a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h8"/></svg></div>
-        <p>LINE登録や予約までの導線が複雑</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M9 8h6M9 12h4"/></svg></div>
-        <p>スマートフォンで読みにくい</p>
+        <p>ホームページでは情報が分散している</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg></div>
-        <p>サービスの魅力をうまく文章にできない</p>
+        <p>商品の魅力を文章で伝えられない</p>
       </div>
       <div class="pain-card">
-        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h5M8 13h3"/><circle cx="16" cy="15" r="0.6" fill="var(--purple)" stroke="none"/></svg></div>
-        <p>制作会社へ何を用意すればいいか分からない</p>
+        <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M9 8h6M9 12h4"/></svg></div>
+        <p>スマートフォンで読みやすい1ページを作りたい</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 問い合わせにつながらない原因 -->
-<section class="content-block reveal">
+<!-- 問い合わせにつながるLPに必要なこと -->
+<section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CAUSE</span>
-      <h2>問い合わせが増えない原因は、<br>デザインだけではありません</h2>
+      <h2>問い合わせにつながるLPに必要なこと</h2>
+      <p>成果を保証するものではありませんが、行動につながりやすくするために大切にしている考え方です。</p>
     </div>
     <div class="cause-grid">
       <div class="cause-card">
         <div class="cause-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div>
         <div>
-          <h3>誰向けの商品かが分からない</h3>
-          <p>年齢や職業、悩みなどターゲット像が曖昧なまま作ると、誰にも刺さらない内容になりやすくなります。</p>
+          <h3>誰に向けたページかを明確にする</h3>
+          <p>ターゲット像が曖昧なままだと、誰にも刺さらない内容になりやすくなります。</p>
         </div>
       </div>
       <div class="cause-card">
         <div class="cause-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
         <div>
-          <h3>最初の画面で得られる未来が伝わらない</h3>
-          <p>ファーストビューで「自分に関係がある」と感じてもらえないと、その先を読んでもらえません。</p>
-        </div>
-      </div>
-      <div class="cause-card">
-        <div class="cause-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
-        <div>
-          <h3>特徴だけで、ベネフィットが伝わっていない</h3>
-          <p>機能や特徴の説明だけでは、利用後にどう変わるかが伝わらず、行動につながりにくくなります。</p>
+          <h3>最初の画面で得られる未来を伝える</h3>
+          <p>ファーストビューで「自分に関係がある」と感じてもらえるかが、その先を読んでもらえるかを左右します。</p>
         </div>
       </div>
       <div class="cause-card">
         <div class="cause-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
         <div>
-          <h3>情報の順番が購入心理と合っていない</h3>
-          <p>悩み→未来→解決策→根拠→料金という順番からずれると、途中で離脱されやすくなります。</p>
+          <h3>悩みから行動まで情報を順番に並べる</h3>
+          <p>悩み→未来→解決策→根拠→行動という順番からずれると、途中で離脱されやすくなります。</p>
         </div>
       </div>
       <div class="cause-card">
         <div class="cause-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20l4-4 4 4"/></svg></div>
         <div>
-          <h3>CTAが少ない、または多すぎる</h3>
+          <h3>問い合わせ先を迷わせない</h3>
           <p>ボタンが少なすぎると行動のきっかけを逃し、多すぎると何を選べばいいか迷わせてしまいます。</p>
         </div>
       </div>
-      <div class="cause-card">
-        <div class="cause-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
-        <div>
-          <h3>信頼できる根拠が不足している</h3>
-          <p>実績や具体的な説明がないまま結論だけを伝えると、不安が残ったまま離脱されやすくなります。</p>
-        </div>
-      </div>
-      <div class="cause-card">
-        <div class="cause-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M9 8h6M9 12h4"/></svg></div>
-        <div>
-          <h3>スマートフォンで読みづらい</h3>
-          <p>文字サイズや余白が調整されていないと、多くのユーザーが利用するスマートフォンで離脱の原因になります。</p>
-        </div>
-      </div>
-      <div class="cause-card">
-        <div class="cause-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <div>
-          <h3>広告とLPのメッセージが一致していない</h3>
-          <p>広告文とLPの内容がずれていると、訪れた人が違和感を覚え、そのまま離脱してしまうことがあります。</p>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
-
-<!-- LPで解決できること -->
-<section class="content-block alt reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">SOLUTION</span>
-      <h2>伝える順番を整えると、<br>行動につながりやすくなります</h2>
-      <p>成果を保証するものではありませんが、問い合わせにつながりやすくする、行動しやすい導線を設計します。</p>
-    </div>
-    <ol class="step-list">
-      <li class="step-list-item">
-        <div class="step-num" aria-hidden="true">1</div>
-        <div class="step-list-body"><h3>ターゲットの悩み</h3><p>「自分のことだ」と感じてもらう入り口です。</p></div>
-      </li>
-      <li class="step-list-item">
-        <div class="step-num" aria-hidden="true">2</div>
-        <div class="step-list-body"><h3>理想の未来</h3><p>解決した先にある状態を提示します。</p></div>
-      </li>
-      <li class="step-list-item">
-        <div class="step-num" aria-hidden="true">3</div>
-        <div class="step-list-body"><h3>解決方法</h3><p>なぜ解決できるのかを説明します。</p></div>
-      </li>
-      <li class="step-list-item">
-        <div class="step-num" aria-hidden="true">4</div>
-        <div class="step-list-body"><h3>サービス内容</h3><p>具体的に何を提供するかを伝えます。</p></div>
-      </li>
-      <li class="step-list-item">
-        <div class="step-num" aria-hidden="true">5</div>
-        <div class="step-list-body"><h3>実績・根拠</h3><p>信頼してもらうための裏付けを示します。</p></div>
-      </li>
-      <li class="step-list-item">
-        <div class="step-num" aria-hidden="true">6</div>
-        <div class="step-list-body"><h3>料金</h3><p>検討に必要な情報を明確に伝えます。</p></div>
-      </li>
-      <li class="step-list-item">
-        <div class="step-num" aria-hidden="true">7</div>
-        <div class="step-list-body"><h3>FAQ</h3><p>不安や疑問をその場で解消します。</p></div>
-      </li>
-      <li class="step-list-item">
-        <div class="step-num" aria-hidden="true">8</div>
-        <div class="step-list-body"><h3>CTA</h3><p>問い合わせ・LINE登録などの行動につなげます。</p></div>
-      </li>
-    </ol>
+    <p style="text-align:center; margin-top:26px;"><a href="blog/website-inquiry-improvement.html" class="text-link" style="font-size:12.5px;">問い合わせにつながるページ改善のポイントはこちら →</a></p>
   </div>
 </section>
 
 <!-- LPとホームページの違い -->
-<section class="content-block reveal">
+<section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">LP vs WEBSITE</span>
@@ -1023,70 +912,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </thead>
         <tbody>
           <tr><th scope="row">目的</th><td>一つの商品、サービス、行動に集中</td><td>会社や複数サービスを総合的に紹介</td></tr>
-          <tr><th scope="row">ページ数</th><td>基本1ページ</td><td>複数ページ</td></tr>
+          <tr><th scope="row">ページ構成</th><td>基本1ページ、上から順に読み進める構成</td><td>複数ページ、必要なページを選んで閲覧</td></tr>
           <tr><th scope="row">主な流入元</th><td>広告、SNS、LINE、検索など</td><td>検索、指名検索、紹介など</td></tr>
-          <tr><th scope="row">情報の構成</th><td>上から順番に読み進める構成</td><td>ユーザーが必要なページを選ぶ</td></tr>
           <tr><th scope="row">CTA</th><td>問い合わせ、予約、購入など一つに絞る</td><td>複数の導線</td></tr>
           <tr><th scope="row">向いている用途</th><td>キャンペーン、商品販売、資料請求など</td><td>会社案内、サービス全体、採用など</td></tr>
-          <tr><th scope="row">更新性</th><td>基本的に1ページ完結のため、部分的な更新が中心</td><td>ページ数が多く、情報更新の自由度が高い</td></tr>
-          <tr><th scope="row">SEOとの相性</th><td>特定のキーワードや広告経由の流入に向く</td><td>幅広いキーワードでの検索流入に向く</td></tr>
+          <tr><th scope="row">検索集客との関係</th><td>特定のキーワードや広告経由の流入に向く</td><td>幅広いキーワードでの検索流入に向く</td></tr>
         </tbody>
       </table>
     </div>
     <div style="text-align:center; margin-top:26px;">
       <a href="website.html" class="text-link">ホームページ制作についてはこちら →</a>
-    </div>
-  </div>
-</section>
-
-<!-- 選ばれる理由 -->
-<section class="content-block alt reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">WHY US</span>
-      <h2>マダナイ？が、<br>作るだけで終わらない理由</h2>
-    </div>
-    <div class="step-grid">
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">1</div>
-        <h3>ターゲットと目的から整理</h3>
-        <p>誰に、何を伝えるページなのかを最初に整理します。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">2</div>
-        <h3>ベネフィット中心の構成</h3>
-        <p>特徴だけでなく、利用後に得られる変化を軸に構成します。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">3</div>
-        <h3>キャッチコピー・文章作成を支援</h3>
-        <p>伝わりやすい言葉選びを一緒に考えます。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">4</div>
-        <h3>スマートフォンを優先した設計</h3>
-        <p>多くのユーザーが利用するスマホでの見やすさを優先します。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">5</div>
-        <h3>LINE・問い合わせ導線まで設計</h3>
-        <p>行動につながるボタンの位置や導線まで設計します。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">6</div>
-        <h3>基本SEO・計測設定に対応</h3>
-        <p>検索対策や効果測定の基本設定にも対応します。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">7</div>
-        <h3>公開後の改善も相談可能</h3>
-        <p>公開して終わりにせず、反応を見ながらの改善もご相談いただけます。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">8</div>
-        <h3>AIを活用した高速制作</h3>
-        <p>AIを活用し、効率よく制作を進めます。</p>
-      </div>
+      <span style="display:block; margin-top:10px;"><a href="blog/website-cost-guide.html" class="text-link" style="font-size:12.5px;">ホームページ制作の費用相場も見る →</a></span>
     </div>
   </div>
 </section>
@@ -1102,10 +938,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="plan-card">
         <div class="plan-name">LIGHT</div>
         <h3 class="plan-title">LPライト</h3>
-        <p class="plan-desc">素材を自分で用意できる方向け</p>
-        <div class="plan-price" style="margin-bottom:4px;">59,800<span>円（税込）〜</span></div>
+        <p class="plan-desc"><strong>対象：</strong>素材や文章を自分で準備できる方</p>
+        <p class="plan-desc">準備済みの構成・文章・写真素材をもとに、1ページのLPを制作するプランです。</p>
         <ul class="plan-check">
-          <li>構成、文章、写真素材はお客様が用意</li>
           <li>1ページ制作</li>
           <li>スマートフォン対応</li>
           <li>CTA設置</li>
@@ -1117,22 +952,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="plan-flag">おすすめ</span>
         <div class="plan-name">STANDARD</div>
         <h3 class="plan-title">LPスタンダード</h3>
-        <p class="plan-desc">構成や文章から相談したい方向け</p>
-        <div class="plan-price" style="margin-bottom:4px;">99,800<span>円（税込）〜</span></div>
+        <p class="plan-desc"><strong>対象：</strong>構成や文章から相談したい方</p>
+        <p class="plan-desc">ターゲット整理から構成、コピー、CTA導線まで、相談しながら制作するプランです。</p>
         <ul class="plan-check">
           <li>ターゲット整理</li>
           <li>ページ構成</li>
-          <li>キャッチコピー</li>
-          <li>文章作成支援</li>
-          <li>1ページ制作</li>
+          <li>キャッチコピー、文章作成支援</li>
           <li>スマートフォン対応</li>
           <li>CTA導線設計</li>
-          <li>基本計測設定</li>
         </ul>
       </div>
-    </div>
-    <div style="text-align:center; margin-top:28px;">
-      <a href="pricing.html#lp" class="btn-primary">2つのプランを比較する<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1151,107 +980,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <caption class="visually-hidden">LP制作プラン比較表：LPライトとLPスタンダードの違い</caption>
           <thead>
             <tr>
-              <th scope="col" class="compare-plan-name">比較項目</th>
+              <th scope="col" class="compare-plan-name">項目</th>
               <th scope="col" class="compare-plan-name">LPライト</th>
               <th scope="col" class="compare-featured compare-plan-name">LPスタンダード<span class="compare-badge">おすすめ</span></th>
             </tr>
           </thead>
           <tbody>
-            <tr class="compare-row-price"><th scope="row">料金（税込）</th><td>59,800円〜</td><td class="compare-featured">99,800円〜</td></tr>
-            <tr><th scope="row">ターゲット整理</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
-            <tr><th scope="row">ページ構成</th><td>お客様がご用意</td><td class="compare-featured">こちらで設計</td></tr>
-            <tr><th scope="row">キャッチコピー</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
-            <tr><th scope="row">文章作成支援</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
-            <tr><th scope="row">1ページ制作</th><td><span class="compare-yes">○</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
-            <tr><th scope="row">スマートフォン対応</th><td><span class="compare-yes">○</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
-            <tr><th scope="row">CTA設置・設計</th><td>設置のみ</td><td class="compare-featured">設計から相談</td></tr>
-            <tr><th scope="row">基本SEO設定</th><td><span class="compare-yes">○</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
-            <tr><th scope="row">基本計測設定</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
-            <tr><th scope="row">素材の準備</th><td>構成・文章・写真素材をご用意いただきます</td><td class="compare-featured">構成・文章はご相談いただけます（写真素材は基本的にお客様にご用意いただきます）</td></tr>
-            <tr><th scope="row">おすすめの方</th><td>素材を自分で用意できる方</td><td class="compare-featured">構成から相談したい方</td></tr>
+            <tr><th scope="row">向いている方</th><td>素材を自分で用意できる方</td><td class="compare-featured">構成から相談したい方</td></tr>
+            <tr><th scope="row">構成・文章の準備</th><td>お客様がご用意</td><td class="compare-featured">こちらと一緒に作成</td></tr>
+            <tr><th scope="row">制作の進め方</th><td>構成・文章をお預かりして制作</td><td class="compare-featured">ヒアリングしながら制作</td></tr>
           </tbody>
         </table>
       </div>
     </div>
-    <p style="font-size:11px; color:var(--text-muted); margin-top:14px; text-align:center;">※詳しい料金・プラン内容は<a href="pricing.html#lp" class="text-link">料金ページ</a>でもご確認いただけます。</p>
+    <div style="text-align:center; margin-top:24px;">
+      <a href="pricing.html#lp" class="btn-primary">LP制作の料金・提供条件を確認する<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- どちらを選べばいい？ -->
+<section class="content-block reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">GUIDE</span>
+      <h2>どちらのLP制作プランを選べばいい？</h2>
+    </div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div class="recommend-box" style="flex:1 1 240px; max-width:280px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">素材・文章・構成を用意できる</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="#plans" class="text-link">LPライト</a></p>
+      </div>
+      <div class="recommend-box" style="flex:1 1 240px; max-width:280px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">構成や文章から相談したい</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="#plans" class="text-link">LPスタンダード</a></p>
+      </div>
+      <div class="recommend-box" style="flex:1 1 240px; max-width:280px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">どちらか分からない</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="text-link">LINEで相談</a></p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- 制作の流れ -->
-<section class="content-block reveal">
+<section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FLOW</span>
       <h2>LP公開までの流れ</h2>
     </div>
-    <div class="step-grid">
-      <div class="step-card">
+    <ol class="step-list">
+      <li class="step-list-item">
         <div class="step-num" aria-hidden="true">1</div>
-        <h3>LINEまたはお問い合わせ</h3>
-        <p>公式LINEまたはお問い合わせフォームからご連絡ください。</p>
-      </div>
-      <div class="step-card">
+        <div class="step-list-body"><h3>LINEまたはお問い合わせ</h3><p>公式LINEまたはお問い合わせフォームからご連絡ください。</p></div>
+      </li>
+      <li class="step-list-item">
         <div class="step-num" aria-hidden="true">2</div>
-        <h3>商品・サービス・目的の確認</h3>
-        <p>何を伝えたいページか、目的やターゲットをお伺いします。</p>
-      </div>
-      <div class="step-card">
+        <div class="step-list-body"><h3>目的・ターゲット・素材を確認</h3><p>何を伝えたいページか、目的やターゲット、ご用意いただける素材の状況をお伺いします。</p></div>
+      </li>
+      <li class="step-list-item">
         <div class="step-num" aria-hidden="true">3</div>
-        <h3>ターゲット整理</h3>
-        <p>誰に向けたページかを整理します。</p>
-      </div>
-      <div class="step-card">
+        <div class="step-list-body"><h3>構成・コピーを準備</h3><p>LPライトは構成・文章・写真素材をお預かりし、LPスタンダードはターゲット整理からキャッチコピーまで一緒に作成します。</p></div>
+      </li>
+      <li class="step-list-item">
         <div class="step-num" aria-hidden="true">4</div>
-        <h3>構成・コピー作成</h3>
-        <p>LPライトの場合、この工程で構成・文章・写真素材をお客様からお預かりします。</p>
-      </div>
-      <div class="step-card">
+        <div class="step-list-body"><h3>デザイン・実装</h3><p>構成をもとにデザイン・実装を進めます。</p></div>
+      </li>
+      <li class="step-list-item">
         <div class="step-num" aria-hidden="true">5</div>
-        <h3>デザイン・コーディング</h3>
-        <p>構成をもとにデザイン・実装を進めます。</p>
-      </div>
-      <div class="step-card">
+        <div class="step-list-body"><h3>内容確認・修正</h3><p>完成した内容をご確認いただき、修正を行います。</p></div>
+      </li>
+      <li class="step-list-item">
         <div class="step-num" aria-hidden="true">6</div>
-        <h3>内容確認・修正</h3>
-        <p>完成した内容をご確認いただき、修正を行います。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">7</div>
-        <h3>公開</h3>
-        <p>内容確定後、LPを公開します。</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">8</div>
-        <h3>必要に応じて改善相談</h3>
-        <p>公開後、反応を見ながらの改善もご相談いただけます。</p>
-      </div>
-    </div>
+        <div class="step-list-body"><h3>公開・必要に応じて改善相談</h3><p>内容確定後に公開し、公開後の反応を見ながらの改善もご相談いただけます。</p></div>
+      </li>
+    </ol>
     <p class="flow-note">※納期は、ページ内容や素材のご準備状況により異なります。詳しい目安はヒアリング時にご案内します。</p>
-  </div>
-</section>
-
-<!-- 料金案内 -->
-<section class="content-block alt reveal" style="scroll-margin-top:90px;">
-  <div class="wrap content-block-inner">
-    <div class="section-head">
-      <span class="eyebrow">PRICE</span>
-      <h2>LP制作料金</h2>
-    </div>
-    <div class="price-tiles">
-      <div class="price-tile">
-        <div class="plan-name">LIGHT</div>
-        <h3>LPライト</h3>
-        <div class="plan-price">59,800<span>円（税込）〜</span></div>
-      </div>
-      <div class="price-tile">
-        <div class="plan-name">STANDARD</div>
-        <h3>LPスタンダード</h3>
-        <div class="plan-price">99,800<span>円（税込）〜</span></div>
-      </div>
-    </div>
-    <p style="font-size:11px; color:var(--text-muted); margin-top:18px;">※商品数、文章量、画像制作、撮影、フォーム機能などにより料金が変わります。</p>
-    <div style="margin-top:24px;">
-      <a href="pricing.html#lp" class="btn-primary">詳しい料金・比較表を見る<span class="btn-arrow">→</span></a>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">この流れでLP制作を相談する<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>

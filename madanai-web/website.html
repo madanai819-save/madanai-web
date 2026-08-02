@@ -35,6 +35,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     { "@type": "ListItem", "position": 2, "name": "ホームページ制作", "item": "https://madanai-web.jp/website.html" }
   ]
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "制作期間はどれくらいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "ヒアリングからご入金確認後、通常2〜3週間ほどで納品しています。ページ数や内容によって前後します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "パソコンが苦手でも大丈夫ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、大丈夫です。ヒアリングシートへのご回答と、写真・お店の情報をご準備いただくだけで進められます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "本当に問い合わせは増えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "問い合わせ数を保証するものではありませんが、行動につながる構成・基本SEO設定・公開後の改善提案までを一体で行うことで、増加を後押しします。" }
+    },
+    {
+      "@type": "Question",
+      "name": "SEO・MEO・AI活用も一緒に頼めますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。ホームページ制作と合わせて、SEO対策・MEO対策・AI活用もご相談いただけます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "公開後のサポートはありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "保守プランにご加入いただくと、修正対応・ドメイン管理・セキュリティ更新まで継続的にサポートします。" }
+    }
+  ]
+}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -453,6 +484,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:var(--purple);
   }
   .work-link{ font-size:13px; font-weight:800; color:var(--purple); display:inline-flex; align-items:center; gap:4px; }
+  .work-description{ font-size:12.5px; color:var(--text-muted); line-height:1.7; margin-bottom:14px; }
 
   /* ---------- CHECK LIST (shared) ---------- */
   .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:10px; }
@@ -467,6 +499,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size:9px;
     font-weight:900;
     display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- COMPARE: website vs DIY ---------- */
+  .diff-table{
+    width:100%; border-collapse:separate; border-spacing:0;
+    background:#fff; border:2px solid var(--line); border-radius:20px; overflow:hidden;
+    font-size:13.5px;
+  }
+  .diff-table th, .diff-table td{ padding:16px 18px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; line-height:1.7; }
+  .diff-table tr:last-child th, .diff-table tr:last-child td{ border-bottom:none; }
+  .diff-table thead th{ font-family:'M PLUS Rounded 1c', sans-serif; font-weight:800; font-size:14px; color:var(--ink); background:var(--bg-soft); border-bottom:2px solid var(--line); }
+  .diff-table th[scope="row"]{ font-weight:700; color:var(--ink); background:#fff; white-space:nowrap; width:120px; }
+  .diff-table tbody tr:nth-child(even){ background:rgba(236,230,243,0.28); }
+  .diff-table-scroll{ overflow-x:auto; border-radius:20px; -webkit-overflow-scrolling:touch; }
+  .diff-table-scroll:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
+  .diff-hint{ display:none; font-size:12px; font-weight:700; color:var(--text-muted); margin-bottom:8px; }
+  .visually-hidden{
+    position:absolute; width:1px; height:1px;
+    padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
   }
 
   /* ---------- PROCESS ---------- */
@@ -655,6 +707,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-flow{ flex-wrap:wrap; row-gap:32px; }
     .process-step{ flex:0 0 50%; }
     .process-step:not(:last-child)::after{ content:none; }
+    .diff-hint{ display:block; }
   }
 
   /* ---------- MOBILE ---------- */
@@ -669,6 +722,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
+    .diff-table th[scope="row"]{ width:96px; }
   }
 
   /* ---------- MOBILE: LEFT-ALIGN BODY TEXT (readability) ---------- */
@@ -761,50 +815,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>作って終わりのホームページではなく、公開後も問い合わせにつながり続けるホームページを。<br>大阪・心斎橋のマダナイ？が、SEO・MEO・AI活用まで含めて制作します。</p>
     <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">ホームページ制作を相談する<span class="btn-arrow">→</span></a>
-      <a href="pricing.html" class="btn-secondary">料金を見る<span class="btn-arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- 制作実績 -->
-<section id="works" class="content-block reveal" style="scroll-margin-top:90px;">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">WORKS</span>
-      <h2>成果につながるホームページ制作実績</h2>
-      <p>デザインだけでは終わりません。AI・SEO・MEO・導線設計まで考えたホームページをご紹介します。</p>
-    </div>
-    <div class="work-grid">
-      <div class="work-card">
-        <div class="work-image"><img src="assets/images/izakaya_shinnwa.jpg" alt="真和 ホームページ PC・スマホ表示イメージ" loading="lazy" width="1536" height="1024"></div>
-        <div class="work-body">
-          <div class="work-tag">居酒屋／大阪・東心斎橋</div>
-          <h3>真和</h3>
-          <div style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
-          <ul class="work-list">
-            <li>ホームページ制作</li>
-            <li>スマホ対応</li>
-            <li>SEO基本設定</li>
-          </ul>
-          <!-- 詳しく見るリンク先：制作事例の詳細ページ公開後にhrefを設定 -->
-          <span class="work-link" style="opacity:.55; cursor:default;">詳しく見る ↗</span>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-image"><img src="assets/images/ella_hp.jpg" alt="ELLA ホームページ PC・スマホ表示イメージ" loading="lazy" width="1536" height="1024"></div>
-        <div class="work-body">
-          <div class="work-tag">アパレル</div>
-          <h3>ELLA</h3>
-          <div style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
-          <ul class="work-list">
-            <li>ECサイト制作</li>
-            <li>スマホ対応</li>
-            <li>レスポンシブ対応</li>
-          </ul>
-          <!-- 詳しく見るリンク先：制作事例の詳細ページ公開後にhrefを設定 -->
-          <span class="work-link" style="opacity:.55; cursor:default;">詳しく見る ↗</span>
-        </div>
-      </div>
+      <a href="pricing.html#website" class="btn-secondary">料金を見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -845,6 +856,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- こんな会社におすすめ -->
+<section class="content-block reveal">
+  <div class="wrap content-block-inner">
+    <div class="section-head">
+      <span class="eyebrow">FOR YOU</span>
+      <h2>こんな会社におすすめ</h2>
+    </div>
+    <ul class="plan-check">
+      <li>問い合わせを増やしたい</li>
+      <li>ホームページを作ったまま放置している</li>
+      <li>SEOも考えたい</li>
+      <li>公開後も相談したい</li>
+      <li>何から始めればいいか分からない</li>
+    </ul>
+  </div>
+</section>
+
 <!-- マダナイ？なら解決できる理由 -->
 <section class="content-block alt reveal">
   <div class="wrap content-block-inner">
@@ -860,25 +888,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- なぜ信じられるのか -->
-<section class="content-block reveal">
-  <div class="wrap content-block-inner">
+<!-- ホームページ制作だけとの違い -->
+<section class="content-block alt reveal">
+  <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">EVIDENCE</span>
-      <h2>なぜ、マダナイ？に任せられるのか</h2>
+      <span class="eyebrow">DIFFERENCE</span>
+      <h2>ホームページ制作だけとの違い</h2>
+      <p>作って終わりにするか、公開後も一緒に育てていくかの違いです。</p>
     </div>
-    <p>「できます」だけでなく、実際に何を行うのかを具体的にお伝えします。</p>
-    <ul class="plan-check">
-      <li>ヒアリングからご入金確認後、通常2〜3週間ほどで納品（ページ数・内容により前後）</li>
-      <li>全プランに基本SEO設定・スマホ対応を標準搭載</li>
-      <li>Google Search Console・ビジネスプロフィールの設定代行に対応</li>
-      <li>公開後も保守プランで、修正対応・改善提案まで継続</li>
-    </ul>
-    <p>実際の制作実績は<a href="#works" class="text-link">このページ上部</a>、お客様の声は<a href="index.html#testimonials" class="text-link">お客様の声ページ</a>でご覧いただけます。</p>
-    <!-- 差し替え位置: 制作事例（詳細な導入事例が増え次第、個別ページ化を検討） -->
-    <!-- 差し替え位置: 改善前後（Before/After）の実績データ -->
-    <!-- 差し替え位置: Search Consoleの結果（検索順位・流入数の推移） -->
-    <!-- 差し替え位置: Googleビジネスプロフィールの結果（閲覧数・アクセス数の推移） -->
+    <p class="diff-hint">→ 横にスライドして比較できます</p>
+    <div class="diff-table-scroll" tabindex="0" aria-label="ホームページ制作だけとの違いの比較表。横にスクロールできます">
+      <table class="diff-table">
+        <caption class="visually-hidden">ホームページ制作だけとの違い比較表</caption>
+        <thead>
+          <tr><th scope="col">比較項目</th><th scope="col">作るだけ</th><th scope="col">マダナイ？</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">問い合わせ導線</th><td>設置のみ</td><td>行動につながる構成まで設計</td></tr>
+          <tr><th scope="row">SEO</th><td>対応なし</td><td>基本SEO設定を標準搭載</td></tr>
+          <tr><th scope="row">公開後サポート</th><td>納品して終了</td><td>保守プランで継続対応</td></tr>
+          <tr><th scope="row">改善提案</th><td>なし</td><td>公開後も改善をご提案</td></tr>
+          <tr><th scope="row">AI活用</th><td>対応なし</td><td>業務効率化の相談が可能</td></tr>
+          <tr><th scope="row">運用相談</th><td>都度依頼が必要</td><td>継続的に相談できる関係</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -914,21 +948,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- サービス内容 -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner">
+<!-- 制作実績 -->
+<section id="works" class="content-block reveal" style="scroll-margin-top:90px;">
+  <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">SERVICE</span>
-      <h2>サービス内容</h2>
+      <span class="eyebrow">WORKS</span>
+      <h2>成果につながるホームページ制作実績</h2>
+      <p>デザインだけでは終わりません。AI・SEO・MEO・導線設計まで考えたホームページをご紹介します。</p>
     </div>
-    <ul class="plan-check">
-      <li>ヒアリングにもとづくホームページ制作（スマホ対応）</li>
-      <li>お問い合わせフォーム設置</li>
-      <li>SSL対応・基本SEO設定（全プラン標準）</li>
-      <li>独自ドメイン・サーバー設定代行（オプション）</li>
-      <li>Google Search Console・ビジネスプロフィール設定代行（オプション）</li>
-      <li>公開後の保守・更新プラン</li>
-    </ul>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-image"><img src="assets/images/izakaya_shinnwa.jpg" alt="真和 ホームページ PC・スマホ表示イメージ" loading="lazy" width="1536" height="1024"></div>
+        <div class="work-body">
+          <div class="work-tag">居酒屋／大阪・東心斎橋</div>
+          <h3>真和</h3>
+          <p class="work-description">オープンまでの準備期間が限られる中でご依頼いただき、店舗の雰囲気やこだわりが伝わるホームページを制作しました。</p>
+          <div style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
+          <ul class="work-list">
+            <li>ホームページ制作</li>
+            <li>スマホ対応</li>
+            <li>SEO基本設定</li>
+          </ul>
+          <!-- 詳しく見るリンク先：制作事例の詳細ページ公開後にhrefを設定 -->
+          <span class="work-link" style="opacity:.55; cursor:default;">詳しく見る ↗</span>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-image"><img src="assets/images/ella_hp.jpg" alt="ELLA ホームページ PC・スマホ表示イメージ" loading="lazy" width="1536" height="1024"></div>
+        <div class="work-body">
+          <div class="work-tag">アパレル</div>
+          <h3>ELLA</h3>
+          <p class="work-description">ブランドの世界観を大切にしながら、スマホでも見やすく購入しやすいECサイトを制作しました。</p>
+          <div style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
+          <ul class="work-list">
+            <li>ECサイト制作</li>
+            <li>スマホ対応</li>
+            <li>レスポンシブ対応</li>
+          </ul>
+          <!-- 詳しく見るリンク先：制作事例の詳細ページ公開後にhrefを設定 -->
+          <span class="work-link" style="opacity:.55; cursor:default;">詳しく見る ↗</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -971,6 +1032,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>保守プランで、公開後も一緒に育てていきます。</p>
       </div>
     </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">この流れで相談してみる<span class="btn-arrow">→</span></a>
+    </div>
   </div>
 </section>
 
@@ -981,9 +1045,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">PRICE</span>
       <h2>料金</h2>
     </div>
-    <p>ホームページ制作は5万円から。HP公開まるごとパックや各種オプション、公開後の保守プランまで、事業や予算に合わせてお選びいただけます。</p>
+    <p>ページ数や内容、必要なオプションによって料金が変わります。事業や予算に合わせて、必要な範囲だけをご提案します。</p>
     <div style="margin-top:28px;">
-      <a href="pricing.html" class="btn-primary">料金・プラン詳細を見る<span class="btn-arrow">→</span></a>
+      <a href="pricing.html#website" class="btn-primary">料金・プラン詳細を見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>

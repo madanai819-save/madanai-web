@@ -35,6 +35,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     { "@type": "ListItem", "position": 2, "name": "MEO対策", "item": "https://madanai-web.jp/meo.html" }
   ]
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "MEOとは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "MEO（マップエンジン最適化）とは、Googleマップや「地域名＋業種」といった検索で、お店や事業を見つけてもらいやすくするための取り組みです。主にGoogleビジネスプロフィールの情報を整えることで行います。" }
+    },
+    {
+      "@type": "Question",
+      "name": "SEO対策との違いは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "SEO対策はGoogle検索など通常の検索結果でホームページを見つけてもらうための対策、MEO対策はGoogleマップや地域名を含む検索でお店を見つけてもらうための対策です。近隣のお客様への来店を増やしたい場合は、MEO対策が重要になります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Googleビジネスプロフィールを持っていなくても依頼できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。お持ちでない場合は、Googleビジネスプロフィール設定代行として基本情報の登録からサポートします。すでに開設・設定済みの場合は、MEO診断やGoogleマップ運用代行をご案内します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "MEO診断とGoogleマップ運用代行の違いは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "MEO診断は、現在のGoogleビジネスプロフィールや表示状況を確認し、改善点をご提案する単発サービスです。Googleマップ運用代行は、基本情報やカテゴリ、写真、投稿、口コミ対応などの改善作業から、継続的な運用までを行う月額サービスです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "口コミ投稿を代行できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "口コミそのものの作成・依頼・購入は行っておりません。実際にいただいた口コミへの返信文案の作成やご提案であればサポートできます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "MEO対策をすると必ず上位表示されますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "順位や来店数の増加を保証するものではありません。地域名や業種に合わせて情報を整えることで、見つけてもらいやすい状態を目指します。結果は地域・競合状況・業種などにより異なります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "写真が少なくても依頼できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、ご相談いただけます。現在お手元にある写真の状況を確認したうえで、掲載方針をご提案します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "料金はいくらですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "最新の料金・提供条件は料金ページをご確認ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "契約期間はどれくらいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "MEO診断は単発でご依頼いただけます。Googleマップ運用代行には最低契約期間があります。詳しい条件は料金ページをご確認ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "対応エリアはどこですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "全国対応しております。オンラインでの打ち合わせが中心となりますので、大阪・心斎橋以外の店舗様もご相談いただけます。" }
+    }
+  ]
+}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -496,6 +552,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:var(--grad);
   }
 
+  /* ---------- COMPARE: MEO診断 vs 運用代行 ---------- */
+  .diff-table{
+    width:100%; border-collapse:separate; border-spacing:0;
+    background:#fff; border:2px solid var(--line); border-radius:20px; overflow:hidden;
+    font-size:13.5px;
+  }
+  .diff-table th, .diff-table td{ padding:16px 18px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; line-height:1.7; }
+  .diff-table tr:last-child th, .diff-table tr:last-child td{ border-bottom:none; }
+  .diff-table thead th{ font-family:'M PLUS Rounded 1c', sans-serif; font-weight:800; font-size:14px; color:var(--ink); background:var(--bg-soft); border-bottom:2px solid var(--line); }
+  .diff-table th[scope="row"]{ font-weight:700; color:var(--ink); background:#fff; white-space:nowrap; width:140px; }
+  .diff-table tbody tr:nth-child(even){ background:rgba(236,230,243,0.28); }
+  .diff-table-scroll{ overflow-x:auto; border-radius:20px; -webkit-overflow-scrolling:touch; }
+  .diff-table-scroll:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
+  .diff-hint{ display:none; font-size:12px; font-weight:700; color:var(--text-muted); margin-bottom:8px; }
+  .visually-hidden{
+    position:absolute; width:1px; height:1px;
+    padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
   /* ---------- PROCESS ---------- */
   .process-flow{
     display:flex;
@@ -681,6 +757,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-flow{ flex-wrap:wrap; row-gap:32px; }
     .process-step{ flex:0 0 50%; }
     .process-step:not(:last-child)::after{ content:none; }
+    .diff-hint{ display:block; }
   }
 
   /* ---------- MOBILE ---------- */
@@ -694,6 +771,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
+    .diff-table th[scope="row"]{ width:96px; }
   }
 
   /* ---------- MOBILE: LEFT-ALIGN BODY TEXT (readability) ---------- */
@@ -786,7 +864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>「地域名＋業種」で検索するお客様に見つけてもらい、来店・問い合わせにつなげる。<br>大阪・心斎橋のマダナイ？が、Googleビジネスプロフィールの整備から運用までサポートします。</p>
     <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">MEO対策を相談する<span class="btn-arrow">→</span></a>
-      <a href="pricing.html#options" class="btn-secondary">料金を見る<span class="btn-arrow">→</span></a>
+      <a href="pricing.html#meo" class="btn-secondary">MEOサービスの料金を見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -796,12 +874,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CONCERN</span>
-      <h2>こんなお悩みありませんか</h2>
+      <h2>こんな店舗のお悩みに</h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card">
         <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <p>Googleマップに店舗が表示されない</p>
+        <p>Googleマップで店舗が見つかりにくい</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></div>
@@ -809,177 +887,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="pain-card">
         <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-        <p>営業時間や住所を正しく伝えたい</p>
+        <p>口コミへの対応方法が分からない</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
-        <p>近隣のお客様からの来店を増やしたい</p>
+        <p>写真や投稿を更新できていない</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <p>Google検索で競合店ばかり表示される</p>
+        <p>競合店舗との違いを伝えられていない</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 17v.01M12 14c0-2.5 2.5-2 2.5-4.5A2.5 2.5 0 0 0 12 7a2.5 2.5 0 0 0-2.5 2.5"/></svg></div>
-        <p>何を設定すればいいか分からない</p>
+        <p>何から改善すればよいか分からない</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- マダナイ？なら解決できる理由 -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner">
-    <div class="section-head">
-      <span class="eyebrow">WHY US</span>
-      <h2>マダナイ？なら解決できる理由</h2>
-    </div>
-    <p>「SEO対策」と「MEO対策」は、どちらも見つけてもらうための取り組みですが、対象とする検索が異なります。</p>
-    <p><strong><a href="seo.html" class="text-link">SEO対策</a></strong>は、Google検索など通常の検索結果で、ホームページを見つけてもらうための対策です。</p>
-    <p><strong style="color:var(--ink);">MEO対策</strong>は、Googleマップや「地域名＋業種」といった検索で、お店や事業を見つけてもらうための対策です。</p>
-    <p>近隣のお客様に来店してほしい場合は、通常の検索対策に加えて、MEO対策を整えることがとても重要になります。マダナイ？は、ホームページ制作・SEOと合わせてMEOも一体で支援できるため、集客の導線を分断せず整えられます。</p>
-  </div>
-</section>
-
-<!-- なぜ信じられるのか -->
-<section class="content-block reveal">
-  <div class="wrap content-block-inner">
-    <div class="section-head">
-      <span class="eyebrow">EVIDENCE</span>
-      <h2>マダナイ？のMEO支援で実施すること</h2>
-    </div>
-    <p>「できます」だけでなく、実際に何を行うのかを具体的にお伝えします。</p>
-    <ul class="plan-check" style="max-width:740px; margin:18px 0 0; text-align:left;">
-      <li>現状確認と改善提案（MEO診断）</li>
-      <li>基本情報・カテゴリ・写真・サービス情報の改善や、公開後の継続運用（Googleマップ運用代行）</li>
-      <li>Googleビジネスプロフィール未開設の場合の設定代行</li>
-    </ul>
-    <!-- 差し替え位置: 制作事例（MEO対策を実施した店舗の紹介） -->
-    <!-- 差し替え位置: お客様の声（MEO対策に関する感想） -->
-    <!-- 差し替え位置: 改善前後（マップ上の表示状況の変化） -->
-    <!-- 差し替え位置: Googleビジネスプロフィールの結果（閲覧数・アクセス数の推移） -->
-  </div>
-</section>
-
-<!-- MEOで整えること -->
-<section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">WHAT WE ARRANGE</span>
-      <h2>MEOで整えること</h2>
-    </div>
-    <p class="arrange-scroll-hint">→ 横にスライドして見る</p>
-    <div class="arrange-slider" id="arrangeSlider" tabindex="0" role="region" aria-label="MEOで整えることのスライダー">
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>正しい情報を届ける</h3>
-        <ul class="plan-check">
-          <li>店舗名</li>
-          <li>住所</li>
-          <li>営業時間</li>
-          <li>電話番号</li>
-          <li>サービス内容</li>
-        </ul>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>見つけてもらう</h3>
-        <ul class="plan-check">
-          <li>地域名や業種に合った情報整理</li>
-          <li>Googleマップ上での表示改善</li>
-          <li>検索されやすい情報設計</li>
-        </ul>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
-        <h3>選ばれやすくする</h3>
-        <ul class="plan-check">
-          <li>写真の整理</li>
-          <li>店舗説明の改善</li>
-          <li>サービス情報の充実</li>
-        </ul>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
-        <h3>継続して育てる</h3>
-        <ul class="plan-check">
-          <li>情報更新</li>
-          <li>投稿内容の整理</li>
-          <li>改善点の確認</li>
-        </ul>
-      </div>
-    </div>
-    <div class="arrange-slider-nav">
-      <button type="button" class="arrange-nav-btn" id="arrangePrevBtn" aria-label="前のカードを表示" disabled>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button type="button" class="arrange-nav-btn" id="arrangeNextBtn" aria-label="次のカードを表示">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-      </button>
-    </div>
-    <p style="text-align:center; font-size:11.5px; color:var(--text-muted); margin-top:32px;">※検索順位の上昇や来店数の増加を保証するものではありません。</p>
-  </div>
-</section>
-
-<!-- マダナイ？のMEO支援 -->
-<section class="content-block alt reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">OUR SUPPORT</span>
-      <h2>目的に合わせて選べるMEO支援</h2>
-      <p style="max-width:740px; margin:8px 0 0;">まず現状を確認したい方は「MEO診断」、実際の設定や情報改善から公開後の運用まで任せたい方は「Googleマップ運用代行」をお選びいただけます。</p>
-    </div>
-    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
-      <div class="recommend-box" style="flex:1 1 280px; max-width:360px;">
-        <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:12px;">MEO診断</h3>
-        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">現状確認と改善提案のみを行います。実際の設定変更・投稿・登録作業は含まれません。</p>
-        <ul>
-          <li>基本情報・カテゴリの確認</li>
-          <li>写真・投稿・口コミ導線の確認</li>
-          <li>優先順位付きの改善提案</li>
-        </ul>
-      </div>
-      <div class="recommend-box" style="flex:1 1 280px; max-width:360px;">
-        <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:12px;">Googleマップ運用代行</h3>
-        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">診断結果をもとに、基本情報やカテゴリ、写真・サービス情報などの実際の改善作業から、公開後の継続的な運用までを行います。</p>
-        <ul>
-          <li>基本情報・カテゴリの改善、写真掲載の整理・初回投稿</li>
-          <li>投稿の継続・情報更新</li>
-          <li>口コミ返信案の作成・表示状況の確認・レポート</li>
-        </ul>
-      </div>
-    </div>
-    <p style="text-align:center; font-size:12px; color:var(--text-muted); max-width:560px; margin:24px auto 0; line-height:1.8;">Googleビジネスプロフィールをまだ開設・設定していない場合は、「Googleビジネスプロフィール設定代行」オプションで基本情報の登録からサポートします。</p>
-  </div>
-</section>
-
-<!-- なぜGoogleマップ改善は3か月なのか -->
-<section id="why-3-months" class="reveal" style="scroll-margin-top:90px;">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">WHY 3 MONTHS</span>
-      <h2>なぜGoogleマップ改善は3か月なのか</h2>
-      <p style="max-width:740px; margin:8px 0 0;">Googleビジネスプロフィールは、基本情報を一度整えるだけで終わりではありません。<br><br>カテゴリや写真、投稿などの内容がGoogleマップ上に反映されるまでには時間がかかり、地域や競合状況によって必要な調整も変わります。<br><br>そのため、Googleマップ運用代行では、初期改善から情報の反映状況を踏まえた調整までを3か月かけて進めます。</p>
-    </div>
-    <div class="process-flow">
-      <div class="process-step">
-        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>1か月目：現状確認・初期改善</h3>
-        <p>Googleビジネスプロフィールの状態を確認し、基本情報の改善、カテゴリ最適化、サービスまたは商品情報の登録など、優先度の高い項目から整えます。</p>
-      </div>
-      <div class="process-step">
-        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>2か月目：情報の強化</h3>
-        <p>説明文の改善、写真掲載の整理、初回投稿、口コミ導線の確認など、地域のお客様に見つけてもらいやすくするための情報を積み増します。</p>
-      </div>
-      <div class="process-step">
-        <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
-        <h3>3か月目：仕上げと今後のご提案</h3>
-        <p>Webサイトとの情報統一を行いながら、それまでに整えた内容の反映状況を踏まえて調整します。4か月目以降も、投稿や情報更新などの運用を継続します。</p>
-      </div>
-    </div>
-    <p style="text-align:center; font-size:13px; color:var(--text-muted); max-width:640px; margin:28px auto 0; line-height:1.9;">Googleマップ運用代行は、最初の3か月で初期改善と反映状況を踏まえた調整を行い、その後も投稿や情報更新、表示状況の確認を継続していただけるプランです。</p>
-    <p style="text-align:center; font-size:11.5px; color:var(--text-muted); margin-top:20px; max-width:640px; margin-left:auto; margin-right:auto; line-height:1.8;">検索順位や来店数、問い合わせ数の増加を保証するものではありません。結果は地域・競合状況・業種・口コミ数・情報量などにより異なります。また、Googleの仕様変更により対応内容が変わる場合があります。</p>
+    <p style="text-align:center; margin-top:26px;"><a href="blog/meo-ranking-causes.html" class="text-link" style="font-size:12.5px;">Googleマップで上位表示されない原因はこちら →</a></p>
   </div>
 </section>
 
@@ -1002,6 +925,151 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- Googleマップ集客で改善すること -->
+<section class="content-block reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">BENEFIT</span>
+      <h2>Googleマップ集客で改善すること</h2>
+      <p>上位表示や来店数の増加を保証するものではありませんが、整えることで次のような状態を目指せます。</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>営業時間や場所を正しく伝えられる</h3>
+        <p>基本情報を整えることで、必要な情報を正しく届けられます。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
+        <h3>電話、経路案内、予約など次の行動へつなげられる</h3>
+        <p>見つけてもらった後、行動につながる導線を整えます。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3>写真や口コミで店舗の雰囲気を伝えられる</h3>
+        <p>来店前の不安を減らし、選ばれやすい状態を目指します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <h3>検索データを見ながら改善できる</h3>
+        <p>表示状況を確認しながら、次の改善につなげられます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- マダナイ？が支援する範囲 -->
+<section class="content-block alt reveal">
+  <div class="wrap content-block-inner">
+    <div class="section-head">
+      <span class="eyebrow">SUPPORT</span>
+      <h2>マダナイ？が支援する範囲</h2>
+    </div>
+    <ul class="plan-check" style="max-width:740px; margin:18px 0 0; text-align:left;">
+      <li>Googleビジネスプロフィールの現状確認</li>
+      <li>基本情報の整理</li>
+      <li>写真掲載の方針整理</li>
+      <li>投稿内容の提案</li>
+      <li>口コミ返信文案</li>
+      <li>検索データの確認</li>
+      <li>毎月の改善提案</li>
+    </ul>
+    <p style="max-width:740px; margin-top:16px;">このうちどこまでを行うかは、<a href="#plans" class="text-link">MEO診断とGoogleマップ運用代行</a>で範囲が異なります。<a href="blog/gbp-initial-setup-checklist.html" class="text-link">Googleビジネスプロフィールが未開設の場合</a>は、設定代行から対応します。</p>
+    <p style="max-width:740px; margin-top:10px;">必要に応じて、<a href="seo.html" class="text-link">SEO対策</a>や<a href="website.html" class="text-link">ホームページ制作</a>など他施策も連携できます。</p>
+  </div>
+</section>
+
+<!-- MEO診断とGoogleマップ運用代行 -->
+<section id="plans" class="content-block reveal" style="scroll-margin-top:90px;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">PLAN</span>
+      <h2>MEO診断とGoogleマップ運用代行</h2>
+    </div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div class="recommend-box" style="flex:1 1 280px; max-width:360px;">
+        <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">MEO診断</h3>
+        <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：まず現状と改善点を確認したい店舗</p>
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">Googleビジネスプロフィールの登録状況や検索での見え方を確認し、優先して改善すべき点を整理する単発サービスです。</p>
+        <ul>
+          <li>基本情報の確認</li>
+          <li>検索での表示状況確認</li>
+          <li>写真、投稿、口コミ状況確認</li>
+          <li>競合店舗との比較</li>
+          <li>改善優先順位の提案</li>
+        </ul>
+      </div>
+      <div class="recommend-box" style="flex:1 1 280px; max-width:360px;">
+        <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">Googleマップ運用代行</h3>
+        <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：Googleマップの更新・改善を継続して任せたい店舗</p>
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">店舗情報、投稿、写真、口コミ対応などを継続的に整え、検索データを確認しながら運用を改善する月額サービスです。<a href="blog/meo-monthly-operations.html" class="text-link" style="font-size:11.5px;">毎月の対応内容はこちら →</a></p>
+        <ul>
+          <li>店舗情報の更新</li>
+          <li>投稿の作成支援</li>
+          <li>写真掲載の提案</li>
+          <li>口コミ返信文案</li>
+          <li>検索データ確認</li>
+          <li>毎月の改善提案</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2サービスの違い -->
+<section class="content-block alt reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">DIFFERENCE</span>
+      <h2>MEO診断とGoogleマップ運用代行の違い</h2>
+    </div>
+    <p class="diff-hint">→ 横にスライドして比較できます</p>
+    <div class="diff-table-scroll" tabindex="0" aria-label="MEO診断とGoogleマップ運用代行の違いの比較表。横にスクロールできます">
+      <table class="diff-table">
+        <caption class="visually-hidden">MEO診断とGoogleマップ運用代行の違い比較表</caption>
+        <thead>
+          <tr><th scope="col">比較項目</th><th scope="col">MEO診断</th><th scope="col">Googleマップ運用代行</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">目的</th><td>現状と改善点を把握する</td><td>継続的に更新・改善する</td></tr>
+          <tr><th scope="row">契約形態</th><td>単発</td><td>継続契約</td></tr>
+          <tr><th scope="row">支援する段階</th><td>改善前</td><td>診断後または運用中</td></tr>
+          <tr><th scope="row">主な内容</th><td>調査、分析、改善提案</td><td>情報更新、投稿、口コミ対応、改善提案</td></tr>
+          <tr><th scope="row">実施主体</th><td>改善作業は店舗側または別途相談</td><td>マダナイ？が運用を支援</td></tr>
+          <tr><th scope="row">おすすめの店舗</th><td>まず課題を知りたい店舗</td><td>運用まで任せたい店舗</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- どちらを選べばいい？ -->
+<section class="content-block reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">GUIDE</span>
+      <h2>どちらのMEOサービスを選べばいい？</h2>
+    </div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div class="recommend-box" style="flex:1 1 240px; max-width:280px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">まず現状と改善点を知りたい</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="#plans" class="text-link">MEO診断</a></p>
+      </div>
+      <div class="recommend-box" style="flex:1 1 240px; max-width:280px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">投稿・写真・口コミ対応などを継続して任せたい</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="#plans" class="text-link">Googleマップ運用代行</a></p>
+      </div>
+      <div class="recommend-box" style="flex:1 1 240px; max-width:280px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">どちらが必要か分からない</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="text-link">LINEで相談</a></p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <a href="pricing.html#meo" class="btn-primary">MEOサービスの料金・提供条件を確認する<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- 支援の流れ -->
 <section class="reveal">
   <div class="wrap">
@@ -1012,35 +1080,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="process-flow">
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
-        <h3>無料相談</h3>
-        <p>公式LINEから、気になることをお聞かせください。</p>
+        <h3>LINEまたはお問い合わせ</h3>
+        <p>公式LINEまたはお問い合わせフォームからご連絡ください。</p>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <h3>現在のGoogle表示を確認</h3>
-        <p>Googleマップ・検索での表示状況を確認します。</p>
+        <h3>店舗・商圏・現在の運用状況を確認</h3>
+        <p>店舗の状況やGoogleマップ・検索での表示状況をお伺いします。</p>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>店舗情報・課題を整理</h3>
-        <p>現在の店舗情報と課題を整理します。</p>
+        <h3>課題と優先順位を整理</h3>
+        <p>現在の店舗情報と課題を整理し、優先すべき改善点をご提案します。</p>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
-        <h3>必要な設定内容をご提案</h3>
-        <p>整えるべき内容をご提案します。</p>
+        <h3>診断または運用開始</h3>
+        <p>MEO診断、またはGoogleマップ運用代行としての改善作業を開始します。</p>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>改善作業・設定代行</h3>
-        <p>Googleマップ運用代行による情報の改善や、必要に応じてGoogleビジネスプロフィール設定代行を行います。</p>
+        <h3>データ確認と改善提案</h3>
+        <p>検索での表示状況を確認しながら、改善点をご提案します。</p>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
-        <h3>公開後の確認・運用相談</h3>
-        <p>公開後の表示状況や運用についてもご相談いただけます。</p>
+        <h3>継続改善</h3>
+        <p>Googleマップ運用代行では、投稿や情報更新など継続的な改善を行います。</p>
       </div>
     </div>
+    <p style="text-align:center; font-size:12px; color:var(--text-muted); max-width:640px; margin:24px auto 0; line-height:1.8;">MEO診断は現状確認と改善提案までの単発サービス、Googleマップ運用代行は改善作業から継続運用までを含む月額サービスです。</p>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">Googleマップ集客について相談する<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 関連記事 -->
+<section class="content-block alt reveal">
+  <div class="wrap content-block-inner">
+    <div class="section-head">
+      <span class="eyebrow">ARTICLES</span>
+      <h2>Googleマップ集客の参考記事</h2>
+    </div>
+    <p>MEO対策についてさらに詳しく知りたい方は、以下の記事もご覧ください。</p>
+    <ul class="plan-check" style="max-width:740px; margin:16px 0 0; text-align:left;">
+      <li><a href="blog/meo-basics.html" class="text-link">MEO対策とは？Googleマップから来店を増やす基本施策を解説</a></li>
+      <li><a href="blog/meo-suitable-industries.html" class="text-link">Googleマップ集客ができる業種一覧</a></li>
+      <li><a href="blog/gbp-agency-cost.html" class="text-link">Googleビジネスプロフィール代行の費用相場</a></li>
+      <li><a href="blog/gbp-faq-30.html" class="text-link">Googleマップよくある質問30選</a></li>
+    </ul>
   </div>
 </section>
 
@@ -1052,6 +1141,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>よくある質問</h2>
     </div>
     <div style="display:flex; flex-direction:column; gap:16px; max-width:720px; margin:0 auto;">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">MEOとは何ですか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>MEO（マップエンジン最適化）とは、Googleマップや「地域名＋業種」といった検索で、お店や事業を見つけてもらいやすくするための取り組みです。主にGoogleビジネスプロフィールの情報を整えることで行います。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">SEO対策との違いは何ですか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>SEO対策はGoogle検索など通常の検索結果でホームページを見つけてもらうための対策、MEO対策はGoogleマップや地域名を含む検索でお店を見つけてもらうための対策です。近隣のお客様への来店を増やしたい場合は、MEO対策が重要になります。</p>
+          </div>
+        </div>
+      </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
@@ -1072,43 +1185,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>MEO診断は、現在のGoogleビジネスプロフィールや表示状況を確認し、改善点をご提案するプランです。Googleマップ運用代行は、その診断内容をもとに、基本情報やカテゴリ、サービス情報などの実際の改善作業から、公開後の継続的な運用までを行います。</p>
+            <p>MEO診断は、現在のGoogleビジネスプロフィールや表示状況を確認し、改善点をご提案する単発サービスです。Googleマップ運用代行は、基本情報やカテゴリ、写真、投稿、口コミ対応などの改善作業から、継続的な運用までを行う月額サービスです。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">なぜGoogleマップ運用代行は最低3か月なのですか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">口コミ投稿を代行できますか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>Googleビジネスプロフィールは、基本情報を整えただけでは効果を判断しにくいためです。1か月目に初期改善、2か月目に情報の強化、3か月目に情報統一と反映状況を踏まえた調整を行います。地域や競合状況によって結果は異なり、順位や来店数を保証するものではありません。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">3か月終了後も継続する必要がありますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>3か月以降の継続は必須ではありません。引き続き投稿や情報更新、口コミ返信案、表示状況の確認などを希望される場合は、そのままGoogleマップ運用代行を継続していただけます。自社で運用できる場合は、そのまま引き継いでいただくことも可能です。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">店舗を持たない事業でも利用できますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>事業形態によって対応可否が異なります。内容を確認のうえ個別にご案内します。</p>
+            <p>口コミそのものの作成・依頼・購入は行っておりません。実際にいただいた口コミへの返信文案の作成やご提案であればサポートできます。</p>
           </div>
         </div>
       </div>
@@ -1120,61 +1209,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>順位や集客成果を保証するものではありません。地域名や業種に合わせて情報を整えることで、見つけてもらいやすい状態を目指します。</p>
+            <p>順位や来店数の増加を保証するものではありません。地域名や業種に合わせて情報を整えることで、見つけてもらいやすい状態を目指します。結果は地域・競合状況・業種などにより異なります。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">写真や店舗情報は何を準備すればいいですか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">写真が少なくても依頼できますか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>店舗の外観・内観やサービスが伝わる写真など。詳しくはご相談時に内容を確認のうえご案内します。</p>
+            <p>はい、ご相談いただけます。現在お手元にある写真の状況を確認したうえで、掲載方針をご提案します。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">SEO対策と一緒に依頼できますか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">料金はいくらですか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>はい、SEOとMEOを組み合わせたご相談も可能です。内容を確認のうえ個別にご案内します。</p>
+            <p>最新の料金・提供条件は<a href="pricing.html#meo" class="text-link">料金ページ</a>をご確認ください。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">公開後の更新も相談できますか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">契約期間はどれくらいですか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>はい。投稿、情報更新、口コミ返信案、表示状況の確認などを継続したい場合は、Googleマップ運用代行としてご案内します。保守プランをご利用の場合も、運用に関するご相談は承っています。</p>
+            <p>MEO診断は単発でご依頼いただけます。Googleマップ運用代行には最低契約期間があります。詳しい条件は<a href="pricing.html#meo" class="text-link">料金ページ</a>をご確認ください。</p>
           </div>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">対応エリアはどこですか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>全国対応しております。オンラインでの打ち合わせが中心となりますので、大阪・心斎橋以外の店舗様もご相談いただけます。</p>
+          </div>
+        </div>
+      </div>
 
-<!-- 料金について -->
-<section class="content-block reveal" style="scroll-margin-top:90px;">
-  <div class="wrap content-block-inner">
-    <div class="section-head">
-      <span class="eyebrow">PRICE</span>
-      <h2>料金について</h2>
-    </div>
-    <p>Googleビジネスプロフィールの登録・設定に対応しています。料金の詳細は料金ページでご確認いただけます。ホームページ制作やSEO対策との組み合わせもご相談いただけます。</p>
-    <div style="margin-top:28px;">
-      <a href="pricing.html#options" class="btn-primary">MEO対策の料金を見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
