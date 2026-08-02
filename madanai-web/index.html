@@ -565,8 +565,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display:flex;
     align-items:center;
     justify-content:flex-start;
-    min-height:460px;
-    margin:48px 0 80px;
+    min-height:0;
+    margin:16px 0 40px;
     overflow:hidden;
   }
   .about-hero-logo{
@@ -1121,7 +1121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-flow{ flex-wrap:wrap; row-gap:36px; }
     .process-step{ flex:0 0 50%; }
     .process-step:not(:last-child)::after{ content:none; }
-    .about-hero{ min-height:0; margin:32px 0 56px; }
+    .about-hero{ min-height:0; margin:16px 0 32px; }
     .about-hero-logo{ width:96%; opacity:0.04; }
   }
 
@@ -1151,9 +1151,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .work-grid, .testimonial-grid{ gap:16px; }
     .work-card, .testimonial-card{ flex-basis:86%; max-width:none; min-width:0; }
     .testimonial-card{ padding:40px 28px; }
-    .concern-grid{ flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:4px; }
-    .concern-grid::-webkit-scrollbar{ display:none; }
-    .concern-card{ flex:0 0 78%; max-width:none; scroll-snap-align:start; }
+    .concern-grid{ flex-direction:column; gap:16px; }
+    .concern-card{ max-width:none; min-width:0; width:100%; }
     .carousel-heading{ margin-bottom:24px; }
     .carousel-nav{ display:none; }
     .carousel-hint{ display:block; }
@@ -1308,6 +1307,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
+<section id="concerns" class="values reveal" style="padding-top:56px; padding-bottom:56px;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">START HERE</span>
+      <h2>あなたの「まだない」は<br>どれですか？</h2>
+      <p class="section-sub">今の状況に近いものを選んでください。必要なことが分からない状態でも大丈夫です。</p>
+    </div>
+    <div class="concern-grid">
+      <a class="concern-card" href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener">
+        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18"/></svg></div>
+        <h3>ホームページがまだない</h3>
+        <p>事業の魅力が伝わるWeb上の窓口を、分かりやすく整えます。</p>
+      </a>
+      <a class="concern-card" href="seo.html">
+        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <h3>検索しても見つからない</h3>
+        <p>SEOや検索設定を見直し、見つけてもらう土台を整えます。</p>
+      </a>
+      <a class="concern-card" href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener">
+        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="var(--purple)"/></svg></div>
+        <h3>集客方法が分からない</h3>
+        <p>事業や予算に合わせて、優先すべき集客方法を整理します。</p>
+      </a>
+      <a class="concern-card" href="ai.html">
+        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+        <h3>AIを仕事に活用したい</h3>
+        <p>日々の業務や情報発信で使えるAI活用方法を一緒に考えます。</p>
+      </a>
+      <a class="concern-card" href="maintenance.html">
+        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
+        <h3>公開後の更新や改善ができない</h3>
+        <p>修正・更新・改善まで、公開後も継続してサポートします。</p>
+      </a>
+    </div>
+  </div>
+</section>
 <section id="works" class="works reveal" style="padding-top:48px; padding-bottom:64px;">
   <div class="wrap">
     <div class="carousel-heading">
@@ -1374,41 +1409,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </a>
     </div>
+    <div style="text-align:center; margin-top:10px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" style="font-size:13px; font-weight:800; color:var(--purple); display:inline-flex; align-items:center; gap:4px;">似たような制作を相談する<span class="btn-arrow">→</span></a>
+    </div>
   </div>
 </section>
-<section id="concerns" class="values reveal" style="padding-top:56px; padding-bottom:56px;">
+<section id="what-we-do" class="values reveal" style="background:var(--bg-soft); padding-top:64px;">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">START HERE</span>
-      <h2>あなたの「まだない」は<br>どれですか？</h2>
-      <p class="section-sub">今の状況に近いものを選んでください。必要なことが分からない状態でも大丈夫です。</p>
+      <span class="eyebrow">WHAT WE DO</span>
+      <h2>マダナイ？ができること</h2>
+      <p class="section-sub">私たちは、ホームページ制作会社ではありません。事業を前に進めるために必要なことを、まとめてご相談いただけます。</p>
     </div>
-    <div class="concern-grid">
-      <a class="concern-card" href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener">
-        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18"/></svg></div>
-        <h3>ホームページがまだない</h3>
-        <p>事業の魅力が伝わるWeb上の窓口を、分かりやすく整えます。</p>
-      </a>
-      <a class="concern-card" href="seo.html">
-        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>検索しても見つからない</h3>
-        <p>SEOや検索設定を見直し、見つけてもらう土台を整えます。</p>
-      </a>
-      <a class="concern-card" href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener">
-        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="var(--purple)"/></svg></div>
-        <h3>集客方法が分からない</h3>
-        <p>事業や予算に合わせて、優先すべき集客方法を整理します。</p>
-      </a>
-      <a class="concern-card" href="ai.html">
-        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
-        <h3>AIを仕事に活用したい</h3>
-        <p>日々の業務や情報発信で使えるAI活用方法を一緒に考えます。</p>
-      </a>
-      <a class="concern-card" href="maintenance.html">
-        <div class="concern-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
-        <h3>公開後の更新や改善ができない</h3>
-        <p>修正・更新・改善まで、公開後も継続してサポートします。</p>
-      </a>
+
+    <div class="pillar-grid">
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+        <h3>見つけてもらう</h3>
+        <p>検索でも、地図でも、見つかる状態に。</p>
+        <ul class="plan-check" style="text-align:left; margin-top:14px;">
+          <li>SEO基本設定</li>
+          <li>Googleビジネスプロフィール設定代行</li>
+        </ul>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+          <a href="seo.html" style="font-size:12px; font-weight:700; color:var(--purple);">SEO対策を見る →</a>
+          <a href="meo.html" style="font-size:12px; font-weight:700; color:var(--purple);">MEO対策を見る →</a>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3>選ばれる</h3>
+        <p>比較された時に、選ばれる見た目と情報に。</p>
+        <ul class="plan-check" style="text-align:left; margin-top:14px;">
+          <li>ホームページ制作・スマホ対応</li>
+          <li>LP制作</li>
+        </ul>
+        <div style="margin-top:14px;">
+          <a href="website.html" style="font-size:12px; font-weight:700; color:var(--purple);">ホームページ制作について見る →</a>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+        <h3>効率化する</h3>
+        <p>日々の対応を、無理なく軽くする。</p>
+        <ul class="plan-check" style="text-align:left; margin-top:14px;">
+          <li>ワンストップ対応（窓口の一本化）</li>
+          <li>問い合わせ対応やお知らせ作成へのAI活用のご提案</li>
+        </ul>
+        <div style="margin-top:14px;">
+          <a href="ai.html" style="font-size:12px; font-weight:700; color:var(--purple);">AI活用について見る →</a>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
+        <h3>育てる</h3>
+        <p>公開後も、事業と一緒に伸ばしていく。</p>
+        <ul class="plan-check" style="text-align:left; margin-top:14px;">
+          <li>マーケティング支援</li>
+          <li>集客導線の見直し・改善</li>
+        </ul>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
+        <h3>伴走する</h3>
+        <p>何かあれば、いつでも相談できる関係を。</p>
+        <ul class="plan-check" style="text-align:left; margin-top:14px;">
+          <li>保守プラン（公開後サポート）</li>
+          <li>LINEでの相談対応</li>
+        </ul>
+        <div style="margin-top:14px;">
+          <a href="maintenance.html" style="font-size:12px; font-weight:700; color:var(--purple);">保守・運用支援について見る →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:36px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">まずは何から始めればいいか相談する<span class="btn-arrow">→</span></a>
+      <p class="hero-note" style="margin-top:14px;">何から始めればいいか分からなくても大丈夫です。</p>
     </div>
   </div>
 </section>
@@ -1460,114 +1537,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </div>
 
-    <p style="text-align:left; margin:64px 0 0; max-width:640px; font-size:15px; font-weight:500; color:var(--text-muted); line-height:1.9;">「まだない」のままになっている挑戦を、「もう動き出している」に変えていく。私たちは、そのために存在します。</p>
-  </div>
-</section>
-<section id="what-we-do" class="values reveal" style="background:var(--bg-soft); padding-top:64px;">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">WHAT WE DO</span>
-      <h2>マダナイ？ができること</h2>
-      <p class="section-sub">私たちは、ホームページ制作会社ではありません。事業を前に進めるために必要なことを、まとめてご相談いただけます。</p>
-    </div>
-
-    <div class="pillar-grid">
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>見つけてもらう</h3>
-        <p>検索でも、地図でも、見つかる状態に。</p>
-        <ul class="plan-check" style="text-align:left; margin-top:14px;">
-          <li>SEO基本設定</li>
-          <li>Google Search Console設定代行</li>
-          <li>Googleビジネスプロフィール設定代行</li>
-          <li>集客支援</li>
-        </ul>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-          <a href="seo.html" style="font-size:12px; font-weight:700; color:var(--purple);">SEO対策を見る →</a>
-          <a href="meo.html" style="font-size:12px; font-weight:700; color:var(--purple);">MEO対策を見る →</a>
-        </div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
-        <h3>選ばれる</h3>
-        <p>比較された時に、選ばれる見た目と情報に。</p>
-        <ul class="plan-check" style="text-align:left; margin-top:14px;">
-          <li>ホームページ制作・スマホ対応</li>
-          <li>独自ドメイン設定</li>
-          <li>LP制作</li>
-        </ul>
-        <div style="margin-top:14px;">
-          <a href="website.html" style="font-size:12px; font-weight:700; color:var(--purple);">ホームページ制作について見る →</a>
-        </div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
-        <h3>効率化する</h3>
-        <p>日々の対応を、無理なく軽くする。</p>
-        <ul class="plan-check" style="text-align:left; margin-top:14px;">
-          <li>ワンストップ対応（窓口の一本化）</li>
-          <li>問い合わせ対応やお知らせ作成へのAI活用のご提案</li>
-        </ul>
-        <div style="margin-top:14px;">
-          <a href="ai.html" style="font-size:12px; font-weight:700; color:var(--purple);">AI活用について見る →</a>
-        </div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
-        <h3>育てる</h3>
-        <p>公開後も、事業と一緒に伸ばしていく。</p>
-        <ul class="plan-check" style="text-align:left; margin-top:14px;">
-          <li>マーケティング支援</li>
-          <li>集客導線の見直し・改善</li>
-        </ul>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
-        <h3>伴走する</h3>
-        <p>何かあれば、いつでも相談できる関係を。</p>
-        <ul class="plan-check" style="text-align:left; margin-top:14px;">
-          <li>保守プラン（公開後サポート）</li>
-          <li>公開後の修正対応</li>
-          <li>改善提案</li>
-          <li>LINEでの相談対応</li>
-        </ul>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top:36px;">
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">まずは何から始めればいいか相談する<span class="btn-arrow">→</span></a>
-      <p class="hero-note" style="margin-top:14px;">何から始めればいいか分からなくても大丈夫です。</p>
-    </div>
-  </div>
-</section>
-<section id="why-us" class="values reveal" style="padding-top:64px;">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">WHY US</span>
-      <h2>選ばれる理由</h2>
-    </div>
-    <div class="value-grid">
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg></div>
-        <h3>最短1日で制作対応</h3>
-        <p>素材・文章・構成が揃った簡易ページなど、条件を満たす場合にスピード対応が可能です。通常の制作期間は、内容や確認状況により2〜3週間程度です。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 8h5.5a2.5 2.5 0 0 1 0 5H9m0 0h7m-7 0v3m0-3v-3"/></svg></div>
-        <h3>明朗な料金設定</h3>
-        <p>ホームページ制作は5万円から。事前に料金をご案内します。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>SEO・集客を意識</h3>
-        <p>検索されやすさとお問い合わせ導線を考えて制作します。</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.1C0.3 8.6 1.7 5 5.2 4.2c2-.5 4 .3 5.1 2 .9.2 1.8.2 2.6 0 1.1-1.7 3.1-2.5 5.1-2 3.5.8 4.9 4.4 3.2 7.7C19.5 16.4 12 21 12 21z"/></svg></div>
-        <h3>公開後もサポート</h3>
-        <p>修正や更新に対応する保守プランで、作って終わりにしません。</p>
-      </div>
-    </div>
   </div>
 </section>
 <section id="pricing" class="pricing-alt reveal">
@@ -1605,16 +1574,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-<section class="cta-mid reveal" style="padding-top:0;">
-  <div class="wrap">
-    <div style="text-align:center;">
-      <p style="font-size:12px; font-weight:800; color:var(--pink); margin-bottom:8px; letter-spacing:0.06em;">お問い合わせ</p>
-      <h3 style="font-size:clamp(20px, 3.6vw, 24px); font-weight:900; color:var(--ink); margin-bottom:10px;">気になることがあれば、まずは無料相談から</h3>
-      <p style="font-size:14px; color:var(--text-muted); margin:0 auto 20px; max-width:520px;">料金や制作内容が気になる方は、公式LINEから気軽にお問合せください。</p>
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line" style="padding:15px 32px; font-size:14px;">30秒で無料相談する</a>
-    </div>
-  </div>
-</section>
 <section id="process" class="process reveal">
   <div class="wrap">
     <div class="section-head">
@@ -1642,6 +1601,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>公開・サポート</h3>
         <p>内容をご確認いただいた上で公開。ご希望の方には保守プランで継続サポートします。</p>
       </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">この流れで相談してみる<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1671,7 +1633,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div style="text-align:center; margin-top:32px;">
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">無料相談する<span class="btn-arrow">→</span></a>
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">私たちにも相談してみる<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1807,15 +1769,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-<section class="cta-faq reveal" style="padding-top:0;">
-  <div class="wrap">
-    <div style="background:var(--bg-soft); border:2px solid var(--line); border-radius:24px; padding:26px 24px; text-align:center;">
-      <h3 style="font-size:20px; font-weight:900; color:var(--ink); margin-bottom:10px;">まだ悩んでいるなら、まずは無料相談から</h3>
-      <p style="font-size:14px; color:var(--text-muted); margin:0 auto 18px; max-width:500px;">お問い合わせ内容が決まっていなくても大丈夫です。公式LINEで気軽にご相談ください。</p>
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line" style="padding:15px 30px; font-size:14px;">まずはLINEで相談する</a>
     </div>
   </div>
 </section>
