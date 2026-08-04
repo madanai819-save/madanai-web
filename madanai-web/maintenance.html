@@ -35,6 +35,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     { "@type": "ListItem", "position": 2, "name": "保守・運用支援", "item": "https://madanai-web.jp/maintenance.html" }
   ]
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "軽微な修正とは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "文章の差し替えや画像の入れ替え、リンク修正など、既存ページの範囲内で完結する作業を指します。新規ページの制作やデザインの大幅な変更は軽微な修正には含まれません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "修正回数はどれくらいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "プランによって異なります。ライトは月1回まで、スタンダードは月3回まで、プレミアムはほぼ無制限（目安あり）でご利用いただけます。詳しい条件は料金ページをご確認ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "対応時間はどれくらいかかりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "内容やボリュームによって異なります。ご依頼内容を確認したうえで、対応にかかる目安の期間をご案内します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "新規ページの制作もお願いできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "保守プランの対応範囲は既存ページの更新・修正が中心です。新規ページの制作や大規模なデザイン変更をご希望の場合は、ホームページ制作から別途ご相談ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "他社で制作したサイトでも相談できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、ご相談いただけます。現在のサイトの状態を確認したうえで、対応可否や必要な支援内容をご案内します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "契約期間はどれくらいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "プランによって条件が異なります。詳しい契約期間は料金ページをご確認ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "解約はできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、可能です。解約方法や条件については、公式LINEまたは料金ページをご確認ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "SEO改善についても相談できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、ご相談いただけます。プランによってご案内できる内容が異なります。より本格的な改善をご希望の場合は、SEO対策ページもあわせてご覧ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "AI活用についても相談できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。日々の業務や情報発信を効率化するAIの活用方法について、専門知識がなくてもご相談いただけます。詳しくはAI導入・活用支援ページもご覧ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "料金はいくらですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "最新の料金・提供条件は料金ページをご確認ください。" }
+    }
+  ]
+}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -447,6 +503,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:var(--grad);
   }
 
+  /* ---------- COMPARE: 3プランの違い ---------- */
+  .diff-table{
+    width:100%; border-collapse:separate; border-spacing:0;
+    background:#fff; border:2px solid var(--line); border-radius:20px; overflow:hidden;
+    font-size:13.5px;
+  }
+  .diff-table th, .diff-table td{ padding:16px 18px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; line-height:1.7; }
+  .diff-table tr:last-child th, .diff-table tr:last-child td{ border-bottom:none; }
+  .diff-table thead th{ font-family:'M PLUS Rounded 1c', sans-serif; font-weight:800; font-size:14px; color:var(--ink); background:var(--bg-soft); border-bottom:2px solid var(--line); }
+  .diff-table th[scope="row"]{ font-weight:700; color:var(--ink); background:#fff; white-space:nowrap; width:140px; }
+  .diff-table tbody tr:nth-child(even){ background:rgba(236,230,243,0.28); }
+  .diff-table-scroll{ overflow-x:auto; border-radius:20px; -webkit-overflow-scrolling:touch; }
+  .diff-table-scroll:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
+  .diff-hint{ display:none; font-size:12px; font-weight:700; color:var(--text-muted); margin-bottom:8px; }
+  .visually-hidden{
+    position:absolute; width:1px; height:1px;
+    padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
   /* ---------- PROCESS ---------- */
   .process-flow{
     display:flex;
@@ -632,6 +708,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-flow{ flex-wrap:wrap; row-gap:32px; }
     .process-step{ flex:0 0 50%; }
     .process-step:not(:last-child)::after{ content:none; }
+    .diff-hint{ display:block; }
   }
 
   /* ---------- MOBILE ---------- */
@@ -645,6 +722,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
+    .diff-table th[scope="row"]{ width:96px; }
   }
 </style>
 </head>
@@ -726,13 +804,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>公開して終わりにしない。<br>ホームページを、育て続ける。</h1>
     <p>ホームページは公開してからが本当のスタートです。<br>更新・修正・改善・集客相談まで、事業の成長に合わせて継続的にサポートします。</p>
     <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
-      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">保守プランを相談する<span class="btn-arrow">→</span></a>
-      <a href="pricing.html#maintenance" class="btn-secondary">料金を見る<span class="btn-arrow">→</span></a>
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">公開後の保守について相談する<span class="btn-arrow">→</span></a>
+      <a href="pricing.html#maintenance" class="btn-secondary">保守プランの料金を見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- 公開後によくある悩み -->
 <section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
@@ -768,102 +845,174 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ホームページを育てる必要性 -->
-<section class="content-block alt reveal">
-  <div class="wrap content-block-inner">
-    <div class="section-head">
-      <span class="eyebrow">WHY</span>
-      <h2>ホームページを育てる必要性</h2>
-    </div>
-    <p style="font-weight:700; color:var(--ink);">公開後に放置してしまうと、次のようなことが起こりやすくなります。</p>
-    <ul class="plan-check" style="max-width:740px; margin:18px 0 28px; text-align:left;">
-      <li>情報が古いままになり、事業の信頼を損ねてしまう</li>
-      <li>検索での見つかりやすさが、少しずつ下がっていく</li>
-      <li>不具合や表示崩れに、気づかないまま時間が経ってしまう</li>
-      <li>問い合わせや集客につながる機会を、逃してしまう</li>
-    </ul>
-    <p style="font-size:16px; font-weight:800; color:var(--ink);">だからこそ、公開後も<span class="grad-text">継続的な改善</span>を続けることが大切です。</p>
-  </div>
-</section>
-
-<!-- マダナイ？が支援できること -->
+<!-- 保守・運用でできること -->
 <section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">SUPPORT</span>
-      <h2>マダナイ？が支援できること</h2>
+      <span class="eyebrow">BENEFIT</span>
+      <h2>保守・運用でできること</h2>
+      <p>公開後に放置してしまうと、情報の古さや不具合に気づかないまま、問い合わせの機会を逃してしまうことがあります。継続的な運用で、次のような状態を目指せます。</p>
     </div>
     <div class="value-grid">
       <div class="value-card">
         <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
-        <h3>守る</h3>
-        <p>不具合やセキュリティの不安から、安心して運用できる状態を守ります。</p>
-        <ul class="plan-check">
-          <li>不具合時のご相談対応</li>
-          <li>セキュリティ・バックアップへの配慮</li>
-        </ul>
+        <h3>ホームページを安心して運用できる</h3>
+        <p>不具合やセキュリティの不安から、安心して運用できる状態を保てます。</p>
       </div>
       <div class="value-card">
         <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
-        <h3>育てる</h3>
-        <p>文章や写真、お知らせなど、サイトの中身を新しく保ち続けます。</p>
-        <ul class="plan-check">
-          <li>文章・画像の更新</li>
-          <li>お知らせ・ブログの更新代行</li>
-        </ul>
+        <h3>情報を最新の状態に保てる</h3>
+        <p>文章や写真、お知らせなど、サイトの中身を新しく保ち続けられます。</p>
       </div>
       <div class="value-card">
         <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
-        <h3>見つけてもらう</h3>
-        <p>検索やGoogleマップからの見つかりやすさを、継続的に確認します。</p>
-        <ul class="plan-check">
-          <li>検索状況の確認</li>
-          <li><a href="meo.html" class="text-link">MEO</a>（地図検索）のご相談</li>
-        </ul>
+        <h3>SEO改善も相談できる</h3>
+        <p>検索やGoogleマップからの見つかりやすさを、継続的に確認・改善できます。</p>
       </div>
       <div class="value-card">
         <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
-        <h3>効率化する</h3>
+        <h3>AI活用も相談できる</h3>
         <p>日々の業務や情報発信を、AIの活用で効率化するご相談も承ります。</p>
-        <ul class="plan-check">
-          <li><a href="ai.html" class="text-link">AI活用</a>のご相談</li>
-          <li>集客に関するご相談</li>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- マダナイ？が対応する範囲 -->
+<section class="content-block alt reveal">
+  <div class="wrap content-block-inner">
+    <div class="section-head">
+      <span class="eyebrow">SUPPORT</span>
+      <h2>マダナイ？が対応する範囲</h2>
+    </div>
+    <ul class="plan-check" style="max-width:740px; margin-top:18px;">
+      <li>文章修正</li>
+      <li>画像差し替え</li>
+      <li>バナー変更</li>
+      <li>リンク修正</li>
+      <li>バックアップ</li>
+      <li>セキュリティ更新</li>
+      <li>表示確認</li>
+      <li>簡易SEO改善</li>
+      <li>アクセス確認</li>
+      <li>改善提案</li>
+      <li>更新相談</li>
+    </ul>
+    <p style="max-width:740px; margin-top:16px;">このうちどこまでを行うかは、<a href="#plans" class="text-link">ライト・スタンダード・プレミアム</a>で範囲が異なります。</p>
+    <p style="max-width:740px; margin-top:10px; font-size:12.5px; color:var(--text-muted);">対象外：新規ページ制作、大規模デザイン変更、システム開発、外部サービス障害など。これらをご希望の場合は<a href="website.html" class="text-link">ホームページ制作</a>など別途ご相談ください。</p>
+    <p style="max-width:740px; margin-top:10px;">より本格的な<a href="seo.html" class="text-link">SEO対策</a>や<a href="meo.html" class="text-link">MEO対策</a>、<a href="ai.html" class="text-link">AI活用</a>まで任せたい場合も、必要に応じてご相談いただけます。</p>
+  </div>
+</section>
+
+<!-- ライト・スタンダード・プレミアム -->
+<section id="plans" class="content-block reveal" style="scroll-margin-top:90px;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">PLAN</span>
+      <h2>ライト・スタンダード・プレミアム</h2>
+    </div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div class="recommend-box" style="flex:1 1 240px; max-width:320px;">
+        <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">ライト</h3>
+        <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：最低限管理したい</p>
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">必要最低限の更新・管理を任せたい方向けのプランです。</p>
+        <ul>
+          <li>月1回までの軽微な修正</li>
+          <li>LINEでのご相談</li>
+          <li>ドメイン更新・SSL管理</li>
+        </ul>
+      </div>
+      <div class="recommend-box" style="flex:1 1 240px; max-width:320px;">
+        <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">スタンダード</h3>
+        <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：更新も改善も相談したい</p>
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">更新作業と改善提案を継続して行いたい方向けのプランです。</p>
+        <ul>
+          <li>月3回までの修正</li>
+          <li>ブログ・お知らせの更新代行</li>
+          <li>SEO・MEOのご相談、月次の改善提案</li>
+        </ul>
+      </div>
+      <div class="recommend-box" style="flex:1 1 240px; max-width:320px;">
+        <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">プレミアム</h3>
+        <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：優先対応まで任せたい</p>
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">更新・改善・優先対応までまとめて任せたい方向けのプランです。</p>
+        <ul>
+          <li>軽微な修正ほぼ無制限（目安あり）</li>
+          <li>優先対応</li>
+          <li>AI活用のご相談</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 保守・運用支援が向いている方 -->
+<!-- 3プランの違い -->
 <section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">FOR YOU</span>
-      <h2>こんな方に向いています</h2>
+      <span class="eyebrow">DIFFERENCE</span>
+      <h2>3プランの違い</h2>
     </div>
-    <div class="recommend-box">
-      <ul>
-        <li>自分で更新する時間がない方</li>
-        <li>公開後の運用に不安がある方</li>
-        <li>相談できる相手がほしい方</li>
-        <li>ホームページを放置したくない方</li>
-        <li>集客や改善まで継続して考えたい方</li>
-      </ul>
+    <p class="diff-hint">→ 横にスライドして比較できます</p>
+    <div class="diff-table-scroll" tabindex="0" aria-label="3プランの違いの比較表。横にスクロールできます">
+      <table class="diff-table">
+        <caption class="visually-hidden">ライト、スタンダード、プレミアムの違い比較表</caption>
+        <thead>
+          <tr><th scope="col">比較項目</th><th scope="col">ライト</th><th scope="col">スタンダード</th><th scope="col">プレミアム</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">おすすめ</th><td><span aria-hidden="true">−</span></td><td>○（おすすめ）</td><td><span aria-hidden="true">−</span></td></tr>
+          <tr><th scope="row">対応範囲</th><td>文章・画像の修正が中心</td><td>更新代行・SEO・MEO相談まで</td><td>優先対応・AI活用相談まで</td></tr>
+          <tr><th scope="row">改善提案</th><td><span aria-hidden="true">−</span></td><td>月次の改善提案</td><td>優先的な改善提案</td></tr>
+          <tr><th scope="row">優先対応</th><td><span aria-hidden="true">−</span></td><td><span aria-hidden="true">−</span></td><td>○</td></tr>
+          <tr><th scope="row">向いている企業</th><td>まず安心して運用したい方</td><td>SEO・MEO・AIまで相談したい方</td><td>修正頻度が高く優先対応も欲しい方</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<!-- 公開後の支援の流れ -->
+<!-- どれを選べばいい？ -->
+<section class="content-block reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">GUIDE</span>
+      <h2>どのプランを選べばいい？</h2>
+    </div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div class="recommend-box" style="flex:1 1 220px; max-width:260px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">最低限更新したい</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="#plans" class="text-link">ライト</a></p>
+      </div>
+      <div class="recommend-box" style="flex:1 1 220px; max-width:260px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">更新も改善も相談したい</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="#plans" class="text-link">スタンダード</a></p>
+      </div>
+      <div class="recommend-box" style="flex:1 1 220px; max-width:260px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">優先対応も必要</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="#plans" class="text-link">プレミアム</a></p>
+      </div>
+      <div class="recommend-box" style="flex:1 1 220px; max-width:260px; margin:0;">
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:10px; line-height:1.7;">どれが必要か分からない</p>
+        <p style="font-size:15px; font-weight:800; color:var(--ink);">→ <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="text-link">LINEで相談</a></p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <a href="pricing.html#maintenance" class="btn-primary">保守プランの料金・提供条件を見る<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FLOW</span>
-      <h2>公開後の支援の流れ</h2>
+      <h2>対応の流れ</h2>
     </div>
     <div class="process-flow">
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-4 4z"/></svg></div>
-        <h3>ご相談</h3>
+        <h3>相談</h3>
         <p>公式LINEから、気になることをお聞かせください。</p>
       </div>
       <div class="process-step">
@@ -873,24 +1022,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>支援内容の整理</h3>
-        <p>必要な支援内容を整理します。</p>
+        <h3>プラン決定</h3>
+        <p>ご希望の内容に合わせて、プランを決定します。</p>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
-        <h3>プランご案内</h3>
-        <p>状況に合わせて保守プランをご案内します。</p>
+        <h3>運用開始</h3>
+        <p>プランに沿って、保守・運用をスタートします。</p>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></div>
-        <h3>更新・改善</h3>
-        <p>継続して更新・改善を行います。</p>
+        <h3>改善提案</h3>
+        <p>状況を確認しながら、必要な改善をご提案します。</p>
       </div>
       <div class="process-step">
         <div class="process-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
-        <h3>追加提案</h3>
-        <p>必要に応じて追加の施策をご提案します。</p>
+        <h3>継続サポート</h3>
+        <p>公開後も継続して、運用をサポートします。</p>
       </div>
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">この流れで相談する<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -906,6 +1058,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">軽微な修正とは何ですか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>文章の差し替えや画像の入れ替え、リンク修正など、既存ページの範囲内で完結する作業を指します。新規ページの制作やデザインの大幅な変更は軽微な修正には含まれません。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">修正回数はどれくらいですか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>プランによって異なります。ライトは月1回まで、スタンダードは月3回まで、プレミアムはほぼ無制限（目安あり）でご利用いただけます。詳しい条件は料金ページをご確認ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">対応時間はどれくらいかかりますか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>内容やボリュームによって異なります。ご依頼内容を確認したうえで、対応にかかる目安の期間をご案内します。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">新規ページの制作もお願いできますか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>保守プランの対応範囲は既存ページの更新・修正が中心です。新規ページの制作や大規模なデザイン変更をご希望の場合は、<a href="website.html" class="text-link">ホームページ制作</a>から別途ご相談ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
           <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">他社で制作したサイトでも相談できますか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
@@ -918,48 +1118,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">どのプランを選べばよいですか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">契約期間はどれくらいですか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>運用状況やご希望によって最適なプランは異なります。内容を確認のうえ個別にご案内しますので、まずは公式LINEからお気軽にご相談ください。</p>
+            <p>プランによって条件が異なります。詳しい契約期間は<a href="pricing.html#maintenance" class="text-link">料金ページ</a>をご確認ください。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">修正内容によって追加料金はかかりますか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">解約はできますか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>修正内容やボリュームによって異なる場合があります。内容を確認のうえ個別にご案内します。</p>
+            <p>はい、可能です。解約方法や条件については、公式LINEまたは<a href="pricing.html#maintenance" class="text-link">料金ページ</a>をご確認ください。</p>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">途中でプラン変更できますか？</span></span>
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">SEO改善についても相談できますか？</span></span>
           <span class="faq-toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>はい、プランの変更は可能です。ご希望のタイミングで公式LINEからご相談ください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">SEOやMEOについても相談できますか？</span></span>
-          <span class="faq-toggle-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <p>はい、ご相談いただけます。プランによってご案内できる内容が異なりますので、詳しくは料金ページをご確認ください。</p>
+            <p>はい、ご相談いただけます。プランによってご案内できる内容が異なります。より本格的な改善をご希望の場合は、<a href="seo.html" class="text-link">SEO対策</a>ページもあわせてご覧ください。</p>
           </div>
         </div>
       </div>
@@ -971,7 +1159,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            <p>はい。日々の業務や情報発信を効率化するAIの活用方法について、専門知識がなくてもご相談いただけます。</p>
+            <p>はい。日々の業務や情報発信を効率化するAIの活用方法について、専門知識がなくてもご相談いただけます。詳しくは<a href="ai.html" class="text-link">AI導入・活用支援</a>ページもご覧ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-label"><span class="grad-text faq-q-mark">Q.</span><span class="faq-q-text">料金はいくらですか？</span></span>
+          <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>最新の料金・提供条件は<a href="pricing.html#maintenance" class="text-link">料金ページ</a>をご確認ください。</p>
           </div>
         </div>
       </div>
@@ -980,21 +1180,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- 料金ページへの誘導 -->
-<section class="content-block reveal" style="scroll-margin-top:90px;">
-  <div class="wrap content-block-inner">
-    <div class="section-head">
-      <span class="eyebrow">PRICE</span>
-      <h2>料金について</h2>
-    </div>
-    <p>保守プランは月額2,980円から。ライト／スタンダード／プレミアムの3プランから、事業や運用状況に合わせてお選びいただけます。</p>
-    <div style="margin-top:28px;">
-      <a href="pricing.html#maintenance" class="btn-primary">あなたに合った保守プランを見る<span class="btn-arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- 最終CTA -->
 <section id="contact" class="contact reveal">
   <div class="wrap inner">
     <span class="eyebrow">CONTACT</span>
