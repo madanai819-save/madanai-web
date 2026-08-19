@@ -386,10 +386,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gap:18px;
   }
   .pain-card{
-    background:#fff;
-    border:1px solid rgba(26,22,32,0.08);
-    border-radius:18px;
-    padding:30px 22px;
+    background:rgba(123,47,247,0.035);
+    border:1px solid rgba(123,47,247,0.08);
+    border-radius:16px;
+    padding:26px 20px;
     text-align:center;
   }
   .pain-icon{
@@ -414,7 +414,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:#fff;
     border:1px solid rgba(26,22,32,0.06);
     text-align:center;
+    transition:transform .2s ease, box-shadow .2s ease;
   }
+  .value-card:hover{ transform:translateY(-4px); box-shadow:0 12px 28px rgba(26,22,32,0.08); }
   .value-card h3{
     font-size:16.5px;
     font-weight:800;
@@ -461,7 +463,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .work-body{ padding:28px 26px; }
   .work-tag{ font-size:12px; font-weight:800; color:var(--pink); margin-bottom:10px; }
-  .work-body h3{ font-size:19px; color:var(--ink); margin-bottom:16px; font-weight:800; }
+  .work-body h3{ font-size:22px; color:var(--ink); margin-bottom:16px; font-weight:800; }
+  .work-meta-label{ border-top:1px solid var(--line); padding-top:14px; margin-top:2px; }
   .work-list{
     list-style:none;
     display:flex;
@@ -486,6 +489,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .work-link{ font-size:13px; font-weight:800; color:var(--purple); display:inline-flex; align-items:center; gap:4px; }
   .work-description{ font-size:12.5px; color:var(--text-muted); line-height:1.7; margin-bottom:14px; }
 
+  /* ---------- MAINTENANCE NOTE (reused from pricing.html) ---------- */
+  .maintenance-note{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:24px 28px;
+    font-size:14px;
+    color:var(--text-muted);
+    position:relative;
+    padding-left:32px;
+  }
+  .maintenance-note::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0;
+    width:8px;
+    background:var(--grad);
+    border-radius:8px 0 0 8px;
+  }
+  .maintenance-note strong{
+    color:var(--ink);
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:16px;
+    display:block;
+    margin-bottom:6px;
+  }
+
   /* ---------- CHECK LIST (shared) ---------- */
   .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:10px; }
   .plan-check li{ position:relative; padding-left:26px; font-size:12.5px; color:var(--text-muted); line-height:1.7; }
@@ -499,6 +528,163 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size:9px;
     font-weight:900;
     display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- PRICING PLANS (reused from pricing.html#website) ---------- */
+  .plan-cards{
+    display:grid; grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:28px; margin-bottom:8px;
+    align-items:stretch;
+  }
+  .plan-card{
+    background:#fff;
+    border:1px solid rgba(26,22,32,0.08);
+    border-radius:18px;
+    padding:38px 30px;
+    position:relative;
+    transition:transform .2s ease, border-color .2s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .plan-card:hover{ transform:translateY(-4px); }
+  .plan-card.featured{ border:1px solid transparent; background:linear-gradient(#fff,#fff) padding-box, var(--grad) border-box; }
+  .plan-flag{
+    position:absolute; top:-14px; left:30px;
+    background:var(--grad);
+    color:#fff;
+    font-size:11px; font-weight:800;
+    padding:6px 16px;
+    border-radius:999px;
+  }
+  .plan-name{ font-size:12px; font-weight:800; color:var(--pink); margin-bottom:8px; letter-spacing:0.06em; }
+  .plan-title{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:clamp(16px, 4.4vw, 21px);
+    font-weight:900;
+    color:var(--ink);
+    margin-bottom:8px;
+    line-height:1.35;
+    word-break:keep-all;
+    overflow-wrap:normal;
+  }
+  .plan-title-nowrap{
+    display:block;
+    white-space:nowrap;
+  }
+  @supports (text-wrap: balance){
+    .plan-title{ text-wrap:balance; }
+  }
+  @media (max-width:400px){
+    .plan-title-nowrap{ white-space:normal; }
+  }
+  .plan-desc{ font-size:13px; color:var(--text-muted); margin-bottom:18px; }
+  .plan-price{ font-family:'M PLUS Rounded 1c', sans-serif; font-size:42px; font-weight:900; color:var(--ink); margin:4px 0 2px; }
+  .plan-price span{ font-size:13px; font-weight:600; color:var(--text-muted); }
+  .plan-section-label{ font-size:11px; font-weight:800; margin-bottom:2px; }
+  .plan-target{ list-style:none; padding:0; margin:10px 0 18px; display:flex; flex-direction:column; gap:6px; }
+  .plan-target li{ position:relative; padding-left:16px; font-size:12.5px; color:var(--text-muted); line-height:1.6; }
+  .plan-target li::before{ content:"・"; position:absolute; left:0; top:0; }
+  .plan-cross{ list-style:none; padding:14px 0 0; margin:18px 0 0; border-top:1px dashed var(--line); display:flex; flex-direction:column; gap:10px; opacity:0.72; }
+  .plan-cross li{ position:relative; padding-left:28px; font-size:12.5px; color:var(--text-muted); line-height:1.6; }
+  .plan-cross li::before{
+    content:"×";
+    position:absolute; left:0; top:0;
+    width:18px; height:18px;
+    border-radius:50%;
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    color:var(--text-muted);
+    font-size:10px;
+    font-weight:900;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- PRICE COMPARISON TABLE (reused from pricing.html#website) ---------- */
+  .compare-wrap{ margin:28px 0 8px; }
+  .compare-hint{
+    display:none;
+    font-size:12px;
+    font-weight:700;
+    color:var(--text-muted);
+    margin-bottom:8px;
+  }
+  .compare-scroll{
+    width:100%;
+    overflow-x:auto;
+    border:2px solid var(--line);
+    border-radius:20px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .compare-scroll:focus-visible{
+    outline:2px solid var(--purple);
+    outline-offset:2px;
+  }
+  .compare-table{
+    width:max-content;
+    min-width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    font-size:13.5px;
+    background:#fff;
+  }
+  .compare-table th, .compare-table td{
+    padding:14px 18px;
+    border-bottom:1px solid var(--line);
+    text-align:center;
+    white-space:normal;
+  }
+  .compare-table tr:last-child th, .compare-table tr:last-child td{ border-bottom:none; }
+  .compare-table thead th{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-weight:800;
+    font-size:14px;
+    color:var(--ink);
+    background:var(--bg-soft);
+    border-bottom:2px solid var(--line);
+    vertical-align:bottom;
+    min-width:240px;
+  }
+  .compare-table th[scope="row"]{
+    text-align:left;
+    font-weight:700;
+    color:var(--text);
+    background:#fff;
+    white-space:nowrap;
+  }
+  .compare-table td:first-child, .compare-table th:first-child{
+    min-width:220px;
+  }
+  .compare-row-price td, .compare-row-price th[scope="row"]{
+    font-weight:800;
+    color:var(--ink);
+    font-size:15px;
+  }
+  .compare-featured{
+    background:linear-gradient(180deg, rgba(123,47,247,0.06), rgba(255,61,138,0.05));
+    position:relative;
+  }
+  .compare-badge{
+    display:inline-block;
+    margin-left:6px;
+    font-size:10px;
+    font-weight:800;
+    color:#fff;
+    background:var(--grad);
+    padding:3px 9px;
+    border-radius:999px;
+    white-space:nowrap;
+    vertical-align:middle;
+  }
+  .compare-plan-name{
+    white-space:nowrap;
+    word-break:keep-all;
+    overflow-wrap:normal;
+  }
+  .compare-yes{ color:var(--purple); font-weight:900; }
+  .compare-no{ color:var(--text-muted); opacity:0.55; }
+  .compare-table tbody tr:nth-child(even){ background:rgba(236,230,243,0.28); }
+  .compare-table tbody tr:nth-child(even) .compare-featured{
+    background:linear-gradient(180deg, rgba(123,47,247,0.1), rgba(255,61,138,0.08));
   }
 
   /* ---------- COMPARE: website vs DIY ---------- */
@@ -708,6 +894,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-step{ flex:0 0 50%; }
     .process-step:not(:last-child)::after{ content:none; }
     .diff-hint{ display:block; }
+    .compare-hint{ display:block; }
+    .compare-table th[scope="row"], .compare-table td:first-child{
+      position:sticky; left:0;
+      background:#fff;
+      box-shadow:2px 0 6px rgba(26,22,32,0.06);
+    }
+    .compare-table tbody tr:nth-child(even) th[scope="row"]{ background:#faf9fc; }
   }
 
   /* ---------- MOBILE ---------- */
@@ -719,6 +912,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pain-grid{ grid-template-columns:1fr; }
     .value-grid{ grid-template-columns:1fr; }
     .work-grid{ grid-template-columns:1fr; }
+    .plan-cards{ grid-template-columns:1fr; }
+    .plan-price{ font-size:37px; }
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
@@ -733,6 +928,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-head p{ margin-left:0 !important; margin-right:0 !important; }
     .content-block-inner{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
     p[style*="text-align:center"]{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
+  }
+
+  /* ---------- FOCUS VISIBLE (accessibility) ---------- */
+  .btn-primary:focus-visible, .btn-secondary:focus-visible, .btn-line:focus-visible,
+  .faq-question:focus-visible, .nav-dropdown-toggle:focus-visible, .hamburger:focus-visible,
+  .mobile-nav-toggle:focus-visible, .work-card:focus-visible, .plan-card:focus-visible{
+    outline:2px solid var(--purple);
+    outline-offset:2px;
+  }
+
+  /* ---------- REDUCED MOTION ---------- */
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ transition:none !important; }
+    .plan-card, .value-card, .work-card{ transition:none !important; }
+    .plan-card:hover, .value-card:hover, .work-card:hover{ transform:none !important; }
+    html{ scroll-behavior:auto; }
   }
 </style>
 </head>
@@ -863,13 +1074,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">FOR YOU</span>
       <h2>こんな会社におすすめ</h2>
     </div>
-    <ul class="plan-check">
-      <li>問い合わせを増やしたい</li>
-      <li>ホームページを作ったまま放置している</li>
-      <li>SEOも考えたい</li>
-      <li>公開後も相談したい</li>
-      <li>何から始めればいいか分からない</li>
-    </ul>
+    <div style="background:#fff; border:1px solid rgba(26,22,32,0.08); border-radius:18px; padding:30px 32px;">
+      <ul class="plan-check">
+        <li>問い合わせを増やしたい</li>
+        <li>ホームページを作ったまま放置している</li>
+        <li>SEOも考えたい</li>
+        <li>公開後も相談したい</li>
+        <li>何から始めればいいか分からない</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -963,7 +1176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="work-tag">居酒屋／大阪・東心斎橋</div>
           <h3>真和</h3>
           <p class="work-description">オープンまでの準備期間が限られる中でご依頼いただき、店舗の雰囲気やこだわりが伝わるホームページを制作しました。</p>
-          <div style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
+          <div class="work-meta-label" style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
           <ul class="work-list">
             <li>ホームページ制作</li>
             <li>スマホ対応</li>
@@ -979,7 +1192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="work-tag">アパレル</div>
           <h3>ELLA</h3>
           <p class="work-description">ブランドの世界観を大切にしながら、スマホでも見やすく購入しやすいECサイトを制作しました。</p>
-          <div style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
+          <div class="work-meta-label" style="font-size:11px; font-weight:700; color:var(--purple); margin-bottom:8px;">対応内容</div>
           <ul class="work-list">
             <li>ECサイト制作</li>
             <li>スマホ対応</li>
@@ -993,8 +1206,137 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- 料金 -->
+<section class="content-block alt reveal" style="scroll-margin-top:90px;">
+  <div class="wrap content-block-inner">
+    <div class="section-head">
+      <span class="eyebrow">PRICE</span>
+      <h2>料金</h2>
+    </div>
+    <p>ページ数や内容、必要なオプションによって料金が変わります。事業や予算に合わせて、必要な範囲だけをご提案します。</p>
+
+    <div class="plan-cards" style="margin-top:32px;">
+      <div class="plan-card">
+        <div class="plan-name">WEB制作</div>
+        <h3 class="plan-title"><span class="plan-title-nowrap">Webページ制作<wbr>プラン<wbr>（公開なし）</span></h3>
+        <p class="plan-desc">デザイン・コーディング済みのWebページを制作します。公開作業やGoogleの初期設定は含まれません。</p>
+        <div class="plan-section-label" style="color:var(--purple);">対象</div>
+        <ul class="plan-target">
+          <li>公開は自分で行う方</li>
+          <li>既にサーバー・ドメインを契約している方</li>
+          <li>制作のみ依頼したい方</li>
+        </ul>
+        <div class="plan-price" style="margin-bottom:4px;">220,000<span>円（税込）</span></div>
+        <div class="plan-section-label" style="color:var(--purple); margin-top:14px;">含まれる内容</div>
+        <ul class="plan-check">
+          <li>Webページ制作</li>
+          <li>スマートフォン対応</li>
+          <li>お問い合わせフォーム</li>
+        </ul>
+        <div class="plan-section-label" style="color:var(--text-muted); margin-top:14px;">含まれない内容</div>
+        <ul class="plan-cross">
+          <li>独自ドメイン設定</li>
+          <li>サーバー設定</li>
+          <li>本番公開</li>
+          <li>Google Search Console設定代行</li>
+          <li>Googleビジネスプロフィール設定代行</li>
+          <li>Google検索改善代行</li>
+          <li>Googleマップ運用代行</li>
+        </ul>
+      </div>
+      <div class="plan-card featured">
+        <span class="plan-flag">おすすめ</span>
+        <div class="plan-name">HP公開パック</div>
+        <h3 class="plan-title"><span class="plan-title-nowrap">HP公開<wbr>まるごとパック</span></h3>
+        <p class="plan-desc">HP制作から公開まで、必要な初期設定をまとめて対応します。</p>
+        <div class="plan-section-label" style="color:var(--purple);">対象</div>
+        <ul class="plan-target">
+          <li>初めてホームページを作る方</li>
+          <li>公開まで任せたい方</li>
+          <li>Google検索やGoogleマップの準備もまとめて依頼したい方</li>
+        </ul>
+        <div class="plan-price" style="margin-bottom:4px;">330,000<span>円（税込）</span></div>
+        <div class="plan-section-label" style="color:var(--purple); margin-top:14px;">含まれる内容</div>
+        <ul class="plan-check">
+          <li>HP制作</li>
+          <li>スマートフォン対応</li>
+          <li>お問い合わせフォーム</li>
+          <li>基本SEO設定</li>
+          <li>独自ドメイン設定代行</li>
+          <li>サーバー設定代行</li>
+          <li>Google Search Console設定代行</li>
+          <li>Googleビジネスプロフィール設定代行</li>
+          <li>本番公開</li>
+        </ul>
+        <div class="plan-section-label" style="color:var(--text-muted); margin-top:14px;">含まれない内容</div>
+        <ul class="plan-cross">
+          <li>Google検索改善代行</li>
+          <li>Googleマップ運用代行</li>
+          <li>記事制作</li>
+          <li>口コミ運用</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="compare-wrap">
+      <p class="compare-hint">→ 横にスライドして比較できます</p>
+      <div class="compare-scroll" tabindex="0" aria-label="ホームページ制作プラン比較表。横にスクロールできます">
+        <table class="compare-table">
+          <caption class="visually-hidden">ホームページ制作プラン比較表：Webページ制作プラン（公開なし）とHP公開まるごとパックの違い</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="compare-plan-name">比較項目</th>
+              <th scope="col" class="compare-plan-name">Webページ<br>制作プラン<br>（公開なし）</th>
+              <th scope="col" class="compare-featured compare-plan-name">HP公開<br>まるごとパック<span class="compare-badge">おすすめ</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="compare-row-price">
+              <th scope="row">料金（税込）</th>
+              <td>220,000円</td>
+              <td class="compare-featured">330,000円</td>
+            </tr>
+            <tr><th scope="row">Webページ制作</th><td><span class="compare-yes">○</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">スマートフォン対応</th><td><span class="compare-yes">○</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">お問い合わせフォーム</th><td><span class="compare-yes">○</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">独自ドメイン設定</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">サーバー設定</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">基本SEO設定</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">Google Search Console<br>設定代行</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">Googleビジネスプロフィール<br>設定代行</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">本番公開</th><td><span class="compare-no">−</span></td><td class="compare-featured"><span class="compare-yes">○</span></td></tr>
+            <tr><th scope="row">おすすめの方</th><td>公開は自分で行う方・制作のみ依頼したい方</td><td class="compare-featured">公開まで任せたい方・初めての方</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="maintenance-note" style="margin-top:20px;">
+      <strong>HP公開まるごとパックの範囲</strong>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px; margin-top:12px; font-size:12.5px; line-height:1.8;">
+        <div>
+          <div style="font-weight:800; color:var(--ink); margin-bottom:4px;">含まれる</div>
+          <div>・Google Search Console設定代行</div>
+          <div>・Googleビジネスプロフィール設定代行</div>
+          <div>・独自ドメイン・サーバー設定代行</div>
+        </div>
+        <div>
+          <div style="font-weight:800; color:var(--ink); margin-bottom:4px;">追加で選べる（別サービス）</div>
+          <div>・<a href="pricing.html#seo" class="text-link" style="color:inherit; text-decoration-color:currentColor;">SEO診断</a>／Google検索改善代行</div>
+          <div>・<a href="pricing.html#meo" class="text-link" style="color:inherit; text-decoration-color:currentColor;">MEO診断</a>／Googleマップ運用代行</div>
+        </div>
+      </div>
+      <div style="font-size:10.5px; margin-top:12px; opacity:0.85;">検索キーワードやサイト構成を改善する「Google検索改善代行」、Googleマップで選ばれやすくする「Googleマップ運用代行」は、まるごとパックとは別サービスです。</div>
+    </div>
+
+    <div style="margin-top:28px;">
+      <a href="pricing.html#website" class="btn-primary">料金・プラン詳細を見る<span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- 制作の流れ -->
-<section class="reveal">
+<section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FLOW</span>
@@ -1034,20 +1376,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div style="text-align:center; margin-top:36px;">
       <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-primary">この流れで相談してみる<span class="btn-arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- 料金 -->
-<section class="content-block alt reveal" style="scroll-margin-top:90px;">
-  <div class="wrap content-block-inner">
-    <div class="section-head">
-      <span class="eyebrow">PRICE</span>
-      <h2>料金</h2>
-    </div>
-    <p>ページ数や内容、必要なオプションによって料金が変わります。事業や予算に合わせて、必要な範囲だけをご提案します。</p>
-    <div style="margin-top:28px;">
-      <a href="pricing.html#website" class="btn-primary">料金・プラン詳細を見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
