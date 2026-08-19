@@ -502,6 +502,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-radius:50%;
     background:var(--grad);
   }
+  .plan-price{ font-family:'M PLUS Rounded 1c', sans-serif; font-size:26px; font-weight:900; color:var(--ink); margin:10px 0 4px; }
+  .plan-price span{ font-size:12px; font-weight:600; color:var(--text-muted); }
 
   /* ---------- COMPARISON TABLE（pricing.htmlのデザインを最小限で流用） ---------- */
   .visually-hidden{
@@ -726,7 +728,94 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer .logo{ display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px; }
   footer .footer-links{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:13px; color:var(--text-muted); }
 
-  .reveal{ transition:opacity 0.7s ease, transform 0.7s ease; }
+  /* ---------- SCROLL REVEAL SYSTEM ---------- */
+  .reveal .section-head>.eyebrow,
+  .reveal .section-head>h2,
+  .page-hero.reveal .eyebrow,
+  .page-hero.reveal h1,
+  .contact.reveal .eyebrow,
+  .contact.reveal h2{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .65s ease-out, transform .65s ease-out;
+  }
+  .reveal .section-head>p,
+  .reveal .content-block-inner>p,
+  .page-hero.reveal p,
+  .contact.reveal p,
+  .contact.reveal .plan-check{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .12s, transform .6s ease-out .12s;
+  }
+  .reveal .compare-wrap{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .2s, transform .6s ease-out .2s;
+  }
+  :where(.reveal) .pain-grid>*,
+  :where(.reveal) .value-grid>*,
+  :where(.reveal) .arrange-slider>.value-card,
+  :where(.reveal) .process-flow>*,
+  :where(.reveal) .faq-item,
+  :where(.reveal) .recommend-box{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .16s, transform .6s ease-out .16s;
+  }
+  .reveal .pain-grid>*:nth-child(2), .reveal .value-grid>*:nth-child(2), .reveal .arrange-slider>.value-card:nth-child(2),
+  .reveal .process-flow>*:nth-child(2), .reveal .faq-item:nth-child(2), .reveal .recommend-box:nth-child(2){
+    transition-delay:.23s;
+  }
+  .reveal .pain-grid>*:nth-child(3), .reveal .value-grid>*:nth-child(3), .reveal .arrange-slider>.value-card:nth-child(3),
+  .reveal .process-flow>*:nth-child(3), .reveal .faq-item:nth-child(3), .reveal .recommend-box:nth-child(3){
+    transition-delay:.30s;
+  }
+  .reveal .pain-grid>*:nth-child(4), .reveal .value-grid>*:nth-child(4), .reveal .arrange-slider>.value-card:nth-child(4),
+  .reveal .process-flow>*:nth-child(4), .reveal .faq-item:nth-child(4){
+    transition-delay:.37s;
+  }
+  .reveal .pain-grid>*:nth-child(5), .reveal .process-flow>*:nth-child(5), .reveal .faq-item:nth-child(5){
+    transition-delay:.44s;
+  }
+  .reveal .pain-grid>*:nth-child(6), .reveal .process-flow>*:nth-child(6){
+    transition-delay:.51s;
+  }
+  .reveal .pain-grid>*:nth-child(7){ transition-delay:.58s; }
+  .reveal .pain-grid>*:nth-child(8){ transition-delay:.65s; }
+  :where(.page-hero.reveal) .hero-cta-row a,
+  :where(.contact.reveal) .btn-line,
+  :where(.contact.reveal) .btn-secondary{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .55s ease-out .26s, transform .55s ease-out .26s;
+  }
+  :where(.page-hero.reveal) .hero-cta-row a:nth-child(2){ transition-delay:.33s; }
+
+  .reveal.is-inview .section-head>.eyebrow,
+  .reveal.is-inview .section-head>h2,
+  .reveal.is-inview.page-hero .eyebrow,
+  .reveal.is-inview.page-hero h1,
+  .reveal.is-inview.contact .eyebrow,
+  .reveal.is-inview.contact h2,
+  .reveal.is-inview .section-head>p,
+  .reveal.is-inview .content-block-inner>p,
+  .reveal.is-inview.page-hero p,
+  .reveal.is-inview.contact p,
+  .reveal.is-inview.contact .plan-check,
+  .reveal.is-inview .compare-wrap,
+  :where(.reveal.is-inview) .pain-grid>*,
+  :where(.reveal.is-inview) .value-grid>*,
+  :where(.reveal.is-inview) .arrange-slider>.value-card,
+  :where(.reveal.is-inview) .process-flow>*,
+  :where(.reveal.is-inview) .faq-item,
+  :where(.reveal.is-inview) .recommend-box,
+  :where(.page-hero.reveal.is-inview) .hero-cta-row a,
+  :where(.contact.reveal.is-inview) .btn-line,
+  :where(.contact.reveal.is-inview) .btn-secondary{
+    opacity:1;
+    transform:translateY(0);
+  }
 
   /* ---------- TABLET ---------- */
   @media (max-width:1080px){
@@ -752,6 +841,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .value-grid{ grid-template-columns:1fr; }
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
+    .process-step:not(:last-child)::after{
+      content:"\203A";
+      position:static;
+      display:block;
+      margin:16px 0 -4px;
+      transform:rotate(90deg);
+      font-size:18px;
+      color:var(--line);
+    }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
   }
 
@@ -763,6 +861,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-head p{ margin-left:0 !important; margin-right:0 !important; }
     .content-block-inner{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
     p[style*="text-align:center"]{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
+  }
+
+  /* ---------- HOVER (PC only) ---------- */
+  @media (hover:hover) and (pointer:fine){
+    .pain-card{ transition:transform .2s ease, box-shadow .2s ease; }
+    .pain-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+    .value-card{ transition:transform .2s ease, box-shadow .2s ease; }
+    .value-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+    .faq-item{ transition:box-shadow .2s ease, border-color .2s ease; }
+    .faq-item:hover{ box-shadow:0 8px 22px rgba(26,22,32,0.06); border-color:rgba(123,47,247,0.18); }
+    .recommend-box{ transition:transform .2s ease, box-shadow .2s ease; }
+    .recommend-box:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+  }
+
+  /* ---------- REDUCED MOTION ---------- */
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal *{
+      opacity:1 !important;
+      transform:none !important;
+      transition:none !important;
+    }
+    .pain-card, .value-card, .faq-item, .recommend-box{ transition:none !important; }
+    .pain-card:hover, .value-card:hover, .faq-item:hover, .recommend-box:hover{ transform:none !important; box-shadow:none !important; }
+    html{ scroll-behavior:auto; }
   }
 </style>
 </head>
@@ -852,12 +974,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- こんなお悩みありませんか -->
+<!-- お悩み -->
 <section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CONCERN</span>
-      <h2>こんなお悩みありませんか</h2>
+      <h2>お悩み</h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card">
@@ -888,12 +1010,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- マダナイ？なら解決できる理由 -->
+<!-- マダナイ？の強み -->
 <section class="content-block alt reveal">
   <div class="wrap content-block-inner">
     <div class="section-head">
       <span class="eyebrow">WHY US</span>
-      <h2>マダナイ？なら解決できる理由</h2>
+      <h2>マダナイ？の強み</h2>
     </div>
     <p>AIは便利なツールですが、「何に使えばいいか分からない」「難しそう」という理由で活用しきれていない事業者様が多くいらっしゃいます。</p>
     <p>マダナイ？はAIツールを売る会社ではありません。ホームページ制作・SEO・MEOで培った、事業や集客への理解をもとに、お客様の業務に合った使い方だけをご提案します。大規模なシステム開発は行わず、実務で今日から使える形に整えることを大切にしています。</p>
@@ -905,7 +1027,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">SCOPE</span>
-      <h2>マダナイ？が対応できるAI活用・業務改善</h2>
+      <h2>対応できる範囲</h2>
       <p style="max-width:740px;">マダナイ？では、ChatGPTやClaudeなど既存AIツールの導入支援、小規模な業務アプリ、顧客管理・シフト管理・請求書作成など、日々の業務を軽くする仕組みづくりに対応しています。既存サービスで解決できる場合は、無理にオーダーメイド開発をおすすめしません。既存ツールでは足りない部分がある場合に、必要な範囲だけ個別に設計します。大規模な基幹システム、高度なセキュリティや法令対応が必要な開発、AI電話・大規模コールセンターなどは対象外または個別確認となります。</p>
     </div>
     <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center;">
@@ -943,7 +1065,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap content-block-inner">
     <div class="section-head">
       <span class="eyebrow">EVIDENCE</span>
-      <h2>マダナイ？のAI活用支援で実施すること</h2>
+      <h2>実施すること</h2>
     </div>
     <p>「できます」だけでなく、実際に何を行うのかを具体的にお伝えします。</p>
     <ul class="plan-check" style="max-width:740px; margin:18px 0 0; text-align:left;">
@@ -958,12 +1080,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- AI活用で変えられること -->
+<!-- 得られること -->
 <section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">BENEFIT</span>
-      <h2>AI活用で得られる未来</h2>
+      <h2>得られること</h2>
     </div>
     <p class="arrange-scroll-hint">→ 横にスライドして見る</p>
     <div class="arrange-slider" id="arrangeSlider" tabindex="0" role="region" aria-label="AI活用で得られる未来のスライダー">
@@ -1176,6 +1298,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>1. AI活用相談</h3>
         <p style="margin-bottom:10px;"><strong>対象：</strong>何から始めればいいか分からない企業</p>
         <p>自社でAIを活用できそうな業務を整理する入口サービスです。<a href="blog/ai-adoption-checklist.html" class="text-link">AI導入前に確認したいチェックリスト</a>もあわせてご覧ください。</p>
+        <div class="plan-price">33,000<span>円（税込）／90分</span></div>
         <ul class="plan-check">
           <li>現状・課題のヒアリング</li>
           <li>活用候補の整理</li>
@@ -1187,6 +1310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>2. AI導入支援</h3>
         <p style="margin-bottom:10px;"><strong>対象：</strong>AIを実際の業務へ導入したい企業</p>
         <p>業務整理から初期導入まで、AIを使える状態に整える単発型サービスです。<a href="blog/ai-adoption-failure-points.html" class="text-link">AI導入で失敗しないために</a>も参考にしてください。</p>
+        <div class="plan-price">330,000<span>円（税込）〜</span></div>
         <ul class="plan-check">
           <li>対象業務の整理</li>
           <li>AIツール選定・初期設定</li>
@@ -1198,17 +1322,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>3. AI顧問</h3>
         <p style="margin-bottom:10px;"><strong>対象：</strong>導入後もAI活用を継続して改善したい企業</p>
         <p>導入後の活用・定着・改善を継続支援する月額サービスです。</p>
+        <div class="plan-price">110,000<span>円（税込）／月〜</span></div>
         <ul class="plan-check">
           <li>定例ミーティング</li>
           <li>プロンプト改善</li>
           <li>新しい活用方法の提案</li>
           <li>社内定着支援</li>
         </ul>
+        <p style="font-size:11px; color:var(--text-muted); margin-top:10px;">最低契約期間：3か月</p>
       </div>
       <div class="value-card" id="svc-development" style="text-align:left; scroll-margin-top:90px;">
         <h3>4. AIシステム開発</h3>
         <p style="margin-bottom:10px;"><strong>対象：</strong>既存AIツールだけでは解決できず、独自の仕組みが必要な企業</p>
         <p>要件を確認したうえで、必要なシステムを個別に設計・開発します。<a href="blog/claude-code-guide.html" class="text-link">Claude Codeとは？</a>もご参考ください。</p>
+        <div class="plan-price" style="font-size:18px;">個別見積</div>
         <ul class="plan-check">
           <li>社内AI・チャットボット</li>
           <li>業務アプリ</li>
@@ -1258,7 +1385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">GUIDE</span>
-      <h2>どのAIサービスを選べばいい？</h2>
+      <h2>選び方</h2>
       <p>迷ったときは、まず下記から近いものをお選びください。詳しい内容は各サービスの説明でご確認いただけます。</p>
     </div>
     <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
@@ -1286,7 +1413,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- 支援の流れ -->
-<section class="reveal">
+<section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FLOW</span>
@@ -1660,21 +1787,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }catch(err){}
   try{
+    const els = document.querySelectorAll('.reveal');
     if('IntersectionObserver' in window){
-      const els = document.querySelectorAll('.reveal');
-      els.forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(18px)'; });
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
           if(e.isIntersecting){
-            e.target.style.opacity='1';
-            e.target.style.transform='translateY(0)';
+            e.target.classList.add('is-inview');
             io.unobserve(e.target);
           }
         });
       }, {threshold:0.12});
       els.forEach(el=>io.observe(el));
+    }else{
+      els.forEach(el=>el.classList.add('is-inview'));
     }
-  }catch(err){}
+  }catch(err){
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-inview'));
+  }
 </script>
 
 </body>

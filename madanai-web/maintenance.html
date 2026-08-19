@@ -502,6 +502,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-radius:50%;
     background:var(--grad);
   }
+  .plan-price{ font-family:'M PLUS Rounded 1c', sans-serif; font-size:30px; font-weight:900; color:var(--ink); margin:10px 0 4px; }
+  .plan-price span{ font-size:12.5px; font-weight:600; color:var(--text-muted); }
 
   /* ---------- COMPARE: 3プランの違い ---------- */
   .diff-table{
@@ -695,7 +697,85 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer .logo{ display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px; }
   footer .footer-links{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:13px; color:var(--text-muted); }
 
-  .reveal{ transition:opacity 0.7s ease, transform 0.7s ease; }
+  /* ---------- SCROLL REVEAL SYSTEM ---------- */
+  .reveal .section-head>.eyebrow,
+  .reveal .section-head>h2,
+  .page-hero.reveal .eyebrow,
+  .page-hero.reveal h1,
+  .contact.reveal .eyebrow,
+  .contact.reveal h2{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .65s ease-out, transform .65s ease-out;
+  }
+  .reveal .section-head>p,
+  .reveal .content-block-inner>p,
+  .page-hero.reveal p,
+  .contact.reveal p{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .12s, transform .6s ease-out .12s;
+  }
+  .reveal .diff-table-scroll{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .2s, transform .6s ease-out .2s;
+  }
+  :where(.reveal) .pain-grid>*,
+  :where(.reveal) .value-grid>*,
+  :where(.reveal) .process-flow>*,
+  :where(.reveal) .faq-item,
+  :where(.reveal) .recommend-box{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .16s, transform .6s ease-out .16s;
+  }
+  .reveal .pain-grid>*:nth-child(2), .reveal .value-grid>*:nth-child(2), .reveal .process-flow>*:nth-child(2),
+  .reveal .faq-item:nth-child(2), .reveal .recommend-box:nth-child(2){
+    transition-delay:.23s;
+  }
+  .reveal .pain-grid>*:nth-child(3), .reveal .value-grid>*:nth-child(3), .reveal .process-flow>*:nth-child(3),
+  .reveal .faq-item:nth-child(3), .reveal .recommend-box:nth-child(3){
+    transition-delay:.30s;
+  }
+  .reveal .pain-grid>*:nth-child(4), .reveal .value-grid>*:nth-child(4), .reveal .process-flow>*:nth-child(4), .reveal .faq-item:nth-child(4){
+    transition-delay:.37s;
+  }
+  .reveal .pain-grid>*:nth-child(5), .reveal .process-flow>*:nth-child(5), .reveal .faq-item:nth-child(5){
+    transition-delay:.44s;
+  }
+  .reveal .pain-grid>*:nth-child(6), .reveal .process-flow>*:nth-child(6){
+    transition-delay:.51s;
+  }
+  :where(.page-hero.reveal) .wrap>div a,
+  :where(.contact.reveal) .btn-line{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .55s ease-out .26s, transform .55s ease-out .26s;
+  }
+  :where(.page-hero.reveal) .wrap>div a:nth-child(2){ transition-delay:.33s; }
+
+  .reveal.is-inview .section-head>.eyebrow,
+  .reveal.is-inview .section-head>h2,
+  .reveal.is-inview.page-hero .eyebrow,
+  .reveal.is-inview.page-hero h1,
+  .reveal.is-inview.contact .eyebrow,
+  .reveal.is-inview.contact h2,
+  .reveal.is-inview .section-head>p,
+  .reveal.is-inview .content-block-inner>p,
+  .reveal.is-inview.page-hero p,
+  .reveal.is-inview.contact p,
+  .reveal.is-inview .diff-table-scroll,
+  :where(.reveal.is-inview) .pain-grid>*,
+  :where(.reveal.is-inview) .value-grid>*,
+  :where(.reveal.is-inview) .process-flow>*,
+  :where(.reveal.is-inview) .faq-item,
+  :where(.reveal.is-inview) .recommend-box,
+  :where(.page-hero.reveal.is-inview) .wrap>div a,
+  :where(.contact.reveal.is-inview) .btn-line{
+    opacity:1;
+    transform:translateY(0);
+  }
 
   /* ---------- TABLET ---------- */
   @media (max-width:1080px){
@@ -721,8 +801,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .value-grid{ grid-template-columns:1fr; }
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
+    .process-step:not(:last-child)::after{
+      content:"\203A";
+      position:static;
+      display:block;
+      margin:16px 0 -4px;
+      transform:rotate(90deg);
+      font-size:18px;
+      color:var(--line);
+    }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
     .diff-table th[scope="row"]{ width:96px; }
+  }
+
+  /* ---------- HOVER (PC only) ---------- */
+  @media (hover:hover) and (pointer:fine){
+    .pain-card{ transition:transform .2s ease, box-shadow .2s ease; }
+    .pain-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+    .value-card{ transition:transform .2s ease, box-shadow .2s ease; }
+    .value-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+    .faq-item{ transition:box-shadow .2s ease, border-color .2s ease; }
+    .faq-item:hover{ box-shadow:0 8px 22px rgba(26,22,32,0.06); border-color:rgba(123,47,247,0.18); }
+    .recommend-box{ transition:transform .2s ease, box-shadow .2s ease; }
+    .recommend-box:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+  }
+
+  /* ---------- REDUCED MOTION ---------- */
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal *{
+      opacity:1 !important;
+      transform:none !important;
+      transition:none !important;
+    }
+    .pain-card, .value-card, .faq-item, .recommend-box{ transition:none !important; }
+    .pain-card:hover, .value-card:hover, .faq-item:hover, .recommend-box:hover{ transform:none !important; box-shadow:none !important; }
+    html{ scroll-behavior:auto; }
   }
 </style>
 </head>
@@ -904,18 +1017,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ライト・スタンダード・プレミアム -->
+<!-- 料金プラン -->
 <section id="plans" class="content-block reveal" style="scroll-margin-top:90px;">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">PLAN</span>
-      <h2>ライト・スタンダード・プレミアム</h2>
+      <h2>料金プラン</h2>
     </div>
     <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
       <div class="recommend-box" style="flex:1 1 240px; max-width:320px;">
         <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">ライト</h3>
         <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：最低限管理したい</p>
         <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">必要最低限の更新・管理を任せたい方向けのプランです。</p>
+        <div class="plan-price">2,980<span>円（税込）／月</span></div>
         <ul>
           <li>月1回までの軽微な修正</li>
           <li>LINEでのご相談</li>
@@ -926,6 +1040,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">スタンダード</h3>
         <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：更新も改善も相談したい</p>
         <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">更新作業と改善提案を継続して行いたい方向けのプランです。</p>
+        <div class="plan-price">5,980<span>円（税込）／月</span></div>
         <ul>
           <li>月3回までの修正</li>
           <li>ブログ・お知らせの更新代行</li>
@@ -936,6 +1051,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">プレミアム</h3>
         <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：優先対応まで任せたい</p>
         <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">更新・改善・優先対応までまとめて任せたい方向けのプランです。</p>
+        <div class="plan-price">9,980<span>円（税込）／月</span></div>
         <ul>
           <li>軽微な修正ほぼ無制限（目安あり）</li>
           <li>優先対応</li>
@@ -961,6 +1077,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <tr><th scope="col">比較項目</th><th scope="col">ライト</th><th scope="col">スタンダード</th><th scope="col">プレミアム</th></tr>
         </thead>
         <tbody>
+          <tr><th scope="row">月額料金（税込）</th><td>2,980円</td><td>5,980円</td><td>9,980円</td></tr>
           <tr><th scope="row">おすすめ</th><td><span aria-hidden="true">−</span></td><td>○（おすすめ）</td><td><span aria-hidden="true">−</span></td></tr>
           <tr><th scope="row">対応範囲</th><td>文章・画像の修正が中心</td><td>更新代行・SEO・MEO相談まで</td><td>優先対応・AI活用相談まで</td></tr>
           <tr><th scope="row">改善提案</th><td><span aria-hidden="true">−</span></td><td>月次の改善提案</td><td>優先的な改善提案</td></tr>
@@ -977,7 +1094,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">GUIDE</span>
-      <h2>どのプランを選べばいい？</h2>
+      <h2>選び方</h2>
     </div>
     <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
       <div class="recommend-box" style="flex:1 1 220px; max-width:260px; margin:0;">
@@ -1003,7 +1120,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="reveal">
+<section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FLOW</span>
@@ -1271,21 +1388,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }catch(err){}
   try{
+    const els = document.querySelectorAll('.reveal');
     if('IntersectionObserver' in window){
-      const els = document.querySelectorAll('.reveal');
-      els.forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(18px)'; });
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
           if(e.isIntersecting){
-            e.target.style.opacity='1';
-            e.target.style.transform='translateY(0)';
+            e.target.classList.add('is-inview');
             io.unobserve(e.target);
           }
         });
       }, {threshold:0.12});
       els.forEach(el=>io.observe(el));
+    }else{
+      els.forEach(el=>el.classList.add('is-inview'));
     }
-  }catch(err){}
+  }catch(err){
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-inview'));
+  }
 </script>
 
 </body>

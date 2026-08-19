@@ -681,7 +681,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .contact .inner{ position:relative; z-index:1; }
   .contact .eyebrow{ color:#E7B8FF; }
-  .contact h2{ color:#fff; font-size:clamp(22px,4.4vw,30px); margin:14px 0 18px; font-weight:900; }
+  .contact h2{ color:#fff; font-size:clamp(20px,4.4vw,30px); margin:14px 0 18px; font-weight:900; line-height:1.4; }
+  @supports (text-wrap: balance){ .contact h2{ text-wrap:balance; } }
+  @media (max-width:360px){ .contact h2{ font-size:19px; } }
   .contact p{ color:#C9C3D6; font-size:14px; max-width:440px; margin:0 auto 30px; }
   .btn-line{
     display:inline-flex; align-items:center; gap:10px;
@@ -699,7 +701,98 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer .logo{ display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px; }
   footer .footer-links{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:13px; color:var(--text-muted); }
 
-  .reveal{ transition:opacity 0.7s ease, transform 0.7s ease; }
+  /* ---------- SCROLL REVEAL SYSTEM ---------- */
+  .reveal .section-head>.eyebrow,
+  .reveal .section-head>h2,
+  .page-hero.reveal .eyebrow,
+  .page-hero.reveal h1,
+  .contact.reveal .eyebrow,
+  .contact.reveal h2{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .65s ease-out, transform .65s ease-out;
+  }
+  .reveal .section-head>p,
+  .page-hero.reveal .sub-copy,
+  .page-hero.reveal .supp-copy,
+  .page-hero.reveal .hero-proof,
+  .contact.reveal p{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .12s, transform .6s ease-out .12s;
+  }
+  .reveal .diff-table-scroll,
+  .reveal .compare-wrap{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .2s, transform .6s ease-out .2s;
+  }
+  :where(.reveal) .pain-grid>*,
+  :where(.reveal) .cause-grid>*,
+  :where(.reveal) .plan-cards>*,
+  :where(.reveal) .step-list>*,
+  :where(.reveal) .faq-item,
+  :where(.reveal) .recommend-box{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .16s, transform .6s ease-out .16s;
+  }
+  .reveal .pain-grid>*:nth-child(2), .reveal .cause-grid>*:nth-child(2), .reveal .plan-cards>*:nth-child(2),
+  .reveal .step-list>*:nth-child(2), .reveal .faq-item:nth-child(2), .reveal .recommend-box:nth-child(2){
+    transition-delay:.23s;
+  }
+  .reveal .pain-grid>*:nth-child(3), .reveal .cause-grid>*:nth-child(3), .reveal .plan-cards>*:nth-child(3),
+  .reveal .step-list>*:nth-child(3), .reveal .faq-item:nth-child(3), .reveal .recommend-box:nth-child(3){
+    transition-delay:.30s;
+  }
+  .reveal .pain-grid>*:nth-child(4), .reveal .cause-grid>*:nth-child(4), .reveal .step-list>*:nth-child(4), .reveal .faq-item:nth-child(4){
+    transition-delay:.37s;
+  }
+  .reveal .pain-grid>*:nth-child(5), .reveal .step-list>*:nth-child(5), .reveal .faq-item:nth-child(5){
+    transition-delay:.44s;
+  }
+  .reveal .pain-grid>*:nth-child(6), .reveal .step-list>*:nth-child(6){
+    transition-delay:.51s;
+  }
+  :where(.page-hero.reveal) .hero-cta-row a,
+  :where(.contact.reveal) .btn-line,
+  :where(.contact.reveal) .contact-sub-link,
+  :where(.reveal) .compare-wrap+div,
+  :where(.reveal) .flow-note+div{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .55s ease-out .26s, transform .55s ease-out .26s;
+  }
+  :where(.page-hero.reveal) .hero-cta-row a:nth-child(2){ transition-delay:.33s; }
+  :where(.contact.reveal) .contact-sub-link{ transition-delay:.33s; }
+
+  .reveal.is-inview .section-head>.eyebrow,
+  .reveal.is-inview .section-head>h2,
+  .reveal.is-inview.page-hero .eyebrow,
+  .reveal.is-inview.page-hero h1,
+  .reveal.is-inview.contact .eyebrow,
+  .reveal.is-inview.contact h2,
+  .reveal.is-inview .section-head>p,
+  .reveal.is-inview.page-hero .sub-copy,
+  .reveal.is-inview.page-hero .supp-copy,
+  .reveal.is-inview.page-hero .hero-proof,
+  .reveal.is-inview.contact p,
+  .reveal.is-inview .diff-table-scroll,
+  .reveal.is-inview .compare-wrap,
+  :where(.reveal.is-inview) .pain-grid>*,
+  :where(.reveal.is-inview) .cause-grid>*,
+  :where(.reveal.is-inview) .plan-cards>*,
+  :where(.reveal.is-inview) .step-list>*,
+  :where(.reveal.is-inview) .faq-item,
+  :where(.reveal.is-inview) .recommend-box,
+  :where(.page-hero.reveal.is-inview) .hero-cta-row a,
+  :where(.contact.reveal.is-inview) .btn-line,
+  :where(.contact.reveal.is-inview) .contact-sub-link,
+  :where(.reveal.is-inview) .compare-wrap+div,
+  :where(.reveal.is-inview) .flow-note+div{
+    opacity:1;
+    transform:translateY(0);
+  }
 
   /* ---------- TABLET ---------- */
   @media (max-width:1080px){
@@ -727,6 +820,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   @media (max-width:480px){
     .usecase-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- HOVER (PC only) ---------- */
+  @media (hover:hover) and (pointer:fine){
+    .pain-card{ transition:transform .2s ease, box-shadow .2s ease; }
+    .pain-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+    .cause-card{ transition:transform .2s ease, box-shadow .2s ease; }
+    .cause-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+    .faq-item{ transition:box-shadow .2s ease, border-color .2s ease; }
+    .faq-item:hover{ box-shadow:0 8px 22px rgba(26,22,32,0.06); border-color:rgba(123,47,247,0.18); }
+    .recommend-box{ transition:transform .2s ease, box-shadow .2s ease; }
+    .recommend-box:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+  }
+
+  /* ---------- REDUCED MOTION ---------- */
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal *{
+      opacity:1 !important;
+      transform:none !important;
+      transition:none !important;
+    }
+    .plan-card, .pain-card, .cause-card, .faq-item, .recommend-box{ transition:none !important; }
+    .plan-card:hover, .pain-card:hover, .cause-card:hover, .faq-item:hover, .recommend-box:hover{ transform:none !important; box-shadow:none !important; }
+    html{ scroll-behavior:auto; }
   }
 </style>
 </head>
@@ -817,12 +934,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- こんな目的・お悩みにLPが向いています -->
+<!-- こんなお悩みに -->
 <section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CONCERN</span>
-      <h2>こんな目的・お悩みにLPが向いています</h2>
+      <h2>こんなお悩みに</h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card">
@@ -853,12 +970,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- 問い合わせにつながるLPに必要なこと -->
+<!-- LPで大切なこと -->
 <section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CAUSE</span>
-      <h2>問い合わせにつながるLPに必要なこと</h2>
+      <h2>LPで大切なこと</h2>
       <p>成果を保証するものではありませんが、行動につながりやすくするために大切にしている考え方です。</p>
     </div>
     <div class="cause-grid">
@@ -895,12 +1012,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- LPとホームページの違い -->
+<!-- HPとの違い -->
 <section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">LP vs WEBSITE</span>
-      <h2>LPとホームページの違い</h2>
+      <h2>HPとの違い</h2>
       <p>どちらが優れているというものではなく、目的によって使い分けることが大切です。</p>
     </div>
     <p class="diff-hint">→ 横にスライドして比較できます</p>
@@ -927,12 +1044,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- 制作内容 -->
+<!-- 料金プラン -->
 <section id="plans" class="content-block reveal" style="scroll-margin-top:90px;">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">PLAN</span>
-      <h2>目的に合わせて、<br>必要な範囲から選べます</h2>
+      <h2>料金プラン</h2>
     </div>
     <div class="plan-cards">
       <div class="plan-card">
@@ -940,6 +1057,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3 class="plan-title">LPライト</h3>
         <p class="plan-desc"><strong>対象：</strong>素材や文章を自分で準備できる方</p>
         <p class="plan-desc">準備済みの構成・文章・写真素材をもとに、1ページのLPを制作するプランです。</p>
+        <div class="plan-price" style="margin-bottom:4px;">59,800<span>円（税込）〜</span></div>
         <ul class="plan-check">
           <li>1ページ制作</li>
           <li>スマートフォン対応</li>
@@ -954,6 +1072,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3 class="plan-title">LPスタンダード</h3>
         <p class="plan-desc"><strong>対象：</strong>構成や文章から相談したい方</p>
         <p class="plan-desc">ターゲット整理から構成、コピー、CTA導線まで、相談しながら制作するプランです。</p>
+        <div class="plan-price" style="margin-bottom:4px;">99,800<span>円（税込）〜</span></div>
         <ul class="plan-check">
           <li>ターゲット整理</li>
           <li>ページ構成</li>
@@ -963,15 +1082,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
     </div>
+    <p style="font-size:11px; color:var(--text-muted); margin-top:14px;">※商品数、文章量、画像制作、撮影、フォーム機能などにより料金が変わります。</p>
   </div>
 </section>
 
-<!-- 2プランの違い -->
+<!-- プラン比較 -->
 <section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">COMPARE</span>
-      <h2>LPライトとLPスタンダードの違い</h2>
+      <h2>プラン比較</h2>
     </div>
     <div class="compare-wrap">
       <p class="compare-hint">→ 横にスライドして比較できます</p>
@@ -986,6 +1106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </tr>
           </thead>
           <tbody>
+            <tr class="compare-row-price"><th scope="row">料金（税込）</th><td>59,800円〜</td><td class="compare-featured">99,800円〜</td></tr>
             <tr><th scope="row">向いている方</th><td>素材を自分で用意できる方</td><td class="compare-featured">構成から相談したい方</td></tr>
             <tr><th scope="row">構成・文章の準備</th><td>お客様がご用意</td><td class="compare-featured">こちらと一緒に作成</td></tr>
             <tr><th scope="row">制作の進め方</th><td>構成・文章をお預かりして制作</td><td class="compare-featured">ヒアリングしながら制作</td></tr>
@@ -1004,7 +1125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">GUIDE</span>
-      <h2>どちらのLP制作プランを選べばいい？</h2>
+      <h2>プランの選び方</h2>
     </div>
     <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
       <div class="recommend-box" style="flex:1 1 240px; max-width:280px; margin:0;">
@@ -1028,7 +1149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FLOW</span>
-      <h2>LP公開までの流れ</h2>
+      <h2>制作の流れ</h2>
     </div>
     <ol class="step-list">
       <li class="step-list-item">
@@ -1176,7 +1297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="contact" class="contact reveal">
   <div class="wrap inner">
     <span class="eyebrow">CONTACT</span>
-    <h2>商品やサービスの魅力を、<br>問い合わせにつながる1ページへ。</h2>
+    <h2>商品やサービスの魅力を、問い合わせにつながる1ページへ。</h2>
     <p>構成や文章が決まっていない段階でもご相談いただけます。目的やターゲットを整理し、必要な制作範囲をご提案します。</p>
     <a href="https://lin.ee/nQ6BEhh" target="_blank" rel="noopener" class="btn-line">LP制作についてLINEで相談する</a>
     <a href="pricing.html#lp" class="contact-sub-link">料金を見る →</a>
@@ -1265,21 +1386,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }catch(err){}
   try{
+    const els = document.querySelectorAll('.reveal');
     if('IntersectionObserver' in window){
-      const els = document.querySelectorAll('.reveal');
-      els.forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(18px)'; });
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
           if(e.isIntersecting){
-            e.target.style.opacity='1';
-            e.target.style.transform='translateY(0)';
+            e.target.classList.add('is-inview');
             io.unobserve(e.target);
           }
         });
       }, {threshold:0.12});
       els.forEach(el=>io.observe(el));
+    }else{
+      els.forEach(el=>el.classList.add('is-inview'));
     }
-  }catch(err){}
+  }catch(err){
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-inview'));
+  }
 </script>
 
 </body>

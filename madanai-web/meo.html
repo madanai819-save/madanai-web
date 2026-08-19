@@ -551,6 +551,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-radius:50%;
     background:var(--grad);
   }
+  .plan-price{ font-family:'M PLUS Rounded 1c', sans-serif; font-size:32px; font-weight:900; color:var(--ink); margin:14px 0 4px; }
+  .plan-price span{ font-size:12.5px; font-weight:600; color:var(--text-muted); }
 
   /* ---------- COMPARE: MEO診断 vs 運用代行 ---------- */
   .diff-table{
@@ -744,7 +746,88 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer .logo{ display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px; }
   footer .footer-links{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:13px; color:var(--text-muted); }
 
-  .reveal{ transition:opacity 0.7s ease, transform 0.7s ease; }
+  /* ---------- SCROLL REVEAL SYSTEM ---------- */
+  .reveal .section-head>.eyebrow,
+  .reveal .section-head>h2,
+  .page-hero.reveal .eyebrow,
+  .page-hero.reveal h1,
+  .contact.reveal .eyebrow,
+  .contact.reveal h2{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .65s ease-out, transform .65s ease-out;
+  }
+  .reveal .section-head>p,
+  .reveal .content-block-inner>p,
+  .page-hero.reveal p,
+  .contact.reveal p{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .12s, transform .6s ease-out .12s;
+  }
+  .reveal .diff-table-scroll{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .2s, transform .6s ease-out .2s;
+  }
+  :where(.reveal) .pain-grid>*,
+  :where(.reveal) .value-grid>*,
+  :where(.reveal) .process-flow>*,
+  :where(.reveal) .faq-item,
+  :where(.reveal) .recommend-box{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .16s, transform .6s ease-out .16s;
+  }
+  .reveal .pain-grid>*:nth-child(2), .reveal .value-grid>*:nth-child(2), .reveal .process-flow>*:nth-child(2),
+  .reveal .faq-item:nth-child(2), .reveal .recommend-box:nth-child(2){
+    transition-delay:.23s;
+  }
+  .reveal .pain-grid>*:nth-child(3), .reveal .value-grid>*:nth-child(3), .reveal .process-flow>*:nth-child(3),
+  .reveal .faq-item:nth-child(3), .reveal .recommend-box:nth-child(3){
+    transition-delay:.30s;
+  }
+  .reveal .pain-grid>*:nth-child(4), .reveal .value-grid>*:nth-child(4), .reveal .process-flow>*:nth-child(4), .reveal .faq-item:nth-child(4){
+    transition-delay:.37s;
+  }
+  .reveal .pain-grid>*:nth-child(5), .reveal .process-flow>*:nth-child(5), .reveal .faq-item:nth-child(5){
+    transition-delay:.44s;
+  }
+  .reveal .pain-grid>*:nth-child(6), .reveal .process-flow>*:nth-child(6){
+    transition-delay:.51s;
+  }
+  .reveal .pain-grid>*:nth-child(7){
+    transition-delay:.58s;
+  }
+  :where(.page-hero.reveal) .wrap>div a,
+  :where(.contact.reveal) .btn-line{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .55s ease-out .26s, transform .55s ease-out .26s;
+  }
+  :where(.page-hero.reveal) .wrap>div a:nth-child(2){ transition-delay:.33s; }
+
+  .reveal.is-inview .section-head>.eyebrow,
+  .reveal.is-inview .section-head>h2,
+  .reveal.is-inview.page-hero .eyebrow,
+  .reveal.is-inview.page-hero h1,
+  .reveal.is-inview.contact .eyebrow,
+  .reveal.is-inview.contact h2,
+  .reveal.is-inview .section-head>p,
+  .reveal.is-inview .content-block-inner>p,
+  .reveal.is-inview.page-hero p,
+  .reveal.is-inview.contact p,
+  .reveal.is-inview .diff-table-scroll,
+  :where(.reveal.is-inview) .pain-grid>*,
+  :where(.reveal.is-inview) .value-grid>*,
+  :where(.reveal.is-inview) .process-flow>*,
+  :where(.reveal.is-inview) .faq-item,
+  :where(.reveal.is-inview) .recommend-box,
+  :where(.page-hero.reveal.is-inview) .wrap>div a,
+  :where(.contact.reveal.is-inview) .btn-line{
+    opacity:1;
+    transform:translateY(0);
+  }
 
   /* ---------- TABLET ---------- */
   @media (max-width:1080px){
@@ -770,6 +853,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .value-grid{ grid-template-columns:1fr; }
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
+    .process-step:not(:last-child)::after{
+      content:"\203A";
+      position:static;
+      display:block;
+      margin:16px 0 -4px;
+      transform:rotate(90deg);
+      font-size:18px;
+      color:var(--line);
+    }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
     .diff-table th[scope="row"]{ width:96px; }
   }
@@ -782,6 +874,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-head p{ margin-left:0 !important; margin-right:0 !important; }
     .content-block-inner{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
     p[style*="text-align:center"]{ text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
+  }
+
+  /* ---------- HOVER (PC only) ---------- */
+  @media (hover:hover) and (pointer:fine){
+    .pain-card{ transition:transform .2s ease, box-shadow .2s ease; }
+    .pain-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+    .value-card{ transition:transform .2s ease, box-shadow .2s ease; }
+    .value-card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+    .faq-item{ transition:box-shadow .2s ease, border-color .2s ease; }
+    .faq-item:hover{ box-shadow:0 8px 22px rgba(26,22,32,0.06); border-color:rgba(123,47,247,0.18); }
+    .recommend-box{ transition:transform .2s ease, box-shadow .2s ease; }
+    .recommend-box:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,22,32,0.06); }
+  }
+
+  /* ---------- REDUCED MOTION ---------- */
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal *{
+      opacity:1 !important;
+      transform:none !important;
+      transition:none !important;
+    }
+    .pain-card, .value-card, .faq-item, .recommend-box{ transition:none !important; }
+    .pain-card:hover, .value-card:hover, .faq-item:hover, .recommend-box:hover{ transform:none !important; box-shadow:none !important; }
+    html{ scroll-behavior:auto; }
   }
 </style>
 </head>
@@ -930,7 +1046,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">BENEFIT</span>
-      <h2>Googleマップ集客で改善すること</h2>
+      <h2>改善できること</h2>
       <p>上位表示や来店数の増加を保証するものではありませんが、整えることで次のような状態を目指せます。</p>
     </div>
     <div class="value-grid">
@@ -991,6 +1107,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">MEO診断</h3>
         <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：まず現状と改善点を確認したい店舗</p>
         <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">Googleビジネスプロフィールの登録状況や検索での見え方を確認し、優先して改善すべき点を整理する単発サービスです。</p>
+        <div class="plan-price">19,800<span>円（税込）</span></div>
         <ul>
           <li>基本情報の確認</li>
           <li>検索での表示状況確認</li>
@@ -1003,6 +1120,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3 style="font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px;">Googleマップ運用代行</h3>
         <p style="font-size:12px; font-weight:700; color:var(--purple); margin-bottom:10px;">対象：Googleマップの更新・改善を継続して任せたい店舗</p>
         <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.8;">店舗情報、投稿、写真、口コミ対応などを継続的に整え、検索データを確認しながら運用を改善する月額サービスです。<a href="blog/meo-monthly-operations.html" class="text-link" style="font-size:11.5px;">毎月の対応内容はこちら →</a></p>
+        <div class="plan-price">33,000<span>円（税込）／月</span></div>
         <ul>
           <li>店舗情報の更新</li>
           <li>投稿の作成支援</li>
@@ -1011,6 +1129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>検索データ確認</li>
           <li>毎月の改善提案</li>
         </ul>
+        <p style="font-size:11px; color:var(--text-muted); margin-top:10px;">最低契約期間：3か月</p>
       </div>
     </div>
   </div>
@@ -1031,6 +1150,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <tr><th scope="col">比較項目</th><th scope="col">MEO診断</th><th scope="col">Googleマップ運用代行</th></tr>
         </thead>
         <tbody>
+          <tr><th scope="row">料金（税込）</th><td>19,800円</td><td>33,000円／月</td></tr>
           <tr><th scope="row">目的</th><td>現状と改善点を把握する</td><td>継続的に更新・改善する</td></tr>
           <tr><th scope="row">契約形態</th><td>単発</td><td>継続契約</td></tr>
           <tr><th scope="row">支援する段階</th><td>改善前</td><td>診断後または運用中</td></tr>
@@ -1048,7 +1168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">GUIDE</span>
-      <h2>どちらのMEOサービスを選べばいい？</h2>
+      <h2>選び方</h2>
     </div>
     <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
       <div class="recommend-box" style="flex:1 1 240px; max-width:280px; margin:0;">
@@ -1071,7 +1191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- 支援の流れ -->
-<section class="reveal">
+<section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FLOW</span>
@@ -1390,21 +1510,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }catch(err){}
   try{
+    const els = document.querySelectorAll('.reveal');
     if('IntersectionObserver' in window){
-      const els = document.querySelectorAll('.reveal');
-      els.forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(18px)'; });
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
           if(e.isIntersecting){
-            e.target.style.opacity='1';
-            e.target.style.transform='translateY(0)';
+            e.target.classList.add('is-inview');
             io.unobserve(e.target);
           }
         });
       }, {threshold:0.12});
       els.forEach(el=>io.observe(el));
+    }else{
+      els.forEach(el=>el.classList.add('is-inview'));
     }
-  }catch(err){}
+  }catch(err){
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-inview'));
+  }
 </script>
 
 </body>
