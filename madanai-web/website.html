@@ -387,10 +387,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .pain-card{
     background:rgba(123,47,247,0.035);
-    border:1px solid rgba(123,47,247,0.08);
     border-radius:16px;
     padding:26px 20px;
     text-align:center;
+    transition:transform .2s ease, background .2s ease;
+  }
+  @media (hover:hover) and (pointer:fine){
+    .pain-card:hover{ transform:translateY(-2px); background:rgba(123,47,247,0.06); }
   }
   .pain-icon{
     width:48px; height:48px;
@@ -448,7 +451,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     overflow:hidden;
     transition:transform .25s ease;
   }
-  .work-card:hover{ transform:translateY(-5px); }
+  @media (hover:hover) and (pointer:fine){
+    .work-card:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(26,22,32,0.1); }
+  }
   .work-image{
     width:100%;
     aspect-ratio:3/2;
@@ -517,6 +522,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* ---------- CHECK LIST (shared) ---------- */
   .plan-check{ list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:10px; }
+  .plan-check-plain{ gap:16px; }
+  .plan-check-plain li{ font-size:14.5px; }
   .plan-check li{ position:relative; padding-left:26px; font-size:12.5px; color:var(--text-muted); line-height:1.7; }
   .plan-check li::before{
     content:"✓";
@@ -749,6 +756,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border:1px solid var(--line);
     border-radius:20px;
     overflow:hidden;
+    transition:box-shadow .2s ease, border-color .2s ease;
+  }
+  @media (hover:hover) and (pointer:fine){
+    .faq-item:hover{ box-shadow:0 8px 22px rgba(26,22,32,0.06); border-color:rgba(123,47,247,0.18); }
   }
   .faq-question{
     width:100%;
@@ -879,7 +890,104 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer .logo{ display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px; }
   footer .footer-links{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:13px; color:var(--text-muted); }
 
-  .reveal{ transition:opacity 0.7s ease, transform 0.7s ease; }
+  /* ---------- SCROLL REVEAL SYSTEM ---------- */
+  /* Tier 1: heading (H2 / eyebrow / H1) — reveals first */
+  .reveal .section-head>.eyebrow,
+  .reveal .section-head>h2,
+  .page-hero.reveal .eyebrow,
+  .page-hero.reveal h1,
+  .contact.reveal .eyebrow,
+  .contact.reveal h2{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .65s ease-out, transform .65s ease-out;
+  }
+  /* Tier 2: body text — arrives slightly after the heading */
+  .reveal .section-head>p,
+  .reveal .content-block-inner>p,
+  .reveal .diff-hint,
+  .reveal .plan-check-plain,
+  .page-hero.reveal p,
+  .contact.reveal p{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .12s, transform .6s ease-out .12s;
+  }
+  /* Tier 3: secondary info blocks (table / note / compare) — the info itself is the star, no card treatment */
+  .reveal .maintenance-note,
+  .reveal .diff-table-scroll,
+  .reveal .compare-wrap{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .2s, transform .6s ease-out .2s;
+  }
+  /* Tier 4: repeating cards — staggered, ~70ms apart. :where() keeps specificity low so existing :hover transforms still win after reveal. */
+  :where(.reveal) .pain-grid>*,
+  :where(.reveal) .value-grid>*,
+  :where(.reveal) .work-grid>*,
+  :where(.reveal) .plan-cards>*,
+  :where(.reveal) .process-flow>*,
+  :where(.reveal) .faq-item{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .6s ease-out .16s, transform .6s ease-out .16s;
+  }
+  .reveal .pain-grid>*:nth-child(2), .reveal .value-grid>*:nth-child(2), .reveal .work-grid>*:nth-child(2),
+  .reveal .plan-cards>*:nth-child(2), .reveal .process-flow>*:nth-child(2), .reveal .faq-item:nth-child(2){
+    transition-delay:.23s;
+  }
+  .reveal .pain-grid>*:nth-child(3), .reveal .value-grid>*:nth-child(3), .reveal .work-grid>*:nth-child(3),
+  .reveal .plan-cards>*:nth-child(3), .reveal .process-flow>*:nth-child(3), .reveal .faq-item:nth-child(3){
+    transition-delay:.30s;
+  }
+  .reveal .pain-grid>*:nth-child(4), .reveal .value-grid>*:nth-child(4), .reveal .work-grid>*:nth-child(4),
+  .reveal .plan-cards>*:nth-child(4), .reveal .process-flow>*:nth-child(4), .reveal .faq-item:nth-child(4){
+    transition-delay:.37s;
+  }
+  .reveal .pain-grid>*:nth-child(5), .reveal .process-flow>*:nth-child(5), .reveal .faq-item:nth-child(5){
+    transition-delay:.44s;
+  }
+  .reveal .pain-grid>*:nth-child(6), .reveal .process-flow>*:nth-child(6){
+    transition-delay:.51s;
+  }
+  /* Tier 5: CTA — light fade-up only, arrives last. :where() keeps specificity low so existing :hover transforms still win after reveal. */
+  :where(.page-hero.reveal) .wrap>div a,
+  :where(.contact.reveal) .btn-line,
+  :where(.reveal) .maintenance-note+div{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .55s ease-out .26s, transform .55s ease-out .26s;
+  }
+  :where(.page-hero.reveal) .wrap>div a:nth-child(2){ transition-delay:.33s; }
+
+  /* Revealed state: JS adds .is-inview to the observed section once it scrolls into view (never removed again) */
+  .reveal.is-inview .section-head>.eyebrow,
+  .reveal.is-inview .section-head>h2,
+  .reveal.is-inview.page-hero .eyebrow,
+  .reveal.is-inview.page-hero h1,
+  .reveal.is-inview.contact .eyebrow,
+  .reveal.is-inview.contact h2,
+  .reveal.is-inview .section-head>p,
+  .reveal.is-inview .content-block-inner>p,
+  .reveal.is-inview .diff-hint,
+  .reveal.is-inview .plan-check-plain,
+  .reveal.is-inview.page-hero p,
+  .reveal.is-inview.contact p,
+  .reveal.is-inview .maintenance-note,
+  .reveal.is-inview .diff-table-scroll,
+  .reveal.is-inview .compare-wrap,
+  :where(.reveal.is-inview) .pain-grid>*,
+  :where(.reveal.is-inview) .value-grid>*,
+  :where(.reveal.is-inview) .work-grid>*,
+  :where(.reveal.is-inview) .plan-cards>*,
+  :where(.reveal.is-inview) .process-flow>*,
+  :where(.reveal.is-inview) .faq-item,
+  :where(.page-hero.reveal.is-inview) .wrap>div a,
+  :where(.contact.reveal.is-inview) .btn-line,
+  :where(.reveal.is-inview) .maintenance-note+div{
+    opacity:1;
+    transform:translateY(0);
+  }
 
   /* ---------- TABLET ---------- */
   @media (max-width:1080px){
@@ -916,6 +1024,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .plan-price{ font-size:37px; }
     .process-flow{ padding:32px 20px; row-gap:26px; }
     .process-step{ flex:0 0 100%; }
+    .process-step:not(:last-child)::after{
+      content:"\203A";
+      position:static;
+      display:block;
+      margin:16px 0 -4px;
+      transform:rotate(90deg);
+      font-size:18px;
+      color:var(--line);
+    }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
     .diff-table th[scope="row"]{ width:96px; }
   }
@@ -940,9 +1057,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* ---------- REDUCED MOTION ---------- */
   @media (prefers-reduced-motion: reduce){
-    .reveal{ transition:none !important; }
-    .plan-card, .value-card, .work-card{ transition:none !important; }
-    .plan-card:hover, .value-card:hover, .work-card:hover{ transform:none !important; }
+    .reveal, .reveal *{
+      opacity:1 !important;
+      transform:none !important;
+      transition:none !important;
+    }
+    .plan-card, .value-card, .work-card, .pain-card, .faq-item{ transition:none !important; }
+    .plan-card:hover, .value-card:hover, .work-card:hover, .pain-card:hover, .faq-item:hover{ transform:none !important; box-shadow:none !important; }
     html{ scroll-behavior:auto; }
   }
 </style>
@@ -1031,12 +1152,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- こんなお悩みありませんか -->
+<!-- お悩み -->
 <section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CONCERN</span>
-      <h2>こんなお悩みありませんか</h2>
+      <h2>お悩み</h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card">
@@ -1067,31 +1188,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- こんな会社におすすめ -->
+<!-- こんな方へ -->
 <section class="content-block reveal">
   <div class="wrap content-block-inner">
     <div class="section-head">
       <span class="eyebrow">FOR YOU</span>
-      <h2>こんな会社におすすめ</h2>
+      <h2>こんな方へ</h2>
     </div>
-    <div style="background:#fff; border:1px solid rgba(26,22,32,0.08); border-radius:18px; padding:30px 32px;">
-      <ul class="plan-check">
-        <li>問い合わせを増やしたい</li>
-        <li>ホームページを作ったまま放置している</li>
-        <li>SEOも考えたい</li>
-        <li>公開後も相談したい</li>
-        <li>何から始めればいいか分からない</li>
-      </ul>
-    </div>
+    <ul class="plan-check plan-check-plain">
+      <li>問い合わせを増やしたい</li>
+      <li>ホームページを作ったまま放置している</li>
+      <li>SEOも考えたい</li>
+      <li>公開後も相談したい</li>
+      <li>何から始めればいいか分からない</li>
+    </ul>
   </div>
 </section>
 
-<!-- マダナイ？なら解決できる理由 -->
+<!-- マダナイ？の強み -->
 <section class="content-block alt reveal">
   <div class="wrap content-block-inner">
     <div class="section-head">
       <span class="eyebrow">WHY US</span>
-      <h2>マダナイ？なら解決できる理由</h2>
+      <h2>マダナイ？の強み</h2>
     </div>
     <p>一般的な制作会社は、ホームページを「納品して終わり」にしがちです。見た目は整っていても、検索から見つけてもらえず、問い合わせにつながらないケースが少なくありません。</p>
     <div class="maintenance-note">
@@ -1101,12 +1220,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ホームページ制作だけとの違い -->
+<!-- 他社との違い -->
 <section class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">DIFFERENCE</span>
-      <h2>ホームページ制作だけとの違い</h2>
+      <h2>他社との違い</h2>
       <p>作って終わりにするか、公開後も一緒に育てていくかの違いです。</p>
     </div>
     <p class="diff-hint">→ 横にスライドして比較できます</p>
@@ -1129,12 +1248,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- 得られる未来 -->
+<!-- 得られること -->
 <section class="content-block reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">BENEFIT</span>
-      <h2>ホームページ制作で得られる未来</h2>
+      <h2>得られること</h2>
     </div>
     <div class="value-grid">
       <div class="value-card">
@@ -1166,7 +1285,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">WORKS</span>
-      <h2>成果につながるホームページ制作実績</h2>
+      <h2>制作実績</h2>
       <p>デザインだけでは終わりません。AI・SEO・MEO・導線設計まで考えたホームページをご紹介します。</p>
     </div>
     <div class="work-grid">
@@ -1545,21 +1664,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }catch(err){}
   try{
+    const els = document.querySelectorAll('.reveal');
     if('IntersectionObserver' in window){
-      const els = document.querySelectorAll('.reveal');
-      els.forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(18px)'; });
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
           if(e.isIntersecting){
-            e.target.style.opacity='1';
-            e.target.style.transform='translateY(0)';
+            e.target.classList.add('is-inview');
             io.unobserve(e.target);
           }
         });
       }, {threshold:0.12});
       els.forEach(el=>io.observe(el));
+    }else{
+      els.forEach(el=>el.classList.add('is-inview'));
     }
-  }catch(err){}
+  }catch(err){
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-inview'));
+  }
 </script>
 
 </body>
