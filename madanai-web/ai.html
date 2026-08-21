@@ -683,6 +683,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .text-link:hover{ color:var(--purple-deep); text-decoration-color:currentColor; }
   .text-link:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
+  .mobile-compare-toggle:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
 
   /* ---------- CONTACT ---------- */
   .contact{
@@ -885,6 +886,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pain-card, .value-card, .faq-item, .recommend-box{ transition:none !important; }
     .pain-card:hover, .value-card:hover, .faq-item:hover, .recommend-box:hover{ transform:none !important; box-shadow:none !important; }
     html{ scroll-behavior:auto; }
+    .mobile-compare-detail{ transition:none !important; }
+  }
+
+  /* ---------- MOBILE COMPARE ACCORDION (smartphone only) ---------- */
+  .mobile-compare-toggle{ display:none; }
+  .mobile-compare-detail{ display:contents; }
+  @media (max-width:720px){
+    .mobile-compare-toggle{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      width:100%;
+      margin-top:20px;
+      padding:14px 18px;
+      border-radius:12px;
+      border:1.5px solid var(--purple);
+      background:#fff;
+      color:var(--purple);
+      font-size:14px;
+      font-weight:800;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .mobile-compare-toggle-icon{ font-size:16px; line-height:1; }
+
+    .mobile-compare-detail{
+      display:grid;
+      grid-template-rows:0fr;
+      opacity:0;
+      margin-top:0;
+      transition:grid-template-rows .3s ease, opacity .25s ease, margin-top .3s ease;
+    }
+    .mobile-compare-detail-inner{ overflow:hidden; }
+    .mobile-compare-detail.open{
+      grid-template-rows:1fr;
+      opacity:1;
+      margin-top:16px;
+    }
+    .mobile-compare-detail .compare-wrap{ margin:0; }
   }
 </style>
 </head>
@@ -1285,12 +1326,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- AIサービスの内容 -->
+<!-- 料金 -->
 <section id="services" class="content-block alt reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">SERVICES</span>
-      <h2>AIサービスの内容</h2>
+      <h2>料金</h2>
       <p>マダナイ？のAI導入・活用支援は、目的に応じて4つのサービスに分かれています。まずは内容を確認し、自社に合うものをお選びください。</p>
     </div>
     <div class="value-grid">
@@ -1355,6 +1396,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>AI導入支援とAI顧問の違い</h2>
       <p>単発で「使える状態」を作るか、継続して活用を広げるかで選び方が変わります。</p>
     </div>
+
+    <button type="button" class="mobile-compare-toggle" aria-expanded="false" aria-controls="mobile-compare-detail-ai">
+      <span class="mobile-compare-toggle-text">詳しい違いを見る</span><span class="mobile-compare-toggle-icon" aria-hidden="true">＋</span>
+    </button>
+
+    <div class="mobile-compare-detail" id="mobile-compare-detail-ai">
+    <div class="mobile-compare-detail-inner">
     <div class="compare-wrap">
       <div class="compare-scroll" tabindex="0" aria-label="AI導入支援とAI顧問の役割比較表。横にスクロールできます">
         <table class="compare-table">
@@ -1376,6 +1424,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </tbody>
         </table>
       </div>
+    </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1785,6 +1835,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.addEventListener('resize', updateArrangeButtons);
       updateArrangeButtons();
     }
+  }catch(err){}
+  try{
+    document.querySelectorAll('.mobile-compare-toggle').forEach(btn=>{
+      const targetId = btn.getAttribute('aria-controls');
+      const detail = targetId ? document.getElementById(targetId) : null;
+      const icon = btn.querySelector('.mobile-compare-toggle-icon');
+      const text = btn.querySelector('.mobile-compare-toggle-text');
+      if(!detail) return;
+      btn.addEventListener('click', ()=>{
+        const isOpen = detail.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(icon) icon.textContent = isOpen ? '−' : '＋';
+        if(text) text.textContent = isOpen ? '詳しい違いを閉じる' : '詳しい違いを見る';
+      });
+    });
   }catch(err){}
   try{
     const els = document.querySelectorAll('.reveal');

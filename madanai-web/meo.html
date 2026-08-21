@@ -702,6 +702,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .text-link:hover{ color:var(--purple-deep); text-decoration-color:currentColor; }
   .text-link:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; border-radius:2px; }
+  .mobile-compare-toggle:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
 
   /* ---------- CONTACT ---------- */
   .contact{
@@ -774,13 +775,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   :where(.reveal) .value-grid>*,
   :where(.reveal) .process-flow>*,
   :where(.reveal) .faq-item,
-  :where(.reveal) .recommend-box{
+  :where(.reveal) .recommend-box,
+  :where(.reveal) .mobile-plan-summary>*{
     opacity:0;
     transform:translateY(24px);
     transition:opacity .6s ease-out .16s, transform .6s ease-out .16s;
   }
   .reveal .pain-grid>*:nth-child(2), .reveal .value-grid>*:nth-child(2), .reveal .process-flow>*:nth-child(2),
-  .reveal .faq-item:nth-child(2), .reveal .recommend-box:nth-child(2){
+  .reveal .faq-item:nth-child(2), .reveal .recommend-box:nth-child(2), .reveal .mobile-plan-summary>*:nth-child(2){
     transition-delay:.23s;
   }
   .reveal .pain-grid>*:nth-child(3), .reveal .value-grid>*:nth-child(3), .reveal .process-flow>*:nth-child(3),
@@ -823,6 +825,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   :where(.reveal.is-inview) .process-flow>*,
   :where(.reveal.is-inview) .faq-item,
   :where(.reveal.is-inview) .recommend-box,
+  :where(.reveal.is-inview) .mobile-plan-summary>*,
   :where(.page-hero.reveal.is-inview) .wrap>div a,
   :where(.contact.reveal.is-inview) .btn-line{
     opacity:1;
@@ -898,6 +901,75 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pain-card, .value-card, .faq-item, .recommend-box{ transition:none !important; }
     .pain-card:hover, .value-card:hover, .faq-item:hover, .recommend-box:hover{ transform:none !important; box-shadow:none !important; }
     html{ scroll-behavior:auto; }
+    .mobile-compare-detail{ transition:none !important; }
+  }
+
+  /* ---------- MOBILE PLAN SUMMARY + COMPARE ACCORDION (smartphone only) ---------- */
+  .mobile-plan-summary{ display:none; }
+  .mobile-compare-toggle{ display:none; }
+  .mobile-compare-detail{ display:contents; }
+  @media (max-width:720px){
+    .mobile-plan-summary{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:28px;
+    }
+    .mobile-plan-card{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:20px;
+    }
+    .mobile-plan-card.featured{
+      border-color:var(--purple);
+      box-shadow:0 8px 24px rgba(124,58,237,0.12);
+    }
+    .mobile-plan-card .plan-flag{ position:absolute; top:-12px; left:20px; }
+    .mobile-plan-name{ font-size:11px; font-weight:800; color:var(--purple); letter-spacing:.05em; margin-bottom:4px; }
+    .mobile-plan-title{ font-size:16px; font-weight:800; color:var(--ink); margin-bottom:8px; line-height:1.4; }
+    .mobile-plan-price{ font-size:26px; font-weight:800; color:var(--ink); margin-bottom:8px; }
+    .mobile-plan-price span{ font-size:12px; font-weight:700; margin-left:4px; }
+    .mobile-plan-target{ font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.7; }
+    .mobile-plan-diff-label{ font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:8px; }
+    .mobile-plan-diff{ display:flex; flex-direction:column; gap:6px; }
+    .mobile-plan-diff li{ font-size:12.5px; color:var(--ink); line-height:1.6; }
+
+    .mobile-compare-toggle{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      width:100%;
+      margin-top:20px;
+      padding:14px 18px;
+      border-radius:12px;
+      border:1.5px solid var(--purple);
+      background:#fff;
+      color:var(--purple);
+      font-size:14px;
+      font-weight:800;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .mobile-compare-toggle-icon{ font-size:16px; line-height:1; }
+
+    .mobile-compare-detail{
+      display:grid;
+      grid-template-rows:0fr;
+      opacity:0;
+      margin-top:0;
+      transition:grid-template-rows .3s ease, opacity .25s ease, margin-top .3s ease;
+    }
+    .mobile-compare-detail-inner{ overflow:hidden; }
+    .mobile-compare-detail.open{
+      grid-template-rows:1fr;
+      opacity:1;
+      margin-top:16px;
+    }
+    .mobile-compare-detail .compare-wrap,
+    .mobile-compare-detail .diff-table-scroll{ margin:0; }
   }
 </style>
 </head>
@@ -1095,12 +1167,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- MEO診断とGoogleマップ運用代行 -->
+<!-- 料金 -->
 <section id="plans" class="content-block reveal" style="scroll-margin-top:90px;">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">PLAN</span>
-      <h2>MEO診断とGoogleマップ運用代行</h2>
+      <h2>料金</h2>
     </div>
     <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
       <div class="recommend-box" style="flex:1 1 280px; max-width:360px;">
@@ -1132,6 +1204,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="font-size:11px; color:var(--text-muted); margin-top:10px;">最低契約期間：3か月</p>
       </div>
     </div>
+
+    <div class="mobile-plan-summary">
+      <div class="mobile-plan-card">
+        <div class="mobile-plan-name">MEO診断</div>
+        <div class="mobile-plan-price">19,800<span>円（税込）</span></div>
+        <div class="mobile-plan-target">対象：まず現状と改善点を確認したい店舗</div>
+        <div class="mobile-plan-diff-label">主な違い</div>
+        <ul class="mobile-plan-diff">
+          <li>目的：現状と改善点を把握する</li>
+          <li>契約形態：単発</li>
+          <li>おすすめの店舗：まず課題を知りたい店舗</li>
+        </ul>
+      </div>
+      <div class="mobile-plan-card">
+        <div class="mobile-plan-name">Googleマップ運用代行</div>
+        <div class="mobile-plan-price">33,000<span>円（税込）／月</span></div>
+        <div class="mobile-plan-target">対象：Googleマップの更新・改善を継続して任せたい店舗</div>
+        <div class="mobile-plan-diff-label">主な違い</div>
+        <ul class="mobile-plan-diff">
+          <li>目的：継続的に更新・改善する</li>
+          <li>契約形態：継続契約</li>
+          <li>おすすめの店舗：運用まで任せたい店舗</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1142,6 +1239,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">DIFFERENCE</span>
       <h2>MEO診断とGoogleマップ運用代行の違い</h2>
     </div>
+
+    <button type="button" class="mobile-compare-toggle" aria-expanded="false" aria-controls="mobile-compare-detail-meo">
+      <span class="mobile-compare-toggle-text">詳しい違いを見る</span><span class="mobile-compare-toggle-icon" aria-hidden="true">＋</span>
+    </button>
+
+    <div class="mobile-compare-detail" id="mobile-compare-detail-meo">
+    <div class="mobile-compare-detail-inner">
     <p class="diff-hint">→ 横にスライドして比較できます</p>
     <div class="diff-table-scroll" tabindex="0" aria-label="MEO診断とGoogleマップ運用代行の違いの比較表。横にスクロールできます">
       <table class="diff-table">
@@ -1159,6 +1263,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <tr><th scope="row">おすすめの店舗</th><td>まず課題を知りたい店舗</td><td>運用まで任せたい店舗</td></tr>
         </tbody>
       </table>
+    </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1508,6 +1614,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.addEventListener('resize', updateArrangeButtons);
       updateArrangeButtons();
     }
+  }catch(err){}
+  try{
+    document.querySelectorAll('.mobile-compare-toggle').forEach(btn=>{
+      const targetId = btn.getAttribute('aria-controls');
+      const detail = targetId ? document.getElementById(targetId) : null;
+      const icon = btn.querySelector('.mobile-compare-toggle-icon');
+      const text = btn.querySelector('.mobile-compare-toggle-text');
+      if(!detail) return;
+      btn.addEventListener('click', ()=>{
+        const isOpen = detail.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(icon) icon.textContent = isOpen ? '−' : '＋';
+        if(text) text.textContent = isOpen ? '詳しい違いを閉じる' : '詳しい違いを見る';
+      });
+    });
   }catch(err){}
   try{
     const els = document.querySelectorAll('.reveal');

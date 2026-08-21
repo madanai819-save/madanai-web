@@ -926,6 +926,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   :where(.reveal) .value-grid>*,
   :where(.reveal) .work-grid>*,
   :where(.reveal) .plan-cards>*,
+  :where(.reveal) .mobile-plan-summary>*,
   :where(.reveal) .process-flow>*,
   :where(.reveal) .faq-item{
     opacity:0;
@@ -933,7 +934,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transition:opacity .6s ease-out .16s, transform .6s ease-out .16s;
   }
   .reveal .pain-grid>*:nth-child(2), .reveal .value-grid>*:nth-child(2), .reveal .work-grid>*:nth-child(2),
-  .reveal .plan-cards>*:nth-child(2), .reveal .process-flow>*:nth-child(2), .reveal .faq-item:nth-child(2){
+  .reveal .plan-cards>*:nth-child(2), .reveal .mobile-plan-summary>*:nth-child(2), .reveal .process-flow>*:nth-child(2), .reveal .faq-item:nth-child(2){
     transition-delay:.23s;
   }
   .reveal .pain-grid>*:nth-child(3), .reveal .value-grid>*:nth-child(3), .reveal .work-grid>*:nth-child(3),
@@ -980,6 +981,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   :where(.reveal.is-inview) .value-grid>*,
   :where(.reveal.is-inview) .work-grid>*,
   :where(.reveal.is-inview) .plan-cards>*,
+  :where(.reveal.is-inview) .mobile-plan-summary>*,
   :where(.reveal.is-inview) .process-flow>*,
   :where(.reveal.is-inview) .faq-item,
   :where(.page-hero.reveal.is-inview) .wrap>div a,
@@ -1050,7 +1052,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* ---------- FOCUS VISIBLE (accessibility) ---------- */
   .btn-primary:focus-visible, .btn-secondary:focus-visible, .btn-line:focus-visible,
   .faq-question:focus-visible, .nav-dropdown-toggle:focus-visible, .hamburger:focus-visible,
-  .mobile-nav-toggle:focus-visible, .work-card:focus-visible, .plan-card:focus-visible{
+  .mobile-nav-toggle:focus-visible, .work-card:focus-visible, .plan-card:focus-visible,
+  .mobile-compare-toggle:focus-visible{
     outline:2px solid var(--purple);
     outline-offset:2px;
   }
@@ -1065,6 +1068,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .plan-card, .value-card, .work-card, .pain-card, .faq-item{ transition:none !important; }
     .plan-card:hover, .value-card:hover, .work-card:hover, .pain-card:hover, .faq-item:hover{ transform:none !important; box-shadow:none !important; }
     html{ scroll-behavior:auto; }
+    .mobile-compare-detail{ transition:none !important; }
+  }
+
+  /* ---------- MOBILE PLAN SUMMARY + COMPARE ACCORDION (smartphone only) ---------- */
+  .mobile-plan-summary{ display:none; }
+  .mobile-compare-toggle{ display:none; }
+  .mobile-compare-detail{ display:contents; }
+  @media (max-width:720px){
+    .mobile-plan-summary{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:28px;
+    }
+    .mobile-plan-card{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:20px;
+    }
+    .mobile-plan-card.featured{
+      border-color:var(--purple);
+      box-shadow:0 8px 24px rgba(124,58,237,0.12);
+    }
+    .mobile-plan-card .plan-flag{ position:absolute; top:-12px; left:20px; }
+    .mobile-plan-name{ font-size:11px; font-weight:800; color:var(--purple); letter-spacing:.05em; margin-bottom:4px; }
+    .mobile-plan-title{ font-size:16px; font-weight:800; color:var(--ink); margin-bottom:8px; line-height:1.4; }
+    .mobile-plan-price{ font-size:26px; font-weight:800; color:var(--ink); margin-bottom:8px; }
+    .mobile-plan-price span{ font-size:12px; font-weight:700; margin-left:4px; }
+    .mobile-plan-target{ font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.7; }
+    .mobile-plan-diff-label{ font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:8px; }
+    .mobile-plan-diff{ display:flex; flex-direction:column; gap:6px; }
+    .mobile-plan-diff li{ font-size:12.5px; color:var(--ink); display:flex; align-items:center; gap:8px; }
+    .mobile-plan-diff .compare-yes{ color:var(--purple); font-weight:800; }
+    .mobile-plan-diff .compare-no{ color:var(--text-muted); font-weight:800; }
+
+    .mobile-compare-toggle{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      width:100%;
+      margin-top:20px;
+      padding:14px 18px;
+      border-radius:12px;
+      border:1.5px solid var(--purple);
+      background:#fff;
+      color:var(--purple);
+      font-size:14px;
+      font-weight:800;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .mobile-compare-toggle-icon{ font-size:16px; line-height:1; }
+
+    .mobile-compare-detail{
+      display:grid;
+      grid-template-rows:0fr;
+      opacity:0;
+      margin-top:0;
+      transition:grid-template-rows .3s ease, opacity .25s ease, margin-top .3s ease;
+    }
+    .mobile-compare-detail-inner{ overflow:hidden; }
+    .mobile-compare-detail.open{
+      grid-template-rows:1fr;
+      opacity:1;
+      margin-top:16px;
+    }
+    .mobile-compare-detail .compare-wrap{ margin:0; }
   }
 </style>
 </head>
@@ -1397,6 +1470,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
+    <div class="mobile-plan-summary">
+      <div class="mobile-plan-card">
+        <div class="mobile-plan-name">WEB制作</div>
+        <div class="mobile-plan-title">Webページ制作プラン（公開なし）</div>
+        <div class="mobile-plan-price">220,000<span>円（税込）</span></div>
+        <div class="mobile-plan-target">対象：公開は自分で行う方</div>
+        <div class="mobile-plan-diff-label">主な違い</div>
+        <ul class="mobile-plan-diff">
+          <li><span class="compare-no" aria-hidden="true">−</span>独自ドメイン設定</li>
+          <li><span class="compare-no" aria-hidden="true">−</span>サーバー設定</li>
+          <li><span class="compare-no" aria-hidden="true">−</span>基本SEO設定</li>
+          <li><span class="compare-no" aria-hidden="true">−</span>本番公開</li>
+        </ul>
+      </div>
+      <div class="mobile-plan-card featured">
+        <span class="plan-flag">おすすめ</span>
+        <div class="mobile-plan-name">HP公開パック</div>
+        <div class="mobile-plan-title">HP公開まるごとパック</div>
+        <div class="mobile-plan-price">330,000<span>円（税込）</span></div>
+        <div class="mobile-plan-target">対象：公開まで任せたい方</div>
+        <div class="mobile-plan-diff-label">主な違い</div>
+        <ul class="mobile-plan-diff">
+          <li><span class="compare-yes" aria-hidden="true">○</span>独自ドメイン設定</li>
+          <li><span class="compare-yes" aria-hidden="true">○</span>サーバー設定</li>
+          <li><span class="compare-yes" aria-hidden="true">○</span>基本SEO設定</li>
+          <li><span class="compare-yes" aria-hidden="true">○</span>本番公開</li>
+        </ul>
+      </div>
+    </div>
+
+    <button type="button" class="mobile-compare-toggle" aria-expanded="false" aria-controls="mobile-compare-detail-website">
+      <span class="mobile-compare-toggle-text">詳しい違いを見る</span><span class="mobile-compare-toggle-icon" aria-hidden="true">＋</span>
+    </button>
+
+    <div class="mobile-compare-detail" id="mobile-compare-detail-website">
+    <div class="mobile-compare-detail-inner">
     <div class="compare-wrap">
       <p class="compare-hint">→ 横にスライドして比較できます</p>
       <div class="compare-scroll" tabindex="0" aria-label="ホームページ制作プラン比較表。横にスクロールできます">
@@ -1428,6 +1537,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </tbody>
         </table>
       </div>
+    </div>
+    </div>
     </div>
 
     <div class="maintenance-note" style="margin-top:20px;">
@@ -1660,6 +1771,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const isOpen = item.classList.toggle('open');
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         if(icon) icon.textContent = isOpen ? '−' : '+';
+      });
+    });
+  }catch(err){}
+  try{
+    document.querySelectorAll('.mobile-compare-toggle').forEach(btn=>{
+      const targetId = btn.getAttribute('aria-controls');
+      const detail = targetId ? document.getElementById(targetId) : null;
+      const icon = btn.querySelector('.mobile-compare-toggle-icon');
+      const text = btn.querySelector('.mobile-compare-toggle-text');
+      if(!detail) return;
+      btn.addEventListener('click', ()=>{
+        const isOpen = detail.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(icon) icon.textContent = isOpen ? '−' : '＋';
+        if(text) text.textContent = isOpen ? '詳しい違いを閉じる' : '詳しい違いを見る';
       });
     });
   }catch(err){}

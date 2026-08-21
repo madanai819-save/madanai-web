@@ -730,6 +730,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   :where(.reveal) .pain-grid>*,
   :where(.reveal) .cause-grid>*,
   :where(.reveal) .plan-cards>*,
+  :where(.reveal) .mobile-plan-summary>*,
   :where(.reveal) .step-list>*,
   :where(.reveal) .faq-item,
   :where(.reveal) .recommend-box{
@@ -738,7 +739,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transition:opacity .6s ease-out .16s, transform .6s ease-out .16s;
   }
   .reveal .pain-grid>*:nth-child(2), .reveal .cause-grid>*:nth-child(2), .reveal .plan-cards>*:nth-child(2),
-  .reveal .step-list>*:nth-child(2), .reveal .faq-item:nth-child(2), .reveal .recommend-box:nth-child(2){
+  .reveal .mobile-plan-summary>*:nth-child(2), .reveal .step-list>*:nth-child(2), .reveal .faq-item:nth-child(2), .reveal .recommend-box:nth-child(2){
     transition-delay:.23s;
   }
   .reveal .pain-grid>*:nth-child(3), .reveal .cause-grid>*:nth-child(3), .reveal .plan-cards>*:nth-child(3),
@@ -782,6 +783,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   :where(.reveal.is-inview) .pain-grid>*,
   :where(.reveal.is-inview) .cause-grid>*,
   :where(.reveal.is-inview) .plan-cards>*,
+  :where(.reveal.is-inview) .mobile-plan-summary>*,
   :where(.reveal.is-inview) .step-list>*,
   :where(.reveal.is-inview) .faq-item,
   :where(.reveal.is-inview) .recommend-box,
@@ -844,6 +846,75 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .plan-card, .pain-card, .cause-card, .faq-item, .recommend-box{ transition:none !important; }
     .plan-card:hover, .pain-card:hover, .cause-card:hover, .faq-item:hover, .recommend-box:hover{ transform:none !important; box-shadow:none !important; }
     html{ scroll-behavior:auto; }
+    .mobile-compare-detail{ transition:none !important; }
+  }
+
+  /* ---------- MOBILE PLAN SUMMARY + COMPARE ACCORDION (smartphone only) ---------- */
+  .mobile-plan-summary{ display:none; }
+  .mobile-compare-toggle{ display:none; }
+  .mobile-compare-detail{ display:contents; }
+  @media (max-width:720px){
+    .mobile-plan-summary{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:28px;
+    }
+    .mobile-plan-card{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:20px;
+    }
+    .mobile-plan-card.featured{
+      border-color:var(--purple);
+      box-shadow:0 8px 24px rgba(124,58,237,0.12);
+    }
+    .mobile-plan-card .plan-flag{ position:absolute; top:-12px; left:20px; }
+    .mobile-plan-name{ font-size:11px; font-weight:800; color:var(--purple); letter-spacing:.05em; margin-bottom:4px; }
+    .mobile-plan-title{ font-size:16px; font-weight:800; color:var(--ink); margin-bottom:8px; line-height:1.4; }
+    .mobile-plan-price{ font-size:26px; font-weight:800; color:var(--ink); margin-bottom:8px; }
+    .mobile-plan-price span{ font-size:12px; font-weight:700; margin-left:4px; }
+    .mobile-plan-target{ font-size:12.5px; color:var(--text-muted); margin-bottom:14px; line-height:1.7; }
+    .mobile-plan-diff-label{ font-size:11px; font-weight:800; color:var(--text-muted); margin-bottom:8px; }
+    .mobile-plan-diff{ display:flex; flex-direction:column; gap:6px; }
+    .mobile-plan-diff li{ font-size:12.5px; color:var(--ink); line-height:1.6; }
+
+    .mobile-compare-toggle{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      width:100%;
+      margin-top:20px;
+      padding:14px 18px;
+      border-radius:12px;
+      border:1.5px solid var(--purple);
+      background:#fff;
+      color:var(--purple);
+      font-size:14px;
+      font-weight:800;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .mobile-compare-toggle-icon{ font-size:16px; line-height:1; }
+
+    .mobile-compare-detail{
+      display:grid;
+      grid-template-rows:0fr;
+      opacity:0;
+      margin-top:0;
+      transition:grid-template-rows .3s ease, opacity .25s ease, margin-top .3s ease;
+    }
+    .mobile-compare-detail-inner{ overflow:hidden; }
+    .mobile-compare-detail.open{
+      grid-template-rows:1fr;
+      opacity:1;
+      margin-top:16px;
+    }
+    .mobile-compare-detail .compare-wrap,
+    .mobile-compare-detail .diff-table-scroll{ margin:0; }
   }
 </style>
 </head>
@@ -1044,12 +1115,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- 料金プラン -->
+<!-- 料金 -->
 <section id="plans" class="content-block reveal" style="scroll-margin-top:90px;">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">PLAN</span>
-      <h2>料金プラン</h2>
+      <h2>料金</h2>
     </div>
     <div class="plan-cards">
       <div class="plan-card">
@@ -1083,6 +1154,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <p style="font-size:11px; color:var(--text-muted); margin-top:14px;">※商品数、文章量、画像制作、撮影、フォーム機能などにより料金が変わります。</p>
+
+    <div class="mobile-plan-summary">
+      <div class="mobile-plan-card">
+        <div class="mobile-plan-name">LIGHT</div>
+        <div class="mobile-plan-title">LPライト</div>
+        <div class="mobile-plan-price">59,800<span>円（税込）〜</span></div>
+        <div class="mobile-plan-target">向いている方：素材を自分で用意できる方</div>
+        <div class="mobile-plan-diff-label">主な違い</div>
+        <ul class="mobile-plan-diff">
+          <li>構成・文章の準備：お客様がご用意</li>
+          <li>制作の進め方：構成・文章をお預かりして制作</li>
+        </ul>
+      </div>
+      <div class="mobile-plan-card featured">
+        <span class="plan-flag">おすすめ</span>
+        <div class="mobile-plan-name">STANDARD</div>
+        <div class="mobile-plan-title">LPスタンダード</div>
+        <div class="mobile-plan-price">99,800<span>円（税込）〜</span></div>
+        <div class="mobile-plan-target">向いている方：構成から相談したい方</div>
+        <div class="mobile-plan-diff-label">主な違い</div>
+        <ul class="mobile-plan-diff">
+          <li>構成・文章の準備：こちらと一緒に作成</li>
+          <li>制作の進め方：ヒアリングしながら制作</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1093,6 +1190,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">COMPARE</span>
       <h2>プラン比較</h2>
     </div>
+
+    <button type="button" class="mobile-compare-toggle" aria-expanded="false" aria-controls="mobile-compare-detail-lp">
+      <span class="mobile-compare-toggle-text">詳しい違いを見る</span><span class="mobile-compare-toggle-icon" aria-hidden="true">＋</span>
+    </button>
+
+    <div class="mobile-compare-detail" id="mobile-compare-detail-lp">
+    <div class="mobile-compare-detail-inner">
     <div class="compare-wrap">
       <p class="compare-hint">→ 横にスライドして比較できます</p>
       <div class="compare-scroll" tabindex="0" aria-label="LP制作プラン比較表。横にスクロールできます">
@@ -1114,6 +1218,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </table>
       </div>
     </div>
+    </div>
+    </div>
+
     <div style="text-align:center; margin-top:24px;">
       <a href="pricing.html#lp" class="btn-primary">LP制作の料金・提供条件を確認する<span class="btn-arrow">→</span></a>
     </div>
@@ -1382,6 +1489,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const isOpen = item.classList.toggle('open');
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         if(icon) icon.textContent = isOpen ? '−' : '+';
+      });
+    });
+  }catch(err){}
+  try{
+    document.querySelectorAll('.mobile-compare-toggle').forEach(btn=>{
+      const targetId = btn.getAttribute('aria-controls');
+      const detail = targetId ? document.getElementById(targetId) : null;
+      const icon = btn.querySelector('.mobile-compare-toggle-icon');
+      const text = btn.querySelector('.mobile-compare-toggle-text');
+      if(!detail) return;
+      btn.addEventListener('click', ()=>{
+        const isOpen = detail.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(icon) icon.textContent = isOpen ? '−' : '＋';
+        if(text) text.textContent = isOpen ? '詳しい違いを閉じる' : '詳しい違いを見る';
       });
     });
   }catch(err){}
