@@ -688,28 +688,70 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .bloglist-hero p{ max-width:740px; margin:16px 0 0; font-size:14px; color:var(--text-muted); line-height:1.8; }
   .bloglist-hero p.sub{ font-size:12.5px; margin-top:10px; }
 
-  /* ---------- BLOG ARTICLE LIST (unified across all breakpoints) ---------- */
-  .blog-grid{ display:flex; flex-direction:column; max-width:760px; margin:0 auto; }
-  .blog-post-card{
-    display:flex; flex-direction:column;
-    background:none; border:none; border-radius:0; box-shadow:none; overflow:visible; height:auto;
-    border-bottom:1px solid var(--line);
-    padding:36px 0;
-    text-align:left;
+  /* ---------- HOME NEWS LIST (shared design language with index.html) ---------- */
+  .home-news-list{ border-top:1px solid rgba(26,22,32,0.08); }
+  .home-news-row{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    padding:20px 6px;
+    border-bottom:1px solid rgba(26,22,32,0.08);
+    text-decoration:none;
+    border-radius:10px;
+    transition:background-color .2s ease;
   }
-  .blog-grid > .blog-post-card:first-child{ padding-top:0; }
-  .blog-grid > .blog-post-card:last-child{ border-bottom:none; padding-bottom:0; }
-  .blog-post-card:hover{ transform:none; box-shadow:none; }
-  .blog-post-card:focus-visible{ outline:2px solid var(--purple); outline-offset:3px; }
-  .blog-post-image{ display:none; }
-  .blog-post-body{ padding:0; display:flex; flex-direction:column; text-align:left; }
-  .blog-post-category{ font-size:11px; font-weight:800; color:var(--purple); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:12px; }
-  .blog-post-body h3{ font-size:clamp(21px, 3.4vw, 28px); font-weight:800; color:var(--ink); line-height:1.4; margin-bottom:12px; text-align:left; }
-  .blog-post-date{ font-size:12.5px; color:var(--text-muted); margin-bottom:14px; display:block; }
-  .blog-post-desc{ font-size:16px; color:var(--text-muted); line-height:1.8; margin-bottom:18px; text-align:left; }
-  .blog-post-link{ font-size:14px; font-weight:800; color:var(--purple); display:inline-flex; align-items:center; gap:4px; }
-  .blog-post-link .btn-arrow{ display:inline-block; transition:transform .2s ease; }
-  .blog-post-card:hover .blog-post-link .btn-arrow{ transform:translateX(3px); }
+  .home-news-row:hover{ background:rgba(123,47,247,0.035); }
+  .home-news-row:focus-visible{ outline:2px solid var(--purple); outline-offset:-2px; }
+  .home-news-meta{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex:0 0 30%;
+    min-width:0;
+  }
+  .home-news-date{ font-size:12.5px; color:var(--text-muted); white-space:nowrap; }
+  .home-news-category{
+    font-size:11px; font-weight:800; color:var(--purple);
+    background:rgba(123,47,247,0.08);
+    padding:4px 11px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .home-news-title{
+    flex:1 1 60%;
+    min-width:0;
+    font-size:15px; font-weight:700; color:var(--ink);
+    line-height:1.6;
+    transition:color .2s ease;
+  }
+  .home-news-row:hover .home-news-title{ color:var(--purple); }
+  .home-news-arrow{
+    flex:0 0 auto;
+    font-size:16px; color:var(--purple);
+    transition:transform .2s ease;
+  }
+  .home-news-row:hover .home-news-arrow{ transform:translateX(4px); }
+
+  @media (max-width:720px){
+    .home-news-row{
+      flex-wrap:wrap;
+      align-items:flex-start;
+      gap:8px;
+      padding:18px 6px;
+      position:relative;
+    }
+    .home-news-meta{ flex:0 0 100%; }
+    .home-news-title{
+      flex:0 0 100%;
+      padding-right:30px;
+      font-size:14.5px;
+    }
+    .home-news-arrow{
+      position:absolute;
+      right:6px;
+      bottom:18px;
+    }
+  }
 
   /* ---------- お悩みから記事を探す (TOPIC LIST) ---------- */
   .topic-list{ display:flex; flex-direction:column; max-width:760px; margin:0 auto; }
@@ -829,12 +871,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ol>
     </nav>
     <span class="eyebrow">BLOG</span>
-    <h1>こんなお悩みありませんか？</h1>
-    <p>ホームページ制作・SEO・MEO・AI活用・業務効率化など、売上アップにつながる情報をまとめています。</p>
+    <h1>新着情報</h1>
+    <p>ホームページ制作・SEO・MEO・AI活用など、集客や業務改善に役立つ情報をわかりやすくまとめています。</p>
     <p class="sub">難しい専門用語をできるだけ使わず、中小企業・店舗・個人事業主の方にも分かりやすく解説します。</p>
-    <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px;">
-      <a href="#topic" class="btn-primary">お悩みから記事を探す<span class="btn-arrow">→</span></a>
-      <a href="#services" class="btn-secondary">サービス一覧を見る<span class="btn-arrow">→</span></a>
+  </div>
+</section>
+
+<!-- カテゴリーから探す -->
+<section class="content-block reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">CATEGORY</span>
+      <h2>カテゴリーから探す</h2>
+    </div>
+    <div class="category-list">
+      <a href="blog.html#industry-ai" class="category-row">
+        <span class="category-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg>
+        </span>
+        <span class="category-name">業種別AI活用</span>
+        <span class="category-count">7記事</span>
+        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a href="blog.html#cat-website" class="category-row">
+        <span class="category-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 21h8"/></svg>
+        </span>
+        <span class="category-name">ホームページ制作</span>
+        <span class="category-count">15記事</span>
+        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a href="blog.html#cat-ai-business" class="category-row">
+        <span class="category-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-3 9v2h6v-2a5 5 0 0 0-3-9z"/><path d="M10 18h4M11 21h2"/></svg>
+        </span>
+        <span class="category-name">AI導入・業務効率化</span>
+        <span class="category-count">17記事</span>
+        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a href="blog.html#cat-meo" class="category-row">
+        <span class="category-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <span class="category-name">MEO対策</span>
+        <span class="category-count">15記事</span>
+        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a href="blog.html#cat-seo" class="category-row">
+        <span class="category-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
+        </span>
+        <span class="category-name">SEO対策</span>
+        <span class="category-count">13記事</span>
+        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -907,110 +997,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">FEATURED</span>
       <h2>まず読みたい記事</h2>
     </div>
-    <div class="blog-grid">
-      <a href="blog/website-cost-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページ制作の費用相場｜料金の内訳と予算別にできることを解説</h3>
-          <time class="blog-post-date" datetime="2026-07-29">2026年7月29日</time>
-          <p class="blog-post-desc">費用の内訳と、予算帯別にできることの目安をわかりやすく解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+    <div class="home-news-list">
+      <a href="blog/website-cost-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-29">2026年7月29日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページ制作の費用相場｜料金の内訳と予算別にできることを解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/google-search-console-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>Google Search Consoleとは？初心者向けに見方を解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">最初に見るべき5つの項目と、初心者がやりがちなよくある間違いを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/google-search-console-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">Google Search Consoleとは？初心者向けに見方を解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/meo-basics.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>MEO対策とは？Googleマップから来店を増やす基本施策を解説</h3>
-          <time class="blog-post-date" datetime="2026-07-29">2026年7月29日</time>
-          <p class="blog-post-desc">Googleビジネスプロフィールの整え方や口コミ・写真・投稿の活用方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/meo-basics.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-29">2026年7月29日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">MEO対策とは？Googleマップから来店を増やす基本施策を解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/claude-code-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>Claude Codeとは？できること・料金・始め方を解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-07-30">2026年7月30日</time>
-          <p class="blog-post-desc">中小企業が仕事でどう活用できるか、料金の目安や始め方をわかりやすく解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/claude-code-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-30">2026年7月30日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">Claude Codeとは？できること・料金・始め方を解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- カテゴリーから探す -->
-<section class="content-block reveal">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">CATEGORY</span>
-      <h2>カテゴリーから探す</h2>
-    </div>
-    <div class="category-list">
-      <a href="blog.html#industry-ai" class="category-row">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg>
-        </span>
-        <span class="category-name">業種別AI活用</span>
-        <span class="category-count">7記事</span>
-        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-      </a>
-      <a href="blog.html#cat-website" class="category-row">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 21h8"/></svg>
-        </span>
-        <span class="category-name">ホームページ制作</span>
-        <span class="category-count">15記事</span>
-        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-      </a>
-      <a href="blog.html#cat-ai-business" class="category-row">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-3 9v2h6v-2a5 5 0 0 0-3-9z"/><path d="M10 18h4M11 21h2"/></svg>
-        </span>
-        <span class="category-name">AI導入・業務効率化</span>
-        <span class="category-count">17記事</span>
-        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-      </a>
-      <a href="blog.html#cat-meo" class="category-row">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </span>
-        <span class="category-name">MEO対策</span>
-        <span class="category-count">15記事</span>
-        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-      </a>
-      <a href="blog.html#cat-seo" class="category-row">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
-        </span>
-        <span class="category-name">SEO対策</span>
-        <span class="category-count">13記事</span>
-        <svg class="category-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
+
 
 <!-- 最新の記事 -->
 <section class="content-block alt reveal">
@@ -1019,46 +1043,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">LATEST</span>
       <h2>最新の記事</h2>
     </div>
-    <div class="blog-grid">
-      <a href="blog/seo-effect-timeline.html" class="blog-post-card">
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>SEO対策は効果が出るまで何ヶ月？成果が出るまでの期間と考え方【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-07">2026年8月7日</time>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+    <div class="home-news-list">
+      <a href="blog/seo-effect-timeline.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">SEO対策は効果が出るまで何ヶ月？成果が出るまでの期間と考え方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/seo-keyword-selection.html" class="blog-post-card">
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>SEOキーワードの選び方｜中小企業が狙う検索キーワードの決め方【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-07">2026年8月7日</time>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/seo-keyword-selection.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">SEOキーワードの選び方｜中小企業が狙う検索キーワードの決め方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/lp-vs-website.html" class="blog-post-card">
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>LPとホームページの違いとは？目的・費用・向いているケースを比較【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-07">2026年8月7日</time>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/lp-vs-website.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">LPとホームページの違いとは？目的・費用・向いているケースを比較【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/seo-keyword-page-mapping.html" class="blog-post-card">
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>ホームページのSEOキーワードは何個必要？1ページ1テーマで設計する方法【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-07">2026年8月7日</time>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/seo-keyword-page-mapping.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">ホームページのSEOキーワードは何個必要？1ページ1テーマで設計する方法【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-reviews-guide.html" class="blog-post-card">
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleの口コミを増やす方法｜自然に口コミを集めるコツ【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-06">2026年8月6日</time>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-reviews-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-06">2026年8月6日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleの口コミを増やす方法｜自然に口コミを集めるコツ【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
   </div>
@@ -1073,90 +1097,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="blog-category-group">
     <h3 id="industry-ai" class="blog-category-heading">業種別AI活用</h3>
-    <div class="blog-grid">
-      <a href="blog/beauty-salon-ai.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3a3 3 0 1 0 3 5.2L12 12l-3 3.8A3 3 0 1 0 12 18l6-6-6-6A3 3 0 0 0 6 3z"/><path d="M15 15l3 3M15 9l3-3"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>美容室でAIを活用する方法｜業務効率化・集客アイデアを解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">予約管理、顧客カルテ、SNS集客など、美容室の業務を効率化する方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+    <div class="home-news-list">
+      <a href="blog/beauty-salon-ai.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">業種別AI活用</span>
+        </span>
+        <span class="home-news-title">美容室でAIを活用する方法｜業務効率化・集客アイデアを解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/restaurant-ai.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2v6a1 1 0 0 0 2 0V2"/><path d="M8 8v14"/><ellipse cx="17" cy="6" rx="2.5" ry="3.3"/><path d="M17 9.3V22"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>飲食店でAIを活用する方法｜シフト・予約・売上・在庫管理を効率化</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">シフト作成、予約、売上、在庫など、店舗運営の手作業を減らす方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/restaurant-ai.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">業種別AI活用</span>
+        </span>
+        <span class="home-news-title">飲食店でAIを活用する方法｜シフト・予約・売上・在庫管理を効率化</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/realestate-ai.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9 20v-6h6v6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>不動産会社でAIを活用する方法｜顧客・追客・契約進捗を一元管理</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">顧客情報、追客、内見履歴、契約進捗など、レインズの外側にある営業業務を整理する方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/realestate-ai.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">業種別AI活用</span>
+        </span>
+        <span class="home-news-title">不動産会社でAIを活用する方法｜顧客・追客・契約進捗を一元管理</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/professional-ai.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>士業でAIを活用する方法｜顧客・案件・期限・書類作成を効率化</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">顧客、案件、期限、書類、請求管理など、士業事務所の業務を効率化する方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/professional-ai.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">業種別AI活用</span>
+        </span>
+        <span class="home-news-title">士業でAIを活用する方法｜顧客・案件・期限・書類作成を効率化</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/construction-ai.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>建設業でAIを活用する方法｜工程・日報・写真・見積管理を効率化</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">工程、日報、写真、見積、原価など、現場と事務所の情報を一元化する方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/construction-ai.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">業種別AI活用</span>
+        </span>
+        <span class="home-news-title">建設業でAIを活用する方法｜工程・日報・写真・見積管理を効率化</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/clinic-ai.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>クリニック・整体院でAIを活用する方法｜予約・受付・顧客管理を効率化</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">予約、受付、顧客情報、リマインドなど、診療・施術以外の業務負担を減らす方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/clinic-ai.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">業種別AI活用</span>
+        </span>
+        <span class="home-news-title">クリニック・整体院でAIを活用する方法｜予約・受付・顧客管理を効率化</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/retail-ai.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l1-4h16l1 4"/><path d="M4 7h16v13H4z"/><path d="M9 11a3 3 0 0 0 6 0"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">業種別AI活用</span>
-          <h3>小売・卸売でAIを活用する方法｜在庫・受発注・売上管理を効率化</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">在庫、受発注、請求、売上を一元管理し、確認や転記の手間を減らす方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/retail-ai.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">業種別AI活用</span>
+        </span>
+        <span class="home-news-title">小売・卸売でAIを活用する方法｜在庫・受発注・売上管理を効率化</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
     <div style="text-align:center; margin-top:24px;">
@@ -1166,744 +1162,504 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="blog-category-group">
     <h3 id="cat-website" class="blog-category-heading">ホームページ制作</h3>
-    <div class="blog-grid">
-      <a href="blog/lp-vs-website.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4"/><path d="M21 7H9"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h12"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>LPとホームページの違いとは？目的・費用・向いているケースを比較【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-07">2026年8月7日</time>
-          <p class="blog-post-desc">LPとホームページの違いを目的・ページ数・SEO・広告との相性から比較し、向いているケースを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+    <div class="home-news-list">
+      <a href="blog/lp-vs-website.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">LPとホームページの違いとは？目的・費用・向いているケースを比較【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/domain-server-basics.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ドメインとサーバーとは？初心者向けにわかりやすく解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">ドメインとサーバーの違いや種類の比較、契約時に気をつけたいポイントを初心者向けに解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/domain-server-basics.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ドメインとサーバーとは？初心者向けにわかりやすく解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-preparation-checklist.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページを作る前に準備するもの一覧｜制作前に必要な情報を解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">会社情報・写真・文章・ロゴなど、制作前に準備しておきたいものを一覧で解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-preparation-checklist.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページを作る前に準備するもの一覧｜制作前に必要な情報を解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-production-duration.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.3"/><path d="M21 3v6h-6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページ制作にかかる期間はどれくらい？完成までの流れとスケジュールを解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">制作期間の目安と、期間が変わる主な要因、ページ数別のスケジュール例を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-production-duration.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページ制作にかかる期間はどれくらい？完成までの流れとスケジュールを解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-post-launch-tasks.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページ公開後にやるべきこと10選｜運用を始める前に確認したいポイント</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">フォーム確認・GBP登録・更新体制の整備など、公開後にやるべきことを10個に整理して解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-post-launch-tasks.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページ公開後にやるべきこと10選｜運用を始める前に確認したいポイント</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/wordpress-vs-nocode.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>WordPressとノーコードツールの違い｜STUDIO・Wixとの比較で分かる選び方</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">カスタマイズ性・費用・更新のしやすさから、WordPressとノーコードツールの違いを比較します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/wordpress-vs-nocode.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">WordPressとノーコードツールの違い｜STUDIO・Wixとの比較で分かる選び方</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-required-pages.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページ制作に必要なページ一覧【企業サイト編】｜基本構成と作る順番を解説</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">企業サイトに必要な基本ページ一覧と、ページごとの優先度・会社規模別のページ数の目安を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-required-pages.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページ制作に必要なページ一覧【企業サイト編】｜基本構成と作る順番を解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/free-website-builder-comparison.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>無料ホームページ作成ツール比較｜Wix・ペライチ・Jimdoと制作会社の違いを解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">Wix・ペライチ・Jimdoなど主要6ツールを比較し、制作会社に依頼した方がいいケースを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/free-website-builder-comparison.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">無料ホームページ作成ツール比較｜Wix・ペライチ・Jimdoと制作会社の違いを解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-traffic-increase.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 9l-5 5-3-3-4 4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページのアクセス数を増やす方法｜SEO・MEO・SNS集客を初心者向けに解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">アクセスが増えない主な原因と、初心者でも取り組みやすい集客方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-traffic-increase.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページのアクセス数を増やす方法｜SEO・MEO・SNS集客を初心者向けに解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-renewal-timing.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.3"/><path d="M21 3v6h-6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページをリニューアルするタイミング｜判断基準と確認項目【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">リニューアルした方がいいケース・しなくていいケースの判断基準を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-renewal-timing.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページをリニューアルするタイミング｜判断基準と確認項目【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-production-flow.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページ制作の流れ｜お問い合わせから公開まで完全ガイド【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">お問い合わせから公開までの8つのステップと、各ステップの期間の目安を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-production-flow.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページ制作の流れ｜お問い合わせから公開まで完全ガイド【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/claude-code-website.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>Claude Codeでホームページを作る方法｜手順・できること・できないことを解説</h3>
-          <time class="blog-post-date" datetime="2026-08-04">2026年8月4日</time>
-          <p class="blog-post-desc">準備するものから制作手順・公開までの流れ、できること・できないことを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/claude-code-website.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-04">2026年8月4日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">Claude Codeでホームページを作る方法｜手順・できること・できないことを解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-cost-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページ制作の費用相場｜料金の内訳と予算別にできることを解説</h3>
-          <time class="blog-post-date" datetime="2026-07-29">2026年7月29日</time>
-          <p class="blog-post-desc">費用の内訳と、予算帯別にできることの目安をわかりやすく解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-cost-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-29">2026年7月29日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページ制作の費用相場｜料金の内訳と予算別にできることを解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-company-selection.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページ制作会社の選び方｜失敗しないために確認したい10のポイント</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">料金の内訳・更新のしやすさ・SEO対応など、契約前に確認したい10のポイントを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-company-selection.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページ制作会社の選び方｜失敗しないために確認したい10のポイント</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-inquiry-improvement.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.7 8.7 0 0 1-4-.9L3 21l1.9-5.5a8.38 8.38 0 0 1-.9-4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 12.5l2-2 2 2 3-3"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">ホームページ制作</span>
-          <h3>ホームページを作っても問い合わせが増えない原因と改善方法</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">導線・スマホ対応・SEOなど、問い合わせが増えない原因と改善のポイントを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/website-inquiry-improvement.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">ホームページを作っても問い合わせが増えない原因と改善方法</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
     </div>
 
     <div class="blog-category-group">
     <h3 id="cat-ai-business" class="blog-category-heading">AI導入・業務効率化</h3>
-    <div class="blog-grid">
-      <a href="blog/claude-code-website-build.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>Claude Codeでホームページを作る方法｜実際に制作して分かったメリット・デメリット【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">実際にClaude Codeでホームページ制作・修正を行い、分かった良い点・困った点をご紹介します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+    <div class="home-news-list">
+      <a href="blog/claude-code-website-build.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">Claude Codeでホームページを作る方法｜実際に制作して分かったメリット・デメリット【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/claude-code-vs-cursor.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4"/><path d="M21 7H9"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h12"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>Claude CodeとCursorを比較｜ホームページ制作ならどっち？【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">料金・日本語対応・修正精度などをホームページ制作の観点で比較して解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/claude-code-vs-cursor.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">Claude CodeとCursorを比較｜ホームページ制作ならどっち？【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/claude-code-pricing.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>Claude Codeの料金は高い？従量課金・Maxプラン・コスパを解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">Pro・Maxプランの料金と従量課金の仕組み、コストを抑える工夫を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/claude-code-pricing.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">Claude Codeの料金は高い？従量課金・Maxプラン・コスパを解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/claude-code-prompts.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>Claude Codeのプロンプト30選｜ホームページ制作・SEO・ブログ作成ですぐ使える【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">そのまま使えるプロンプト例を30個以上、カテゴリ別に紹介します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/claude-code-prompts.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">Claude Codeのプロンプト30選｜ホームページ制作・SEO・ブログ作成ですぐ使える【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-adoption-failure-points.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>AI導入で失敗しないために｜中小企業が導入前に確認したい7つのポイント【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-07-31">2026年7月31日</time>
-          <p class="blog-post-desc">失敗しやすい会社に共通する7つのポイントと、導入前チェックリストを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-adoption-failure-points.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-31">2026年7月31日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">AI導入で失敗しないために｜中小企業が導入前に確認したい7つのポイント【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/claude-code-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>Claude Codeとは？できること・料金・始め方を解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-07-30">2026年7月30日</time>
-          <p class="blog-post-desc">中小企業が仕事でどう活用できるか、料金の目安や始め方をわかりやすく解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/claude-code-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-30">2026年7月30日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">Claude Codeとは？できること・料金・始め方を解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/chatgpt-business-use-cases.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12h8M8 16h5"/><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>ChatGPTでできること15選｜仕事で活用できる具体例を紹介【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-07-30">2026年7月30日</time>
-          <p class="blog-post-desc">中小企業が仕事で活用できるChatGPTの使い方を15個、具体例とあわせて紹介します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/chatgpt-business-use-cases.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-30">2026年7月30日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">ChatGPTでできること15選｜仕事で活用できる具体例を紹介【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/chatgpt-vs-claude.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4"/><path d="M21 7H9"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h12"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>ChatGPTとClaudeの違いを比較｜目的別におすすめを解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-07-30">2026年7月30日</time>
-          <p class="blog-post-desc">それぞれの得意分野を目的別に比較し、中小企業に合った選び方を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/chatgpt-vs-claude.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-30">2026年7月30日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">ChatGPTとClaudeの違いを比較｜目的別におすすめを解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-adoption-checklist.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>AIを会社へ導入する前に決めるべき5つのポイント</h3>
-          <time class="blog-post-date" datetime="2026-07-30">2026年7月30日</time>
-          <p class="blog-post-desc">ツール選びの前に決めておきたい、目的・範囲・予算などのポイントを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-adoption-checklist.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-30">2026年7月30日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">AIを会社へ導入する前に決めるべき5つのポイント</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-shift-scheduling.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/><path d="M8 14h3M8 17h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>AIでシフト作成を自動化する方法｜店長の作業負担を減らす仕組みを解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-07-29">2026年7月29日</time>
-          <p class="blog-post-desc">シフト作成にかかる時間や店長の負担を、AIでどこまで減らせるのか仕組みや選び方、費用感まで解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-shift-scheduling.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-29">2026年7月29日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">AIでシフト作成を自動化する方法｜店長の作業負担を減らす仕組みを解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-shift-scheduling-cost.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>シフト作成AIの費用はどれくらい？既存サービスとオーダーメイド開発を比較</h3>
-          <time class="blog-post-date" datetime="2026-07-29">2026年7月29日</time>
-          <p class="blog-post-desc">既存サービスとオーダーメイド開発、それぞれの費用感やスタッフ規模別の目安を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-shift-scheduling-cost.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-29">2026年7月29日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">シフト作成AIの費用はどれくらい？既存サービスとオーダーメイド開発を比較</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/shift-collection-methods.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v14H4z"/><path d="M4 8h16"/><path d="M8 12h8M8 15h5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>希望シフトの回収を効率化する方法｜LINE・Googleフォーム・シフト管理アプリを比較</h3>
-          <time class="blog-post-date" datetime="2026-07-29">2026年7月29日</time>
-          <p class="blog-post-desc">3つの回収方法のメリット・デメリットを比較し、店舗規模に合った選び方を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/shift-collection-methods.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-29">2026年7月29日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">希望シフトの回収を効率化する方法｜LINE・Googleフォーム・シフト管理アプリを比較</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-phone-answering.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>AI電話とは？仕組み・料金・導入メリットをわかりやすく解説</h3>
-          <time class="blog-post-date" datetime="2026-07-29">2026年7月29日</time>
-          <p class="blog-post-desc">AI電話の仕組みや対応できる範囲、料金の目安、導入判断のポイントを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-phone-answering.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-29">2026年7月29日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">AI電話とは？仕組み・料金・導入メリットをわかりやすく解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-training-subsidy.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 15l6-6"/><circle cx="9.5" cy="9.5" r="1"/><circle cx="14.5" cy="14.5" r="1"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>AI研修は補助金・助成金で実質負担が約4分の1になることも？｜対象制度や条件をわかりやすく解説</h3>
-          <time class="blog-post-date" datetime="2026-07-28">2026年7月28日</time>
-          <p class="blog-post-desc">AI研修が対象になる可能性がある補助金・助成金制度や、対象条件をわかりやすく解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-training-subsidy.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-28">2026年7月28日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">AI研修は補助金・助成金で実質負担が約4分の1になることも？｜対象制度や条件をわかりやすく解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-custom-vs-existing.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7l-3 6a3 3 0 0 0 6 0z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0z"/><path d="M5 7h14"/><path d="M8 21h8"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>AI導入はオーダーメイドと既存サービス、どちらを選ぶべき？</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">オーダーメイド開発と既存サービス、それぞれが向いているケースと選び方を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-custom-vs-existing.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">AI導入はオーダーメイドと既存サービス、どちらを選ぶべき？</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-first-review-points.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6l1 1 2-2"/><path d="M4 12l1 1 2-2"/><path d="M4 18l1 1 2-2"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>小さな会社がAIを導入するときに最初に見直したい業務5選</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">優先順位のつけ方や、既存サービスで対応できるかの確認方法をわかりやすく紹介します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-first-review-points.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">小さな会社がAIを導入するときに最初に見直したい業務5選</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ai-development-cost.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">AI導入・業務効率化</span>
-          <h3>AI開発の費用相場｜オーダーメイドと既存ツールを比較</h3>
-          <time class="blog-post-date" datetime="2026-07-27">2026年7月27日</time>
-          <p class="blog-post-desc">費用を構成する要素や、費用を抑えるための考え方もあわせてご紹介します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ai-development-cost.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-27">2026年7月27日</time>
+          <span class="home-news-category">AI導入・業務効率化</span>
+        </span>
+        <span class="home-news-title">AI開発の費用相場｜オーダーメイドと既存ツールを比較</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
     </div>
 
     <div class="blog-category-group">
     <h3 id="cat-meo" class="blog-category-heading">MEO対策</h3>
-    <div class="blog-grid">
-      <a href="blog/gbp-reviews-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleの口コミを増やす方法｜自然に口コミを集めるコツ【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-06">2026年8月6日</time>
-          <p class="blog-post-desc">口コミを自然に集める方法、依頼するタイミングと伝え方、ガイドライン違反になる集め方まで解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+    <div class="home-news-list">
+      <a href="blog/gbp-reviews-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-06">2026年8月6日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleの口コミを増やす方法｜自然に口コミを集めるコツ【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-photo-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleビジネスプロフィールの写真は何を載せる？効果的な写真の撮り方【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-06">2026年8月6日</time>
-          <p class="blog-post-desc">掲載すべき写真の種類と効果的な撮り方のコツ、避けたいNG例まで解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-photo-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-06">2026年8月6日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleビジネスプロフィールの写真は何を載せる？効果的な写真の撮り方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-category-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleビジネスプロフィールのカテゴリ設定方法｜上位表示につながる選び方【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-06">2026年8月6日</time>
-          <p class="blog-post-desc">メインカテゴリとサブカテゴリの違いや選び方、よくある失敗、変更方法まで解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-category-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-06">2026年8月6日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleビジネスプロフィールのカテゴリ設定方法｜上位表示につながる選び方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/meo-self-vs-agency.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4"/><path d="M21 7H9"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h12"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>MEO対策は自分でできる？自社運用と業者依頼を比較【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-06">2026年8月6日</time>
-          <p class="blog-post-desc">自社運用と業者依頼の違いを費用・時間・必要な知識の面から比較し、向いているケースを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/meo-self-vs-agency.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-06">2026年8月6日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">MEO対策は自分でできる？自社運用と業者依頼を比較【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-owner-verification.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleビジネスプロフィールのオーナー確認方法｜確認できない原因と対処法【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">オーナー確認ができない主な原因と対処法、確認方法の種類や権限レベルの違いを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-owner-verification.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleビジネスプロフィールのオーナー確認方法｜確認できない原因と対処法【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-suspension-recovery.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.3"/><path d="M21 3v6h-6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleビジネスプロフィールが停止・非表示になったときの対処法【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">停止・非表示になる主な原因と復旧の手順、期間目安、停止を防ぐポイントを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-suspension-recovery.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleビジネスプロフィールが停止・非表示になったときの対処法【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-insights-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 9l-5 5-3-3-4 4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleビジネスプロフィール インサイトの見方｜アクセス解析で改善する方法【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="blog-post-desc">インサイトで見られる主な指標の意味と確認手順、数値をどう改善に活かすかを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-insights-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-05">2026年8月5日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleビジネスプロフィール インサイトの見方｜アクセス解析で改善する方法【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-posts-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v14H4z"/><path d="M4 8h16"/><path d="M8 12h8M8 15h5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleビジネスプロフィールの投稿機能とは？集客につながる使い方【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">おすすめの投稿内容、頻度の考え方、写真の使い方などを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-posts-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleビジネスプロフィールの投稿機能とは？集客につながる使い方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/meo-monthly-operations.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleマップ運用代行は毎月何をする？3か月間の作業内容を解説</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">Googleマップ運用代行が毎月行う作業内容を、1〜3か月目の流れで解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/meo-monthly-operations.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleマップ運用代行は毎月何をする？3か月間の作業内容を解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/meo-suitable-industries.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleマップで集客できる業種一覧｜向いている業種・向かない業種を解説</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">Googleマップ集客に向いている業種・向いていない業種の見分け方を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/meo-suitable-industries.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleマップで集客できる業種一覧｜向いている業種・向かない業種を解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-initial-setup-checklist.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleビジネスプロフィール初期設定チェックリスト｜公開前に確認したい項目</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">公開前に確認しておきたい初期設定項目を、カテゴリ別のチェックリストで解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-initial-setup-checklist.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleビジネスプロフィール初期設定チェックリスト｜公開前に確認したい項目</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-agency-cost.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleビジネスプロフィール代行の費用相場｜料金・サービス内容・選び方を比較</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">初期設定代行・月額運用代行の費用相場と、代行会社を選ぶ際の注意点を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-agency-cost.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleビジネスプロフィール代行の費用相場｜料金・サービス内容・選び方を比較</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/meo-ranking-causes.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleマップで上位表示されない原因｜順位が上がらない理由を解説</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">順位が上がらない8つの原因を、自己診断チェックリストつきで解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/meo-ranking-causes.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleマップで上位表示されない原因｜順位が上がらない理由を解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gbp-faq-30.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>Googleマップでよくある質問30選｜Googleビジネスプロフィールの疑問をまとめて解説</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">Googleマップ・GBPに関するよくある質問30個を、テーマ別にまとめて解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gbp-faq-30.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleマップでよくある質問30選｜Googleビジネスプロフィールの疑問をまとめて解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/meo-basics.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">MEO対策</span>
-          <h3>MEO対策とは？Googleマップから来店を増やす基本施策を解説</h3>
-          <time class="blog-post-date" datetime="2026-07-29">2026年7月29日</time>
-          <p class="blog-post-desc">Googleビジネスプロフィールの整え方や口コミ・写真・投稿の活用方法を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/meo-basics.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-07-29">2026年7月29日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">MEO対策とは？Googleマップから来店を増やす基本施策を解説</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
     </div>
 
     <div class="blog-category-group">
     <h3 id="cat-seo" class="blog-category-heading">SEO対策</h3>
-    <div class="blog-grid">
-      <a href="blog/seo-effect-timeline.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>SEO対策は効果が出るまで何ヶ月？成果が出るまでの期間と考え方【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-07">2026年8月7日</time>
-          <p class="blog-post-desc">SEO効果が出るまでの一般的な考え方と、Search Consoleで確認すべき指標を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+    <div class="home-news-list">
+      <a href="blog/seo-effect-timeline.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">SEO対策は効果が出るまで何ヶ月？成果が出るまでの期間と考え方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/seo-keyword-selection.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>SEOキーワードの選び方｜中小企業が狙う検索キーワードの決め方【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-07">2026年8月7日</time>
-          <p class="blog-post-desc">検索意図やキーワードの種類の違い、業種別の考え方まで、キーワードの決め方を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/seo-keyword-selection.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">SEOキーワードの選び方｜中小企業が狙う検索キーワードの決め方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/seo-keyword-page-mapping.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>ホームページのSEOキーワードは何個必要？1ページ1テーマで設計する方法【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-07">2026年8月7日</time>
-          <p class="blog-post-desc">キーワードをページごとに割り当てる考え方と、キーワードカニバリゼーションの防ぎ方を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/seo-keyword-page-mapping.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">ホームページのSEOキーワードは何個必要？1ページ1テーマで設計する方法【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/google-not-indexed-causes.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>Googleにインデックスされない原因10選｜検索結果に表示されない理由と対処法</h3>
-          <time class="blog-post-date" datetime="2026-08-04">2026年8月4日</time>
-          <p class="blog-post-desc">インデックスされない原因を10個に分けて解説し、確認方法や対処法も紹介します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/google-not-indexed-causes.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-04">2026年8月4日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">Googleにインデックスされない原因10選｜検索結果に表示されない理由と対処法</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/search-console-request-indexing.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>Search Consoleでインデックス登録をリクエストする方法【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-04">2026年8月4日</time>
-          <p class="blog-post-desc">URL検査ツールからインデックス登録をリクエストする手順を初心者向けに解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/search-console-request-indexing.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-04">2026年8月4日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">Search Consoleでインデックス登録をリクエストする方法【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/seo-checklist-after-launch.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>ホームページ公開後に最初にやるSEO設定チェックリスト【保存版】</h3>
-          <time class="blog-post-date" datetime="2026-08-04">2026年8月4日</time>
-          <p class="blog-post-desc">Search Console・GA4・サイトマップ送信など、公開後にやるべき設定をチェックリストで紹介します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/seo-checklist-after-launch.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-04">2026年8月4日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">ホームページ公開後に最初にやるSEO設定チェックリスト【保存版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/gsc-indexing-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>Google Search Consoleのインデックス登録方法｜反映されない原因も解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">登録までの流れ、URL検査ツールの使い方、反映されない原因を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/gsc-indexing-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">Google Search Consoleのインデックス登録方法｜反映されない原因も解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/seo-article-writing.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>SEO記事の書き方｜AI時代でも検索される記事構成を解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">タイトル・見出し・本文・内部リンク・FAQ・比較表という記事構成の基本を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/seo-article-writing.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">SEO記事の書き方｜AI時代でも検索される記事構成を解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/seo-company-selection.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>SEO対策会社の選び方｜失敗しない会社選び7つのポイント【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">料金体系・施策内容・レポートの透明性など、契約前に確認したい7つのポイントを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/seo-company-selection.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">SEO対策会社の選び方｜失敗しない会社選び7つのポイント【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/google-ai-overview.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>Google AI Overviewとは？表示される仕組みと対策を解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">表示される仕組み、通常の検索結果との違い、引用されやすくするための対策を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/google-ai-overview.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">Google AI Overviewとは？表示される仕組みと対策を解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/google-search-console-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 7l4 5 4-5"/><path d="M12 12v6"/><path d="M9 14h6"/><path d="M9 16.5h6"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>Google Search Consoleとは？初心者向けに見方を解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">最初に見るべき5つの項目と、初心者がやりがちなよくある間違いを解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/google-search-console-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">Google Search Consoleとは？初心者向けに見方を解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/ga4-guide.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v14H4z"/><path d="M4 8h16"/><path d="M8 12h8M8 15h5"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>Google Analytics 4（GA4）とは？ホームページで見るべき数字を解説【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">Search Consoleとの違いや、問い合わせ改善への活かし方を解説します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/ga4-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">Google Analytics 4（GA4）とは？ホームページで見るべき数字を解説【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/aeo-improvement-experience.html" class="blog-post-card">
-        <div class="blog-post-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="blog-post-body">
-          <span class="blog-post-category">SEO対策</span>
-          <h3>AI検索で引用される記事を書くためにやったこと｜実際に試した改善内容を公開【2026年最新版】</h3>
-          <time class="blog-post-date" datetime="2026-08-01">2026年8月1日</time>
-          <p class="blog-post-desc">マダナイ？が実際に取り組んだ記事構成・比較表・内部リンクの改善内容を公開します。</p>
-          <span class="blog-post-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/aeo-improvement-experience.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-01">2026年8月1日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">AI検索で引用される記事を書くためにやったこと｜実際に試した改善内容を公開【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
     </div>

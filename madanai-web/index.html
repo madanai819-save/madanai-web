@@ -1162,37 +1162,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
   }
 
-  /* ---------- HOME BLOG SECTION ---------- */
-  .home-blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-  .home-blog-card{
-    display:flex; flex-direction:column;
-    background:#fff; border:1px solid rgba(26,22,32,0.08); border-radius:20px;
-    overflow:hidden; height:100%;
-    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  /* ---------- HOME BLOG SECTION (news-list style) ---------- */
+  .home-news-list{ border-top:1px solid rgba(26,22,32,0.08); }
+  .home-news-row{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    padding:20px 6px;
+    border-bottom:1px solid rgba(26,22,32,0.08);
+    text-decoration:none;
+    border-radius:10px;
+    transition:background-color .2s ease;
   }
-  .home-blog-card:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(26,22,32,0.08); }
-  .home-blog-card:focus-visible{ outline:2px solid var(--purple); outline-offset:3px; border-color:transparent; }
-  .home-blog-image{
-    width:100%; aspect-ratio:16 / 10;
-    background:linear-gradient(135deg, rgba(123,47,247,0.09), rgba(76,140,255,0.09));
-    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  .home-news-row:hover{ background:rgba(123,47,247,0.035); }
+  .home-news-row:focus-visible{ outline:2px solid var(--purple); outline-offset:-2px; }
+  .home-news-meta{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex:0 0 30%;
+    min-width:0;
   }
-  .home-blog-image img{ width:100%; height:100%; object-fit:cover; }
-  .home-blog-body{ padding:22px 22px 24px; display:flex; flex-direction:column; flex:1; text-align:left; }
-  .home-blog-category{ font-size:10.5px; font-weight:800; color:var(--purple); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:10px; }
-  .home-blog-body h3{ font-size:16px; font-weight:800; color:var(--ink); line-height:1.5; margin-bottom:8px; text-align:left; }
-  .home-blog-date{ font-size:11.5px; color:var(--text-muted); margin-bottom:12px; display:block; }
-  .home-blog-desc{ font-size:12.5px; color:var(--text-muted); line-height:1.8; margin-bottom:16px; text-align:left; }
-  .home-blog-link{ margin-top:auto; font-size:12.5px; font-weight:800; color:var(--purple); display:inline-flex; align-items:center; gap:4px; }
-  .home-blog-link .btn-arrow{ display:inline-block; transition:transform .2s ease; }
-  .home-blog-card:hover .home-blog-link .btn-arrow{ transform:translateX(3px); }
+  .home-news-date{ font-size:12.5px; color:var(--text-muted); white-space:nowrap; }
+  .home-news-category{
+    font-size:11px; font-weight:800; color:var(--purple);
+    background:rgba(123,47,247,0.08);
+    padding:4px 11px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .home-news-title{
+    flex:1 1 60%;
+    min-width:0;
+    font-size:15px; font-weight:700; color:var(--ink);
+    line-height:1.6;
+    transition:color .2s ease;
+  }
+  .home-news-row:hover .home-news-title{ color:var(--purple); }
+  .home-news-arrow{
+    flex:0 0 auto;
+    font-size:16px; color:var(--purple);
+    transition:transform .2s ease;
+  }
+  .home-news-row:hover .home-news-arrow{ transform:translateX(4px); }
   .home-blog-more{ font-size:13px; font-weight:800; color:var(--purple); display:inline-flex; align-items:center; gap:4px; }
   .home-blog-more:hover{ text-decoration:underline; }
 
-  @media (max-width:1000px){ .home-blog-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:600px){
-    .home-blog-grid{ grid-template-columns:1fr; }
-    .home-blog-image{ display:none; }
+  @media (max-width:720px){
+    .home-news-row{
+      flex-wrap:wrap;
+      align-items:flex-start;
+      gap:8px;
+      padding:18px 6px;
+      position:relative;
+    }
+    .home-news-meta{ flex:0 0 100%; }
+    .home-news-title{
+      flex:0 0 100%;
+      padding-right:30px;
+      font-size:14.5px;
+    }
+    .home-news-arrow{
+      position:absolute;
+      right:6px;
+      bottom:18px;
+    }
   }
 
   /* ---------- MOBILE: LEFT-ALIGN BODY TEXT (readability) ---------- */
@@ -1688,52 +1722,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section id="blog" class="reveal" style="padding-top:64px; padding-bottom:64px;">
+<section id="blog" class="reveal" style="padding-top:56px; padding-bottom:56px;">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">BLOG</span>
-      <h2>お悩み解決ブログ</h2>
-      <p style="max-width:560px; margin:16px 0 0; font-size:14px; color:var(--text-muted); line-height:1.8;">ホームページ制作・SEO・MEO・AI活用・業務効率化など、問い合わせや売上につながる情報を分かりやすく解説しています。</p>
+      <h2>新着情報</h2>
     </div>
-    <div class="home-blog-grid">
-      <a href="blog/lp-vs-website.html" class="home-blog-card">
-        <div class="home-blog-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4"/><path d="M21 7H9"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h12"/></svg>
-        </div>
-        <div class="home-blog-body">
-          <span class="home-blog-category">ホームページ制作</span>
-          <h3>LPとホームページの違いとは？目的・費用・向いているケースを比較【2026年最新版】</h3>
-          <time class="home-blog-date" datetime="2026-08-07">2026年8月7日</time>
-          <p class="home-blog-desc">LPとホームページの違いを目的・ページ数・SEO・広告との相性から比較し、向いているケースを解説します。</p>
-          <span class="home-blog-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+    <div class="home-news-list">
+      <a href="blog/seo-effect-timeline.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">SEO対策は効果が出るまで何ヶ月？成果が出るまでの期間と考え方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/claude-code-guide.html" class="home-blog-card">
-        <div class="home-blog-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div class="home-blog-body">
-          <span class="home-blog-category">AI導入・業務効率化</span>
-          <h3>Claude Codeとは？できること・料金・始め方を解説【2026年最新版】</h3>
-          <time class="home-blog-date" datetime="2026-07-30">2026年7月30日</time>
-          <p class="home-blog-desc">中小企業が仕事でどう活用できるか、料金の目安や始め方をわかりやすく解説します。</p>
-          <span class="home-blog-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/seo-keyword-selection.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">SEOキーワードの選び方｜中小企業が狙う検索キーワードの決め方【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="blog/website-required-pages.html" class="home-blog-card">
-        <div class="home-blog-image">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
-        </div>
-        <div class="home-blog-body">
-          <span class="home-blog-category">ホームページ制作</span>
-          <h3>ホームページ制作に必要なページ一覧【企業サイト編】｜基本構成と作る順番を解説</h3>
-          <time class="home-blog-date" datetime="2026-08-05">2026年8月5日</time>
-          <p class="home-blog-desc">企業サイトに必要な基本ページ一覧と、ページごとの優先度・ページ数の目安を解説します。</p>
-          <span class="home-blog-link">記事を読む<span class="btn-arrow">→</span></span>
-        </div>
+      <a href="blog/lp-vs-website.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">ホームページ制作</span>
+        </span>
+        <span class="home-news-title">LPとホームページの違いとは？目的・費用・向いているケースを比較【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="blog/seo-keyword-page-mapping.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-07">2026年8月7日</time>
+          <span class="home-news-category">SEO対策</span>
+        </span>
+        <span class="home-news-title">ホームページのSEOキーワードは何個必要？1ページ1テーマで設計する方法【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="blog/gbp-reviews-guide.html" class="home-news-row">
+        <span class="home-news-meta">
+          <time class="home-news-date" datetime="2026-08-06">2026年8月6日</time>
+          <span class="home-news-category">MEO対策</span>
+        </span>
+        <span class="home-news-title">Googleの口コミを増やす方法｜自然に口コミを集めるコツ【2026年最新版】</span>
+        <span class="home-news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
-    <div style="text-align:center; margin-top:36px;">
+    <div style="text-align:center; margin-top:32px;">
       <a href="blog.html" class="home-blog-more">ブログ一覧を見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
