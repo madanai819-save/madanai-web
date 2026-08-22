@@ -634,37 +634,70 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   /* ---------- PRICING TEASER ---------- */
-  .price-teaser-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    max-width:760px;
+  .price-list{
+    border-top:1px solid var(--line);
+    max-width:880px;
     margin:0 auto;
   }
-  .price-teaser-card{
-    background:#fff;
-    border:1px solid rgba(26,22,32,0.08);
-    border-radius:16px;
-    padding:24px 26px;
-    box-shadow:0 4px 14px rgba(26,22,32,0.03);
+  .price-row{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    padding:28px 4px;
+    border-bottom:1px solid var(--line);
   }
-  .price-teaser-name{
+  .price-row-num{
+    font-family:'M PLUS Rounded 1c', sans-serif;
     font-size:13px;
     font-weight:800;
     color:var(--purple);
-    margin-bottom:8px;
+    flex-shrink:0;
+    padding-top:3px;
   }
-  .price-teaser-price{
-    font-size:22px;
+  .price-row-main{ flex:1; min-width:0; }
+  .price-row-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:6px 16px;
+  }
+  .price-row-name{
+    font-size:17px;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .price-row-price{
+    font-family:'M PLUS Rounded 1c', sans-serif;
+    font-size:16px;
     font-weight:900;
     color:var(--ink);
-    margin-bottom:8px;
-    line-height:1.3;
   }
-  .price-teaser-desc{
-    font-size:13px;
+  .price-row-desc{
+    margin-top:8px;
+    font-size:13.5px;
     color:var(--text-muted);
     line-height:1.7;
+    max-width:480px;
+  }
+  .price-row-link{
+    flex-shrink:0;
+    align-self:center;
+    font-size:13px;
+    font-weight:800;
+    color:var(--purple);
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    white-space:nowrap;
+  }
+  .price-teaser-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:26px;
+    font-size:14px;
+    font-weight:800;
+    color:var(--purple);
   }
 
   /* ---------- CONCERNS ---------- */
@@ -1147,7 +1180,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pain-grid{ grid-template-columns:1fr; }
     .value-grid{ grid-template-columns:1fr; }
     .pillar-grid{ grid-template-columns:1fr; }
-    .price-teaser-grid{ grid-template-columns:1fr; }
     .about-hero-text p{ font-size:14.5px; }
     .about-message{ font-size:19px; }
     .plan-cards{ grid-template-columns:1fr; }
@@ -1163,6 +1195,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .process-step{ padding-left:60px; padding-bottom:32px; }
     .process-num{ width:40px; height:40px; font-size:12px; }
     .process-step:not(:last-child)::before{ left:19px; top:40px; }
+    .price-row{ flex-direction:column; gap:10px; padding:22px 2px; }
+    .price-row-link{ align-self:flex-start; margin-top:2px; }
     .price-table th, .price-table td{ padding:13px 14px; font-size:12.5px; }
     .contact::before{ font-size:280px; right:-80px; top:-60px; }
   }
@@ -1588,31 +1622,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>料金</h2>
     </div>
 
-    <div class="price-teaser-grid">
-      <div class="price-teaser-card">
-        <div class="price-teaser-name">ホームページ制作</div>
-        <div class="price-teaser-price">220,000円（税込）〜</div>
-        <p class="price-teaser-desc">スマホ対応・お問い合わせフォームなど、集客につながるページを制作</p>
+    <div class="price-list">
+      <div class="price-row">
+        <span class="price-row-num" aria-hidden="true">01</span>
+        <div class="price-row-main">
+          <div class="price-row-head">
+            <h3 class="price-row-name">ホームページ制作</h3>
+            <span class="price-row-price">220,000円（税込）〜</span>
+          </div>
+          <p class="price-row-desc">スマホ対応・お問い合わせフォームなど、集客につながるページを制作</p>
+        </div>
+        <a href="pricing.html#website" class="price-row-link">詳細を見る<span class="btn-arrow">→</span></a>
       </div>
-      <div class="price-teaser-card">
-        <div class="price-teaser-name">LP制作</div>
-        <div class="price-teaser-price">59,800円（税込）〜</div>
-        <p class="price-teaser-desc">問い合わせ・予約・購入など、1つの行動に絞ったページを制作</p>
+      <div class="price-row">
+        <span class="price-row-num" aria-hidden="true">02</span>
+        <div class="price-row-main">
+          <div class="price-row-head">
+            <h3 class="price-row-name">LP制作</h3>
+            <span class="price-row-price">59,800円（税込）〜</span>
+          </div>
+          <p class="price-row-desc">問い合わせ・予約・購入など、1つの行動に絞ったページを制作</p>
+        </div>
+        <a href="pricing.html#lp" class="price-row-link">詳細を見る<span class="btn-arrow">→</span></a>
       </div>
-      <div class="price-teaser-card">
-        <div class="price-teaser-name">保守・運用支援</div>
-        <div class="price-teaser-price">月額2,980円（税込）〜</div>
-        <p class="price-teaser-desc">更新・修正・公開後のサポートまで対応</p>
+      <div class="price-row">
+        <span class="price-row-num" aria-hidden="true">03</span>
+        <div class="price-row-main">
+          <div class="price-row-head">
+            <h3 class="price-row-name">保守・運用支援</h3>
+            <span class="price-row-price">月額2,980円（税込）〜</span>
+          </div>
+          <p class="price-row-desc">更新・修正・公開後のサポートまで対応</p>
+        </div>
+        <a href="pricing.html#maintenance" class="price-row-link">詳細を見る<span class="btn-arrow">→</span></a>
       </div>
-      <div class="price-teaser-card">
-        <div class="price-teaser-name">集客・AI活用支援</div>
-        <div class="price-teaser-price">内容に応じてお見積り</div>
-        <p class="price-teaser-desc">SEO・Googleマップ・AI導入を支援</p>
+      <div class="price-row">
+        <span class="price-row-num" aria-hidden="true">04</span>
+        <div class="price-row-main">
+          <div class="price-row-head">
+            <h3 class="price-row-name">集客・AI活用支援</h3>
+            <span class="price-row-price">内容に応じてお見積り</span>
+          </div>
+          <p class="price-row-desc">SEO・Googleマップ・AI導入を支援</p>
+        </div>
+        <a href="pricing.html" class="price-row-link">詳細を見る<span class="btn-arrow">→</span></a>
       </div>
     </div>
-    <div style="text-align:center; margin-top:28px;">
-      <a href="pricing.html" class="btn-secondary">料金・サービス詳細を見る<span class="btn-arrow">→</span></a>
-      <p class="hero-note" style="margin-top:14px;">ご希望やご予算を確認し、必要な内容だけをご提案します。不要なサービスを無理におすすめすることはありません。</p>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="pricing.html#website" class="price-teaser-link">料金・プランを見る<span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
